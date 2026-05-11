@@ -15,6 +15,52 @@
   // Insert nav-offset right after the nav (which is now firstChild)
   document.body.insertBefore(offset, document.body.firstChild.nextSibling);
 
+
+  // ── Inject Mobile Overlay ─────────────────────────────────────
+  var mobileOverlay = document.createElement('div');
+  mobileOverlay.id = 'navMobile';
+  mobileOverlay.className = 'nav-mobile';
+  mobileOverlay.innerHTML = [
+    '<button id="navClose" class="nav-mobile-close" aria-label="Close menu">',
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">',
+        '<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>',
+      '</svg>',
+    '</button>',
+
+    '<div class="mob-group">',
+      '<a href="https://trueluvtake2.com/how-it-works" class="mob-primary">How to Engage</a>',
+      '<div class="mob-sub-links">',
+        '<a href="https://trueluvtake2.com/how-it-works">The Seeker Journey</a>',
+        '<a href="https://trueluvtake2.com/the-five-elements-of-connection">The 5 Elements</a>',
+        '<a href="https://trueluvtake2.com/advisory-circle">Advisory Circle</a>',
+        '<a href="https://trueluvtake2.com/profiles">Attunement Profiles</a>',
+      '</div>',
+    '</div>',
+
+    '<div class="mobile-divider"></div>',
+    '<a href="https://trueluvtake2.com/membership" class="mob-primary">Membership</a>',
+    '<div class="mobile-divider"></div>',
+
+    '<div class="mob-group">',
+      '<a href="https://trueluvtake2.com/about" class="mob-primary">About</a>',
+      '<div class="mob-sub-links">',
+        '<a href="https://trueluvtake2.com/about">Meet Monique</a>',
+        '<a href="https://trueluvtake2.com/faq">FAQ</a>',
+        '<a href="https://trueluvtake2.com/reflections">Reflections</a>',
+      '</div>',
+    '</div>',
+
+    '<div class="mobile-divider"></div>',
+    '<a href="https://trueluvtake2.com/media" class="mob-primary">Media</a>',
+    '<div class="mobile-divider"></div>',
+    '<a href="https://trueluvtake2.com/affiliate-program" class="mob-primary">Partner with Us</a>',
+    '<div class="mobile-divider"></div>',
+
+    '<a href="https://trueluvtake2.com/member-introduction-page" class="btn-primary-mob">Begin Here</a>',
+    '<a href="https://connect.trueluvtake2.com" class="btn-signin-mob">Member Sign In</a>'
+  ].join('');
+  document.body.appendChild(mobileOverlay);
+
   // ── Nav Behaviour ──────────────────────────────────────────────
 (function () {
   var nav       = document.getElementById('tl2Nav');
