@@ -1,0 +1,24 @@
+/* ═══════════════════════════════════════════════
+   TLT2 GLOBAL DESIGN TOKENS
+   Defines all CSS variables used across pages.
+   Loaded before nav.js to ensure immediate render.
+═══════════════════════════════════════════════ */
+:root {
+  /* Typography */
+  --san: 'Instrument Sans', system-ui, sans-serif;
+  --ser: 'Playfair Display', Georgia, serif;
+
+  /* Palette */
+  --cream:  #F9F6F0;
+  --char:   #1a1614;
+  --burg:   #823348;
+  --teal:   #2BA5B4;
+
+  /* Aliases matching nav.js tokens */
+  --bg:           #F9F6F0;
+  --text-head:    #1a1614;
+  --text-muted:   #5a524e;
+  --brand:        #823348;
+  --brand-dark:   #6d2a3d;
+  --border-faint: rgba(130,51,72,0.06);
+}
