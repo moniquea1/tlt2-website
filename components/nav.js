@@ -28,35 +28,35 @@
     '</button>',
 
     '<div class="mob-group">',
-      '<a href="https://trueluvtake2.com/how-it-works" class="mob-primary">How to Engage</a>',
+      '<a href="/how-it-works" class="mob-primary">How to Engage</a>',
       '<div class="mob-sub-links">',
-        '<a href="https://trueluvtake2.com/how-it-works">The Seeker Journey</a>',
-        '<a href="https://trueluvtake2.com/the-five-elements-of-connection">The 5 Elements</a>',
-        '<a href="https://trueluvtake2.com/advisory-circle">Advisory Circle</a>',
-        '<a href="https://trueluvtake2.com/profiles">Attunement Profiles</a>',
+        '<a href="/how-it-works">The Seeker Journey</a>',
+        '<a href="/five-elements">The 5 Elements</a>',
+        '<a href="/advisory-circle">Advisory Circle</a>',
+        '<a href="/profiles">Attunement Profiles</a>',
       '</div>',
     '</div>',
 
     '<div class="mobile-divider"></div>',
-    '<a href="https://trueluvtake2.com/membership" class="mob-primary">Membership</a>',
+    '<a href="/membership" class="mob-primary">Membership</a>',
     '<div class="mobile-divider"></div>',
 
     '<div class="mob-group">',
-      '<a href="https://trueluvtake2.com/about" class="mob-primary">About</a>',
+      '<a href="/about" class="mob-primary">About</a>',
       '<div class="mob-sub-links">',
-        '<a href="https://trueluvtake2.com/about">Meet Monique</a>',
-        '<a href="https://trueluvtake2.com/faq">FAQ</a>',
-        '<a href="https://trueluvtake2.com/reflections">Reflections</a>',
+        '<a href="/about">Meet Monique</a>',
+        '<a href="/faq">FAQ</a>',
+        '<a href="/reflections">Reflections</a>',
       '</div>',
     '</div>',
 
     '<div class="mobile-divider"></div>',
-    '<a href="https://trueluvtake2.com/media" class="mob-primary">Media</a>',
+    '<a href="/media" class="mob-primary">Media</a>',
     '<div class="mobile-divider"></div>',
-    '<a href="https://trueluvtake2.com/affiliate-program" class="mob-primary">Partner with Us</a>',
+    '<a href="/partner-with-us" class="mob-primary">Partner with Us</a>',
     '<div class="mobile-divider"></div>',
 
-    '<a href="https://trueluvtake2.com/member-introduction-page" class="btn-primary-mob">Begin Here</a>',
+    '<a href="/member-introduction-page" class="btn-primary-mob">Begin Here</a>',
     '<a href="https://connect.trueluvtake2.com" class="btn-signin-mob">Member Sign In</a>'
   ].join('');
   document.body.appendChild(mobileOverlay);
