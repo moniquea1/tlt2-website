@@ -3,11 +3,18 @@
   "trailingSlash": false,
   "routes": [
     { "src": "/garden", "status": 301, "headers": { "Location": "https://tlt2-garden.vercel.app" } },
+
     { "src": "/partner-profile(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/partner-profile$1" } },
     { "src": "/advisory-circle-access(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/advisory-circle-access$1" } },
     { "src": "/family-results(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/family-results$1" } },
     { "src": "/partner-results-page(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/partner-results-page$1" } },
     { "src": "/profiles(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/profiles$1" } },
+
+    { "src": "/the-five-elements-of-connection(.*)", "status": 301, "headers": { "Location": "/five-elements$1" } },
+    { "src": "/affiliate-program(.*)", "status": 301, "headers": { "Location": "/partner-with-us$1" } },
+    { "src": "/membership(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/membership$1" } },
+    { "src": "/reflections(.*)", "status": 301, "headers": { "Location": "https://blog.trueluvtake2.com/reflections$1" } },
+
     { "src": "/(.*)", "dest": "/$1" }
   ]
 }
