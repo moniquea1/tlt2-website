@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "routes": [
+    { "src": "/garden", "status": 301, "headers": { "Location": "https://tlt2-garden.vercel.app" } },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}

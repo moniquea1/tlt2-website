@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Create Your Introduction — TrueLuvTake2</title>
+<meta name="description" content="Start your Introduction and become part of the TrueLuvTake2 community." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* ═══════════════════════════════════════
+   DESIGN TOKENS
+═══════════════════════════════════════ */
+:root {
+  --bg:           #F9F6F0;
+  --bg-card:      #FEFDFB;
+  --bg-subtle:    #F5F2EB;
+  --bg-warm:      #EBE3DB;
+  --text-head:    #1a1614;
+  --text-body:    #2E2725;
+  --text-muted:   #5a524e;
+  --text-faint:   #A0927D;
+  --brand:        #823348;
+  --brand-dark:   #6d2a3d;
+  --teal:         #2BA5B4;
+  --teal-dark:    #1a8a97;
+  --border:       rgba(130,51,72,0.1);
+  --border-faint: rgba(130,51,72,0.06);
+  --shadow-sm:    0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md:    0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-lg:    0 16px 48px rgba(0,0,0,0.1), 0 4px 16px rgba(0,0,0,0.06);
+  --radius:       1rem;
+  --radius-sm:    .625rem;
+  --max-w:        680px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+html, body { width: 100%; overflow-x: hidden;   padding-top: 88px;
+}
+body {
+  background: var(--bg);
+  color: var(--text-body);
+  font-family: 'Source Serif 4', Georgia, serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+textarea, input, select, button { font-family: inherit; }
+/* ── ANIMATIONS ── */
+@keyframes fadeUp   { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+@keyframes breathe  { 0%,100%{opacity:.4;transform:scale(1)} 50%{opacity:.7;transform:scale(1.08)} }
+@keyframes shimmer  { from{left:-100%} to{left:160%} }
+@keyframes pulse    { 0%,100%{transform:scale(1)} 50%{transform:scale(1.04)} }
+@keyframes spin     { to{transform:rotate(360deg)} }
+@keyframes checkIn  { from{transform:scale(0) rotate(-15deg);opacity:0} to{transform:scale(1) rotate(0);opacity:1} }
+/* ═══════════════════════════════════════
+   PAGE WRAPPER & LAYOUT
+═══════════════════════════════════════ */
+.page-bg {
+  position: fixed; inset: 0; z-index: 0;
+  pointer-events: none; overflow: hidden;
+}
+.page-orb {
+  position: absolute; border-radius: 50%;
+  filter: blur(80px); animation: breathe 10s ease-in-out infinite;
+}
+.page-orb.a {
+  width: 500px; height: 500px; top: -10%; right: -8%;
+  background: radial-gradient(circle, rgba(130,51,72,.07) 0%, transparent 65%);
+}
+.page-orb.b {
+  width: 400px; height: 400px; bottom: 10%; left: -6%;
+  background: radial-gradient(circle, rgba(43,165,180,.06) 0%, transparent 65%);
+  animation-delay: 4s;
+}
+.page-wrap {
+  position: relative; z-index: 1;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: clamp(2rem,6vw,4rem) clamp(1.25rem,5vw,2rem) 5rem;
+}
+/* ═══════════════════════════════════════
+   HEADER
+═══════════════════════════════════════ */
+.page-header {
+  text-align: center;
+  margin-bottom: clamp(2.5rem,5vw,3.5rem);
+  animation: fadeUp .7s ease forwards;
+}
+.page-header-eyebrow {
+  display: inline-flex; align-items: center; gap: .875rem;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: .68rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 1rem;
+}
+.page-header-eyebrow::before, .page-header-eyebrow::after {
+  content: ''; width: 2rem; height: 1px; background: var(--teal); opacity: .4;
+}
+.page-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem,5vw,2.875rem);
+  font-weight: 400; color: var(--text-head); line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.page-header h1 em { font-style: italic; color: var(--brand); }
+.page-header p {
+  font-size: clamp(.9375rem,1.8vw,1.0625rem);
+  color: var(--text-muted); line-height: 1.8; max-width: 520px; margin: 0 auto;
+  font-weight: 300;
+}
+.page-header p span {
+  display: block; margin-top: .5rem;
+  font-style: italic; color: var(--text-faint);
+}
+/* ═══════════════════════════════════════
+   SECTION CARD — base
+═══════════════════════════════════════ */
+.section-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-faint);
+  box-shadow: var(--shadow-md);
+  padding: clamp(1.75rem,4vw,2.5rem);
+  margin-bottom: 1.25rem;
+  transition: box-shadow .3s, border-color .3s;
+  animation: fadeUp .6s ease forwards;
+  opacity: 0;
+}
+.section-card:nth-child(2)  { animation-delay: .1s; }
+.section-card:nth-child(3)  { animation-delay: .2s; }
+.section-card:nth-child(4)  { animation-delay: .3s; }
+.section-card:nth-child(5)  { animation-delay: .4s; }
+.section-card:nth-child(6)  { animation-delay: .5s; }
+.section-card:nth-child(7)  { animation-delay: .6s; }
+.section-card:nth-child(8)  { animation-delay: .7s; }
+.section-card:nth-child(9)  { animation-delay: .8s; }
+.section-card:nth-child(10) { animation-delay: .9s; }
+.section-card:focus-within {
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(130,51,72,.12);
+}
+/* section label + prompt */
+.section-label {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: .65rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--text-faint); display: block; margin-bottom: .625rem;
+}
+.section-prompt {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.0625rem,2vw,1.25rem);
+  font-weight: 400; color: var(--text-head); line-height: 1.35;
+  margin-bottom: 1.125rem;
+}
+.section-hint {
+  font-size: .875rem; color: var(--text-faint);
+  font-style: italic; font-weight: 300; line-height: 1.6;
+  margin-top: .375rem;
+}
+/* ── INPUTS ── */
+.field-input {
+  width: 100%;
+  background: var(--bg-subtle);
+  border: 1.5px solid rgba(130,51,72,.1);
+  border-radius: var(--radius-sm);
+  padding: .875rem 1.125rem;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1rem; color: var(--text-body);
+  line-height: 1.65;
+  transition: border-color .25s, background .25s, box-shadow .25s;
+  outline: none;
+  resize: none;
+}
+.field-input::placeholder { color: var(--text-faint); font-style: italic; font-weight: 300; }
+.field-input:focus {
+  border-color: rgba(130,51,72,.3);
+  background: var(--bg-card);
+  box-shadow: 0 0 0 3px rgba(130,51,72,.06);
+}
+textarea.field-input { min-height: 160px; }
+select.field-input {
+  appearance: none; -webkit-appearance: none; -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235a524e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 1.125rem center;
+  padding-right: 2.75rem;
+  cursor: pointer;
+}
+select.field-input:invalid { color: var(--text-faint); font-style: italic; font-weight: 300; }
+.char-count {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: .75rem; color: var(--text-faint);
+  text-align: right; margin-top: .375rem;
+  transition: color .2s;
+}
+.char-count.warn { color: var(--brand); }
+/* ═══════════════════════════════════════
+   SECTION 3 — ESSENCE
+═══════════════════════════════════════ */
+.essence-card { border-left: 3px solid var(--brand); }
+.essence-card:focus-within { border-left-color: var(--brand); }
+textarea#essence { min-height: 200px; font-size: 1.0625rem; }
+.helpers-toggle {
+  display: inline-flex; align-items: center; gap: .45rem;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: .8rem; color: var(--teal-dark);
+  cursor: pointer; margin-top: .875rem;
+  background: none; border: none; padding: 0;
+  transition: color .2s; outline: none;
+}
+.helpers-toggle:hover { color: var(--teal); }
+.helpers-toggle svg { width: .75rem; height: .75rem; transition: transform .25s; }
+.helpers-toggle.open svg { transform: rotate(180deg); }
+.helpers-panel {
+  max-height: 0; overflow: hidden;
+  transition: max-height .35s cubic-bezier(.4,0,.2,1), opacity .3s;
+  opacity: 0;
+}
+.helpers-panel.open { max-height: 200px; opacity: 1; }
+.helpers-list {
+  list-style: none; margin-top: .875rem;
+  display: flex; flex-direction: column; gap: .5rem;
+  padding: 1rem 1.125rem;
+  background: rgba(43,165,180,.05);
+  border: 1px solid rgba(43,165,180,.12);
+  border-radius: var(--radius-sm);
+}
+.helpers-list li {
+  display: flex; align-items: flex-start; gap: .625rem;
+  font-size: .9rem; color: var(--text-muted);
+  line-height: 1.6; font-weight: 300; font-style: italic;
+}
+.helpers-list li::before {
+  content: ''; width: 4px; height: 4px; border-radius: 50%;
+  background: var(--teal); flex-shrink: 0; margin-top: .55rem; opacity: .6;
+}
+/* ═══════════════════════════════════════
+   PHOTO & VIDEO UPLOAD — shared styles
+═══════════════════════════════════════ */
+.photo-upload-wrap {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 1.25rem; margin-top: .25rem;
+}
+.photo-drop-zone {
+  width: 100%;
+  border: 2px dashed rgba(130,51,72,.2);
+  border-radius: var(--radius);
+  padding: 2.5rem 1.5rem;
+  text-align: center; cursor: pointer;
+  transition: border-color .25s, background .25s;
+  background: var(--bg-subtle);
+  position: relative;
+}
+.photo-drop-zone:hover, .photo-drop-zone.drag-over {
+  border-color: rgba(130,51,72,.4);
+  background: rgba(130,51,72,.03);
+}
+.photo-drop-zone input[type="file"] {
+  position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+}
+.photo-icon {
+  width: 3rem; height: 3rem; border-radius: 50%;
+  background: rgba(130,51,72,.08);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto .875rem;
+}
+.photo-icon svg { width: 1.25rem; height: 1.25rem; stroke: var(--brand); opacity: .7; }
+.photo-drop-label {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: .9rem; color: var(--text-muted); margin-bottom: .25rem;
+}
+.photo-drop-label span { color: var(--brand); text-decoration: underline; text-underline-offset: 2px; }
+/* photo preview */
+.photo-preview {
+  display: none; flex-direction: column; align-items: center; gap: 1rem;
+}
+.photo-preview-img-wrap {
+  position: relative;
+  width: 160px; height: 160px; border-radius: 50%; overflow: hidden;
+  border: 3px solid rgba(130,51,72,.2);
+  box-shadow: var(--shadow-md);
+  flex-shrink: 0;
+}
+.photo-preview-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+/* video preview — rectangular */
+.video-preview-wrap {
+  width: 100%; border-radius: var(--radius-sm); overflow: hidden;
+  border: 2px solid rgba(130,51,72,.15);
+  box-shadow: var(--shadow-sm);
+  background: #1a1614;
+}
+.video-preview-wrap video {
+  width: 100%; display: block; max-height: 280px; outline: none;
+}
+.photo-preview-actions {
+  display: flex; gap: .625rem; flex-wrap: wrap; justify-content: center;
+}
+.btn-change-photo {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: .8rem; font-weight: 500;
+  color: var(--brand);
+  background: rgba(130,51,72,.07);
+  border: 1.5px solid rgba(130,51,72,.22);
+  border-radius: 50px; padding: .45rem 1.1rem;
+  cursor: pointer; transition: background .2s, border-color .2s;
+  outline: none; position: relative; overflow: hidden;
+}
+.btn-change-photo input[type="file"] {
+  position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+}
+.btn-change-photo:hover { background: rgba(130,51,72,.13); border-color: rgba(130,51,72,.38); }
+.btn-remove-photo {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: .8rem; font-weight: 500;
+  color: var(--text-faint); background: transparent;
+  border: 1.5px solid rgba(160,146,125,.3);
+  border-radius: 50px; padding: .45rem 1.1rem;
+  cursor: pointer; transition: color .2s, border-color .2s; outline: none;
+}
+.btn-remove-photo:hover { color: var(--brand); border-color: rgba(130,51,72,.3); }
+/* ═══════════════════════════════════════
+   SECTION — LOCATION / AGE / CONNECTION
+═══════════════════════════════════════ */
+.pref-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: .625rem; margin-top: .25rem;
+}
+@media(max-width:400px){ .pref-grid { grid-template-columns: repeat(2,1fr); } }
+.pref-btn {
+  position: relative; padding: .875rem .5rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid rgba(130,51,72,.15);
+  background: var(--bg-subtle);
+  cursor: pointer; text-align: center;
+  transition: border-color .2s, background .2s, box-shadow .2s, transform .15s;
+  outline: none;
+}
+.pref-btn:hover { border-color: rgba(130,51,72,.3); background: rgba(130,51,72,.03); transform: translateY(-1px); }
+.pref-btn.selected { border-color: var(--brand); background: rgba(130,51,72,.06); box-shadow: 0 2px 10px rgba(130,51,72,.15); }
+.pref-btn input { position: absolute; opacity: 0; width: 0; height: 0; }
+.pref-btn-label {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1rem; font-weight: 400; color: var(--text-head);
+  display: block; margin-bottom: .2rem; pointer-events: none;
+}
+.pref-btn-sub { font-family: 'Instrument Sans', sans-serif; font-size: .7rem; color: var(--text-faint); pointer-events: none; }
+.pref-btn.selected .pref-btn-label { color: var(--brand); }
+.pref-check {
+  position: absolute; top: 6px; right: 6px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--brand);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transform: scale(0);
+  transition: opacity .2s, transform .2s;
+}
+.pref-btn.selected .pref-check { opacity: 1; transform: scale(1); }
+.pref-check svg { width: 8px; height: 8px; stroke: #fff; stroke-width: 2.5; }
+/* ═══════════════════════════════════════
+   GARDEN TILE PREVIEW
+═══════════════════════════════════════ */
+.preview-card {
+  background: linear-gradient(135deg, rgba(130,51,72,.04) 0%, rgba(43,165,180,.04) 100%);
+  border: 1px solid rgba(130,51,72,.14);
+  animation-delay: .9s;
+}
+.preview-label-row { display: flex; align-items: center; gap: .75rem; margin-bottom: 1.5rem; }
+.preview-eyebrow {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--text-faint);
+}
+.preview-label-line { flex: 1; height: 1px; background: var(--border-faint); }
+.garden-tile {
+  background: var(--bg-card); border-radius: var(--radius);
+  border: 1px solid var(--border-faint); box-shadow: var(--shadow-md);
+  overflow: hidden; max-width: 320px; margin: 0 auto;
+  transition: box-shadow .3s, transform .3s;
+}
+.garden-tile:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+.tile-accent-bar { height: 3px; background: linear-gradient(90deg, var(--brand) 0%, #C97B5D 55%, #D99A27 100%); }
+.tile-photo-wrap {
+  width: 100%; aspect-ratio: 1/1;
+  background: var(--bg-warm);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.tile-photo-placeholder { display: flex; flex-direction: column; align-items: center; gap: .5rem; }
+.tile-photo-placeholder svg { width: 2.5rem; height: 2.5rem; stroke: var(--text-faint); opacity: .4; }
+.tile-photo-placeholder span { font-family: 'Instrument Sans', sans-serif; font-size: .75rem; color: var(--text-faint); letter-spacing: .06em; }
+#tile-photo-img { width: 100%; height: 100%; object-fit: cover; display: none; }
+.tile-body { padding: 1.25rem 1.375rem 1.5rem; }
+.tile-name { font-family: 'Playfair Display', Georgia, serif; font-size: 1.125rem; font-weight: 400; color: var(--text-head); margin-bottom: .25rem; }
+.tile-name em { font-style: normal; color: var(--brand); }
+.tile-location {
+  display: flex; align-items: center; gap: .375rem;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: .78rem; color: var(--text-faint); margin-bottom: .875rem;
+}
+.tile-location svg { width: .875rem; height: .875rem; flex-shrink: 0; }
+.tile-essence { font-size: .9375rem; line-height: 1.7; color: var(--text-muted); font-weight: 300; font-style: italic; }
+.tile-essence-placeholder { color: var(--text-faint); font-style: italic; font-weight: 300; font-size: .9rem; }
+.tile-footer {
+  display: flex; align-items: center; justify-content: flex-end;
+  padding: .875rem 1.375rem;
+  border-top: 1px solid var(--border-faint);
+  background: var(--bg-subtle);
+}
+.tile-interest-btn {
+  font-family: 'Instrument Sans', sans-serif; font-size: .78rem; font-weight: 500;
+  color: var(--brand); background: rgba(130,51,72,.07);
+  border: 1px solid rgba(130,51,72,.2); border-radius: 50px; padding: .35rem .9rem;
+  cursor: default; opacity: .6;
+}
+/* ═══════════════════════════════════════
+   VALIDATION MESSAGES
+═══════════════════════════════════════ */
+.field-msg {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: .8rem; color: var(--brand);
+  margin-top: .375rem; display: none;
+  align-items: center; gap: .375rem;
+}
+.field-msg.show { display: flex; }
+.field-msg svg { width: .875rem; height: .875rem; flex-shrink: 0; }
+/* ═══════════════════════════════════════
+   PRIMARY CTA
+═══════════════════════════════════════ */
+.cta-section {
+  text-align: center; padding-top: 1.5rem;
+  animation: fadeUp .6s ease forwards 1s; opacity: 0;
+}
+.btn-garden {
+  display: inline-flex; align-items: center; gap: .625rem;
+  padding: 1.0625rem 2.75rem;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 1rem; font-weight: 500; color: #fff;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+  border-radius: 50px; border: none; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(130,51,72,.3);
+  transition: transform .2s, box-shadow .2s;
+  position: relative; overflow: hidden;
+}
+.btn-garden::before {
+  content: ''; position: absolute; top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.15) 50%, transparent 60%);
+}
+.btn-garden:hover::before { animation: shimmer .5s ease forwards; }
+.btn-garden:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(130,51,72,.38); }
+.btn-garden:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+.btn-garden svg { width: 1rem; height: 1rem; transition: transform .2s; }
+.btn-garden:hover svg { transform: translateX(3px); }
+.btn-loading { display: none; align-items: center; gap: .625rem; }
+.btn-loading svg { width: 1.125rem; height: 1.125rem; animation: spin 1s linear infinite; }
+.cta-note {
+  margin-top: .875rem;
+  font-size: .8375rem; color: var(--text-faint);
+  font-style: italic; font-weight: 300;
+}
+/* ═══════════════════════════════════════
+   POST-SUBMISSION STATE
+═══════════════════════════════════════ */
+.success-screen {
+  display: none; text-align: center;
+  padding: clamp(3rem,8vw,5rem) 1.5rem;
+  animation: fadeUp .8s ease forwards;
+}
+.success-icon {
+  width: 5rem; height: 5rem; border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 2rem;
+  box-shadow: 0 8px 28px rgba(130,51,72,.3);
+}
+.success-icon svg { width: 2rem; height: 2rem; stroke: #fff; stroke-width: 1.75; animation: checkIn .5s cubic-bezier(.34,1.56,.64,1) .2s both; }
+.success-eyebrow { font-family: 'Instrument Sans', sans-serif; font-size: .65rem; letter-spacing: .22em; text-transform: uppercase; color: var(--teal); margin-bottom: .75rem; }
+.success-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.75rem,4vw,2.5rem); font-weight: 400; color: var(--text-head); line-height: 1.2; margin-bottom: 1.5rem; }
+.success-title em { font-style: italic; color: var(--brand); }
+.success-body { max-width: 480px; margin: 0 auto 2rem; display: flex; flex-direction: column; gap: 1rem; }
+.success-body p { font-size: clamp(.9375rem,1.8vw,1.0625rem); color: var(--text-muted); line-height: 1.8; font-weight: 300; }
+.btn-garden-enter {
+  display: inline-flex; align-items: center; gap: .625rem;
+  padding: 1.0625rem 2.75rem;
+  font-family: 'Instrument Sans', sans-serif; font-size: 1rem; font-weight: 500; color: #fff;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  border-radius: 50px; border: none; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(43,165,180,.3);
+  transition: transform .2s, box-shadow .2s; text-decoration: none;
+}
+.btn-garden-enter:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(43,165,180,.4); }
+.btn-garden-enter svg { width: 1rem; height: 1rem; }
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:600px) {
+  .page-wrap { padding: 2rem 1.25rem 4rem; }
+  .section-card { padding: 1.5rem 1.25rem; }
+  .pref-grid { grid-template-columns: repeat(2,1fr); }
+  .garden-tile { max-width: 100%; }
+}
+</style>
+</head>
+<body>
+<script src="/components/nav.js"></script>
+<!-- background orbs -->
+<div class="page-bg">
+  <div class="page-orb a"></div>
+  <div class="page-orb b"></div>
+</div>
+<div class="page-wrap">
+  <!-- ══ FORM STATE ══ -->
+  <div id="form-state">
+    <!-- ─── HEADER ─── -->
+    <header class="page-header">
+      <div class="page-header-eyebrow">Your Introduction</div>
+      <h1>Start with a little <em>about you</em></h1>
+      <p>
+        This is your Introduction — a simple way for others to get a sense of who you are.
+        <span>You don't need to get this perfect. Just begin.</span>
+      </p>
+    </header>
+
+    <!-- ─── SECTION 1 — NAME ─── -->
+    <div class="section-card">
+      <span class="section-label">Your name</span>
+      <p class="section-prompt">What should we call you?</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.875rem;">
+        <div>
+          <input type="text" id="first_name" name="first_name" class="field-input" placeholder="First name" autocomplete="given-name" maxlength="50" oninput="updatePreview()" />
+          <div class="field-msg" id="msg-first_name">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            First name is needed to continue
+          </div>
+        </div>
+        <div>
+          <input type="text" id="last_name" name="last_name" class="field-input" placeholder="Last name" autocomplete="family-name" maxlength="50" oninput="updatePreview()" />
+          <p class="section-hint">Only your last initial will appear to others.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 2 — EMAIL ─── -->
+    <div class="section-card">
+      <span class="section-label">Your email</span>
+      <p class="section-prompt">How can we reach you?</p>
+      <input type="email" id="email" name="email" class="field-input" placeholder="you@example.com" autocomplete="email" maxlength="120" oninput="state.email = this.value.trim(); if(state.email) hideMsg('msg-email');" />
+      <p class="section-hint">This stays private — it's only used for communication between you and TrueLuvTake2.</p>
+      <div class="field-msg" id="msg-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        An email address is needed to continue
+      </div>
+    </div>
+
+    <!-- ─── SECTION 3 — ESSENCE ─── -->
+    <div class="section-card essence-card">
+      <span class="section-label">Your essence</span>
+      <p class="section-prompt">In a few sentences, how would you describe yourself at this stage of your life?</p>
+      <textarea id="essence" name="essence_text" class="field-input" placeholder="Share a little about who you are right now — your world, your values, what matters most to you…" maxlength="800" oninput="updateEssenceCount(); updatePreview()"></textarea>
+      <div class="char-count" id="essence-count">0 / 800</div>
+      <div class="field-msg" id="msg-essence">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        A few words here will help others connect with you
+      </div>
+      <button class="helpers-toggle" id="helpers-btn" onclick="toggleHelpers()" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        Not sure where to start? A few prompts to spark ideas
+      </button>
+      <div class="helpers-panel" id="helpers-panel">
+        <ul class="helpers-list">
+          <li>What feels most alive in your life right now?</li>
+          <li>What do people who know you well appreciate about you?</li>
+          <li>What kind of connection feels meaningful to you?</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 4 — PHOTO (Required) ─── -->
+    <div class="section-card">
+      <span class="section-label">Your photo</span>
+      <p class="section-prompt">Add a photo so others can connect a face to your presence.</p>
+      <p class="section-hint">This doesn't need to be perfect — just real. Required to appear in the Garden.</p>
+      <div class="photo-upload-wrap" style="margin-top:1.125rem;">
+        <div class="photo-drop-zone" id="photo-drop" ondragover="handleDragOver(event,'photo-drop')" ondragleave="handleDragLeave(event,'photo-drop')" ondrop="handleDrop(event,'photo')">
+          <input type="file" accept="image/*" id="photo-input" name="photo_url" onchange="handlePhotoSelect(this)" />
+          <div class="photo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+          <p class="photo-drop-label"><span>Choose a photo</span> or drag it here</p>
+          <p class="section-hint" style="margin-top:.25rem">JPG, PNG · any size</p>
+        </div>
+        <div class="photo-preview" id="photo-preview">
+          <div class="photo-preview-img-wrap">
+            <img id="photo-img" src="" alt="Your photo" />
+          </div>
+          <div class="photo-preview-actions">
+            <button class="btn-change-photo" type="button">
+              <input type="file" accept="image/*" id="photo-input-change" onchange="handlePhotoSelect(this)" />
+              ↺ Change photo
+            </button>
+            <button class="btn-remove-photo" type="button" onclick="removePhoto()">Remove</button>
+          </div>
+        </div>
+      </div>
+      <div class="field-msg" id="msg-photo" style="margin-top:.75rem;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        A photo is required to appear in the Garden
+      </div>
+    </div>
+
+    <!-- ─── SECTION 5 — VIDEO (Optional) ─── -->
+    <div class="section-card">
+      <span class="section-label">Your video introduction <span style="font-size:.6rem;background:rgba(43,165,180,.1);color:var(--teal-dark);padding:.2rem .5rem;border-radius:50px;letter-spacing:.08em;margin-left:.5rem;">Optional — add now or later</span></span>
+      <p class="section-prompt">A short video helps your Advisory Circle team get to know you</p>
+      <p class="section-hint">Up to 90 seconds. On your phone: tap below and choose "Take Video." On a computer: record a clip first, then upload it. MP4 or MOV preferred.<br><strong style="color:var(--text-body)">You can skip this now and add your video anytime at trueluvtake2.com/add-my-video</strong></p>
+      <div class="photo-upload-wrap" style="margin-top:1.125rem;">
+        <div class="photo-drop-zone" id="video-drop" ondragover="handleDragOver(event,'video-drop')" ondragleave="handleDragLeave(event,'video-drop')" ondrop="handleDrop(event,'video')">
+          <input type="file" accept="video/*" id="video-input" name="video_url" onchange="handleVideoSelect(this)" />
+          <div class="photo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          </div>
+          <p class="photo-drop-label"><span>Choose a video</span> or drag it here</p>
+          <p class="section-hint" style="margin-top:.25rem">MP4 or MOV · 90 seconds maximum · under 80 MB</p>
+        </div>
+        <div class="photo-preview" id="video-preview">
+          <div class="video-preview-wrap">
+            <video id="video-preview-el" controls preload="metadata"></video>
+          </div>
+          <div class="photo-preview-actions">
+            <button class="btn-change-photo" type="button">
+              <input type="file" accept="video/*" id="video-input-change" onchange="handleVideoSelect(this)" />
+              ↺ Change video
+            </button>
+            <button class="btn-remove-photo" type="button" onclick="removeVideo()">Remove</button>
+          </div>
+        </div>
+      </div>
+      <div class="field-msg" id="msg-video" style="margin-top:.75rem;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span id="msg-video-text">Please choose a shorter video — 90 seconds maximum</span>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 6 — LOCATION ─── -->
+    <div class="section-card">
+      <span class="section-label">Location</span>
+      <p class="section-prompt">Where are you based?</p>
+      <input type="text" id="location" name="location" class="field-input" placeholder="City, state or region — e.g. Boston, MA" maxlength="100" oninput="updatePreview()" />
+      <p class="section-hint">No exact address needed — city, state, or region only.</p>
+      <div class="field-msg" id="msg-location">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Location helps others find nearby connections
+      </div>
+    </div>
+
+    <!-- ─── SECTION 7 — AGE RANGE ─── -->
+    <div class="section-card">
+      <span class="section-label">Age range</span>
+      <p class="section-prompt">Which range best describes you?</p>
+      <select id="age_range" name="age_range" class="field-input" required onchange="handleAgeChange()">
+        <option value="" disabled selected hidden>Select an age range…</option>
+        <option value="40-45">40–45</option>
+        <option value="46-50">46–50</option>
+        <option value="50-55">50–55</option>
+        <option value="56-60">56–60</option>
+        <option value="61-65">61–65</option>
+        <option value="66-70">66–70</option>
+        <option value="71-75">71–75</option>
+        <option value="76+">76+</option>
+      </select>
+      <p class="section-hint">This helps us create a more personalized experience.</p>
+      <div class="field-msg" id="msg-age_range">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Please choose an age range to continue
+      </div>
+    </div>
+
+    <!-- ─── SECTION 8 — CONNECTION PREFERENCE ─── -->
+    <div class="section-card">
+      <span class="section-label">Connection</span>
+      <p class="section-prompt">Who are you open to meeting?</p>
+      <div class="pref-grid" role="group" aria-label="Connection preference">
+        <button type="button" class="pref-btn" data-value="Men" onclick="selectPref(this)">
+          <input type="radio" name="connection_preference" value="Men" />
+          <div class="pref-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span class="pref-btn-label">Men</span>
+        </button>
+        <button type="button" class="pref-btn" data-value="Women" onclick="selectPref(this)">
+          <input type="radio" name="connection_preference" value="Women" />
+          <div class="pref-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span class="pref-btn-label">Women</span>
+        </button>
+        <button type="button" class="pref-btn" data-value="Both" onclick="selectPref(this)">
+          <input type="radio" name="connection_preference" value="Both" />
+          <div class="pref-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span class="pref-btn-label">Both</span>
+        </button>
+        <button type="button" class="pref-btn" data-value="Open" onclick="selectPref(this)">
+          <input type="radio" name="connection_preference" value="Open" />
+          <div class="pref-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span class="pref-btn-label">Open</span>
+        </button>
+      </div>
+      <div class="field-msg" id="msg-pref">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Please choose one to continue
+      </div>
+    </div>
+
+    <!-- ─── SECTION 9 — GARDEN TILE PREVIEW ─── -->
+    <div class="section-card preview-card">
+      <div class="preview-label-row">
+        <div class="preview-label-line"></div>
+        <span class="preview-eyebrow">Your Garden Tile</span>
+        <div class="preview-label-line"></div>
+      </div>
+      <p class="section-hint" style="text-align:center;margin-bottom:1.5rem;font-size:.875rem;">This is how you will appear in the community</p>
+      <div class="garden-tile">
+        <div class="tile-accent-bar"></div>
+        <div class="tile-photo-wrap">
+          <img id="tile-photo-img" src="" alt="" />
+          <div class="tile-photo-placeholder" id="tile-photo-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Photo will appear here</span>
+          </div>
+        </div>
+        <div class="tile-body">
+          <div class="tile-name" id="tile-name">Your Name</div>
+          <div class="tile-location" id="tile-location-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span id="tile-location">Location</span>
+          </div>
+          <div class="tile-essence" id="tile-essence">
+            <span class="tile-essence-placeholder">Your introduction will appear here…</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── CONSENT ─── -->
+    <div class="section-card" style="border-left:3px solid var(--teal);animation-delay:.95s;">
+      <span class="section-label">Your permissions</span>
+      <p class="section-prompt" style="margin-bottom:1.5rem;">A few things we want to be clear about</p>
+
+      <!-- CONSENT 1 — Required: Private Garden display -->
+      <label style="display:flex;align-items:flex-start;gap:1rem;cursor:pointer;margin-bottom:1.25rem;">
+        <div style="flex-shrink:0;margin-top:.2rem;">
+          <input type="checkbox" id="consent-check" onchange="handleConsentChange()"
+            style="width:1.25rem;height:1.25rem;accent-color:var(--brand);cursor:pointer;" />
+        </div>
+        <div>
+          <p style="font-family:'Instrument Sans',sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin-bottom:.375rem;">Required</p>
+          <p style="font-size:.9375rem;color:var(--text-body);line-height:1.75;font-weight:400;">
+            I understand that my Introduction, photo, and video will be shared privately with verified <strong>Advisory Circle teams only</strong> — not with other Seekers directly, and never on the public website.
+          </p>
+          <p style="font-size:.8125rem;color:var(--text-faint);font-style:italic;margin-top:.375rem;line-height:1.6;">
+            Your information is handled with care and discretion. It will never be sold or shared with third parties.
+          </p>
+        </div>
+      </label>
+      <div class="field-msg" id="msg-consent" style="margin-bottom:1.25rem;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Please agree to continue
+      </div>
+
+      <!-- Divider -->
+      <div style="height:1px;background:var(--border-faint);margin:1.25rem 0;"></div>
+
+      <!-- CONSENT 2 — Required: Relationship status -->
+      <label style="display:flex;align-items:flex-start;gap:1rem;cursor:pointer;margin-bottom:1.25rem;">
+        <div style="flex-shrink:0;margin-top:.2rem;">
+          <input type="checkbox" id="consent-relationship" onchange="handleRelationshipChange()"
+            style="width:1.25rem;height:1.25rem;accent-color:var(--brand);cursor:pointer;" />
+        </div>
+        <div>
+          <p style="font-family:'Instrument Sans',sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin-bottom:.375rem;">Required</p>
+          <p style="font-size:.9375rem;color:var(--text-body);line-height:1.75;font-weight:400;">
+            I confirm that I am not currently married or in an exclusive committed partnership, and that I am genuinely open and available for connection.
+          </p>
+        </div>
+      </label>
+      <div class="field-msg" id="msg-relationship" style="margin-bottom:1.25rem;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Please confirm your availability to continue
+      </div>
+
+      <!-- Divider -->
+      <div style="height:1px;background:var(--border-faint);margin:1.25rem 0;"></div>
+
+      <!-- CONSENT 3 — Required: Financial independence -->
+      <label style="display:flex;align-items:flex-start;gap:1rem;cursor:pointer;margin-bottom:1.25rem;">
+        <div style="flex-shrink:0;margin-top:.2rem;">
+          <input type="checkbox" id="consent-financial" onchange="handleFinancialChange()"
+            style="width:1.25rem;height:1.25rem;accent-color:var(--brand);cursor:pointer;" />
+        </div>
+        <div>
+          <p style="font-family:'Instrument Sans',sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin-bottom:.375rem;">Required</p>
+          <p style="font-size:.9375rem;color:var(--text-body);line-height:1.75;font-weight:400;">
+            I confirm that I am financially independent and self-sufficient.
+          </p>
+        </div>
+      </label>
+      <div class="field-msg" id="msg-financial" style="margin-bottom:1.25rem;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Please confirm your financial independence to continue
+      </div>
+
+      <!-- Divider -->
+      <div style="height:1px;background:var(--border-faint);margin:1.25rem 0;"></div>
+
+      <!-- CONSENT 4 — Optional: Public website use -->
+      <label style="display:flex;align-items:flex-start;gap:1rem;cursor:pointer;">
+        <div style="flex-shrink:0;margin-top:.2rem;">
+          <input type="checkbox" id="consent-public"
+            style="width:1.25rem;height:1.25rem;accent-color:var(--teal);cursor:pointer;" />
+        </div>
+        <div>
+          <p style="font-family:'Instrument Sans',sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:.375rem;">Optional — help us grow</p>
+          <p style="font-size:.9375rem;color:var(--text-body);line-height:1.75;font-weight:400;">
+            I give TrueLuvTake2 permission to use my photo <strong>anonymously</strong> on the public website to show that real people are joining — for example, in a blurred or softened rotating gallery. No name or personal details will be shown.
+          </p>
+          <p style="font-size:.8125rem;color:var(--text-faint);font-style:italic;margin-top:.375rem;line-height:1.6;">
+            This is entirely optional and does not affect your Introduction or Garden presence.
+          </p>
+        </div>
+      </label>
+    </div>
+
+    <!-- ─── CTA ─── -->
+    <div class="cta-section">
+      <button class="btn-garden" id="submit-btn" onclick="handleSubmit()" type="button">
+        <span class="btn-label">Submit My Introduction</span>
+        <span class="btn-loading" id="btn-loading">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+          A moment…
+        </span>
+        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+      <p class="cta-note">Need to update your photo, video, or Introduction? Email us at hello@trueluvtake2.com and we'll take care of it.</p>
+    </div>
+  </div><!-- /form-state -->
+
+  <!-- ══ SUCCESS STATE ══ -->
+  <div class="success-screen" id="success-screen">
+    <div class="success-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    </div>
+    <div class="page-header-eyebrow" style="justify-content:center;margin-bottom:.75rem;">Welcome</div>
+    <h2 class="success-title">You're now part of the<br><em>TrueLuvTake2 community</em></h2>
+    <div class="success-body">
+      <p>Your Introduction is now live in the Garden. You don't need to do anything else — simply relax and let the process unfold.</p>
+      <p>When there is resonance, your TrueLuvTake2 Advisory Circle will reach out to you directly. Love later in life is worth doing right — and we'll take it from here.</p>
+    </div>
+    <div style="display:inline-flex;align-items:center;gap:.625rem;padding:1rem 2rem;background:rgba(43,165,180,.08);border:1px solid rgba(43,165,180,.2);border-radius:50px;font-family:'Instrument Sans',sans-serif;font-size:.9375rem;color:var(--teal-dark);font-style:italic;margin-bottom:2rem;">
+      🌸 You are in the Garden. We'll be in touch.
+    </div>
+    <!-- Video nudge — shown only if no video was submitted -->
+    <div id="video-nudge" style="display:none;margin-top:1.5rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem 2rem;text-align:left;max-width:520px;margin-left:auto;margin-right:auto;">
+      <p style="font-family:'Instrument Sans',sans-serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-faint);margin-bottom:.5rem;">One more thing</p>
+      <p style="font-size:1.0625rem;color:var(--text-head);font-weight:400;margin-bottom:.625rem;">Ready to add your video introduction?</p>
+      <p style="font-size:.9375rem;color:var(--text-muted);margin-bottom:1.25rem;">A short video — 90 seconds or less — helps your Advisory Circle team get a real sense of who you are. You can do it now on your phone or come back whenever you're ready.</p>
+      <a href="/add-my-video" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--brand);color:#fff;font-family:'Instrument Sans',sans-serif;font-size:.9375rem;padding:.875rem 1.75rem;border-radius:50px;text-decoration:none;font-weight:500;">
+        Add My Video →
+      </a>
+    </div>
+  </div>
+</div><!-- /page-wrap -->
+
+<script>
+// ── State ─────────────────────────────────────────────────────────────
+const state = {
+  first_name: '', last_name: '', last_initial: '',
+  email: '',
+  location: '', essence_text: '',
+  age_range: '',
+  photo_url: null,
+  video_url: null,
+  connection_preference: null,
+  photo_file: null,
+  photo_data_url: null,
+  video_file: null,
+};
+
+// ── Helpers toggle ────────────────────────────────────────────────────
+function toggleHelpers() {
+  const btn = document.getElementById('helpers-btn');
+  const panel = document.getElementById('helpers-panel');
+  btn.classList.toggle('open');
+  panel.classList.toggle('open');
+}
+
+// ── Preference selection ──────────────────────────────────────────────
+function selectPref(btn) {
+  document.querySelectorAll('.pref-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  btn.querySelector('input').checked = true;
+  state.connection_preference = btn.dataset.value;
+  hideMsg('msg-pref');
+  updatePreview();
+}
+
+// ── Age range change ──────────────────────────────────────────────────
+function handleAgeChange() {
+  state.age_range = document.getElementById('age_range').value;
+  if (state.age_range) hideMsg('msg-age_range');
+}
+
+// ── Photo handling ────────────────────────────────────────────────────
+function handlePhotoSelect(input) {
+  const file = input.files[0];
+  if (!file) return;
+  state.photo_file = file;
+  const reader = new FileReader();
+  reader.onload = e => {
+    state.photo_data_url = e.target.result;
+    document.getElementById('photo-img').src = e.target.result;
+    document.getElementById('photo-preview').style.display = 'flex';
+    document.getElementById('photo-drop').style.display = 'none';
+    hideMsg('msg-photo');
+    updatePreview();
+  };
+  reader.readAsDataURL(file);
+}
+
+function removePhoto() {
+  state.photo_file = null;
+  state.photo_data_url = null;
+  document.getElementById('photo-img').src = '';
+  document.getElementById('photo-input').value = '';
+  document.getElementById('photo-input-change').value = '';
+  document.getElementById('photo-preview').style.display = 'none';
+  document.getElementById('photo-drop').style.display = 'block';
+  updatePreview();
+}
+
+// ── Video handling ────────────────────────────────────────────────────
+function handleVideoSelect(input) {
+  const file = input.files[0];
+  if (!file) return;
+  // File size check — 80 MB max
+  if (file.size > 80 * 1024 * 1024) {
+    document.getElementById('msg-video-text').textContent = 'That video is too large (over 80 MB). Please trim it or record a shorter clip.';
+    showMsg('msg-video');
+    input.value = '';
+    return;
+  }
+  const url = URL.createObjectURL(file);
+  const tempVideo = document.createElement('video');
+  tempVideo.preload = 'metadata';
+  tempVideo.src = url;
+  tempVideo.onloadedmetadata = function() {
+    if (tempVideo.duration > 92) {
+      document.getElementById('msg-video-text').textContent = 'That video is over 90 seconds. Please trim it and try again.';
+      showMsg('msg-video');
+      input.value = '';
+      URL.revokeObjectURL(url);
+      return;
+    }
+    state.video_file = file;
+    const videoEl = document.getElementById('video-preview-el');
+    videoEl.src = url;
+    document.getElementById('video-preview').style.display = 'flex';
+    document.getElementById('video-drop').style.display = 'none';
+    hideMsg('msg-video');
+  };
+}
+
+function removeVideo() {
+  state.video_file = null;
+  const videoEl = document.getElementById('video-preview-el');
+  videoEl.src = '';
+  document.getElementById('video-input').value = '';
+  document.getElementById('video-input-change').value = '';
+  document.getElementById('video-preview').style.display = 'none';
+  document.getElementById('video-drop').style.display = 'block';
+}
+
+// ── Drag/drop ─────────────────────────────────────────────────────────
+function handleDragOver(e, id) { e.preventDefault(); document.getElementById(id).classList.add('drag-over'); }
+function handleDragLeave(e, id) { document.getElementById(id).classList.remove('drag-over'); }
+function handleDrop(e, type) {
+  e.preventDefault();
+  const id = type === 'photo' ? 'photo-drop' : 'video-drop';
+  document.getElementById(id).classList.remove('drag-over');
+  const file = e.dataTransfer.files[0];
+  if (!file) return;
+  if (type === 'photo') {
+    const inp = document.getElementById('photo-input');
+    const dt = new DataTransfer(); dt.items.add(file); inp.files = dt.files;
+    handlePhotoSelect(inp);
+  } else if (type === 'video') {
+    const inp = document.getElementById('video-input');
+    const dt = new DataTransfer(); dt.items.add(file); inp.files = dt.files;
+    handleVideoSelect(inp);
+  }
+}
+
+// ── Essence counter ───────────────────────────────────────────────────
+function updateEssenceCount() {
+  const ta = document.getElementById('essence');
+  const count = document.getElementById('essence-count');
+  const len = ta.value.length;
+  count.textContent = len + ' / 800';
+  count.classList.toggle('warn', len > 700);
+}
+
+// ── Garden Tile live preview ──────────────────────────────────────────
+function updatePreview() {
+  const fn = document.getElementById('first_name').value.trim();
+  const ln = document.getElementById('last_name').value.trim();
+  const loc = document.getElementById('location').value.trim();
+  const ess = document.getElementById('essence').value.trim();
+  const nameEl = document.getElementById('tile-name');
+  if (fn) {
+    const initial = ln ? ln.charAt(0).toUpperCase() + '.' : '';
+    nameEl.innerHTML = fn + (initial ? ' <em>' + initial + '</em>' : '');
+  } else {
+    nameEl.textContent = 'Your Name';
+  }
+  document.getElementById('tile-location').textContent = loc || 'Location';
+  const essEl = document.getElementById('tile-essence');
+  if (ess) {
+    const short = ess.length > 120 ? ess.substring(0,120).trimEnd() + '…' : ess;
+    essEl.innerHTML = '<span style="font-style:italic">' + escHtml(short) + '</span>';
+  } else {
+    essEl.innerHTML = '<span class="tile-essence-placeholder">Your introduction will appear here…</span>';
+  }
+  const img = document.getElementById('tile-photo-img');
+  const placeholder = document.getElementById('tile-photo-placeholder');
+  if (state.photo_data_url) {
+    img.src = state.photo_data_url;
+    img.style.display = 'block';
+    placeholder.style.display = 'none';
+  } else {
+    img.style.display = 'none';
+    placeholder.style.display = 'flex';
+  }
+  state.first_name = fn;
+  state.last_name = ln;
+  state.last_initial = ln ? ln.charAt(0).toUpperCase() : '';
+  state.location = loc;
+  state.essence_text = ess;
+}
+
+function escHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── Validation ────────────────────────────────────────────────────────
+function showMsg(id) { document.getElementById(id).classList.add('show'); }
+function hideMsg(id) { document.getElementById(id).classList.remove('show'); }
+function handleConsentChange()      { if (document.getElementById('consent-check').checked)        hideMsg('msg-consent'); }
+function handleRelationshipChange() { if (document.getElementById('consent-relationship').checked)  hideMsg('msg-relationship'); }
+function handleFinancialChange()    { if (document.getElementById('consent-financial').checked)     hideMsg('msg-financial'); }
+
+function validate() {
+  let ok = true;
+  if (!state.first_name)                                            { showMsg('msg-first_name');   ok = false; } else hideMsg('msg-first_name');
+  if (!state.email || !state.email.includes('@'))                   { showMsg('msg-email');         ok = false; } else hideMsg('msg-email');
+  if (!state.essence_text)                                          { showMsg('msg-essence');       ok = false; } else hideMsg('msg-essence');
+  if (!state.photo_file)                                            { showMsg('msg-photo');         ok = false; } else hideMsg('msg-photo');
+  // video is optional — no required check here
+  if (!state.location)                                              { showMsg('msg-location');      ok = false; } else hideMsg('msg-location');
+  if (!state.age_range)                                             { showMsg('msg-age_range');     ok = false; } else hideMsg('msg-age_range');
+  if (!state.connection_preference)                                 { showMsg('msg-pref');          ok = false; } else hideMsg('msg-pref');
+  if (!document.getElementById('consent-check').checked)           { showMsg('msg-consent');       ok = false; } else hideMsg('msg-consent');
+  if (!document.getElementById('consent-relationship').checked)    { showMsg('msg-relationship');  ok = false; } else hideMsg('msg-relationship');
+  if (!document.getElementById('consent-financial').checked)       { showMsg('msg-financial');     ok = false; } else hideMsg('msg-financial');
+  return ok;
+}
+
+// ── Submit ────────────────────────────────────────────────────────────
+function handleSubmit() {
+  updatePreview();
+  handleAgeChange();
+  if (!validate()) {
+    const firstErr = document.querySelector('.field-msg.show');
+    if (firstErr) firstErr.closest('.section-card').scrollIntoView({ behavior:'smooth', block:'center' });
+    return;
+  }
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.querySelector('.btn-label').style.display = 'none';
+  btn.querySelector('.btn-arrow').style.display = 'none';
+  btn.querySelector('.btn-loading').style.display = 'inline-flex';
+
+  const CLOUD_NAME    = 'diip9essn';
+  const UPLOAD_PRESET = 'Intake form images';
+  const WEBHOOK_URL   = 'https://services.leadconnectorhq.com/hooks/Qf0pQQODoBLEPfZVAAGo/webhook-trigger/bc1a8918-d1fc-460a-bcec-0726d7db2218';
+
+  function submitToWebhook(photoUrl, videoUrl) {
+    const payload = {
+      first_name:            state.first_name,
+      last_name:             state.last_name,
+      email:                 state.email,
+      location:              state.location,
+      essence_text:          state.essence_text,
+      age_range:             state.age_range,
+      connection_preference: state.connection_preference,
+      photo_url:             photoUrl || '',
+      video_url:             videoUrl || '',
+      contact_id:            '',
+      public_photo_consent:  document.getElementById('consent-public').checked ? 'Yes' : 'No',
+    };
+    return fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    }).then(res => {
+      if (!res.ok) throw new Error('Webhook returned ' + res.status);
+    });
+  }
+
+  function uploadPhoto(file) {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', UPLOAD_PRESET);
+    formData.append('folder', 'Garden');
+    return fetch('https://api.cloudinary.com/v1_1/' + CLOUD_NAME + '/image/upload', {
+      method: 'POST', body: formData,
+    }).then(res => {
+      if (!res.ok) throw new Error('Photo upload failed');
+      return res.json();
+    }).then(data => data.secure_url);
+  }
+
+  function uploadVideo(file) {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', UPLOAD_PRESET);
+    formData.append('folder', 'Garden');
+    return fetch('https://api.cloudinary.com/v1_1/' + CLOUD_NAME + '/video/upload', {
+      method: 'POST', body: formData,
+    }).then(res => {
+      if (!res.ok) throw new Error('Video upload failed');
+      return res.json();
+    }).then(data => data.secure_url);
+  }
+
+  const photoPromise = state.photo_file ? uploadPhoto(state.photo_file) : Promise.resolve('');
+  const videoPromise = state.video_file ? uploadVideo(state.video_file) : Promise.resolve('');
+
+  Promise.all([photoPromise, videoPromise])
+    .then(([photoUrl, videoUrl]) => submitToWebhook(photoUrl, videoUrl))
+    .then(() => showSuccess())
+    .catch(err => {
+      console.error('Submission error:', err);
+      btn.disabled = false;
+      btn.querySelector('.btn-label').style.display = '';
+      btn.querySelector('.btn-arrow').style.display = '';
+      btn.querySelector('.btn-loading').style.display = 'none';
+      alert('Something went wrong submitting your introduction. Please try again.');
+    });
+}
+
+function showSuccess() {
+  document.getElementById('form-state').style.display = 'none';
+  const s = document.getElementById('success-screen');
+  s.style.display = 'block';
+  // Show video nudge only if they didn't upload a video
+  if (!state.video_file) {
+    document.getElementById('video-nudge').style.display = 'block';
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── Init ──────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  updatePreview();
+});
+</script>
+</body>
+</html>

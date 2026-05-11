@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questions — TrueLuvTake2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* ── MONDAi Reset (Mel Rules) ── */
+
+
+
+
+/* ── DESIGN TOKENS ── */
+:root {
+  --rose:        #823348;
+  --rose-light:  #9B3D57;
+  --rose-pale:   #F5E8EC;
+  --teal:        #2BA5B4;
+  --teal-dark:   #1E8A98;
+  --cream:       #FAF7F2;
+  --cream-deep:  #F2EDE4;
+  --charcoal:    #1A1410;
+  --text-warm:   #2E2725;
+  --muted:       #7a6e66;
+  --rule:        #e4dbd0;
+  --font-serif:  "Playfair Display", Georgia, serif;
+  --font-body:   "Source Serif 4", Georgia, serif;
+  --font-ui:     "Instrument Sans", sans-serif;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--text-warm);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 88px;
+}
+.fb { width: 100vw; position: relative; left: 50%; margin-left: -50vw; box-sizing: border-box; }
+.label {
+  font-family: var(--font-ui); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; display: block; margin-bottom: 16px;
+}
+.label.teal  { color: var(--teal); }
+.label.rose  { color: var(--rose); }
+.label.light { color: rgba(43,165,180,0.75); }
+.label.pale  { color: rgba(255,255,255,0.4); }
+h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
+.btn-rose {
+  display: inline-block; font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--rose); color: white;
+  padding: 16px 36px; text-decoration: none; border-radius: 2px;
+  transition: background 0.2s;
+}
+.btn-rose:hover { background: var(--rose-light); }
+.btn-ghost {
+  display: inline-block; font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.8);
+  padding: 16px 36px; text-decoration: none; border-radius: 2px;
+  transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: white; color: white; }
+
+/* ════════════════════════════════════════
+   1. HERO — cream, bold editorial
+════════════════════════════════════════ */
+.hero {
+  background: var(--cream);
+  border-top: 4px solid var(--rose);
+  padding: clamp(80px,12vw,130px) clamp(24px,6vw,80px) clamp(64px,9vw,100px);
+  text-align: center;
+}
+.hero-eyebrow {
+  font-family: var(--font-ui); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--rose);
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  margin-bottom: 28px;
+}
+.hero-eyebrow::before,.hero-eyebrow::after {
+  content:""; width:28px; height:1px; background:currentColor; opacity:0.4;
+}
+.hero h1 {
+  font-size: clamp(42px,7vw,82px); line-height: 1.08;
+  color: var(--charcoal); margin-bottom: 24px; letter-spacing: -0.025em;
+}
+.hero h1 em { font-style: italic; color: var(--rose); }
+.hero-sub {
+  font-size: clamp(16px,1.9vw,20px); line-height: 1.75;
+  color: var(--muted); font-weight: 300;
+  max-width: 560px; margin: 0 auto;
+}
+
+/* ── CATEGORY NAV ── */
+.cat-nav {
+  background: var(--cream-deep);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 0 clamp(24px,6vw,80px);
+  overflow-x: auto;
+}
+.cat-nav-inner {
+  max-width: 1000px; margin: 0 auto;
+  display: flex; gap: 0;
+}
+.cat-nav a {
+  font-family: var(--font-ui); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+  padding: 20px 28px; white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.cat-nav a:hover { color: var(--rose); border-bottom-color: var(--rose); }
+
+/* ════════════════════════════════════════
+   ACCORDION — shared
+════════════════════════════════════════ */
+.faq-section {
+  padding: clamp(64px,9vw,100px) clamp(24px,6vw,80px);
+}
+.faq-section.cream    { background: var(--cream); }
+.faq-section.deep     { background: var(--cream-deep); border-top: 1px solid var(--rule); }
+.faq-section.charcoal { background: var(--charcoal); }
+.faq-section.burgundy { background: linear-gradient(160deg, #5E2233 0%, #7A2D44 100%); }
+.faq-section.teal-dark{ background: linear-gradient(160deg, #0E2F34 0%, #123840 100%); }
+
+.faq-inner { max-width: 820px; margin: 0 auto; }
+.faq-header { margin-bottom: clamp(40px,5vw,56px); }
+.faq-header h2 {
+  font-size: clamp(28px,3.5vw,44px); line-height: 1.18;
+  margin-bottom: 14px;
+}
+/* light sections */
+.faq-section.cream .faq-header h2,
+.faq-section.deep  .faq-header h2  { color: var(--charcoal); }
+.faq-section.cream .faq-header h2 em,
+.faq-section.deep  .faq-header h2 em { color: var(--rose); font-style: italic; }
+.faq-section.cream .faq-header p,
+.faq-section.deep  .faq-header p   { color: var(--muted); font-size: 15px; line-height: 1.8; font-weight: 300; }
+
+/* dark sections */
+.faq-section.charcoal  .faq-header h2,
+.faq-section.burgundy  .faq-header h2,
+.faq-section.teal-dark .faq-header h2 { color: white; }
+.faq-section.charcoal  .faq-header h2 em { color: rgba(43,165,180,0.9); font-style: italic; }
+.faq-section.burgundy  .faq-header h2 em { color: rgba(232,189,201,0.9); font-style: italic; }
+.faq-section.teal-dark .faq-header h2 em { color: rgba(43,165,180,0.9); font-style: italic; }
+.faq-section.charcoal  .faq-header p,
+.faq-section.burgundy  .faq-header p,
+.faq-section.teal-dark .faq-header p { color: rgba(255,255,255,0.5); font-size: 15px; line-height: 1.8; font-weight: 300; }
+
+/* Accordion items — light */
+.faq-list { display: flex; flex-direction: column; gap: 2px; }
+.faq-item {
+  overflow: hidden;
+  border-bottom: 1px solid var(--rule);
+}
+.faq-item:first-child { border-top: 1px solid var(--rule); }
+.faq-q {
+  width: 100%; background: transparent; border: none; text-align: left;
+  padding: 22px 0; display: flex; justify-content: space-between; align-items: center;
+  cursor: pointer; transition: opacity 0.2s;
+  gap: 16px;
+}
+.faq-q:hover { opacity: 0.75; }
+.faq-q-text {
+  font-family: var(--font-body); font-size: clamp(15px,1.7vw,17px);
+  line-height: 1.45; text-align: left; flex: 1;
+}
+.faq-icon {
+  font-size: 22px; flex-shrink: 0;
+  transition: transform 0.28s ease; line-height: 1; font-family: var(--font-ui);
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.38s ease; }
+.faq-item.open .faq-a { max-height: 600px; }
+.faq-a-inner {
+  padding: 4px 0 24px;
+  font-size: clamp(14px,1.5vw,16px); line-height: 1.82;
+}
+.faq-a-inner p { margin-bottom: 12px; }
+.faq-a-inner p:last-child { margin-bottom: 0; }
+.faq-a-inner strong { font-weight: 500; }
+.faq-a-inner ul { margin: 8px 0 12px 20px; }
+.faq-a-inner ul li { margin-bottom: 6px; }
+
+/* light theme overrides */
+.faq-section.cream .faq-q-text,
+.faq-section.deep  .faq-q-text  { color: var(--charcoal); }
+.faq-section.cream .faq-icon,
+.faq-section.deep  .faq-icon    { color: var(--rose); }
+.faq-section.cream .faq-a-inner,
+.faq-section.deep  .faq-a-inner { color: var(--muted); }
+.faq-section.cream .faq-a-inner strong,
+.faq-section.deep  .faq-a-inner strong { color: var(--text-warm); }
+
+/* dark theme overrides */
+.faq-section.charcoal  .faq-item,
+.faq-section.burgundy  .faq-item,
+.faq-section.teal-dark .faq-item { border-color: rgba(255,255,255,0.09); }
+.faq-section.charcoal  .faq-q-text,
+.faq-section.burgundy  .faq-q-text,
+.faq-section.teal-dark .faq-q-text { color: rgba(255,255,255,0.88); }
+.faq-section.charcoal  .faq-icon  { color: var(--teal); }
+.faq-section.burgundy  .faq-icon  { color: rgba(232,189,201,0.8); }
+.faq-section.teal-dark .faq-icon  { color: var(--teal); }
+.faq-section.charcoal  .faq-a-inner,
+.faq-section.burgundy  .faq-a-inner,
+.faq-section.teal-dark .faq-a-inner { color: rgba(255,255,255,0.58); }
+.faq-section.charcoal  .faq-a-inner strong,
+.faq-section.burgundy  .faq-a-inner strong,
+.faq-section.teal-dark .faq-a-inner strong { color: rgba(255,255,255,0.85); }
+
+/* ════════════════════════════════════════
+   ROADMAP — cream, visual timeline
+════════════════════════════════════════ */
+.roadmap {
+  background: var(--cream-deep);
+  border-top: 4px solid var(--teal);
+  padding: clamp(72px,10vw,112px) clamp(24px,6vw,80px);
+}
+.roadmap-inner { max-width: 900px; margin: 0 auto; }
+.roadmap-header {
+  text-align: center; max-width: 580px;
+  margin: 0 auto clamp(56px,7vw,80px);
+}
+.roadmap-header h2 {
+  font-size: clamp(30px,4vw,48px); color: var(--charcoal);
+  line-height: 1.18; margin-bottom: 16px;
+}
+.roadmap-header h2 em { font-style: italic; color: var(--teal); }
+.roadmap-header p {
+  font-size: clamp(15px,1.7vw,17px); color: var(--muted);
+  font-weight: 300; line-height: 1.8;
+}
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before {
+  content: ""; position: absolute; left: 0; top: 8px; bottom: 8px;
+  width: 2px; background: var(--rule);
+}
+.timeline-item {
+  position: relative; padding: 0 0 40px 40px;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-dot {
+  position: absolute; left: -7px; top: 6px;
+  width: 16px; height: 16px; border-radius: 50%;
+  border: 2px solid var(--rule);
+  background: var(--cream-deep);
+  transition: background 0.2s, border-color 0.2s;
+}
+.timeline-item.done  .timeline-dot { background: var(--teal); border-color: var(--teal); }
+.timeline-item.live  .timeline-dot { background: var(--rose); border-color: var(--rose); box-shadow: 0 0 0 4px rgba(130,51,72,0.15); }
+.timeline-item.soon  .timeline-dot { background: transparent; border-color: var(--teal); border-style: dashed; }
+.timeline-item.future .timeline-dot { background: transparent; border-color: var(--rule); }
+.timeline-when {
+  font-family: var(--font-ui); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 6px; display: block;
+}
+.timeline-item.live .timeline-when { color: var(--rose); }
+.timeline-item.soon .timeline-when { color: var(--teal); }
+.timeline-title {
+  font-family: var(--font-serif); font-size: clamp(17px,2vw,21px);
+  color: var(--charcoal); line-height: 1.3; margin-bottom: 8px;
+}
+.timeline-item.future .timeline-title { color: var(--muted); }
+.timeline-body {
+  font-size: 14px; color: var(--muted); line-height: 1.75;
+  font-weight: 300; max-width: 620px;
+}
+.timeline-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-ui); font-size: 9px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 2px; margin-bottom: 8px;
+}
+.timeline-item.done   .timeline-badge { background: rgba(43,165,180,0.1); color: var(--teal); }
+.timeline-item.live   .timeline-badge { background: rgba(130,51,72,0.1); color: var(--rose); }
+.timeline-item.soon   .timeline-badge { background: rgba(43,165,180,0.08); color: var(--teal); }
+.timeline-item.future .timeline-badge { background: rgba(0,0,0,0.05); color: var(--muted); }
+
+/* ════════════════════════════════════════
+   BRIDGE PHOTO — Peru, visual breath
+════════════════════════════════════════ */
+.bridge-photo {
+  position: relative; overflow: hidden;
+  min-height: 380px;
+  display: flex; align-items: center; justify-content: center;
+}
+.bridge-bg { position: absolute; inset: 0; }
+.bridge-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 45%;
+  display: block;
+}
+.bridge-overlay {
+  position: absolute; inset: 0;
+  background: rgba(26,20,16,0.58);
+}
+.bridge-inner {
+  position: relative; z-index: 2; text-align: center;
+  padding: clamp(48px,7vw,80px) clamp(24px,6vw,80px);
+}
+.bridge-inner p {
+  font-family: var(--font-serif);
+  font-size: clamp(20px,3vw,36px);
+  font-style: italic; color: white; line-height: 1.45;
+}
+.bridge-inner p em { color: rgba(232,189,201,0.9); font-style: normal; }
+
+/* ════════════════════════════════════════
+   CLOSING CTA
+════════════════════════════════════════ */
+.closing {
+  background: var(--cream);
+  border-top: 1px solid var(--rule);
+  padding: clamp(72px,10vw,112px) clamp(24px,6vw,80px);
+  text-align: center;
+}
+.closing h2 {
+  font-size: clamp(30px,4vw,52px); line-height: 1.2;
+  color: var(--charcoal); margin-bottom: 20px;
+}
+.closing h2 em { font-style: italic; color: var(--rose); }
+.closing p {
+  font-size: clamp(15px,1.7vw,17px); color: var(--muted); font-weight: 300;
+  line-height: 1.8; max-width: 520px; margin: 0 auto 40px;
+}
+.closing-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-outline-rose {
+  display: inline-block; font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  border: 1px solid var(--rose); color: var(--rose);
+  padding: 16px 36px; text-decoration: none; border-radius: 2px;
+  transition: all 0.2s;
+}
+.btn-outline-rose:hover { background: var(--rose); color: white; }
+
+/* ════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════ */
+.footer {
+  background: var(--charcoal);
+  padding: clamp(52px,7vw,80px) clamp(24px,6vw,80px) 36px;
+}
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: clamp(32px,4vw,56px);
+  padding-bottom: 40px; margin-bottom: 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.footer-logo { margin-bottom: 14px; }
+.footer-logo img { height: 40px; width: auto; opacity: 0.92; }
+.footer-brand p {
+  font-size: 13px; line-height: 1.72;
+  color: rgba(255,255,255,0.3); font-weight: 300; max-width: 240px;
+}
+.footer-col h4 {
+  font-family: var(--font-ui); font-size: 9.5px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.22); margin-bottom: 14px;
+}
+.footer-col a {
+  display: block; font-family: var(--font-ui); font-size: 13px;
+  color: rgba(255,255,255,0.44); text-decoration: none;
+  margin-bottom: 10px; transition: color 0.2s;
+}
+.footer-col a:hover { color: rgba(255,255,255,0.82); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+}
+.footer-bottom p { font-family: var(--font-ui); font-size: 11.5px; color: rgba(255,255,255,0.2); }
+.footer-legal { display: flex; gap: 20px; }
+.footer-legal a {
+  font-family: var(--font-ui); font-size: 11.5px;
+  color: rgba(255,255,255,0.22); text-decoration: none;
+}
+.footer-legal a:hover { color: rgba(255,255,255,0.5); }
+
+/* ════════════════════════════════════════
+   MOBILE
+════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .fb { width: 100% !important; left: 0 !important; margin-left: 0 !important; position: relative; }
+  .cat-nav-inner { gap: 0; }
+  .cat-nav a { padding: 16px 16px; font-size: 10px; }
+  .timeline { padding-left: 20px; }
+  .timeline-item { padding-left: 28px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .closing-btns { flex-direction: column; align-items: center; }
+}
+@media (max-width: 480px) {
+  .cat-nav a { padding: 14px 12px; }
+  .footer-top { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+<script src="/components/nav.js"></script>
+
+<!-- ════════════════════════════════════════
+     1. HERO
+════════════════════════════════════════ -->
+<section class="hero fb">
+  <div class="hero-eyebrow">TrueLuvTake2</div>
+  <h1>Every good decision<br>starts with the right <em>questions.</em></h1>
+  <p class="hero-sub">We'd rather you ask everything upfront than wonder later. This is a space for clarity — not a sales page.</p>
+</section>
+
+<!-- ── CATEGORY NAV ── -->
+<nav class="cat-nav fb">
+  <div class="cat-nav-inner">
+    <a href="#about">About TLT2</a>
+    <a href="#process">The Process</a>
+    <a href="#advisory">Advisory Circle</a>
+    <a href="#membership">Membership</a>
+    <a href="#roadmap">Roadmap</a>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════
+     2. ABOUT TLT2 — cream
+════════════════════════════════════════ -->
+<section class="faq-section cream fb" id="about">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <span class="label rose">About TLT2</span>
+      <h2>What is <em>TrueLuvTake2?</em></h2>
+      <p>The foundational questions — who we are, what we stand for, and how we're different from anything else out there.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span class="faq-q-text">Is TrueLuvTake2 a dating app?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>No — and that distinction matters to us. TrueLuvTake2 is a people-first platform for love and companionship later in life. Technology supports our vision; it doesn't replace the foundation.</p>
+          <p>We don't believe love is a sorting problem. We believe it's a readiness question. Our platform is built around that difference.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span class="faq-q-text">How is TrueLuvTake2 different from other dating platforms?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Most platforms are built for speed, volume, and novelty. TrueLuvTake2 is built for depth, discernment, and real-world context.</p>
+          <ul>
+            <li><strong>Readiness over urgency</strong> — we begin with who you are, not just what you're looking for</li>
+            <li><strong>Depth over volume</strong> — curated, intentional connections rather than endless browsing</li>
+            <li><strong>Human discernment over algorithms</strong> — your Advisory Circle, not an algorithm, is at the center of every introduction</li>
+            <li><strong>Context over anonymity</strong> — your life history is honored, not hidden</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span class="faq-q-text">Is this traditional matchmaking?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Neither swipe-based dating nor legacy matchmaking. TrueLuvTake2 is a modern, people-first platform that blends thoughtful attunement with scalable, community-driven design.</p>
+          <p>We draw on the wisdom of both worlds — the personal care of traditional matchmaking and the reach of modern platforms — while leaving behind what doesn't serve you.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span class="faq-q-text">What does "people-first" actually mean?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>It means your full humanity is the starting point — not a profile, not a score, not an age range. Specifically:</p>
+          <ul>
+            <li>Your lived history matters and is honored, not edited out</li>
+            <li>Family context is acknowledged, not ignored</li>
+            <li>Emotional maturity is valued over surface compatibility</li>
+            <li>Your autonomy and dignity are protected at every stage</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span class="faq-q-text">Who is TrueLuvTake2 for?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Adults 50 and older who are ready to explore partnership again — not because they're desperate, but because they've done the work to know who they are and what they truly want.</p>
+          <p>Our members are accomplished, emotionally mature, and ready for something real. If that's you, you'll feel it the moment you begin your Attunement Profile.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     3. THE PROCESS — charcoal
+════════════════════════════════════════ -->
+<section class="faq-section charcoal fb" id="process">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <span class="label light">The Process</span>
+      <h2>How does it <em>work?</em></h2>
+      <p>What to expect when you step into TrueLuvTake2 — from your first reflection to your first introduction.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span class="faq-q-text">What is the Attunement Profile?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Your Attunement Profile is a reflective set of questions across six relational domains — designed to reveal how connection lives in you right now. It takes about 10–15 minutes and there are no right or wrong answers.</p>
+          <p>The results are reflected back to you through our <strong>Five Elements of Connection</strong> framework: Earth, Water, Air, Fire, and Ether — each shown at Rooted, Growing, or Seeding. You receive a private portrait. No scores are ever shown to you.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span class="faq-q-text">What are the Five Elements of Connection?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Our proprietary framework for understanding relational readiness — not a personality type or a compatibility score, but a reflective portrait of how love moves through you.</p>
+          <ul>
+            <li><strong>Earth</strong> — Ground & Capacity: stability, readiness, follow-through</li>
+            <li><strong>Water</strong> — Emotional Flow: empathy, expression, repair</li>
+            <li><strong>Air</strong> — Pace & Boundaries: rhythm, clarity, spaciousness</li>
+            <li><strong>Fire</strong> — Intimacy & Connection: warmth, chemistry, aliveness</li>
+            <li><strong>Ether</strong> — Relational Support: community, values, life context</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span class="faq-q-text">Is my profile private?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes. Your full Attunement Profile is private — returned directly to you. Your specific results, reflections, and personal details are never shared without your explicit consent.</p>
+          <p>Your Advisory Circle receives a high-level impression of your relational portrait — not your private specifics. The portrait, not the details.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span class="faq-q-text">What happens after I complete my profile?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>You create your Introduction — a brief personal portrait including a photo and short video — which becomes your tile in The Garden. You then activate your Membership and invite your Advisory Circle.</p>
+          <p>From that point, your Advisory Circle does the searching. They browse the Garden, discuss candidates privately among themselves, and present their curated choices to you. <strong>You never scroll. You receive.</strong> That hand-off is the heart of the entire experience.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     4. ADVISORY CIRCLE — burgundy
+════════════════════════════════════════ -->
+<section class="faq-section burgundy fb" id="advisory">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <span class="label pale">The Advisory Circle</span>
+      <h2>Questions about<br>the <em>people beside you.</em></h2>
+      <p>The Advisory Circle is one of TrueLuvTake2's most distinctive features. Here's everything you need to know.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span class="faq-q-text">What is the Advisory Circle?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The Advisory Circle is the trusted group of people you invite to search the Garden on your behalf — most often your adult children and a Trusted Love Advisor (TLA). They are the heart of what makes TrueLuvTake2 unlike anything else.</p>
+          <p>They browse. They discuss. They shortlist. They present. You never see a profile until your circle believes it's worth your time.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span class="faq-q-text">What role do adult children play?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Adult children will complete the <strong>Adult Child Profile</strong> — a thoughtful reflection that helps them understand their parent's relational portrait and what their parent is genuinely seeking in a partner.</p>
+          <p>They are then given access to the Garden, where they browse member profiles and discuss candidates privately with the other members of the Advisory Circle. The Seeker never sees pictures, profiles, or introductions directly — that is entirely the Advisory Circle's work. <strong>They search. They vet. They present. You decide.</strong></p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span class="faq-q-text">Is the Advisory Circle required?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes — the Advisory Circle is a required and essential part of the TrueLuvTake2 journey. It is what makes this platform fundamentally different from anything else available.</p>
+          <p>Your Advisory Circle — the people who love you and know you best — are the ones who browse the Garden and present curated introductions to you. You don't browse. You don't scroll. You receive. That hand-off <em>is</em> the product.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span class="faq-q-text">What does the Advisory Circle see?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Your Advisory Circle receives an overall impression of your relational portrait — enough context to search thoughtfully on your behalf. <strong>They see the portrait, not the details.</strong></p>
+          <p>Your private specifics, scores, and reflections remain yours alone. The circle receives context, not confidences.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     5. MEMBERSHIP — teal dark
+════════════════════════════════════════ -->
+<section class="faq-section teal-dark fb" id="membership">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <span class="label light">Membership</span>
+      <h2>Joining TrueLuvTake2 —<br><em>what to expect.</em></h2>
+      <p>Transparent answers about how membership works, what it includes, and what comes next.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span class="faq-q-text">Is there a membership fee?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Yes. TrueLuvTake2 is a premium, people-first service — and our membership reflects that. Membership is structured in three-month cycles: <strong>$222 per month</strong> for the first two months, then a loyalty rate of <strong>$111</strong> in the third month — then the cycle renews. A full six-month journey with TrueLuvTake2 is <strong>$1,111</strong>.</p>
+          <p>We believe in full transparency — complete details on everything your membership includes, and how it compares to alternatives, are on our <a href="#" style="color:rgba(43,165,180,0.9);text-decoration:underline;">Membership page</a>. No surprises. No hidden fees.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span class="faq-q-text">How do I get started?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Begin with your <strong>Partner Attunement Profile</strong> — a quiet, reflective 10–15 minute experience. From there, create your Introduction (a brief personal portrait with photo and short video), activate your Membership, and invite your Advisory Circle.</p>
+          <p>Your circle takes it from there — browsing the Garden, discussing privately, and presenting their curated candidates to you.</p>
+          <p>We are building intentionally toward <strong>250 members</strong> — the milestone at which the Garden opens fully for everyone. Creating your Introduction today is your reservation. Think of it the way you'd think about a presale: you're securing your place in something extraordinary that is being built with care, intention, and <em>you</em> in mind.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span class="faq-q-text">When does the Garden fully open?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The Garden opens fully at <strong>250 members</strong> — that is our founding milestone, and every member who creates their Introduction and activates their Membership brings us one step closer.</p>
+          <p>We are building intentionally, not urgently. When the Garden reaches 250, the full experience — Advisory Circle vetting, curated presentations, and meaningful real-world introductions — comes alive for everyone. Your presence here matters.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">
+          <span class="faq-q-text">How do I participate in Reflections or the community?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Our Reflections blog is open to everyone — no membership required. It's a space for honest, thoughtful writing about love, connection, and the second chapter of life.</p>
+          <p>Our Reflections blog is the heartbeat of the community — open to everyone, no membership required. As the platform grows, dedicated community spaces for members are on the horizon. For now, the best place to stay connected is at <a href="https://blog.trueluvtake2.com/reflections" style="color:rgba(43,165,180,0.9);">blog.trueluvtake2.com/reflections</a>.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     BRIDGE PHOTO — Peru crossing
+════════════════════════════════════════ -->
+<section class="bridge-photo fb">
+  <div class="bridge-bg">
+    <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69f7d8346b07ab330356845f.jpg"
+         alt="Crossing the bridge — Sacred Valley, Peru">
+    <div class="bridge-overlay"></div>
+  </div>
+  <div class="bridge-inner">
+    <p>"There are no right answers here.<br>Only <em>honest</em> ones."</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     6. ROADMAP — cream timeline
+════════════════════════════════════════ -->
+<section class="roadmap fb" id="roadmap">
+  <div class="roadmap-inner">
+    <div class="roadmap-header">
+      <span class="label teal">The Journey So Far</span>
+      <h2>Where we've been.<br>Where we're <em>going.</em></h2>
+      <p>TrueLuvTake2 is growing with intention — not urgency. Here's our honest roadmap.</p>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item done">
+        <div class="timeline-dot"></div>
+        <span class="timeline-badge">Complete</span>
+        <span class="timeline-when">2024</span>
+        <h3 class="timeline-title">Vision takes shape</h3>
+        <p class="timeline-body">Philosophy, framework, and the Five Elements of Connection developed. The foundation of TrueLuvTake2 is built from lived experience and deep conviction.</p>
+      </div>
+
+      <div class="timeline-item done">
+        <div class="timeline-dot"></div>
+        <span class="timeline-badge">Complete</span>
+        <span class="timeline-when">2025</span>
+        <h3 class="timeline-title">Year of integration & insight</h3>
+        <p class="timeline-body">Deepening the vision through lived experience. The platform, attunement framework, and community architecture refined.</p>
+      </div>
+
+      <div class="timeline-item done">
+        <div class="timeline-dot"></div>
+        <span class="timeline-badge">Complete</span>
+        <span class="timeline-when">Early 2026</span>
+        <h3 class="timeline-title">Attunement Profiles launched</h3>
+        <p class="timeline-body">The Partner Attunement Profile and Advisor Circle Insight profile are built and live. Members begin their reflective journey.</p>
+      </div>
+
+      <div class="timeline-item live">
+        <div class="timeline-dot"></div>
+        <span class="timeline-badge">Live Now</span>
+        <span class="timeline-when">March 2026</span>
+        <h3 class="timeline-title">Community opens</h3>
+        <p class="timeline-body">Founding members begin engaging. The Garden opens for early access. Real conversations, real connection — beginning with intention.</p>
+      </div>
+
+      <div class="timeline-item soon">
+        <div class="timeline-dot"></div>
+        <span class="timeline-badge">Coming Soon</span>
+        <span class="timeline-when">Spring – Summer 2026</span>
+        <h3 class="timeline-title">Founding Pilot begins</h3>
+        <p class="timeline-body">A select group of members experience TrueLuvTake2 with full hands-on engagement — personal conversations, early compatibility exploration, and shared input shaping what comes next.</p>
+      </div>
+
+      <div class="timeline-item soon">
+        <div class="timeline-dot"></div>
+        <span class="timeline-badge">Coming Soon</span>
+        <span class="timeline-when">Late 2026</span>
+        <h3 class="timeline-title">Expanded member experience</h3>
+        <p class="timeline-body">Additional features, pathways, and community depth. The platform grows with the wisdom of its founding members.</p>
+      </div>
+
+      <div class="timeline-item future">
+        <div class="timeline-dot"></div>
+        <span class="timeline-badge">On the Horizon</span>
+        <span class="timeline-when">Future</span>
+        <h3 class="timeline-title">The TrueLuvTake2 App</h3>
+        <p class="timeline-body">A full mobile experience built on everything we've learned — intentional, beautiful, and designed for the richness of this stage of life.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     CLOSING CTA
+════════════════════════════════════════ -->
+
+<!-- FOOTER -->
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+
+<script>
+function toggleFaq(item) {
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrueLuvTake2 — Homepage Preview v3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+
+
+[class="custom-code-container"], 
+:root {
+  --burg: #823348;
+  --teal: #2BA5B4;
+  --cream: #F0E4D0;
+  --char: #1A1410;
+  --muted: #7a6e66;
+  --earth: #4E8B5F;
+  --water: #2E7BC4;
+  --air:   #5BA4C7;
+  --fire:  #C94B1F;
+  --ether: #7B68C8;
+  --ser: 'Playfair Display', Georgia, serif;
+  --san: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+body { font-family: var(--san); background: var(--cream); color: var(--char);   padding-top: 88px;
+}
+/* Full-bleed breakout — escapes MONDAi's container to full viewport width */
+.sec {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  display: block;
+}
+.container { max-width: 760px; margin: 0 auto; padding: 0 40px; }
+.label {
+  font-family: var(--san); font-size: 11px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  display: block; margin-bottom: 14px;
+}
+.hd { font-family: var(--ser); font-weight: 400; line-height: 1.25; margin: 0; }
+.body-text { font-family: var(--san); font-size: 16px; line-height: 1.8; margin: 0 0 1rem; }
+.btn {
+  display: inline-block; font-family: var(--san); font-size: 14px;
+  font-weight: 600; padding: 13px 26px; border-radius: 4px;
+  text-decoration: none; cursor: pointer;
+}
+.btn-burg { background: var(--burg); color: #fff; }
+.btn-teal { background: var(--teal); color: #fff; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; }
+
+/* HERO — photo as background, gradient left→right, no grid needed */
+.hero {
+  background-color: var(--char);
+  background-image:
+    linear-gradient(to right, rgba(26,20,16,1) 0%, rgba(26,20,16,.96) 38%, rgba(26,20,16,.45) 60%, rgba(26,20,16,.02) 80%),
+    url('https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/699e0fca1001a5a3c53f19f2.jpg');
+  background-repeat: no-repeat;
+  background-position: 76% center;
+  background-size: auto 110%;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+}
+.hero-copy { max-width: 560px; padding: 96px 56px 88px; }
+.hero-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
+.hero-eyebrow .line { display: inline-block; width: 28px; height: 1px; background: var(--teal); flex-shrink: 0; }
+.hero h1 {
+  font-family: var(--ser); font-size: clamp(36px, 4.2vw, 52px);
+  color: #fff; line-height: 1.18; margin: 0 0 20px; font-weight: 400; max-width: 540px;
+}
+.hero-pivot {
+  font-family: var(--san); font-size: 12px; font-weight: 700;
+  color: var(--teal); text-transform: uppercase; letter-spacing: .1em;
+  margin: 0 0 20px;
+}
+.hero-body {
+  font-size: 16px; line-height: 1.8; color: rgba(255,255,255,.92);
+  max-width: 500px; margin: 0 0 10px;
+}
+.hero-bridge { font-size: 14px; color: rgba(255,255,255,.55); margin: 0 0 24px; }
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* SECTION PADS */
+.cream-sec { background: var(--cream); padding: 80px 40px; }
+.white-sec  { background: #fff;        padding: 80px 40px; }
+.char-sec   { background: var(--char); padding: 80px 40px; }
+
+/* STATS */
+.stat-block {
+  border-top: .5px solid rgba(130,51,72,.18);
+  border-bottom: .5px solid rgba(130,51,72,.18);
+  padding: 32px 0; margin: 0 0 36px;
+}
+.stat-line { font-family: var(--ser); line-height: 1.4; margin: 0 0 18px; color: var(--char); }
+.stat-line:last-child { margin: 0; }
+
+/* PATH CARDS */
+.path-card {
+  background: #fff; border-radius: 8px; padding: 30px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.path-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,.10); }
+.seeker-card  { border: .5px solid rgba(130,51,72,.15); border-top: 4px solid var(--burg); }
+.advisor-card { border: .5px solid rgba(43,165,180,.2); border-top: 4px solid var(--teal); }
+
+/* STEPS */
+.step {
+  display: flex; gap: 22px; align-items: flex-start;
+  padding: 22px 20px; border-radius: 10px;
+  transition: background 0.22s ease;
+}
+.step:hover { background: rgba(130,51,72,.05); }
+.step-num {
+  font-family: var(--ser); font-size: 18px; font-weight: 500;
+  color: #fff; width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--burg);
+  box-shadow: 0 6px 18px rgba(130,51,72,.28);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 2px;
+}
+.step-title { font-family: var(--san); font-weight: 700; font-size: 15px; color: var(--burg); margin: 4px 0 8px; letter-spacing: .01em; }
+.step-body { font-size: 14px; color: var(--muted); line-height: 1.8; }
+
+/* FIVE ELEMENTS */
+.elem-row {
+  display: flex; gap: 16px; align-items: center;
+  padding: 16px 20px; background: #fff;
+  border-radius: 8px; border: .5px solid rgba(130,51,72,.1);
+}
+.elem-icon {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.elem-name { font-family: var(--san); font-weight: 700; font-size: 13px; min-width: 52px; }
+.elem-desc { font-family: var(--san); font-size: 14px; color: var(--muted); }
+
+/* ADVISORY CIRCLE — deep teal gradient, linen warmth woven in */
+.ac-sec {
+  background: linear-gradient(170deg, #17606c 0%, #1f8e9e 50%, var(--teal) 100%);
+  padding: 80px 40px;
+}
+.ac-inner {
+  background: rgba(249,246,240,.13);
+  border: 1px solid rgba(249,246,240,.3);
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 640px;
+  margin: 0 auto 36px;
+}
+.ac-quote {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 28px 32px;
+  max-width: 580px;
+  margin: 0 auto 40px;
+}
+.ac-circle-card {
+  background: rgba(240,228,208,.96);
+  border-radius: 10px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.5);
+  box-shadow: 0 4px 20px rgba(0,0,0,.10);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.ac-circle-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,.16); }
+.ac-card-head {
+  background: linear-gradient(135deg, #1a6b78 0%, var(--teal) 100%);
+  padding: 18px 22px 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.ac-card-body { padding: 18px 22px 22px; }
+.ac-cta-link {
+  display: inline-block;
+  font-family: var(--san); font-size: 14px; font-weight: 600;
+  padding: 13px 28px; border-radius: 4px;
+  background: rgba(240,228,208,.15);
+  border: 1.5px solid rgba(240,228,208,.55);
+  color: #fff; text-decoration: none;
+  transition: background 0.2s ease;
+}
+.ac-cta-link:hover { background: rgba(240,228,208,.28); }
+
+@media (max-width: 700px) {
+  .hero {
+    background-image:
+      linear-gradient(rgba(14,24,44,.62) 0%, rgba(14,24,44,.58) 100%),
+      url('https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/699e0fca1001a5a3c53f19f2.jpg');
+    background-size: cover;
+    background-position: center top;
+    min-height: auto;
+  }
+  .hero-copy { padding: 72px 24px 64px; max-width: 100%; }
+  .cream-sec, .white-sec, .char-sec, .ac-sec { padding: 60px 24px; }
+  .container { padding: 0 24px; }
+  .ac-inner { padding: 28px 22px; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<script src="/components/nav.js"></script>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 1 — HERO
+     MONDAi layout: copy left column · Monique's
+     portrait right column. Charcoal background.
+════════════════════════════════════════════════ -->
+<section class="hero sec">
+  <div style="max-width:1160px;margin:0 auto;width:100%;padding:0 32px">
+  <div class="hero-copy">
+    <div class="hero-eyebrow">
+      <span class="line"></span>
+      <span class="label" style="color:var(--teal);margin:0;letter-spacing:.1em">For Adults 50+ · People-First · Family-Included</span>
+    </div>
+    <h1>You've built a whole life.<br>You shouldn't have to condense it into a swipe.</h1>
+    <p class="hero-pivot">You don't have to search alone. And you don't have to settle.</p>
+    <p class="hero-body">TrueLuvTake2 is not a dating app. It's the first space where the people who love you most — your adult children, your closest friends, your trusted advisors — are part of finding the person who deserves you.</p>
+    <p class="hero-bridge">Two ways to begin:</p>
+    <div class="hero-ctas">
+      <a href="/how-it-works"    class="btn btn-burg">I'm looking for love →</a>
+      <a href="/advisory-circle" class="btn btn-teal">I'm here for someone I love →</a>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2 — YOU ARE NOT ALONE
+════════════════════════════════════════════════ -->
+<section class="cream-sec sec">
+  <div class="container" style="text-align:center">
+    <span class="label" style="color:var(--teal)">Why This Matters</span>
+    <h2 class="hd" style="font-size:clamp(28px,3.5vw,38px);color:var(--char);margin-bottom:40px">You are not alone in this.</h2>
+    <div class="stat-block">
+      <p class="stat-line" style="font-size:clamp(22px,3vw,28px)">1 in 3 marriages ends after 50.</p>
+      <p class="stat-line" style="font-size:clamp(18px,2.4vw,24px)">More people are living alone in their 60s than at any point in modern history.</p>
+      <p class="stat-line" style="font-size:clamp(18px,2.4vw,24px)">We are living longer, healthier, and more awake to who we are than any generation before us.</p>
+    </div>
+    <p class="body-text" style="color:var(--muted)">And somewhere between "I'm fine" and "I want more," there's a question most of us are afraid to say out loud:</p>
+    <p style="font-family:var(--ser);font-style:italic;font-size:clamp(20px,2.5vw,26px);color:var(--burg);margin:0 0 22px">Is this it? Or is there still time?</p>
+    <p class="body-text" style="color:var(--muted)">There is still time. That's what TrueLuvTake2 was built for.</p>
+    <div style="margin-top:40px;padding-top:36px;border-top:1px solid rgba(130,51,72,0.15)">
+      <p style="font-family:var(--ser);font-style:italic;font-size:clamp(17px,2vw,22px);color:var(--burg);line-height:1.65;margin:0 auto 14px;max-width:560px">"I've never felt so much love and thoughtfulness put into something I was reading."</p>
+      <span style="font-family:var(--san);font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted)">— Founding Member</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 3 — PATH SPLIT
+════════════════════════════════════════════════ -->
+<section class="white-sec sec">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <span class="label" style="color:var(--teal)">Two Ways to Begin</span>
+      <h2 class="hd" style="font-size:clamp(26px,3vw,38px);color:var(--char)">Are you a <em>Seeker</em> — or here for someone you love?</h2>
+    </div>
+    <div class="grid-2" style="margin-bottom:24px">
+      <div class="path-card seeker-card">
+        <span class="label" style="color:var(--burg)">The Seeker</span>
+        <h3 class="hd" style="font-size:clamp(22px,2.4vw,28px);color:var(--char);margin-bottom:14px">I am ready for real connection.</h3>
+        <p class="body-text" style="color:var(--muted);font-size:15px;margin-bottom:24px">You've lived enough to know what you want. You're not interested in apps, algorithms, or pretending. You want a process that honors the life you've built — and the love you still have to give.</p>
+        <a href="/member-introduction-page" class="btn btn-burg" style="width:100%;text-align:center;display:block">Begin My Introduction — It's Free →</a>
+      </div>
+      <div class="path-card advisor-card">
+        <span class="label" style="color:var(--teal)">For the One Supporting Someone They Love</span>
+        <h3 class="hd" style="font-size:clamp(22px,2.4vw,28px);color:var(--char);margin-bottom:14px">I am here for someone I love.</h3>
+        <p class="body-text" style="color:var(--muted);font-size:15px;margin-bottom:24px">You were invited because your judgment is trusted and your love is real. Whether you're an adult child, a best friend, a sibling, or a trusted advisor — your role here is one of the most meaningful things you can do for someone you love.</p>
+        <a href="/advisory-circle" class="btn btn-teal" style="width:100%;text-align:center;display:block">Learn About the Advisory Circle →</a>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <a href="https://blog.trueluvtake2.com/reflections" style="font-family:var(--san);font-size:14px;color:var(--teal);text-decoration:none">Just here to learn more? Join the community →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 4 — THE SEEKER JOURNEY
+════════════════════════════════════════════════ -->
+<section class="cream-sec sec">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:52px">
+      <span class="label" style="color:var(--teal)">The Seeker Journey</span>
+      <!-- Decorative botanical flourish -->
+      <div style="margin:0 auto 18px;display:flex;align-items:center;justify-content:center;gap:10px">
+        <svg width="64" height="18" viewBox="0 0 64 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 9 Q10 3 18 9 Q26 15 34 9 Q42 3 50 9 Q56 13 62 9" stroke="rgba(130,51,72,.25)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          <circle cx="2" cy="9" r="1.5" fill="rgba(130,51,72,.35)"/>
+          <circle cx="32" cy="9" r="2" fill="rgba(130,51,72,.45)"/>
+          <circle cx="62" cy="9" r="1.5" fill="rgba(130,51,72,.35)"/>
+          <!-- tiny leaf left -->
+          <path d="M14 6 Q18 2 22 6 Q18 5 14 6Z" fill="rgba(130,51,72,.2)"/>
+          <!-- tiny leaf right -->
+          <path d="M42 12 Q46 8 50 12 Q46 11 42 12Z" fill="rgba(130,51,72,.2)"/>
+        </svg>
+      </div>
+      <h2 class="hd" style="font-size:clamp(26px,3vw,34px);color:var(--char)">Six steps to The Garden.</h2>
+      <p style="font-family:var(--san);font-size:16px;color:var(--muted);margin-top:10px;font-style:italic">At your own pace. On your own terms.</p>
+    </div>
+    <div class="grid-2" style="gap:36px">
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <p class="step-title">Take Your Attunement Profile</p>
+          <p class="step-body">Before you look for someone, look at yourself. Five Elements of Connection — a quiet, reflective exploration of who you are and what you're truly ready for. Results arrive by email. No scores. No judgment. Only honest answers.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <p class="step-title">Create Your Introduction</p>
+          <p class="step-body">A photo. A few honest words. A 60-second video that proves you're real and lets your personality speak for itself. No script. No performance. Just you.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div>
+          <p class="step-title">Assemble Your Advisory Circle</p>
+          <p class="step-body">Name the people who know your heart. Your adult children. Your closest friends. A trusted advisor. They receive a personal invitation to stand beside you in this journey.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div>
+          <p class="step-title">Activate Your Membership</p>
+          <p class="step-body">When The Garden opens, your Advisory Circle gets full browsing access — viewing introductions, watching videos, reaching out to other Advisory Circles on your behalf.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">5</span>
+        <div>
+          <p class="step-title">Receive Your Presentations</p>
+          <p class="step-body">Your circle brings their chosen candidates — a photo, a video, and a personal note explaining what stood out and why they believe this person deserves to meet you.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">6</span>
+        <div>
+          <p class="step-title">The Garden Opens For You</p>
+          <p class="step-body">The rest unfolds at your pace. No pressure. No performance. Just people who love you, working to find someone worthy of you.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px">
+      <a href="/how-it-works" style="font-family:var(--san);font-size:14px;color:var(--teal);font-weight:600;text-decoration:none">Read the full journey →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 5 — THE GARDEN
+     NOTE: "loneliness" language removed per founder.
+     TLT2 is for people with full hearts + more love to give.
+════════════════════════════════════════════════ -->
+<section class="char-sec sec">
+  <div style="max-width:640px;margin:0 auto;padding:0 40px;text-align:center">
+    <span class="label" style="color:var(--teal)">The Garden</span>
+    <p style="font-family:var(--ser);font-style:italic;font-size:18px;color:rgba(249,246,240,.6);margin:0 0 16px">If you've never seen anything quite like this before, that's intentional.</p>
+    <h2 class="hd" style="font-size:clamp(26px,3vw,34px);color:#fff;margin-bottom:28px">A members-only space built for people who are truly ready.</h2>
+    <p class="body-text" style="color:rgba(249,246,240,.92)">The Garden is not a place the Seeker enters. It is a place their Advisory Circle enters — on their behalf.</p>
+    <p class="body-text" style="color:rgba(249,246,240,.92)">Advisory Circle members browse introductions, watch videos, and reach out to other Advisory Circles within the platform. They screen. They vet. They bring their best candidates forward.</p>
+    <p class="body-text" style="color:rgba(249,246,240,.92)">The Seeker never scrolls through faces. Never swipes. Never reduces a rich life to a thumbnail. That's not what this chapter calls for.</p>
+    <p style="font-family:var(--ser);font-style:italic;font-size:clamp(17px,2vw,20px);color:rgba(249,246,240,.72);margin:0 0 30px">That is not a small distinction. That is the entire point.</p>
+    <a href="/how-it-works" style="font-family:var(--san);font-size:14px;color:var(--teal);font-weight:600;text-decoration:none">Read the full journey →</a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 6 — ADVISORY CIRCLE
+     Teal · single column · size hierarchy creates the flair
+════════════════════════════════════════════════ -->
+<section class="ac-sec sec">
+  <div style="max-width:680px;margin:0 auto;padding:0 40px;text-align:center">
+
+    <!-- Label -->
+    <span class="label" style="color:rgba(249,246,240,.6)">The Advisory Circle</span>
+
+    <!-- Headline with serif italic -->
+    <h2 class="hd" style="font-size:clamp(32px,4vw,48px);color:#fff;line-height:1.18;margin:0 auto 20px;max-width:640px">
+      The people who already know your heart <em>do the searching.</em>
+    </h2>
+
+    <!-- Thin cream rule -->
+    <div style="width:52px;height:1px;background:rgba(249,246,240,.3);margin:0 auto 44px"></div>
+
+    <!-- Lead paragraph — larger, centered -->
+    <p style="font-family:var(--san);font-size:18px;color:rgba(249,246,240,.95);line-height:1.85;max-width:600px;margin:0 auto 18px">
+      Your Advisory Circle browses The Garden on your behalf. They review introductions, watch videos, and reach out to other Advisory Circles within the platform. They screen. They vet.
+    </p>
+    <p class="body-text" style="color:rgba(249,246,240,.8);max-width:580px;margin:0 auto 52px">
+      And when they're done, they bring you their best — with a photo, a video, and a personal note explaining exactly why they believe this person deserves to meet you. This could be your adult children, your best friend of thirty years, a sibling, or a trusted advisor whose judgment you trust completely.
+    </p>
+
+    <!-- Founder quote — full-width cream card, left-aligned text inside -->
+    <div style="background:var(--cream);border-radius:10px;padding:38px 44px;margin:0 auto 52px;text-align:left">
+      <p style="font-family:var(--ser);font-style:italic;font-size:20px;color:var(--char);line-height:1.72;margin:0 0 20px">
+        "The people who already love you are your greatest asset. At TrueLuvTake2, they are invited in from the very beginning."
+      </p>
+      <span class="label" style="color:var(--muted);font-size:10px;margin:0">— Monique Alemán, Founder</span>
+    </div>
+
+    <!-- Matchmaker contrast — left-aligned, thin top rule -->
+    <div style="border-top:1px solid rgba(249,246,240,.2);padding-top:44px;margin-bottom:20px;text-align:left">
+      <p class="body-text" style="color:rgba(249,246,240,.92);margin-bottom:24px">
+        Elite matchmaking services charge thousands of dollars for a professional who met you once. Your Advisory Circle brings something no hired matchmaker can offer: <strong style="color:#fff">decades of knowing you.</strong> They've watched you love and be loved. They know your patterns, your blindspots, your gifts — and what you actually deserve, even when you forget.
+      </p>
+      <!-- Standalone pullquote — the emotional landing -->
+      <p style="font-family:var(--ser);font-style:italic;font-size:clamp(20px,2.5vw,25px);color:rgba(249,246,240,.88);line-height:1.45;margin:0 0 52px">
+        No other platform in the world acknowledges this dynamic — let alone builds for it.
+      </p>
+    </div>
+
+    <!-- Thin rule before cards -->
+    <div style="width:52px;height:1px;background:rgba(249,246,240,.2);margin:0 auto 40px"></div>
+
+    <!-- Circle configuration cards — redesigned with icon headers -->
+    <div class="grid-3" style="margin-bottom:44px;text-align:left">
+
+      <!-- Card 1 -->
+      <div class="ac-circle-card">
+        <div class="ac-card-head">
+          <!-- Family icon -->
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="10" r="4"/>
+            <path d="M8 26c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+            <circle cx="7" cy="12" r="3"/>
+            <path d="M2 26c0-3.3 2.2-6 5-7"/>
+            <circle cx="25" cy="12" r="3"/>
+            <path d="M30 26c0-3.3-2.2-6-5-7"/>
+          </svg>
+          <div>
+            <p style="font-family:var(--san);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin:0 0 2px">Option 1</p>
+            <p style="font-family:var(--san);font-size:12px;font-weight:600;color:#fff;margin:0;line-height:1.3">Family + Advisor</p>
+          </div>
+        </div>
+        <div class="ac-card-body">
+          <p style="font-family:var(--san);font-weight:600;font-size:13px;color:var(--char);margin:0 0 8px">2 Adult Children + 1 Trusted Love Advisor</p>
+          <p style="font-family:var(--san);font-size:13px;color:var(--muted);line-height:1.7;margin:0">Family history grounded in lived experience, supported by a trusted outside voice.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="ac-circle-card">
+        <div class="ac-card-head">
+          <!-- Balance icon (two figures) -->
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="10" r="4"/>
+            <path d="M3 26c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+            <circle cx="23" cy="11" r="3.5"/>
+            <path d="M17 26c0-3.6 2.7-6.5 6-7"/>
+          </svg>
+          <div>
+            <p style="font-family:var(--san);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin:0 0 2px">Option 2</p>
+            <p style="font-family:var(--san);font-size:12px;font-weight:600;color:#fff;margin:0;line-height:1.3">Balanced & Whole</p>
+          </div>
+        </div>
+        <div class="ac-card-body">
+          <p style="font-family:var(--san);font-weight:600;font-size:13px;color:var(--char);margin:0 0 8px">1 Adult Child + 1 Trusted Love Advisor</p>
+          <p style="font-family:var(--san);font-size:13px;color:var(--muted);line-height:1.7;margin:0">One family member, one trusted friend — balanced, grounded, and whole.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="ac-circle-card">
+        <div class="ac-card-head">
+          <!-- Heart / chosen family icon -->
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 27S4 19 4 11.5A6.5 6.5 0 0 1 16 8a6.5 6.5 0 0 1 12 3.5C28 19 16 27 16 27z"/>
+          </svg>
+          <div>
+            <p style="font-family:var(--san);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin:0 0 2px">Option 3</p>
+            <p style="font-family:var(--san);font-size:12px;font-weight:600;color:#fff;margin:0;line-height:1.3">Chosen Family</p>
+          </div>
+        </div>
+        <div class="ac-card-body">
+          <p style="font-family:var(--san);font-weight:600;font-size:13px;color:var(--char);margin:0 0 8px">2 Trusted Love Advisors</p>
+          <p style="font-family:var(--san);font-size:13px;color:var(--muted);line-height:1.7;margin:0">Chosen family is real family. Two TLAs form a complete and equally sacred circle.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <a href="/advisory-circle" class="ac-cta-link">Learn about the Advisory Circle →</a>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 7 — FIVE ELEMENTS
+     Thin-line inline SVGs matching existing Five Elements page.
+     Earth=green, Water=blue, Air=light blue, Fire=coral, Ether=purple.
+     NO Tabler icons / NO AI-looking symbols.
+════════════════════════════════════════════════ -->
+<section class="cream-sec sec">
+  <div style="max-width:600px;margin:0 auto;padding:0 40px;text-align:center">
+    <span class="label" style="color:var(--teal)">Our Framework</span>
+    <p style="font-family:var(--ser);font-style:italic;font-size:18px;color:var(--muted);margin:0 0 12px">Before we match, we attune.</p>
+    <h2 class="hd" style="font-size:clamp(26px,3vw,34px);color:var(--char);margin-bottom:16px">The Five Elements of Connection.</h2>
+    <p class="body-text" style="color:var(--muted);margin-bottom:36px">Not a quiz. Not an algorithm. A reflective mirror — designed to help you understand yourself before you look for someone else. Because the most important conversation in this process is the one you have with your own honest answers.</p>
+
+    <div style="display:grid;gap:12px;margin-bottom:32px;text-align:left">
+
+      <!-- EARTH — Globe icon, green -->
+      <div class="elem-row">
+        <div class="elem-icon" style="background:rgba(78,139,95,.1)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4E8B5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <ellipse cx="12" cy="12" rx="4" ry="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+          </svg>
+        </div>
+        <span class="elem-name" style="color:var(--earth)">Earth</span>
+        <span class="elem-desc">Stability, readiness, and real-life availability that allow love to take root.</span>
+      </div>
+
+      <!-- WATER — Droplet icon, blue -->
+      <div class="elem-row">
+        <div class="elem-icon" style="background:rgba(46,123,196,.1)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E7BC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.25S5 10.5 5 14.5a7 7 0 0 0 14 0C19 10.5 12 2.25 12 2.25z"/>
+          </svg>
+        </div>
+        <span class="elem-name" style="color:var(--water)">Water</span>
+        <span class="elem-desc">How feeling, empathy, and repair move through you in connection.</span>
+      </div>
+
+      <!-- AIR — Three wavy lines, light blue -->
+      <div class="elem-row">
+        <div class="elem-icon" style="background:rgba(91,164,199,.1)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5BA4C7" stroke-width="1.5" stroke-linecap="round">
+            <path d="M2 7c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0"/>
+            <path d="M2 12c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0"/>
+            <path d="M2 17c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0"/>
+          </svg>
+        </div>
+        <span class="elem-name" style="color:var(--air)">Air</span>
+        <span class="elem-desc">The rhythm and spaciousness that let love breathe and communication build.</span>
+      </div>
+
+      <!-- FIRE — Flame outline, coral -->
+      <div class="elem-row">
+        <div class="elem-icon" style="background:rgba(201,75,31,.1)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C94B1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2c0 0-6 8-6 12.5a6 6 0 0 0 12 0C18 10 12 2 12 2z"/>
+            <path d="M12 22c-1.7 0-3-1.3-3-3 0-2 2-4 3-4s3 2 3 4c0 1.7-1.3 3-3 3z"/>
+          </svg>
+        </div>
+        <span class="elem-name" style="color:var(--fire)">Fire</span>
+        <span class="elem-desc">The warmth, aliveness, and spark that keep love vibrant and joyful.</span>
+      </div>
+
+      <!-- ETHER — 8-point asterisk/starburst, purple -->
+      <div class="elem-row">
+        <div class="elem-icon" style="background:rgba(123,104,200,.1)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7B68C8" stroke-width="1.5" stroke-linecap="round">
+            <line x1="12" y1="3"    x2="12" y2="21"/>
+            <line x1="3"  y1="12"   x2="21" y2="12"/>
+            <line x1="5.64" y1="5.64" x2="18.36" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="5.64" y2="18.36"/>
+          </svg>
+        </div>
+        <span class="elem-name" style="color:var(--ether)">Ether</span>
+        <span class="elem-desc">Community, family, values — the wider container that helps love grow sustainably.</span>
+      </div>
+
+    </div>
+    <a href="/the-five-elements-of-connection" style="font-family:var(--san);font-size:14px;color:var(--teal);font-weight:600;text-decoration:none">Explore the Five Elements →</a>
+  </div>
+</section>
+
+
+<!-- TRANSITION — Five Elements → Founder -->
+<div class="sec" style="background:var(--char);padding:44px 40px;text-align:center">
+  <div style="display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:16px">
+    <div style="width:52px;height:.5px;background:rgba(255,255,255,.18)"></div>
+    <!-- Botanical ornament -->
+    <svg width="36" height="20" viewBox="0 0 36 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 10 Q12 4 6 8 Q12 7 18 10Z" fill="rgba(130,51,72,.55)"/>
+      <path d="M18 10 Q24 4 30 8 Q24 7 18 10Z" fill="rgba(130,51,72,.55)"/>
+      <path d="M18 10 Q12 16 6 12 Q12 13 18 10Z" fill="rgba(130,51,72,.35)"/>
+      <path d="M18 10 Q24 16 30 12 Q24 13 18 10Z" fill="rgba(130,51,72,.35)"/>
+      <circle cx="18" cy="10" r="2" fill="rgba(43,165,180,.7)"/>
+    </svg>
+    <div style="width:52px;height:.5px;background:rgba(255,255,255,.18)"></div>
+  </div>
+  <p style="font-family:var(--ser);font-style:italic;font-size:16px;color:rgba(255,255,255,.52);margin:0;letter-spacing:.01em">Built from lived experience. Founded with love.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 8 — FOUNDER VOICE
+     Photo: Monique with sons (advisory section photo)
+     NOT the headshot from the hero.
+════════════════════════════════════════════════ -->
+<section class="white-sec sec">
+  <div class="container">
+    <div class="grid-2" style="align-items:center;gap:56px">
+
+      <!-- Photo — Monique with her sons -->
+      <div>
+        <div style="border-radius:10px;overflow:hidden;max-width:340px;aspect-ratio:3/4;background:var(--char)">
+          <img
+            src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69b9858d61cba53ce18d90fd.jpg"
+            style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block"
+            alt="Monique Alemán with her sons">
+        </div>
+      </div>
+
+      <!-- Copy -->
+      <div>
+        <span class="label" style="color:var(--teal)">Our Founder</span>
+        <h2 class="hd" style="font-size:clamp(22px,2.4vw,28px);color:var(--char);margin-bottom:24px">A full life, fully lived — and the clarity that comes from it.</h2>
+        <p style="font-family:var(--san);font-weight:600;font-size:16px;color:var(--char);margin:0 0 4px">Not another app.</p>
+        <p style="font-family:var(--san);font-weight:600;font-size:16px;color:var(--char);margin:0 0 4px">Not a matchmaker who'd never met me.</p>
+        <p style="font-family:var(--san);font-weight:600;font-size:16px;color:var(--char);margin:0 0 22px">Not anything that existed yet.</p>
+        <p style="font-family:var(--ser);font-style:italic;font-size:26px;color:var(--burg);margin:0 0 22px">So I built it.</p>
+        <p class="body-text" style="color:var(--muted)">TrueLuvTake2 exists because by this stage of life, we don't need more options. We need the right ones. And we need the people who love us most to be part of that.</p>
+        <p class="body-text" style="color:var(--muted)">My adult sons are part of my journey. My history is part of my story. And my heart — after everything — is still open.</p>
+        <p style="font-family:var(--san);font-size:16px;color:var(--char);font-style:italic;margin:0 0 16px">If any of that sounds familiar, you're in the right place.</p>
+        <span class="label" style="color:var(--muted);font-size:10px;margin:0">— Monique Alemán, Founder</span>
+        <div style="margin-top:22px">
+          <a href="/about" style="font-family:var(--san);font-size:14px;color:var(--teal);font-weight:600;text-decoration:none">Meet Monique →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 9 — PRICING
+     FREE leads. $222 follows smaller / muted.
+════════════════════════════════════════════════ -->
+<section class="char-sec sec">
+  <div style="max-width:520px;margin:0 auto;padding:0 40px;text-align:center">
+    <span class="label" style="color:var(--teal)">Transparent Pricing</span>
+    <h2 class="hd" style="font-size:clamp(36px,5vw,50px);color:#fff;line-height:1.15">Your Introduction</h2>
+    <h2 class="hd" style="font-size:clamp(36px,5vw,50px);color:#fff;font-style:italic;margin:0 0 32px">is always free.</h2>
+    <p class="body-text" style="color:rgba(249,246,240,.9)">Paid membership activates when The Garden reaches 250 founding members.</p>
+    <p class="body-text" style="color:rgba(249,246,240,.9)">Until then — your place is free, your profile is live, and your Advisory Circle can begin forming today.</p>
+    <p style="font-family:var(--san);font-size:13px;color:rgba(249,246,240,.38);margin:0 0 40px">When pricing activates: $222/month &nbsp;·&nbsp; No long-term contracts &nbsp;·&nbsp; Complete transparency</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;align-items:center">
+      <a href="/member-introduction-page" class="btn btn-burg">Start Free Today →</a>
+      <a href="/faq" style="font-family:var(--san);font-size:14px;color:var(--teal);font-weight:600;text-decoration:none">See full pricing details →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Global Footer ("The Garden is growing / Be part of it") lives in MONDAi Global Footer — not modified here -->
+
+</body>
+</html>

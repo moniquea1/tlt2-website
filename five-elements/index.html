@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Five Elements of Connection — TrueLuvTake2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* ── MONDAi Reset (Mel Rules) ── */
+html, body { overflow-x: hidden; background: #FAF7F2 !important;   padding-top: 88px;
+}
+
+
+/* nav-offset: height:0 is sufficient — no background needed */
+
+/* ── DESIGN TOKENS ── */
+:root {
+  --rose:        #823348;
+  --rose-light:  #9B3D57;
+  --rose-pale:   #F5E8EC;
+  --rose-bg:     rgba(130,51,72,0.07);
+  --teal:        #2BA5B4;
+  --teal-pale:   rgba(43,165,180,0.10);
+  --cream:       #FAF7F2;
+  --cream-deep:  #F2EDE4;
+  --charcoal:    #1A1410;
+  --charcoal-mid:#252018;
+  --text-warm:   #2E2725;
+  --muted:       #7a6e66;
+  --rule:        #e4dbd0;
+  --font-serif:  "Playfair Display", Georgia, serif;
+  --font-body:   "Source Serif 4", Georgia, serif;
+  --font-ui:     "Instrument Sans", sans-serif;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--text-warm);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── FULL-BLEED ── */
+.fb { width: 100vw; position: relative; left: 50%; margin-left: -50vw; box-sizing: border-box; }
+
+/* ── SHARED ── */
+.label {
+  font-family: var(--font-ui); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 16px; display: block;
+  padding-top: clamp(56px, 8vw, 88px);
+}
+.label.rose { color: var(--rose); }
+.label.light { color: rgba(43,165,180,0.75); }
+h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
+
+/* ── BUTTONS ── */
+.btn-rose {
+  display: inline-block; font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--rose); color: white;
+  padding: 16px 36px; text-decoration: none; border-radius: 2px;
+  transition: background 0.2s;
+}
+.btn-rose:hover { background: var(--rose-light); }
+.btn-ghost {
+  display: inline-block; font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.8);
+  padding: 16px 36px; text-decoration: none; border-radius: 2px;
+  transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: white; color: white; }
+.btn-outline {
+  display: inline-block; font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  border: 1px solid var(--rose); color: var(--rose);
+  padding: 16px 36px; text-decoration: none; border-radius: 2px;
+  transition: all 0.2s;
+}
+.btn-outline:hover { background: var(--rose-bg); }
+
+/* ════════════════════════════════════════
+   1. HERO — cream, centered, bold
+════════════════════════════════════════ */
+.hero {
+  background: var(--cream);
+  padding: clamp(72px,11vw,120px) clamp(24px,6vw,80px) clamp(56px,8vw,88px);
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.hero-eyebrow {
+  font-family: var(--font-ui); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--rose);
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  margin-bottom: 28px;
+}
+/* pseudo-elements removed per Mel Rules — replaced with real elements below */
+.hero-eyebrow-line {
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--rose);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+.hero h1 {
+  font-size: clamp(44px,7vw,80px); line-height: 1.08;
+  color: var(--charcoal); margin-bottom: 28px; letter-spacing: -0.025em;
+}
+.hero h1 em { font-style: italic; color: var(--rose); }
+.hero-sub {
+  font-size: clamp(16px,2vw,20px); line-height: 1.75;
+  color: var(--muted); font-weight: 300;
+  max-width: 580px; margin: 0 auto 40px;
+}
+.hero-sub strong { color: var(--text-warm); font-weight: 400; }
+
+/* ════════════════════════════════════════
+   2. PHILOSOPHY — centered text only
+════════════════════════════════════════ */
+.philosophy {
+  background: var(--cream);
+  border-top: 4px solid var(--rose);
+}
+.philosophy-inner {
+  max-width: 720px; margin: 0 auto;
+  padding: clamp(64px,9vw,104px) clamp(24px,6vw,80px);
+  text-align: center;
+}
+/* label has built-in padding-top for section rhythm; override here */
+.philosophy-inner .label { padding-top: 0; }
+.philosophy-text h2 {
+  font-size: clamp(28px,3.5vw,44px); line-height: 1.2;
+  color: var(--charcoal); margin-bottom: 24px;
+}
+.philosophy-text h2 em { font-style: italic; color: var(--rose); }
+.philosophy-text p {
+  font-size: clamp(15px,1.7vw,17px); line-height: 1.85;
+  color: var(--muted); font-weight: 300; margin-bottom: 18px;
+}
+.philosophy-text p strong { color: var(--text-warm); font-weight: 400; }
+
+/* ════════════════════════════════════════
+   3. FIVE ELEMENTS — dark, cards pop
+════════════════════════════════════════ */
+.framework {
+  background: var(--charcoal);
+  padding: clamp(64px,9vw,104px) clamp(24px,6vw,80px) 0;
+}
+.framework-header {
+  text-align: center; max-width: 640px;
+  margin: 0 auto clamp(48px,6vw,72px);
+}
+.framework-header h2 {
+  font-size: clamp(32px,4vw,52px); line-height: 1.15;
+  color: white; margin-bottom: 20px;
+}
+.framework-header h2 em { font-style: italic; color: var(--rose-pale); }
+.framework-header p {
+  font-size: clamp(15px,1.8vw,17px); line-height: 1.8;
+  color: rgba(255,255,255,0.55); font-weight: 300;
+}
+.elements-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(5,1fr); gap: 3px;
+}
+.el-card {
+  background: var(--cream); padding: clamp(28px,3vw,40px) 24px;
+  text-align: center; border-top: 6px solid var(--rule);
+  transition: border-top-color 0.25s, transform 0.25s;
+}
+.el-card:hover { transform: translateY(-6px); }
+.elements-grid .el-card:nth-child(1) { border-top-color: #6B8E5A; }
+.elements-grid .el-card:nth-child(2) { border-top-color: #5B8FB9; }
+.elements-grid .el-card:nth-child(3) { border-top-color: #C8BAA4; }
+.elements-grid .el-card:nth-child(4) { border-top-color: #C06060; }
+.elements-grid .el-card:nth-child(5) { border-top-color: #9370B8; }
+.el-sym  { display: block; margin-bottom: 14px; line-height: 1; }
+.el-name { font-family: var(--font-serif); font-size: 20px; font-weight: 500; color: var(--charcoal); margin-bottom: 4px; }
+.el-sub  {
+  font-family: var(--font-ui); font-size: 9px; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--rose); display: block; margin-bottom: 12px;
+}
+.el-desc { font-size: 13px; line-height: 1.7; color: var(--muted); font-weight: 300; }
+.el-body {
+  font-size: 12px; line-height: 1.65; color: var(--muted); font-weight: 300;
+  margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--rule);
+}
+
+/* ════════════════════════════════════════
+   4. THREE LEVELS — burgundy warm
+════════════════════════════════════════ */
+.levels {
+  background: var(--cream-deep);
+  padding: clamp(64px,9vw,104px) clamp(24px,6vw,80px);
+  border-top: 4px solid var(--rose);
+}
+.levels-header {
+  text-align: center; max-width: 600px; margin: 0 auto clamp(48px,6vw,72px);
+}
+.levels-header h2 {
+  font-size: clamp(32px,4vw,52px); line-height: 1.15;
+  color: var(--charcoal); margin-bottom: 20px;
+}
+.levels-header h2 em { font-style: italic; color: var(--rose); }
+.levels-header p {
+  font-size: clamp(15px,1.8vw,17px); line-height: 1.8;
+  color: var(--muted); font-weight: 300;
+}
+.levels-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 3px;
+}
+.level-card {
+  background: white;
+  border: 1px solid var(--rule);
+  border-top: 4px solid var(--rose);
+  padding: clamp(32px,4vw,48px) 36px;
+  transition: box-shadow 0.25s, transform 0.25s;
+  box-shadow: 0 2px 12px rgba(130,51,72,0.06);
+}
+.level-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(130,51,72,0.12); }
+.level-badge {
+  font-family: var(--font-ui); font-size: 9px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--teal); border: 1px solid rgba(43,165,180,0.25);
+  background: rgba(43,165,180,0.08);
+  padding: 5px 12px; display: inline-block; margin-bottom: 18px;
+}
+.level-name {
+  font-family: var(--font-serif); font-size: 32px; font-weight: 400;
+  color: var(--charcoal); margin-bottom: 12px;
+}
+.level-desc {
+  font-size: 15px; line-height: 1.78; color: var(--muted);
+  font-weight: 300; margin-bottom: 18px;
+}
+.level-keywords {
+  font-family: var(--font-ui); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; color: var(--teal);
+}
+.levels-grid .level-card:nth-child(1) { border-top-color: var(--rose); }
+.levels-grid .level-card:nth-child(1) .level-badge { color: var(--rose); border-color: rgba(130,51,72,0.25); background: rgba(130,51,72,0.07); }
+.levels-grid .level-card:nth-child(1) .level-keywords { color: var(--rose); }
+.levels-grid .level-card:nth-child(2) { border-top-color: var(--teal); }
+.levels-grid .level-card:nth-child(2) .level-badge { color: var(--teal); border-color: rgba(43,165,180,0.25); background: rgba(43,165,180,0.07); }
+.levels-grid .level-card:nth-child(2) .level-keywords { color: var(--teal); }
+.levels-grid .level-card:nth-child(3) { border-top-color: var(--rose); }
+.levels-grid .level-card:nth-child(3) .level-badge { color: var(--rose); border-color: rgba(130,51,72,0.25); background: rgba(130,51,72,0.07); }
+.levels-grid .level-card:nth-child(3) .level-keywords { color: var(--rose); }
+
+/* ════════════════════════════════════════
+   5. HOW IT WORKS — linen, white step cards
+════════════════════════════════════════ */
+.how {
+  background: var(--cream-deep);
+  border-top: 4px solid var(--rose);
+  padding: clamp(64px,9vw,104px) clamp(24px,6vw,80px);
+  position: relative;
+}
+.how-inner { max-width: 1200px; margin: 0 auto; }
+.how-header {
+  text-align: center; max-width: 600px; margin: 0 auto clamp(48px,6vw,72px);
+}
+.how .label.light { color: var(--teal); }
+.how-header h2 {
+  font-size: clamp(32px,4vw,52px); line-height: 1.15;
+  color: var(--charcoal); margin-bottom: 20px;
+}
+.how-header h2 em { font-style: italic; color: var(--rose); }
+.how-header p {
+  font-size: clamp(15px,1.8vw,17px); line-height: 1.8;
+  color: var(--muted); font-weight: 300;
+}
+.steps {
+  max-width: 780px; margin: 0 auto;
+  display: flex; flex-direction: column; gap: 3px;
+  border-left: none; padding-left: 0;
+}
+.step {
+  display: grid; grid-template-columns: 72px 1fr;
+  gap: 0; align-items: stretch;
+  position: relative;
+  background: white;
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--teal);
+}
+.step-num {
+  font-family: var(--font-serif); font-size: 32px; font-weight: 300;
+  color: var(--teal); line-height: 1;
+  position: relative; left: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(43,165,180,0.05);
+  border-right: 1px solid var(--rule);
+  padding: 24px 0;
+}
+.step-content { padding: 24px 32px; }
+.step-content h4 {
+  font-family: var(--font-ui); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--rose); margin-bottom: 8px;
+}
+.step-content p {
+  font-size: 15px; line-height: 1.78; color: var(--text-warm); font-weight: 300;
+}
+.step-content p strong { color: var(--charcoal); font-weight: 400; }
+.step-note {
+  margin-top: 12px; font-family: var(--font-ui); font-size: 12px;
+  font-weight: 600; color: var(--teal); letter-spacing: 0.05em;
+}
+
+/* ════════════════════════════════════════
+   3b. WATER BRIDGE — mountain lake, Peru
+════════════════════════════════════════ */
+.lake-bridge {
+  position: relative; overflow: hidden;
+  height: 480px; min-height: 480px;
+  display: flex; align-items: center; justify-content: center;
+  background-color: #0a141e;
+  background-image: url('https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69fa37aabecb53a735081d44.jpg');
+  background-size: cover;
+  background-position: center 40%;
+}
+.lake-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(10,20,28,0.45) 0%,
+    rgba(10,18,26,0.75) 100%
+  );
+}
+.lake-inner {
+  position: relative; z-index: 2;
+  text-align: center; max-width: 680px;
+  padding: clamp(72px,10vw,110px) clamp(24px,6vw,64px);
+}
+.lake-label {
+  font-family: var(--font-ui); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: rgba(43,165,180,0.65);
+  margin-bottom: 24px; display: block;
+}
+.lake-text {
+  font-family: var(--font-serif); font-size: clamp(24px,3.8vw,46px);
+  font-style: italic; color: white; line-height: 1.35;
+  margin-bottom: 20px;
+}
+.lake-text em { color: rgba(43,165,180,0.9); font-style: normal; }
+.lake-sub {
+  font-family: var(--font-ui); font-size: 10px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+}
+
+/* ════════════════════════════════════════
+   3c. BELL ROCK BRIDGE — Sedona
+   (visual break between elements and levels)
+════════════════════════════════════════ */
+.monique-bridge {
+  position: relative; overflow: hidden;
+  height: clamp(420px, 65vw, 820px);
+  background-color: #2A1A10;
+  background-image: url('https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69f7d4fd6b07ab330355f7ee.jpg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center 35%;
+}
+.monique-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26,20,16,0.10) 0%,
+    rgba(26,20,16,0.32) 100%
+  );
+}
+
+/* ════════════════════════════════════════
+   6. QUOTE — full-bleed bridge photo (Peru)
+════════════════════════════════════════ */
+.quote-section {
+  position: relative; overflow: hidden;
+  min-height: 480px;
+  display: flex; align-items: center; justify-content: center;
+}
+.quote-bg {
+  position: absolute; inset: 0;
+}
+.quote-bg img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 30%;
+}
+.quote-bg-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(26,20,16,0.38) 0%,
+    rgba(26,20,16,0.52) 50%,
+    rgba(26,20,16,0.72) 100%);
+}
+.quote-inner {
+  position: relative; z-index: 2;
+  max-width: 720px; margin: 0 auto;
+  padding: clamp(64px,9vw,104px) clamp(24px,6vw,80px);
+  text-align: center;
+}
+.quote-text {
+  font-family: var(--font-serif); font-size: clamp(26px,4vw,46px);
+  font-style: italic; font-weight: 400; color: white;
+  line-height: 1.3; margin-bottom: 24px;
+}
+.quote-text em { color: var(--teal); font-style: normal; }
+.quote-context {
+  font-size: clamp(14px,1.6vw,16px); line-height: 1.8;
+  color: rgba(255,255,255,0.5); font-weight: 300;
+  max-width: 520px; margin: 0 auto 36px;
+}
+.quote-context strong { color: rgba(255,255,255,0.75); font-weight: 400; }
+.quote-cite {
+  font-family: var(--font-ui); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ════════════════════════════════════════
+   7. TWO PROFILES — teal deep, clean
+════════════════════════════════════════ */
+.profiles {
+  background: linear-gradient(160deg, #1A2830 0%, #22343C 100%);
+  padding: clamp(64px,9vw,104px) clamp(24px,6vw,80px);
+}
+.profiles-header {
+  text-align: center; max-width: 600px; margin: 0 auto clamp(48px,6vw,64px);
+}
+.profiles-header h2 {
+  font-size: clamp(32px,4vw,52px); line-height: 1.15;
+  color: white; margin-bottom: 20px;
+}
+.profiles-header h2 em { font-style: italic; color: rgba(43,165,180,0.85); }
+.profiles-header p {
+  font-size: clamp(15px,1.8vw,17px); line-height: 1.8;
+  color: rgba(255,255,255,0.46); font-weight: 300;
+}
+.profiles-grid {
+  max-width: 1000px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+}
+.profile-card {
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-top: 3px solid rgba(255,255,255,0.18);
+  padding: clamp(32px,4vw,48px) 36px;
+  transition: background 0.25s;
+}
+.profile-card:hover { background: rgba(255,255,255,0.14); }
+.profile-card.active { border-top-color: var(--rose); }
+.profile-card.circle  { border-top-color: var(--teal); }
+.profile-status {
+  font-family: var(--font-ui); font-size: 9px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+}
+.profile-card.active .profile-status { color: var(--rose-pale); }
+.profile-card.circle  .profile-status { color: var(--teal); }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.profile-card.active .status-dot { background: var(--rose); }
+.profile-card.circle  .status-dot { background: var(--teal); }
+.profile-icon { font-size: 32px; margin-bottom: 14px; display: block; }
+.profile-name {
+  font-family: var(--font-serif); font-size: 26px; font-weight: 500;
+  color: white; margin-bottom: 14px; line-height: 1.3;
+}
+.profile-desc {
+  font-size: 15px; line-height: 1.78;
+  color: rgba(255,255,255,0.70); font-weight: 300;
+  margin-bottom: 20px;
+}
+.profile-privacy {
+  padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.1);
+  font-family: var(--font-ui); font-size: 11px;
+  color: rgba(255,255,255,0.35); display: flex; gap: 8px;
+}
+
+
+/* ════════════════════════════════════════
+   MOBILE
+════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .fb { width: 100% !important; left: 0 !important; margin-left: 0 !important; position: relative; }
+
+  /* Philosophy — text only, stays centered */
+  .philosophy-inner { padding: clamp(48px,8vw,72px) 24px; }
+
+  /* Sedona bridge — clamp handles mobile sizing */
+
+  /* Elements — 2 col */
+  .elements-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  /* Lake bridge — shorter on mobile */
+  .lake-bridge { height: 360px; min-height: 360px; }
+
+  /* Levels — 1 col */
+  .levels-grid { grid-template-columns: 1fr; gap: 12px; }
+
+  /* Steps — compact on mobile */
+  .step { grid-template-columns: 52px 1fr; }
+  .step-num { font-size: 24px; }
+  .step-content { padding: 18px 20px; }
+
+  /* Profiles — 1 col */
+  .profiles-grid { grid-template-columns: 1fr; gap: 20px; }
+
+  /* Closing buttons — stack */
+  .closing-btns { flex-direction: column; align-items: center; gap: 12px; }
+
+  /* Footer — 2 col */
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 480px) {
+  .elements-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+<script src="/components/nav.js"></script>
+
+<!-- ════════════════════════════════════════
+     1. HERO
+════════════════════════════════════════ -->
+<section class="hero fb">
+  <div class="hero-eyebrow">
+    <span class="hero-eyebrow-line"></span>
+    The TrueLuvTake2 Approach
+    <span class="hero-eyebrow-line"></span>
+  </div>
+  <h1>The Five <em>Elements</em><br>of Connection</h1>
+  <p class="hero-sub">Not a score. Not a type. <strong>A reflective mirror</strong> — designed to illuminate how love moves through you.</p>
+  <a href="#how-it-works" class="btn-rose">Explore the Framework →</a>
+</section>
+
+<!-- ════════════════════════════════════════
+     2a. LAKE — mountain lake, Sacred Valley Peru (full-bleed spread)
+════════════════════════════════════════ -->
+<section class="lake-bridge fb">
+  <div class="lake-overlay"></div>
+  <div class="lake-inner">
+    <span class="lake-label">Water · Emotional Flow</span>
+    <p class="lake-text">The Water element asks not how much you feel —<br>but how honestly you <em>flow.</em></p>
+    <span class="lake-sub">— The Five Elements of Connection</span>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     2b. PHILOSOPHY — centered text, no photo
+════════════════════════════════════════ -->
+<section class="philosophy fb">
+  <div class="philosophy-inner">
+    <div class="philosophy-text">
+      <span class="label rose">Our Approach</span>
+      <h2>Not scores. Not types.<br><em>A language for love.</em></h2>
+      <p>At TrueLuvTake2, we don't reduce people to scores, types, or algorithms. Instead, we reflect connection through five foundational conditions — relational qualities that help love take root, deepen, and endure.</p>
+      <p>Every person expresses all five — just in <strong>different ways and different seasons of life.</strong> This framework is not designed for comparison. It is designed for clarity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     3. FIVE ELEMENTS — dark, cards pop
+════════════════════════════════════════ -->
+<section class="framework fb">
+  <div class="framework-header">
+    <span class="label light">The Framework</span>
+    <h2>Five Elements, <em>One Language</em></h2>
+    <p>Each element reflects a distinct dimension of how connection forms, deepens, and sustains itself in relationship.</p>
+  </div>
+  <div class="elements-grid">
+    <div class="el-card">
+      <div class="el-sym"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#823348" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="15" r="11"/><path d="M4 15h22M15 4c-3 3-5 6.5-5 11s2 8 5 11M15 4c3 3 5 6.5 5 11s-2 8-5 11"/></svg></div>
+      <div class="el-name">Earth</div>
+      <span class="el-sub">Ground &amp; Capacity</span>
+      <p class="el-desc">The stability, readiness, and real-life availability that allow love to take root.</p>
+      <p class="el-body">Reflects follow-through, steadiness, and the ability to make room for relationship in a full life.</p>
+    </div>
+    <div class="el-card">
+      <div class="el-sym"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#823348" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4c0 0-9 9-9 14.5a9 9 0 0 0 18 0C24 13 15 4 15 4z"/></svg></div>
+      <div class="el-name">Water</div>
+      <span class="el-sub">Emotional Flow</span>
+      <p class="el-desc">The movement of feeling, empathy, and repair.</p>
+      <p class="el-body">Reflects how emotion is expressed, received, and navigated in connection — including the ability to repair.</p>
+    </div>
+    <div class="el-card">
+      <div class="el-sym"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#823348" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h14a4 4 0 0 0 0-8"/><path d="M4 18h18a4 4 0 0 1 0 8H20"/></svg></div>
+      <div class="el-name">Air</div>
+      <span class="el-sub">Pace &amp; Boundaries</span>
+      <p class="el-desc">The rhythm, communication, and spaciousness that let love breathe.</p>
+      <p class="el-body">Reflects how clarity is built through pacing, honest boundaries, and knowing your own needs.</p>
+    </div>
+    <div class="el-card">
+      <div class="el-sym"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#823348" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 26c-5.5 0-9-3.5-9-8 0-3 1.5-5.5 4-7-0.5 2 0.5 4 2 4.5C12 11 13 7 15 4c1 3 3.5 5 3.5 8.5 1.5-1 2-3 1.5-5 2 2 4 5 4 8.5 0 4.5-3.5 10-9 10z"/></svg></div>
+      <div class="el-name">Fire</div>
+      <span class="el-sub">Intimacy &amp; Connection</span>
+      <p class="el-desc">The warmth, attraction, and aliveness that keep love vibrant.</p>
+      <p class="el-body">Reflects chemistry, playfulness, and the spark that brings joy and desire into relationship.</p>
+    </div>
+    <div class="el-card">
+      <div class="el-sym"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#823348" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4v22M4 15h22M8 8l14 14M22 8L8 22"/></svg></div>
+      <div class="el-name">Ether</div>
+      <span class="el-sub">Relational Support</span>
+      <p class="el-desc">The wider container around relationship.</p>
+      <p class="el-body">Reflects the role of community, family, values, and broader life context in helping love grow sustainably.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     3b. BELL ROCK BRIDGE — Sedona, the path forward
+════════════════════════════════════════ -->
+<section class="monique-bridge fb">
+  <div class="monique-overlay"></div>
+</section>
+
+<!-- ════════════════════════════════════════
+     4. THREE LEVELS — burgundy warm
+════════════════════════════════════════ -->
+<section class="levels fb">
+  <div class="levels-header">
+    <span class="label">The Three Levels</span>
+    <h2>Not a Hierarchy —<br><em>Stages of Aliveness</em></h2>
+    <p>Every element is reflected at one of three levels. These are not rankings — they're descriptions of where you are right now. All three are honored equally.</p>
+  </div>
+  <div class="levels-grid">
+    <div class="level-card">
+      <span class="level-badge">Rooted</span>
+      <h3 class="level-name">Rooted</h3>
+      <p class="level-desc">Well-established and actively expressed. This element is a current strength in how you approach connection.</p>
+      <div class="level-keywords">Steady. Present. Real.</div>
+    </div>
+    <div class="level-card">
+      <span class="level-badge">Growing</span>
+      <h3 class="level-name">Growing</h3>
+      <p class="level-desc">Present and developing. Something meaningful is here — and it is still taking clearer shape.</p>
+      <div class="level-keywords">Forming. Alive. Moving.</div>
+    </div>
+    <div class="level-card">
+      <span class="level-badge">Seeding</span>
+      <h3 class="level-name">Seeding</h3>
+      <p class="level-desc">Early, tender, and still forming. This element is not absent — it is quietly taking root.</p>
+      <div class="level-keywords">Tender. Early. Possible.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     5. HOW IT WORKS — cream, clean numbered list
+════════════════════════════════════════ -->
+<section class="how fb" id="how-it-works">
+  <div class="how-inner">
+    <div class="how-header">
+      <span class="label light">How It Works</span>
+      <h2>The Attunement <em>Profile</em></h2>
+      <p>Your responses move through six relational domains — one for each dimension of connection. There are <strong>no right answers.</strong> No scores are ever shown to you. What emerges is a gentle reflection — a portrait of how connection lives in you right now.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">01</span>
+        <div class="step-content">
+          <h4>Complete the Profile</h4>
+          <p>A quiet, reflective set of questions across six relational domains. About 10–15 minutes. Only honest answers — no right or wrong.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">02</span>
+        <div class="step-content">
+          <h4>Scored Behind the Scenes</h4>
+          <p>Weighted values work quietly in the background. You never see numbers or percentages — only the human language of your portrait.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <div class="step-content">
+          <h4>Each Element Is Reflected</h4>
+          <p>Earth, Water, Air, Fire, and Ether — each shown at Rooted, Growing, or Seeding, with a short narrative written for you personally.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">04</span>
+        <div class="step-content">
+          <h4>You Receive Your Full Results</h4>
+          <p>Five element reflections, your strengths, and what may want more care — returned as a private portrait, emailed directly to you.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">05</span>
+        <div class="step-content">
+          <h4>Your Profile Shapes the Journey</h4>
+          <p>Your profile becomes your relational portrait — the foundation your Advisory Circle draws from as they support your journey. They receive an overall impression of who you are and how you connect, giving them the context to advocate thoughtfully on your behalf.</p>
+          <div class="step-note">Your private specifics remain yours alone. Your circle sees the portrait — not the details.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     6. QUOTE — Crossing the Bridge, Peru
+════════════════════════════════════════ -->
+<section class="quote-section fb">
+  <div class="quote-bg">
+    <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69f7d8346b07ab330356845f.jpg"
+         alt="Crossing a bridge in Peru — the path forward">
+    <div class="quote-bg-overlay"></div>
+  </div>
+  <div class="quote-inner">
+    <p class="quote-text">"Love doesn't ask you to compete.<br>It asks you to <em>arrive.</em>"</p>
+    <p class="quote-context">Modern dating platforms invite comparison — who is more accomplished, more attractive, more compatible. <strong>TrueLuvTake2 is built differently.</strong> Your profile is not a résumé. It is an invitation to be known.</p>
+    <div class="quote-cite">— Monique Alemán, Founder · TrueLuvTake2</div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     7. TWO PROFILES — teal deep
+════════════════════════════════════════ -->
+<section class="profiles fb">
+  <div class="profiles-header">
+    <span class="label">Two Profiles</span>
+    <h2>Designed for <em>Real Lives</em></h2>
+    <p>A guided reflection experience for both you and the people who stand beside you in this journey.</p>
+  </div>
+  <div class="profiles-grid">
+    <div class="profile-card active">
+      <div class="profile-status">
+        <div class="status-dot"></div>Available Now
+      </div>
+      <div class="profile-icon"><svg width="28" height="28" viewBox="0 0 30 30" fill="none" stroke="#823348" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 26S4 19 4 11a6 6 0 0 1 11-3 6 6 0 0 1 11 3c0 8-11 15-11 15z"/></svg></div>
+      <h3 class="profile-name">Partner Attunement Profile</h3>
+      <p class="profile-desc">A reflective starting point for those ready to explore partnership again. Understand your relational readiness, emotional availability, and the conditions where love can genuinely take hold in your life right now.</p>
+      <div class="profile-privacy">
+        <span>🔒</span>
+        Your results are private — returned directly to you. No one else sees your specific profile details.
+      </div>
+      <a href="/member-introduction-page" class="btn-rose" style="margin-top:28px;display:inline-block;">Begin My Attunement Profile →</a>
+    </div>
+    <div class="profile-card circle">
+      <div class="profile-status">
+        <div class="status-dot"></div>Unlocks with Membership
+      </div>
+      <div class="profile-icon"><svg width="28" height="28" viewBox="0 0 30 30" fill="none" stroke="#823348" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="8" r="3.5"/><circle cx="24" cy="20" r="3"/><circle cx="6" cy="20" r="3"/><path d="M15 11.5c0 4-4 6.5-9 6.5M15 11.5c0 4 4 6.5 9 6.5"/></svg></div>
+      <h3 class="profile-name">Advisory Circle Insight</h3>
+      <p class="profile-desc">A guided reflection designed for the people who stand beside you — your adult children or trusted advisors. As part of your member dossier, your Advisory Circle receives an overall impression of your relational portrait — enough to search thoughtfully on your behalf. The private details remain yours alone.</p>
+      <div class="profile-privacy">
+        <span>🤝</span>
+        Your circle receives context, not confidences. The impression, not the intimacy.
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

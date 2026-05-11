@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How It Works — TrueLuvTake2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ── MONDAi Full-Bleed Reset (per TLT2_MONDAi_FullBleed_MobileRules.md) ── */
+
+
+
+/* ── Full-bleed (Mel Rule) ── */
+.fb {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .fb {
+    width: 100% !important;
+    left: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+
+
+:root {
+  --rose: #823348;
+  --rose-dark: #6d2a3d;
+  --teal: #2BA5B4;
+  --cream: #FAF7F2;
+  --cream-deep: #F2EDE4;
+  --charcoal: #1A1410;
+  --charcoal-mid: #252018;
+  --charcoal-light: #332D26;
+  --charcoal-card: #2A2420;
+  --text-warm: #2E2725;
+  --muted: #7a6e66;
+  --rule: #e8e0d6;
+  --rule-dark: rgba(255,255,255,0.08);
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-body: "Source Serif 4", Georgia, serif;
+  --font-ui: "Instrument Sans", sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text-warm);font-family:var(--font-body);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden  padding-top: 88px;
+}
+
+/* ── HERO ── */
+.hero{background:var(--charcoal);width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box;padding:clamp(80px,8vw,100px) 0 clamp(48px,8vw,80px);overflow:hidden}
+.hero::before{content:"";position:absolute;top:-20%;right:-10%;width:50%;height:140%;background:radial-gradient(ellipse at center,rgba(43,165,180,0.07) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:780px;margin:0 auto;text-align:center;padding:0 clamp(1.25rem,5vw,2.5rem)}
+.hero-label{font-family:var(--font-ui);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:20px}
+.hero-title{font-family:var(--font-serif);font-size:clamp(32px,4.5vw,54px);font-weight:400;color:white;line-height:1.2;margin-bottom:20px}
+.hero-title em{font-style:italic;color:rgba(232,189,201,0.9)}
+.hero-body{font-size:clamp(15px,1.8vw,18px);color:rgba(255,255,255,0.72);max-width:580px;margin:0 auto 36px;line-height:1.75}
+.hero-paths{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.hero-path-btn{display:inline-block;padding:12px 28px;border-radius:50px;font-family:var(--font-ui);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s}
+.hero-path-btn.seeker{background:var(--rose);color:white;border-top:3px solid var(--teal)}
+.hero-path-btn.seeker:hover{background:var(--rose-dark)}
+.hero-path-btn.circle{background:transparent;border:1.5px solid rgba(43,165,180,0.6);color:var(--teal)}
+.hero-path-btn.circle:hover{border-color:var(--teal);background:rgba(43,165,180,0.08)}
+
+/* ── SHARED ── */
+.section-inner{max-width:1200px;margin:0 auto;padding:clamp(48px,8vw,80px) clamp(1.25rem,5vw,2.5rem)}
+.section-label{font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+.section-label.rose{color:var(--rose)}
+.section-title{font-family:var(--font-serif);font-size:clamp(24px,3vw,38px);font-weight:400;line-height:1.25;margin-bottom:16px;color:var(--charcoal)}
+.section-title.light{color:white}
+.section-title em{color:var(--rose);font-style:italic}
+.section-title.light em{color:rgba(232,189,201,0.9)}
+.section-intro{font-size:16px;color:var(--muted);line-height:1.8;max-width:640px;margin-bottom:48px}
+.section-intro.light{color:rgba(255,255,255,0.7)}
+
+.paths-section{background:var(--cream);width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box;}
+
+/* ── PATH CARDS ── */
+.path-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:0}
+.path-card{background:white;border-radius:16px;padding:36px 32px;border-top:4px solid var(--rule);text-decoration:none;display:block;transition:box-shadow 0.2s,transform 0.15s;border:1px solid var(--rule);border-top-width:4px}
+.path-card:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,0.09)}
+.path-card.seeker{border-top-color:var(--rose);border-top:3px solid var(--teal)}
+.path-card.circle{border-top-color:var(--teal)}
+.path-card-icon{font-size:28px;margin-bottom:12px}
+.path-card-label{font-family:var(--font-ui);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.path-card-title{font-family:var(--font-serif);font-size:22px;color:var(--charcoal);margin-bottom:10px}
+.path-card-body{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:16px}
+.path-card-link{font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--rose);text-decoration:none}
+.path-card.circle .path-card-link{color:var(--teal)}
+
+/* ── JOURNEY STEPS ── */
+.steps-section{background:linear-gradient(160deg,#1A1410 0%,#0F0C09 100%);width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box;}
+.steps-inner{max-width:1200px;margin:0 auto;padding:clamp(48px,8vw,80px) clamp(1.25rem,5vw,2.5rem)}
+.steps-grid{display:flex;flex-direction:column;gap:0}
+.step{display:grid;grid-template-columns:80px 1fr;gap:32px;padding:40px 0;border-bottom:1px solid var(--rule-dark);align-items:start}
+.step:last-child{border-bottom:none}
+.step-num-wrap{display:flex;flex-direction:column;align-items:center;padding-top:4px}
+.step-num{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-size:20px;font-weight:600;background:var(--rose);color:white;flex-shrink:0}
+.step-num.rose{background:var(--rose)}
+.step-num.teal{background:var(--teal)}
+.step-connector{width:1px;height:100%;min-height:20px;background:rgba(255,255,255,0.1);margin-top:8px;display:none}
+.step-content{}
+.step-badge{display:inline-block;font-family:var(--font-ui);font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px}
+.step-badge.free{background:rgba(43,165,180,0.2);color:var(--teal)}
+.step-badge.paid{background:rgba(130,51,72,0.25);color:rgba(232,189,201,0.9)}
+.step-title{font-family:var(--font-serif);font-size:22px;font-weight:400;color:white;margin-bottom:10px;line-height:1.3}
+.step-body{font-size:15px;color:rgba(255,255,255,0.68);line-height:1.75;margin-bottom:14px}
+.step-details{list-style:none;display:flex;flex-direction:column;gap:7px}
+.step-details li{font-family:var(--font-ui);font-size:12px;color:rgba(255,255,255,0.55);padding-left:18px;position:relative;line-height:1.5}
+.step-details li::before{content:"→";position:absolute;left:0;color:var(--teal);font-size:11px}
+.step-details li.rose::before{color:rgba(232,189,201,0.7)}
+
+/* ── ADVISORY CIRCLE SECTION ── */
+.circle-section{background:linear-gradient(160deg,#5E2233 0%,#7A2D44 100%);width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box;}
+.circle-inner{max-width:1200px;margin:0 auto;padding:clamp(48px,8vw,80px) clamp(1.25rem,5vw,2.5rem)}
+.circle-split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.circle-photo-wrap{position:relative;border-radius:16px;overflow:hidden}
+.circle-photo-wrap img{width:100%;height:420px;object-fit:cover;display:block}
+.circle-photo-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,20,16,0.85));padding:24px 20px 20px}
+.circle-photo-caption p{font-family:var(--font-serif);font-style:italic;font-size:15px;color:rgba(255,255,255,0.9);line-height:1.55}
+.circle-steps{display:flex;flex-direction:column;gap:20px;margin-top:24px}
+.circle-step{display:flex;gap:16px;align-items:flex-start}
+.circle-step-dot{width:32px;height:32px;border-radius:50%;background:var(--teal);border:1.5px solid var(--teal);display:flex;align-items:center;justify-content:center;font-family:var(--font-ui);font-size:11px;font-weight:600;color:var(--teal);flex-shrink:0;margin-top:2px}
+.circle-step-content{}
+.circle-step-title{font-family:var(--font-ui);font-size:12px;font-weight:600;color:white;margin-bottom:3px;letter-spacing:0.02em}
+.circle-step-body{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6}
+
+/* ── PRESENTATION MOMENT ── */
+.presentation-section{background:var(--cream-deep);width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box;}
+.pres-inner{max-width:1200px;margin:0 auto;padding:clamp(48px,8vw,80px) clamp(1.25rem,5vw,2.5rem)}
+.pres-split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.pres-quote-block{background:var(--charcoal);border-radius:16px;padding:40px 36px}
+.pres-quote-block blockquote{font-family:var(--font-serif);font-size:clamp(17px,2vw,22px);font-style:italic;color:white;line-height:1.65;margin-bottom:16px}
+.pres-quote-block cite{font-family:var(--font-ui);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal)}
+.pres-cards{display:flex;flex-direction:column;gap:14px}
+.pres-card{background:white;border-radius:12px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;border:1px solid var(--rule)}
+.pres-card-icon{width:36px;height:36px;flex-shrink:0;margin-top:2px;color:var(--rose);display:flex;align-items:center;justify-content:center;}
+.pres-card-title{font-family:var(--font-ui);font-size:12px;font-weight:600;color:var(--charcoal);margin-bottom:3px}
+.pres-card-body{font-size:13px;color:var(--muted);line-height:1.55}
+
+/* ── PRICING SNAPSHOT ── */
+.pricing-snap{background:linear-gradient(160deg,#5E2233 0%,#7A2D44 100%);width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box;}
+.pricing-snap-inner{max-width:900px;margin:0 auto;padding:72px 40px;text-align:center}
+.pricing-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;margin-bottom:28px}
+.price-snap-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:28px 22px;text-align:center}
+.price-snap-card.featured{background:rgba(130,51,72,0.15);border-color:rgba(130,51,72,0.35)}
+.price-snap-eyebrow{font-family:var(--font-ui);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.price-snap-card.featured .price-snap-eyebrow{color:rgba(232,189,201,0.8)}
+.price-snap-amount{font-family:var(--font-serif);font-size:40px;color:white;margin-bottom:4px}
+.price-snap-period{font-family:var(--font-ui);font-size:11px;color:rgba(255,255,255,0.45);margin-bottom:14px}
+.price-snap-desc{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6}
+.pricing-snap-link{display:inline-block;font-family:var(--font-ui);font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+
+/* ── TIMELINE ── */
+.timeline-section{background:var(--cream);width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box;}
+.timeline-inner{max-width:1200px;margin:0 auto;padding:clamp(48px,8vw,80px) clamp(1.25rem,5vw,2.5rem)}
+.timeline-track{position:relative;margin-top:40px}
+.timeline-track::before{content:"";position:absolute;left:22px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--teal),var(--rose));opacity:0.3}
+.timeline-item{display:flex;gap:28px;margin-bottom:36px;position:relative;align-items:flex-start}
+.timeline-dot{width:46px;height:46px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:0.5px;z-index:1}
+.timeline-dot.done{background:var(--teal);color:white}
+.timeline-dot.live{background:var(--rose);color:white}
+.timeline-dot.soon{background:var(--cream-deep);color:var(--muted);border:2px solid var(--rule)}
+.timeline-dot.future{background:transparent;color:var(--muted);border:2px dashed var(--rule)}
+.timeline-content{}
+.timeline-when{font-family:var(--font-ui);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.timeline-milestone{font-family:var(--font-serif);font-size:17px;color:var(--charcoal);margin-bottom:4px}
+.timeline-status{font-family:var(--font-ui);font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:2px 9px;border-radius:20px}
+.status-done{background:rgba(43,165,180,0.12);color:var(--teal)}
+.status-live{background:rgba(130,51,72,0.1);color:var(--rose)}
+.status-soon{background:var(--cream-deep);color:var(--muted)}
+.status-future{background:transparent;color:var(--muted);border:1px solid var(--rule)}
+
+/* ── FAQ ── */
+.faq-section{background:var(--charcoal);width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box;}
+.faq-inner{max-width:1200px;margin:0 auto;padding:clamp(48px,8vw,80px) clamp(1.25rem,5vw,2.5rem)}
+.faq-cats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
+.faq-cat-btn{font-family:var(--font-ui);font-size:11px;font-weight:500;padding:7px 18px;border-radius:50px;border:1.5px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.55);background:transparent;cursor:pointer;transition:all 0.2s}
+.faq-cat-btn.active{background:var(--teal);border-color:var(--teal);color:white}
+.faq-cat-btn:hover{border-color:var(--teal);color:var(--teal)}
+.faq-list{display:flex;flex-direction:column;gap:2px}
+.faq-item{border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.07)}
+.faq-q{width:100%;background:rgba(255,255,255,0.04);border:none;text-align:left;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:background 0.2s}
+.faq-q:hover{background:rgba(255,255,255,0.07)}
+.faq-q-text{font-family:var(--font-body);font-size:15px;color:rgba(255,255,255,0.88);line-height:1.4;padding-right:16px;text-align:left}
+.faq-icon{color:var(--teal);font-size:20px;flex-shrink:0;transition:transform 0.25s;line-height:1}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.25s ease}
+.faq-item.open .faq-a{max-height:400px}
+.faq-a-inner{padding:0 22px 20px;font-size:14px;color:rgba(255,255,255,0.62);line-height:1.75;border-top:1px solid rgba(255,255,255,0.06);padding-top:16px}
+.faq-a-inner strong{color:rgba(255,255,255,0.85);font-weight:600}
+.faq-hidden{display:none}
+
+/* ── CTA ── */
+.cta-section{background:var(--rose);width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box;padding:clamp(48px,8vw,80px) clamp(1.25rem,5vw,2.5rem);text-align:center;overflow:hidden}
+.cta-section::before{content:"";position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:80%;height:200%;background:radial-gradient(ellipse at center,rgba(255,255,255,0.07) 0%,transparent 60%);pointer-events:none}
+.cta-inner{max-width:620px;margin:0 auto;position:relative}
+.cta-title{font-family:var(--font-serif);font-size:clamp(26px,3.5vw,42px);font-weight:400;color:white;margin-bottom:14px;line-height:1.25}
+.cta-title em{font-style:italic;opacity:0.88}
+.cta-body{font-size:16px;color:rgba(255,255,255,0.78);line-height:1.75;margin-bottom:36px}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-btn{display:inline-block;padding:16px 36px;border-radius:50px;font-family:var(--font-ui);font-size:14px;font-weight:600;text-decoration:none;transition:all 0.2s}
+.cta-btn.primary{background:white;color:var(--rose)}
+.cta-btn.primary:hover{background:var(--cream);transform:translateY(-2px)}
+.cta-btn.secondary{background:transparent;border:1.5px solid rgba(255,255,255,0.5);color:white}
+.cta-btn.secondary:hover{border-color:white;background:rgba(255,255,255,0.08)}
+.cta-fine{font-family:var(--font-ui);font-size:11px;color:rgba(255,255,255,0.45);margin-top:18px;font-style:italic}
+
+/* ── FOOTER ── */
+.footer{background:#0F0C09;width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box;padding:clamp(36px,6vw,56px) 0 clamp(24px,4vw,36px);}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,5vw,2.5rem)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.7;margin-top:12px}
+.footer-col-title{font-family:var(--font-ui);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;margin-bottom:8px;transition:color 0.2s}
+.footer-col a:hover{color:rgba(255,255,255,0.85)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-family:var(--font-ui);font-size:11px;color:rgba(255,255,255,0.25)}
+.footer-tagline{font-family:var(--font-serif);font-style:italic;font-size:13px;color:rgba(255,255,255,0.3)}
+
+
+/* ── Photo Break ── */
+.photo-break { position:relative; overflow:hidden; }
+.photo-break-overlay {
+  position:absolute;inset:0;
+  background: linear-gradient(to top, rgba(26,20,16,0.72) 0%, rgba(26,20,16,0.2) 50%, transparent 100%);
+}
+.photo-break-text {
+  position:absolute;bottom:0;right:0;
+  padding:clamp(24px,4vw,48px) clamp(24px,6vw,80px);
+  text-align:right;
+  max-width:60%;
+}
+.photo-break-text p {
+  font-family:var(--font-serif);font-size:clamp(18px,2.6vw,26px);
+  color:rgba(255,255,255,0.92);font-style:italic;line-height:1.5;
+  max-width:680px;
+}
+.photo-break-text em { color: rgba(43,165,180,0.9); font-style:italic; }
+
+/* ── Presentation section background image ── */
+.pres-card-icon svg { color: var(--rose); }
+
+
+@media (max-width: 600px) {
+  .step { grid-template-columns: 56px 1fr; gap: 16px; padding: 28px 0; }
+  .step-num-wrap .step-num { width: 40px; height: 40px; font-size: 15px; }
+  .photo-break-text p { font-size: 17px; }
+
+  /* Presentation Moment — stack quote block above cards */
+  .pres-split { grid-template-columns: 1fr !important; gap: 28px; }
+
+  /* Pricing — stack free card above paid card */
+  .pricing-grid { grid-template-columns: 1fr !important; }
+
+  /* Witch arrow — hide on mobile */
+  .witch-arrow-wrap { display: none !important; }
+  /* Witch text — reset to left edge on mobile, allow 3 lines */
+  .witch-text { margin-left: 4px !important; max-width: 160px !important; }
+}
+</style>
+</head>
+<body>
+<script src="/components/nav.js"></script>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-label">The Seeker Journey</p>
+    <h1 class="hero-title">A process designed around you.<br><em>Not against you.</em></h1>
+    <p class="hero-body">TrueLuvTake2 is not a platform you scroll through alone. It is a guided, human experience — beginning with self-knowledge and ending with the people who already love you doing the searching on your behalf.</p>
+    <div class="hero-paths">
+      <a href="#seeker-journey" class="hero-path-btn seeker">I'm a Seeker →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO BREAK -->
+<div style="width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box;display:grid;grid-template-rows:1fr;overflow:hidden;">
+
+  <!-- Layer 1: the photo -->
+  <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69f7d834dd67e758c0fb5486.jpg"
+       alt="Monique"
+       style="grid-row:1;grid-column:1;width:100%;height:clamp(320px,45vw,540px);object-fit:cover;object-position:68% 42%;display:block;">
+
+  <!-- Layer 2: gradient + text — sits on top via grid stacking -->
+  <div style="grid-row:1;grid-column:1;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(20px,3vw,40px) clamp(24px,5vw,72px);box-sizing:border-box;background:linear-gradient(to top,rgba(15,12,9,0.88) 0%,rgba(15,12,9,0.35) 50%,transparent 100%);z-index:2;">
+
+    <!-- Top zone: empty spacer pushes witch to middle -->
+    <div></div>
+
+    <!-- Middle zone: witch annotation — floats at ~50% image height, arrow points down toward the hat -->
+    <div class="witch-text" style="display:inline-block;transform:rotate(-3deg);max-width:260px;margin-left:clamp(20px,15vw,220px);">
+      <p style="font-family:'Caveat',cursive;font-size:clamp(18px,2.5vw,24px);color:#ffffff;line-height:1.4;text-shadow:0 2px 12px rgba(0,0,0,0.95);margin:0;font-weight:600;">Your Advisory Circle will do better than this! &#128516;</p>
+      <div class="witch-arrow-wrap" style="display:block;">
+        <svg width="86" height="44" viewBox="0 0 86 44" fill="none" style="display:block;margin-top:6px;">
+          <path d="M6 6 C28 4, 58 14, 78 30" stroke="rgba(255,255,255,0.88)" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M78 30 L65 22 M78 30 L66 38" stroke="rgba(255,255,255,0.88)" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Bottom zone: quote anchored bottom-right -->
+    <div style="display:flex;justify-content:flex-end;">
+      <p style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(15px,2vw,21px);color:rgba(255,255,255,0.93);font-style:italic;line-height:1.65;margin:0;text-align:right;max-width:420px;text-shadow:0 2px 8px rgba(0,0,0,0.7);">"The right love doesn't ask you to search harder.<br>It asks you to <em style="color:rgba(43,165,180,1);font-style:italic;">arrive more fully.</em>"</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- SEEKER JOURNEY -->
+<section class="steps-section" id="seeker-journey">
+  <div class="steps-inner">
+    <p class="section-label">Your Six Steps</p>
+    <h2 class="section-title light">From <em>self-knowledge</em><br>to your first introduction.</h2>
+    <p class="section-intro light" style="margin-bottom:48px">Every step was designed with intention. None of them ask you to compete, perform, or rush.</p>
+    <div class="steps-grid">
+
+      <div class="step">
+        <div class="step-num-wrap">
+          <div class="step-num teal">1</div>
+        </div>
+        <div class="step-content">
+          <span class="step-badge free">Free · Always</span>
+          <h3 class="step-title">Take your Attunement Profile.</h3>
+          <p class="step-body">Before anything else, we ask you to look inward. The Attunement Profile is a quiet, reflective set of questions across six domains — it takes 10 to 15 minutes and returns something no dating app has ever offered: a personal readiness reflection delivered to your inbox.</p>
+          <ul class="step-details">
+            <li>No scoring, no comparison — only honest reflection</li>
+            <li>Results returned privately by email</li>
+            <li>Reflects each of the Five Elements at Rooted, Growing, or Seeding</li>
+            <li>Available to anyone — Seekers, Advisory Circle members, and the curious</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num-wrap">
+          <div class="step-num teal">2</div>
+        </div>
+        <div class="step-content">
+          <span class="step-badge free">Free · Always</span>
+          <h3 class="step-title">Create your Introduction.</h3>
+          <p class="step-body">Your Introduction is your presence in The Garden — the first glimpse others will receive of who you are. It is not a resume. It is not a profile optimized for clicks. It is a genuine, unhurried expression of yourself.</p>
+          <ul class="step-details">
+            <li>Upload your photo and video — your photo places your tile in The Garden</li>
+            <li>Write your essence — what matters to you, what you're ready for</li>
+            <li>Record a 60-second video — your video is what lets your Advisory Circle step inside and begin searching on your behalf</li>
+            <li>Share your connection preference and location</li>
+            <li class="rose">Photo gets you into the Garden. Video opens the door for your love team to begin.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num-wrap">
+          <div class="step-num teal">3</div>
+        </div>
+        <div class="step-content">
+          <span class="step-badge free">Free · Waitlist</span>
+          <h3 class="step-title">Join The Garden and wait for the moment.</h3>
+          <p class="step-body">Once your Introduction is approved, you become a founding member of The Garden. Paid membership — and matching — activates when The Garden reaches 250 members. Until then, you are nurtured, kept informed, and part of a community that is building something real.</p>
+          <ul class="step-details">
+            <li>Receive curated updates, member spotlights, and founder reflections</li>
+            <li>Watch the founding counter grow toward 250</li>
+            <li>No payment required until the Garden opens</li>
+            <li class="rose">You are first in line — founding members receive priority when matching begins</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num-wrap">
+          <div class="step-num rose">4</div>
+        </div>
+        <div class="step-content">
+          <span class="step-badge paid">$444 to Activate</span>
+          <h3 class="step-title">Activate your membership and name your Advisory Circle.</h3>
+          <p class="step-body">When The Garden reaches 250 members, paid membership opens. Your $222/month commitment — with a 2-month minimum — activates your Advisory Circle and begins the search on your behalf. You will never have to scroll, swipe, or stress.</p>
+          <ul class="step-details">
+            <li>Name up to 2 adult children and 1 Trusted Love Advisor</li>
+            <li>Each receives a personal invitation by email</li>
+            <li>Adult children complete their own profile</li>
+            <li>Your Trusted Love Advisor completes a brief 3-question reflection</li>
+            <li class="rose">Your circle is your team — and they do the searching so you don't have to</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num-wrap">
+          <div class="step-num rose">5</div>
+        </div>
+        <div class="step-content">
+          <span class="step-badge paid">Active Membership</span>
+          <h3 class="step-title">Your circle searches The Garden.</h3>
+          <p class="step-body">This is where TrueLuvTake2 becomes unlike anything else. The people who already love you — who know your history, your humor, your heartbreaks, and your hopes — browse The Garden on your behalf. They watch videos. They discuss. They reach out to other Advisory Circles and begin the process of real, human vetting.</p>
+          <ul class="step-details">
+            <li>Advisory Circle browses member tiles: photo, video, essence, location</li>
+            <li>Circle discusses candidates privately within the platform</li>
+            <li>Circle reaches out to other circles — circle-to-circle vetting, not cold contact</li>
+            <li class="rose">You are not scrolling. You are not stressed. You are living your life while your team works.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num-wrap">
+          <div class="step-num rose">6</div>
+        </div>
+        <div class="step-content">
+          <span class="step-badge paid">The Moment</span>
+          <h3 class="step-title">Receive your presentation.</h3>
+          <p class="step-body">When your Advisory Circle is ready, you receive a presentation — not a notification. Their photo, their video, and a personal note from the people who love you, explaining why they chose this person and what stood out. It should feel like opening something special on a very special occasion.</p>
+          <ul class="step-details">
+            <li>Up to 3 presentations in your first 2 months</li>
+            <li>Optional Month 3 at $111 — 2 more presentations (5 total per cycle)</li>
+            <li>You decide how and when to connect — text, call, video, in person — at your pace</li>
+            <li class="rose">"This could be my pathway to true love. And I don't have to search alone."</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRESENTATION MOMENT -->
+<section class="presentation-section" style="position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;z-index:0;">
+    <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69f7d834d868be00855ee13d.jpg"
+         alt="" aria-hidden="true"
+         style="width:100%;height:100%;object-fit:cover;object-position:center 25%;opacity:0.38;">
+  </div>
+  <div style="position:relative;z-index:1;">
+  <div class="pres-inner">
+    <p class="section-label rose">The Presentation Moment</p>
+    <h2 class="section-title" style="margin-bottom:12px">Not a notification.<br><em>A gift.</em></h2>
+    <p class="section-intro" style="margin-bottom:40px">When your Advisory Circle is ready to present a candidate, the moment is designed to feel like opening something you have been waiting a very long time for.</p>
+    <div class="pres-split">
+      <div class="pres-quote-block">
+        <blockquote>"When your circle presents someone to you, it is not a match suggestion. It is an act of love. And you will feel the difference."</blockquote>
+        <cite>— Monique Alemán, Founder</cite>
+      </div>
+      <div class="pres-cards">
+        <div class="pres-card">
+          <div class="pres-card-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="24" height="18" rx="3"/>
+              <circle cx="14" cy="16" r="4"/>
+              <path d="M9 7l1.5-3h7L19 7"/>
+            </svg></div>
+          <div>
+            <p class="pres-card-title">Their photo</p>
+            <p class="pres-card-body">A genuine image — not a curated highlight reel, but a real person your circle has already vetted.</p>
+          </div>
+        </div>
+        <div class="pres-card">
+          <div class="pres-card-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="6" width="18" height="16" rx="2"/>
+              <path d="M20 10l6-4v16l-6-4V10z"/>
+            </svg></div>
+          <div>
+            <p class="pres-card-title">Their 60-second video</p>
+            <p class="pres-card-body">Unscripted. Unfiltered. In their own words. You'll know immediately if there's a spark worth exploring.</p>
+          </div>
+        </div>
+        <div class="pres-card">
+          <div class="pres-card-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="6" width="24" height="16" rx="2"/>
+              <path d="M2 8l12 9 12-9"/>
+            </svg></div>
+          <div>
+            <p class="pres-card-title">A note from your circle</p>
+            <p class="pres-card-body">The people who love you explain why they chose this person — what stood out, what felt right, what made them say yes.</p>
+          </div>
+        </div>
+        <div class="pres-card">
+          <div class="pres-card-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 14c0 0-8-2-8-8 0-3 3-4 6-2l2 2 2-2c3-2 6-1 6 2 0 6-8 8-8 8z"/>
+              <path d="M14 14v8"/>
+              <path d="M11 19l3 3 3-3"/>
+            </svg></div>
+          <div>
+            <p class="pres-card-title">Your pace. Your choice.</p>
+            <p class="pres-card-body">You decide if, when, and how to connect. Text, call, video, in person — on your terms, in your time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING SNAPSHOT -->
+<section class="pricing-snap">
+  <div class="pricing-snap-inner" style="text-align:left;max-width:960px">
+    <p class="section-label" style="text-align:center">Transparent Pricing</p>
+    <h2 class="section-title light" style="text-align:center;margin-bottom:10px">Every dollar visible <em>before</em> you commit.</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.55);max-width:520px;margin:0 auto 48px;text-align:center">We don't hide pricing behind consultation calls. Here is exactly what membership costs — and exactly what it includes.</p>
+    <div class="pricing-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px">
+
+      <!-- FREE CARD -->
+      <div style="background:white;border-radius:16px;padding:36px 32px;color:var(--charcoal)">
+        <p style="font-family:var(--font-ui);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:12px">Always Free</p>
+        <h3 style="font-family:var(--font-serif);font-size:22px;color:var(--charcoal);margin-bottom:16px;font-weight:400">Create Your Introduction</h3>
+        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px">
+          <span style="font-family:var(--font-serif);font-size:48px;color:var(--rose);line-height:1">$0</span>
+          <span style="font-family:var(--font-ui);font-size:13px;color:var(--muted)">&nbsp;/ always</span>
+        </div>
+        <p style="font-family:var(--font-ui);font-size:12px;color:var(--rose);font-style:italic;margin-bottom:24px">No credit card. No commitment. Ever.</p>
+        <div style="border-top:1px solid var(--rule);padding-top:20px;margin-bottom:20px">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--teal);font-weight:700;font-size:14px;margin-top:1px">✓</span><span style="font-size:14px;color:var(--text-warm)">Upload your photo and video</span></div>
+            <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--teal);font-weight:700;font-size:14px;margin-top:1px">✓</span><span style="font-size:14px;color:var(--text-warm)">Complete your Attunement Profile</span></div>
+            <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--teal);font-weight:700;font-size:14px;margin-top:1px">✓</span><span style="font-size:14px;color:var(--text-warm)">Receive your personal readiness results by email</span></div>
+            <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--muted);font-size:14px;margin-top:1px">—</span><span style="font-size:14px;color:var(--muted)">Advisory Circle access — not included</span></div>
+            <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--muted);font-size:14px;margin-top:1px">—</span><span style="font-size:14px;color:var(--muted)">Introduction matching — not included</span></div>
+          </div>
+        </div>
+        <div style="background:var(--cream-deep);border-left:3px solid var(--rose);border-radius:0 8px 8px 0;padding:16px 18px;margin-bottom:24px">
+          <p style="font-size:13px;color:var(--charcoal);line-height:1.7">The Garden is full of real people and real possibility. Creating your Introduction places you just outside the gate. <strong>Activating your membership opens it</strong> — and lets the people who love you step inside on your behalf.</p>
+        </div>
+        <a href="/member-introduction-page" style="display:block;text-align:center;background:transparent;border:1.5px solid var(--rose);color:var(--rose);padding:14px 24px;border-radius:50px;font-family:var(--font-ui);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s">Create My Introduction →</a>
+      </div>
+
+      <!-- PAID CARD -->
+      <div style="background:white;border-radius:16px;padding:36px 32px;color:var(--charcoal);border-top:4px solid var(--rose)">
+        <p style="font-family:var(--font-ui);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--rose);margin-bottom:12px">Paid Membership · Activates at $444</p>
+        <h3 style="font-family:var(--font-serif);font-size:22px;color:var(--charcoal);margin-bottom:16px;font-weight:400">Activate Your Advisory Circle</h3>
+        <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px">
+          <span style="font-family:var(--font-serif);font-size:48px;color:var(--rose);line-height:1">$222</span>
+          <span style="font-family:var(--font-ui);font-size:13px;color:var(--muted)">&nbsp;/ month</span>
+        </div>
+        <p style="font-family:var(--font-ui);font-size:12px;color:var(--rose);font-style:italic;margin-bottom:24px">2-month minimum &middot; no long-term contract</p>
+        <div style="border-top:1px solid var(--rule);padding-top:20px;margin-bottom:24px">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--rose);font-weight:700;font-size:14px;margin-top:1px">✓</span><span style="font-size:14px;color:var(--text-warm)">Your Advisory Circle searches The Garden on your behalf</span></div>
+            <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--rose);font-weight:700;font-size:14px;margin-top:1px">✓</span><span style="font-size:14px;color:var(--text-warm)">Up to 3 curated introductions in your first 2 months</span></div>
+            <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--rose);font-weight:700;font-size:14px;margin-top:1px">✓</span><span style="font-size:14px;color:var(--text-warm)">Vetting, outreach &amp; Advisory Circle discussion included</span></div>
+            <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--rose);font-weight:700;font-size:14px;margin-top:1px">✓</span><span style="font-size:14px;color:var(--text-warm)">Connect at your own pace — text, phone, video, in person</span></div>
+            <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--rose);font-weight:700;font-size:14px;margin-top:1px">✓</span><span style="font-size:14px;color:var(--text-warm)">Optional Month 3 at half price — 2 additional introductions, 5 total per cycle</span></div>
+            <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--rose);font-weight:700;font-size:14px;margin-top:1px">✓</span><span style="font-size:14px;color:var(--text-warm)">Continue in cycles for as long as you choose</span></div>
+          </div>
+        </div>
+        <a href="/member-introduction-page" style="display:block;text-align:center;background:var(--rose);color:white;padding:14px 24px;border-radius:50px;font-family:var(--font-ui);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s">Start with a Free Introduction →</a>
+      </div>
+
+    </div>
+    <p style="text-align:center"><a href="/membership" class="pricing-snap-link">See full pricing + competitive comparison →</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<!-- FOOTER -->
+
+<script>
+
+function toggleFaq(item) {
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+function filterFaq(cat) {
+  document.querySelectorAll('.faq-cat-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.faq-item').forEach(item => {
+    if (cat === 'all' || item.dataset.cat === cat) {
+      item.classList.remove('faq-hidden');
+    } else {
+      item.classList.add('faq-hidden');
+      item.classList.remove('open');
+    }
+  });
+}
+</script>
+</body>
+</html>

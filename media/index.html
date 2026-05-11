@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media & Press — TrueLuvTake2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* ── MONDAi Reset (Mel Rules) ── */
+
+
+
+
+/* ── DESIGN TOKENS ── */
+:root {
+  --rose:        #823348;
+  --rose-light:  #9B3D57;
+  --rose-pale:   #F5E8EC;
+  --rose-bg:     rgba(130,51,72,0.07);
+  --teal:        #2BA5B4;
+  --teal-pale:   rgba(43,165,180,0.10);
+  --cream:       #FAF7F2;
+  --cream-deep:  #F2EDE4;
+  --charcoal:    #1A1410;
+  --charcoal-mid:#252018;
+  --text-warm:   #2E2725;
+  --muted:       #7a6e66;
+  --rule:        #e4dbd0;
+  --font-serif:  "Playfair Display", Georgia, serif;
+  --font-body:   "Source Serif 4", Georgia, serif;
+  --font-ui:     "Instrument Sans", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--text-warm);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 88px;
+}
+
+/* ── FULL-BLEED ── */
+.fb { width: 100vw; position: relative; left: 50%; margin-left: -50vw; box-sizing: border-box; }
+
+/* ── SHARED ── */
+.label {
+  font-family: var(--font-ui); font-size: 10px; letter-spacing: 3.5px;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 20px; display: block;
+  padding-top: clamp(56px, 8vw, 88px);
+}
+/* Section-internal labels: suppress inherited padding, generous gap to headline */
+.hero .label,
+.context .label,
+.speaking-header .label,
+.resources-header .label,
+.founder-text .label,
+.diversity-text .label,
+.press-text .label,
+.sphinx-inner .label,
+.podcasts-header .label,
+.quotes-header .label,
+.news .label,
+.media-cta-text .label { padding-top: 0; margin-bottom: 36px; }
+
+/* Accent rule — short rose bar anchoring each section label */
+.label-rule {
+  width: 48px; height: 2px;
+  background: var(--rose);
+  margin-bottom: 24px;
+  display: block;
+}
+/* Center the rule in text-centered sections */
+.context .label-rule,
+.speaking-header .label-rule,
+.resources-header .label-rule,
+.quotes-header .label-rule,
+.news .label-rule { margin-left: auto; margin-right: auto; }
+/* Lighter rule for dark sections */
+.press-text .label-rule,
+.media-cta-text .label-rule { background: rgba(245,232,236,0.35); }
+/* Teal rule for founder section */
+.founder-text .label-rule { background: var(--teal); }
+/* Muted teal rule for dark diversity section */
+.diversity-text .label-rule { background: rgba(43,165,180,0.45); }
+.label.rose  { color: var(--rose); }
+.label.light { color: rgba(43,165,180,0.75); }
+.label.pale  { color: rgba(255,255,255,0.45); }
+h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
+
+/* ── BUTTONS ── */
+.btn-rose {
+  display: inline-block; font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--rose); color: white;
+  padding: 16px 36px; text-decoration: none; border-radius: 2px;
+  transition: background 0.2s;
+}
+.btn-rose:hover { background: var(--rose-light); }
+.btn-teal {
+  display: inline-block; font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--teal); color: white;
+  padding: 16px 36px; text-decoration: none; border-radius: 2px;
+  transition: background 0.2s;
+}
+.btn-teal:hover { background: #239aaa; }
+.btn-ghost {
+  display: inline-block; font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.85);
+  padding: 16px 36px; text-decoration: none; border-radius: 2px;
+  transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: white; color: white; }
+.btn-outline {
+  display: inline-block; font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  border: 1px solid var(--rose); color: var(--rose);
+  padding: 14px 32px; text-decoration: none; border-radius: 2px;
+  transition: all 0.2s;
+}
+.btn-outline:hover { background: var(--rose); color: white; }
+
+
+/* ════════════════════════════════════════
+   1. HERO — Sedona Red Rock Vista
+════════════════════════════════════════ */
+.hero {
+  position: relative; overflow: hidden;
+  min-height: 92vh;
+  display: flex; align-items: flex-end; justify-content: flex-start;
+  background: #1a1008;
+  margin-top: 0 !important;
+}
+.hero-bg { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
+.hero-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 45%;
+  display: block;
+}
+.hero-overlay {
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15,12,9,0.97) 0%,
+    rgba(15,12,9,0.65) 40%,
+    rgba(15,12,9,0.20) 100%
+  );
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  max-width: 1200px; width: 100%;
+  margin: 0 auto;
+  padding: clamp(96px,11vw,130px) clamp(32px,6vw,96px) clamp(80px,10vw,120px);
+}
+.hero-eyebrow {
+  font-family: var(--font-ui); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--teal);
+  margin-bottom: 28px; display: block;
+}
+.hero h1 {
+  font-size: clamp(44px,7vw,86px); line-height: 1.08;
+  color: white; max-width: 700px;
+  margin-bottom: 24px; letter-spacing: -0.02em;
+}
+.hero h1 em { font-style: italic; color: rgba(245,232,236,0.9); }
+.hero-sub {
+  font-size: clamp(15px,1.8vw,18px); line-height: 1.8;
+  color: rgba(255,255,255,0.52); font-weight: 300;
+  max-width: 560px; margin-bottom: 40px;
+}
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+
+/* ════════════════════════════════════════
+   2. STATS STRIP — charcoal
+════════════════════════════════════════ */
+.stats-strip {
+  background: var(--charcoal);
+  padding: clamp(56px,7vw,80px) clamp(24px,6vw,80px);
+}
+.stats-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 32px; text-align: center;
+}
+.stat-item {}
+.stat-num {
+  font-family: var(--font-serif);
+  font-size: clamp(36px,5vw,60px);
+  color: var(--rose-pale); line-height: 1.1;
+  margin-bottom: 8px; font-weight: 400;
+}
+.stat-label {
+  font-family: var(--font-ui); font-size: 12px;
+  color: rgba(255,255,255,0.55); line-height: 1.55;
+  margin-bottom: 8px;
+}
+.stat-source {
+  font-family: var(--font-ui); font-size: 9.5px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(43,165,180,0.55);
+}
+
+
+/* ════════════════════════════════════════
+   3. CULTURAL CONTEXT — cream
+════════════════════════════════════════ */
+.context {
+  background: var(--cream);
+  padding: clamp(88px,11vw,120px) clamp(24px,6vw,80px);
+  text-align: center;
+}
+.context-inner { max-width: 780px; margin: 0 auto; }
+.context h2 {
+  font-size: clamp(30px,4.5vw,56px); line-height: 1.18;
+  color: var(--text-warm); margin-bottom: 12px;
+}
+.context h2 em { font-style: italic; color: var(--rose); }
+.context-body {
+  font-size: clamp(15px,1.7vw,18px); line-height: 1.9;
+  color: var(--muted); font-weight: 300; max-width: 640px;
+  margin: 20px auto 36px;
+}
+.context-rule {
+  width: 64px; height: 2px; margin: 0 auto 36px;
+  background: linear-gradient(to right, var(--rose), var(--teal));
+}
+.context-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(16px,2vw,21px);
+  font-style: italic;
+  color: var(--text-warm);
+  line-height: 1.6;
+  max-width: 600px; margin: 0 auto 12px;
+}
+.context-attr {
+  font-family: var(--font-ui); font-size: 10px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted);
+}
+
+
+/* ════════════════════════════════════════
+   4. SPEAKING TOPICS — cream/linen
+════════════════════════════════════════ */
+.speaking {
+  background: var(--cream-deep);
+  border-top: 4px solid var(--rose);
+  padding: clamp(88px,11vw,120px) clamp(24px,6vw,80px);
+}
+.speaking-inner { max-width: 1100px; margin: 0 auto; }
+.speaking-header { text-align: center; margin-bottom: 64px; }
+.speaking-header h2 {
+  font-size: clamp(28px,4vw,52px); color: var(--text-warm);
+  line-height: 1.2; margin-bottom: 16px;
+}
+.speaking-header h2 em { font-style: italic; color: var(--rose); }
+.speaking-header p {
+  font-size: clamp(14px,1.6vw,17px); color: var(--muted);
+  font-weight: 300; max-width: 520px; margin: 0 auto;
+  line-height: 1.8;
+}
+.topics-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; margin-bottom: 56px;
+}
+.topic-card {
+  background: white;
+  padding: 36px 40px;
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--teal);
+  transition: box-shadow 0.2s;
+}
+.topic-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+.topic-number {
+  font-family: var(--font-ui); font-size: 10px;
+  letter-spacing: 0.2em; color: var(--teal);
+  margin-bottom: 12px; display: block;
+}
+.topic-title {
+  font-family: var(--font-serif); font-size: clamp(16px,1.8vw,20px);
+  color: var(--rose); line-height: 1.3;
+  margin-bottom: 14px; font-weight: 400;
+}
+.topic-desc {
+  font-size: clamp(13px,1.4vw,15px); color: var(--muted);
+  line-height: 1.75; font-weight: 300; margin-bottom: 16px;
+}
+.topic-read-link {
+  font-family: var(--font-ui); font-size: 10px;
+  font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--teal); text-decoration: none;
+  display: inline-block; margin-top: 4px;
+  transition: color 0.2s;
+}
+.topic-read-link:hover { color: var(--rose); }
+.speaking-cta { text-align: center; }
+.speaking-note {
+  font-family: var(--font-ui); font-size: 11px;
+  color: var(--muted); margin-top: 16px;
+  font-style: italic;
+}
+
+
+/* ════════════════════════════════════════
+   5. CURATED RESOURCES — cream, sectioned
+════════════════════════════════════════ */
+.resources {
+  background: var(--cream);
+  padding: clamp(88px,11vw,120px) clamp(24px,6vw,80px);
+}
+.resources-inner { max-width: 1100px; margin: 0 auto; }
+.resources-header { text-align: center; margin-bottom: 72px; }
+.resources-header h2 {
+  font-size: clamp(28px,4vw,48px); color: var(--text-warm);
+  line-height: 1.2; margin-bottom: 16px;
+}
+.resources-header h2 em { font-style: italic; color: var(--rose); }
+.resources-header p {
+  font-size: clamp(14px,1.6vw,17px); color: var(--muted);
+  font-weight: 300; max-width: 540px; margin: 0 auto;
+  line-height: 1.85;
+}
+.resource-group { margin-bottom: 64px; }
+.resource-group-label {
+  font-family: var(--font-ui); font-size: 9.5px;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 28px; display: block;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+.resource-cards {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 24px;
+}
+.resource-card {
+  background: white;
+  border: 1px solid var(--rule);
+  padding: 0 0 28px;
+  border-top: 3px solid var(--teal);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+.resource-card.rose-top { border-top-color: var(--rose); }
+/* Page-preview image at top of each card */
+.resource-logo {
+  height: 160px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--rule);
+  display: block; position: relative;
+}
+.resource-logo img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block; transition: transform 0.3s;
+}
+.resource-card:hover .resource-logo img { transform: scale(1.03); }
+.resource-logo-fallback {
+  display: flex; align-items: center; justify-content: center;
+  height: 100%;
+  font-family: var(--font-ui); font-size: 13px; font-weight: 600;
+  color: var(--muted); background: #F0EBE4;
+}
+/* Card body padding now that top is handled by logo band */
+.resource-body { padding: 20px 24px 0; display: flex; flex-direction: column; flex: 1; }
+.resource-type {
+  font-family: var(--font-ui); font-size: 9px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 10px;
+}
+.resource-title {
+  font-family: var(--font-serif); font-size: clamp(15px,1.5vw,18px);
+  color: var(--text-warm); line-height: 1.35;
+  margin-bottom: 6px; font-weight: 400;
+}
+.resource-author {
+  font-family: var(--font-ui); font-size: 11px;
+  color: var(--rose); margin-bottom: 14px; font-weight: 500;
+}
+.resource-desc {
+  font-size: 13.5px; color: var(--muted);
+  line-height: 1.72; flex: 1; margin-bottom: 20px;
+}
+.resource-link {
+  font-family: var(--font-ui); font-size: 11px;
+  font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--teal); text-decoration: none;
+  transition: color 0.2s;
+}
+.resource-link:hover { color: var(--rose); }
+
+
+/* ════════════════════════════════════════
+   6. SPHINX BRIDGE — Egypt, full-bleed quote
+════════════════════════════════════════ */
+.sphinx-bridge {
+  position: relative; overflow: hidden;
+  min-height: 540px;
+  display: flex; align-items: center; justify-content: center;
+  background-color: #0d0a07;
+  background-image: url('https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69fa37abd38dd6188708fc58.jpg');
+  background-size: cover;
+  background-position: center 35%;
+}
+.sphinx-overlay {
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15,12,9,0.20) 0%,
+    rgba(26,20,16,0.42) 50%,
+    rgba(15,12,9,0.68) 100%
+  );
+}
+.sphinx-inner {
+  position: relative; z-index: 2;
+  text-align: center; max-width: 760px;
+  padding: clamp(72px,10vw,110px) clamp(24px,6vw,64px);
+}
+.sphinx-eyebrow {
+  font-family: var(--font-ui); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: rgba(43,165,180,0.7);
+  margin-bottom: 28px; display: block;
+}
+.sphinx-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(22px,3.5vw,44px);
+  font-style: italic; color: white;
+  line-height: 1.38; margin-bottom: 24px;
+}
+.sphinx-quote em { color: white; font-style: normal; }
+.sphinx-attr {
+  font-family: var(--font-ui); font-size: 10px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+
+/* ════════════════════════════════════════
+   7. PODCASTS — charcoal strip
+════════════════════════════════════════ */
+.podcasts {
+  background: var(--charcoal-mid);
+  border-top: 4px solid var(--teal);
+  padding: clamp(88px,10vw,112px) clamp(24px,6vw,80px);
+}
+.podcasts-inner { max-width: 1100px; margin: 0 auto; }
+.podcasts-header { margin-bottom: 48px; }
+.podcasts-header h2 {
+  font-size: clamp(24px,3.2vw,40px); color: white;
+  line-height: 1.2;
+}
+.podcasts-header h2 em { font-style: italic; color: rgba(43,165,180,0.85); }
+.podcasts-header p {
+  font-size: clamp(13px,1.5vw,16px); color: rgba(255,255,255,0.4);
+  font-weight: 300; max-width: 480px; margin-top: 12px;
+  line-height: 1.75;
+}
+.podcast-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 16px;
+}
+.podcast-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-top: 3px solid var(--teal);
+  padding: 0;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+.podcast-art {
+  height: 200px; overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+.podcast-art img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.podcast-card:hover .podcast-art img { transform: scale(1.04); }
+.podcast-art-fallback {
+  width: 100%; height: 100%;
+  display: none; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, rgba(43,165,180,0.12) 0%, rgba(43,165,180,0.04) 100%);
+  font-family: var(--font-serif); font-size: 54px; font-style: italic;
+  color: rgba(43,165,180,0.6); line-height: 1;
+}
+.podcast-body { padding: 20px 20px 18px; display: flex; flex-direction: column; flex: 1; }
+.podcast-name {
+  font-family: var(--font-serif); font-size: clamp(14px,1.5vw,17px);
+  color: white; margin-bottom: 4px; line-height: 1.3;
+}
+.podcast-host {
+  font-family: var(--font-ui); font-size: 11px;
+  color: rgba(255,255,255,0.52); margin-bottom: 14px; flex: 1;
+}
+.podcast-link {
+  font-family: var(--font-ui); font-size: 10px;
+  font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--teal); text-decoration: none;
+}
+.podcast-link:hover { color: white; }
+
+
+/* ════════════════════════════════════════
+   8. DIVERSITY — teal dark
+════════════════════════════════════════ */
+.diversity {
+  background: linear-gradient(160deg, #0E2F34 0%, #123840 100%);
+  padding: clamp(88px,10vw,112px) clamp(24px,6vw,80px);
+}
+.diversity-inner { max-width: 1100px; margin: 0 auto; }
+.diversity-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(48px,6vw,80px);
+  align-items: center;
+}
+.diversity-text h2 {
+  font-size: clamp(26px,3.5vw,44px); color: white;
+  line-height: 1.2; margin-bottom: 20px;
+}
+.diversity-text h2 em { font-style: italic; color: rgba(43,165,180,0.9); }
+.diversity-text p {
+  font-size: clamp(14px,1.6vw,17px); color: rgba(255,255,255,0.72);
+  font-weight: 300; line-height: 1.85;
+}
+.diversity-tags {
+  display: flex; flex-wrap: wrap; gap: 10px;
+}
+.diversity-tag {
+  font-family: var(--font-ui); font-size: 11px;
+  font-weight: 500; letter-spacing: 0.06em;
+  background: rgba(43,165,180,0.25);
+  border: 1px solid rgba(43,165,180,0.6);
+  color: white;
+  padding: 8px 16px; border-radius: 2px;
+}
+
+
+/* ════════════════════════════════════════
+   9. FOUNDER BIO — cream, 2-col
+════════════════════════════════════════ */
+.founder {
+  background: var(--cream-deep);
+  padding: clamp(88px,11vw,120px) clamp(24px,6vw,80px);
+}
+.founder-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 340px 1fr;
+  gap: clamp(48px,6vw,80px);
+  align-items: start;
+}
+.founder-photo {
+  position: relative; overflow: hidden;
+}
+.founder-photo img {
+  width: 100%; display: block;
+  aspect-ratio: 4/5;
+  object-fit: cover; object-position: center top;
+}
+.founder-text { padding-top: 8px; }
+.founder-text h2 {
+  font-size: clamp(26px,3.2vw,40px); color: var(--text-warm);
+  line-height: 1.2; margin-bottom: 6px;
+}
+.founder-text h2 em { font-style: italic; color: var(--rose); }
+.founder-role {
+  font-family: var(--font-ui); font-size: 11px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 24px; display: block;
+}
+.founder-text p {
+  font-size: clamp(14px,1.6vw,16px); color: #4e433d;
+  line-height: 1.9; margin-bottom: 18px; font-weight: 300;
+}
+.founder-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.founder-tag {
+  font-family: var(--font-ui); font-size: 11px;
+  background: white;
+  border: 1px solid #c4b0a6;
+  border-left: 3px solid var(--teal);
+  color: #4e433d;
+  padding: 6px 14px 6px 12px;
+}
+
+
+/* ════════════════════════════════════════
+   10. PRESS RELEASE — dark charcoal
+════════════════════════════════════════ */
+.press {
+  background: #110E0B;
+  padding: clamp(88px,11vw,120px) clamp(24px,6vw,80px);
+}
+.press-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 380px;
+  gap: clamp(48px,6vw,80px);
+  align-items: start;
+}
+.press-text h2 {
+  font-size: clamp(28px,4vw,52px); color: white;
+  line-height: 1.2; margin-bottom: 20px;
+}
+.press-text h2 em { font-style: italic; color: rgba(245,232,236,0.85); }
+.press-meta {
+  font-family: var(--font-ui); font-size: 10px;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(43,165,180,0.6); margin-bottom: 24px; display: block;
+}
+.press-excerpt {
+  font-size: clamp(14px,1.6vw,17px); color: rgba(255,255,255,0.48);
+  line-height: 1.9; font-weight: 300; margin-bottom: 32px;
+}
+.press-excerpt strong { color: rgba(255,255,255,0.75); font-weight: 400; }
+.press-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.press-panel {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 36px 32px;
+}
+.press-panel h3 {
+  font-family: var(--font-ui); font-size: 10px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3); margin-bottom: 24px;
+}
+.press-contact-row {
+  display: flex; gap: 12px; align-items: flex-start;
+  margin-bottom: 16px;
+}
+.press-contact-icon {
+  font-size: 14px; margin-top: 1px; flex-shrink: 0;
+  opacity: 0.5;
+}
+.press-contact-label {
+  font-family: var(--font-ui); font-size: 9.5px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.25); margin-bottom: 2px;
+}
+.press-contact-value {
+  font-size: 13px; color: rgba(255,255,255,0.6);
+}
+.press-contact-value a { color: var(--teal); text-decoration: none; }
+
+
+/* ════════════════════════════════════════
+   11. FOUNDER QUOTES — cream
+════════════════════════════════════════ */
+.quotes {
+  background: var(--cream);
+  padding: clamp(88px,11vw,120px) clamp(24px,6vw,80px);
+}
+.quotes-inner { max-width: 1100px; margin: 0 auto; }
+.quotes-header { text-align: center; margin-bottom: 64px; }
+.quotes-header h2 {
+  font-size: clamp(26px,3.5vw,44px); color: var(--text-warm); line-height: 1.2;
+}
+.quotes-header h2 em { font-style: italic; color: var(--rose); }
+.quotes-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.quote-card {
+  background: white; border: 1px solid var(--rule);
+  padding: 36px 36px 28px;
+  border-top: 3px solid var(--rose);
+}
+.quote-mark {
+  font-family: var(--font-serif); font-size: 48px;
+  color: var(--rose-pale); line-height: 0.8;
+  margin-bottom: 16px; display: block;
+}
+.quote-text {
+  font-family: var(--font-serif); font-size: clamp(15px,1.6vw,18px);
+  font-style: italic; color: var(--text-warm);
+  line-height: 1.65; margin-bottom: 20px;
+}
+.quote-byline {
+  font-family: var(--font-ui); font-size: 9.5px;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--muted);
+}
+
+
+/* ════════════════════════════════════════
+   12. IN THE NEWS — placeholder
+════════════════════════════════════════ */
+.news {
+  background: var(--cream-deep);
+  padding: clamp(72px,9vw,100px) clamp(24px,6vw,80px);
+  text-align: center;
+}
+.news-inner { max-width: 640px; margin: 0 auto; }
+.news-sprout { font-size: 28px; margin-bottom: 20px; }
+.news h2 {
+  font-family: var(--font-serif); font-size: clamp(26px,3.5vw,40px);
+  font-style: italic; color: var(--text-warm);
+  line-height: 1.25; margin-bottom: 16px;
+}
+.news h2 em { font-style: normal; color: var(--rose); }
+.news p {
+  font-size: clamp(14px,1.6vw,16px); color: var(--muted);
+  font-weight: 300; line-height: 1.85; margin-bottom: 32px;
+}
+
+
+/* ════════════════════════════════════════
+   13. MEDIA INQUIRY CTA — burgundy
+════════════════════════════════════════ */
+.media-cta {
+  background: var(--charcoal);
+  padding: clamp(88px,11vw,120px) clamp(24px,6vw,80px);
+}
+.media-cta-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 360px;
+  gap: clamp(48px,6vw,80px);
+  align-items: start;
+}
+.media-cta-text h2 {
+  font-size: clamp(30px,4.5vw,56px); color: white;
+  line-height: 1.18; margin-bottom: 20px;
+}
+.media-cta-text h2 em { font-style: italic; color: rgba(245,232,236,0.85); }
+.media-cta-text p {
+  font-size: clamp(15px,1.7vw,17px); color: rgba(255,255,255,0.52);
+  font-weight: 300; line-height: 1.85; margin-bottom: 36px;
+  max-width: 480px;
+}
+.media-cta-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.media-cta-panel {
+  background: rgba(255,255,255,0.07);
+  padding: 36px 32px;
+}
+.media-cta-panel h3 {
+  font-family: var(--font-ui); font-size: 9.5px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3); margin-bottom: 24px;
+}
+.media-contact-item {
+  margin-bottom: 20px;
+}
+.media-contact-label {
+  font-family: var(--font-ui); font-size: 9px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.25); margin-bottom: 3px;
+}
+.media-contact-value {
+  font-size: 13.5px; color: rgba(255,255,255,0.65);
+  font-weight: 300;
+}
+.media-contact-value a { color: rgba(43,165,180,0.85); text-decoration: none; }
+
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .stats-inner        { grid-template-columns: repeat(2,1fr); }
+  .topics-grid        { grid-template-columns: 1fr; gap: 2px; }
+  .resource-cards     { grid-template-columns: 1fr; }
+  .podcast-grid       { grid-template-columns: 1fr 1fr; }
+  .diversity-grid     { grid-template-columns: 1fr; }
+  .founder-inner      { grid-template-columns: 1fr; }
+  .founder-photo      { max-width: 340px; }
+  .press-inner        { grid-template-columns: 1fr; }
+  .press-panel        { order: -1; }
+  .media-cta-inner    { grid-template-columns: 1fr; }
+  .media-cta-panel    { order: -1; max-width: 360px; }
+}
+@media (max-width: 768px) {
+  .fb { width: 100% !important; left: 0 !important; margin-left: 0 !important; position: relative; }
+  .hero { min-height: 75vh; }
+  .hero-inner { padding: 88px 24px 60px; }
+  .hero-btns { flex-direction: column; gap: 12px; max-width: 280px; }
+  .podcast-grid { grid-template-columns: 1fr; }
+  .quotes-grid  { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .stats-inner { grid-template-columns: 1fr 1fr; gap: 20px; }
+}
+
+</style>
+</head>
+<body>
+<script src="/components/nav.js"></script>
+
+<!-- ════════════════════════════════════════
+     1. HERO — Sedona Red Rock Vista
+════════════════════════════════════════ -->
+<section class="hero fb">
+  <div class="hero-bg">
+    <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69f7d471fdf2432ccfe33c2f.jpg"
+         alt="Sedona Red Rock Vista — Arizona">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Media &amp; Press</span>
+    <h1>A story worth<br><em>telling.</em></h1>
+    <p class="hero-sub">TrueLuvTake2 is reimagining how love begins later in life — with intention, community, and a deeply human approach. Researchers, journalists, and podcasters: this is a conversation your audience hasn't heard before.</p>
+    <div class="hero-btns">
+      <a href="#media-inquiry" class="btn-rose">Invite Monique to Speak</a>
+      <a href="https://drive.google.com/file/d/MEDIA_KIT_LINK/view" class="btn-ghost" id="media-kit-btn">Download Media Kit ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     2. STATS STRIP — charcoal
+════════════════════════════════════════ -->
+<section class="stats-strip fb">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">40M+</div>
+      <div class="stat-label">Single adults over 50 in the United States</div>
+      <div class="stat-source">AARP / U.S. Census</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2×</div>
+      <div class="stat-label">Gray divorce rate has doubled since 1990</div>
+      <div class="stat-source">BGSU / NCFMR Research</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">67%</div>
+      <div class="stat-label">Of divorced adults 50+ express interest in a new relationship</div>
+      <div class="stat-source">Pew Research Center</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">#1</div>
+      <div class="stat-label">Loneliness among older adults — declared a public health crisis</div>
+      <div class="stat-source">U.S. Surgeon General, 2023</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     3. CULTURAL CONTEXT — cream
+════════════════════════════════════════ -->
+<section class="context fb">
+  <div class="context-inner">
+    <div class="label-rule"></div>
+    <span class="label">The Cultural Conversation</span>
+    <h2>Everyone is talking about<br>the problem. <em>TrueLuvTake2<br>is building the solution.</em></h2>
+    <p class="context-body">Millions of adults over 50 are open to love — and largely underserved by every existing platform. Researchers, therapists, journalists, and podcasters have been sounding this alarm for years. We curate their work here because the conversation validates what you already know: this moment deserves something better.</p>
+    <div class="context-rule"></div>
+    <p class="context-quote">"The data tells us the problem is real. The question was never whether love after 50 matters — it was whether anyone would build something worthy of it."</p>
+    <span class="context-attr">— Monique Alemán, Founder, TrueLuvTake2</span>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     4. SPEAKING TOPICS — deep burgundy
+════════════════════════════════════════ -->
+<section class="speaking fb" id="speaking">
+  <div class="speaking-inner">
+    <div class="speaking-header">
+      <div class="label-rule"></div>
+      <span class="label rose">Book Monique</span>
+      <h2>Topics worth <em>talking about</em></h2>
+      <p>Perfect for podcasts, panels, newsletters, and media appearances exploring midlife, relationships, aging, and modern connection.</p>
+    </div>
+    <div class="topics-grid">
+      <div class="topic-card">
+        <span class="topic-number">01</span>
+        <div class="topic-title">Why Safety Matters More Later in Life</div>
+        <p class="topic-desc">Romance scams have become an epidemic disproportionately targeting adults over 50, costing billions annually. Monique makes the case for why real identity verification and a trusted circle of advocates isn't just a feature — it's a fundamental act of respect for people who deserve better than the internet's status quo.</p>
+        <a href="https://blog.trueluvtake2.com/post/why-safety-matters-more-later-in-life" class="topic-read-link" target="_blank" rel="noopener">Read her thinking →</a>
+      </div>
+      <div class="topic-card">
+        <span class="topic-number">02</span>
+        <div class="topic-title">Why Geography Should Not Decide Your Future</div>
+        <p class="topic-desc">Most dating platforms assume the right partner lives nearby. But for adults over 50 who have already built a full life, the question isn't convenience — it's alignment. Monique explores what opens up when you stop filtering by zip code and start filtering by values, readiness, and depth.</p>
+        <a href="https://blog.trueluvtake2.com/post/why-geography-should-not-decide-your-future" class="topic-read-link" target="_blank" rel="noopener">Read her thinking →</a>
+      </div>
+      <div class="topic-card">
+        <span class="topic-number">03</span>
+        <div class="topic-title">When Adult Children Become Guardians of Love</div>
+        <p class="topic-desc">What happens when the people who know you best want to help you find love? Monique explores the beautiful and often untapped role adult children play in a parent's search for meaningful companionship — and why family isn't an obstacle, it's one of the most underused resources in modern dating.</p>
+        <a href="https://blog.trueluvtake2.com/post/when-adult-children-become-guardians-of-love" class="topic-read-link" target="_blank" rel="noopener">Read her thinking →</a>
+      </div>
+      <div class="topic-card">
+        <span class="topic-number">04</span>
+        <div class="topic-title">Why We're More Intentional About Hiring Than Love</div>
+        <p class="topic-desc">You wouldn't hire someone for an important role based on a photo and a two-minute conversation. Yet that's exactly how most adults approach finding a life partner. Monique challenges audiences to bring the same discernment they use in their careers to the most important decision of their personal lives.</p>
+        <a href="https://blog.trueluvtake2.com/post/why-were-more-intentional-about-hiring-than-love" class="topic-read-link" target="_blank" rel="noopener">Read her thinking →</a>
+      </div>
+      <div class="topic-card">
+        <span class="topic-number">05</span>
+        <div class="topic-title">40 Million Adults Over 50 Are Single. Almost No One Talks About It.</div>
+        <p class="topic-desc">The data is staggering — and largely invisible in mainstream culture. Monique unpacks what it means that millions of emotionally available, experienced adults are being systematically underserved by every existing platform, and what changes when we finally take this population seriously.</p>
+        <a href="https://blog.trueluvtake2.com/post/millions-of-people-over-50-are-single-almost-no-one-talks-about-it" class="topic-read-link" target="_blank" rel="noopener">Read her thinking →</a>
+      </div>
+      <div class="topic-card">
+        <span class="topic-number">06</span>
+        <div class="topic-title">Chemistry Isn't the Problem. Readiness Is.</div>
+        <p class="topic-desc">The connections that felt electric but quietly fell apart weren't lacking chemistry — they were lacking readiness. Monique introduces a framework for emotional, relational, and practical readiness that is changing how adults over 50 think about entering a new chapter of love and companionship.</p>
+        <a href="https://blog.trueluvtake2.com/post/chemistry-isnt-the-problem" class="topic-read-link" target="_blank" rel="noopener">Read her thinking →</a>
+      </div>
+    </div>
+    <div class="speaking-cta">
+      <a href="#media-inquiry" class="btn-rose">Book Monique for Your Show</a>
+      <p class="speaking-note">Available for podcast interviews, panels, newsletters, and speaking engagements. Remote or in-person.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     5. CURATED RESOURCES — cream
+════════════════════════════════════════ -->
+<section class="resources fb">
+  <div class="resources-inner">
+    <div class="resources-header">
+      <div class="label-rule"></div>
+      <span class="label">The Conversation</span>
+      <h2>Voices we <em>amplify</em></h2>
+      <p>The researchers, therapists, and journalists who have been sounding the alarm. We curate their work because it validates what we're building — and because this conversation belongs to everyone.</p>
+    </div>
+
+    <div class="resource-group">
+      <span class="resource-group-label">Research &amp; Family Context</span>
+      <div class="resource-cards">
+        <div class="resource-card">
+          <div class="resource-logo">
+            <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69e4146d38381eafa86bd668.png" alt="BGSU NCFMR Research" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="resource-logo-fallback" style="display:none">BGSU · NCFMR</span>
+          </div>
+          <div class="resource-body">
+            <div class="resource-type">Academic Research</div>
+            <div class="resource-title">National Center for Family &amp; Marriage Research</div>
+            <div class="resource-author">Bowling Green State University</div>
+            <p class="resource-desc">The leading academic source on gray divorce trends, family structure, and relationship patterns among adults 50+. The data here shapes TrueLuvTake2's entire philosophy.</p>
+            <a href="https://www.bgsu.edu/ncfmr.html" class="resource-link" target="_blank" rel="noopener">Explore the research →</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-logo">
+            <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69e416788696a78b8dfc6f40.png" alt="Psychology Today" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="resource-logo-fallback" style="display:none">Psychology Today</span>
+          </div>
+          <div class="resource-body">
+            <div class="resource-type">Psychology · Article</div>
+            <div class="resource-title">Late-in-Life Parental Divorce Can Upend Adult Children's Lives</div>
+            <div class="resource-author">Dr. Carol Hughes · Psychology Today</div>
+            <p class="resource-desc">Explores the emotional impact adult children experience when parents divorce later in life — grief, identity shifts, and long-term adjustment. A vital lens for TrueLuvTake2's Advisory Circle model.</p>
+            <a href="https://www.psychologytoday.com" class="resource-link" target="_blank" rel="noopener">Read the article →</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-logo">
+            <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69e4146d50b9a3263af02c55.png" alt="Care.com" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="resource-logo-fallback" style="display:none">Care.com</span>
+          </div>
+          <div class="resource-body">
+            <div class="resource-type">Family · Guide</div>
+            <div class="resource-title">When Aging Parents Start Dating: The Best Ways to Cope</div>
+            <div class="resource-author">Maressa Brown · Care.com</div>
+            <p class="resource-desc">A practical guide for adult children navigating their parent's new romantic chapter — exactly why TrueLuvTake2 brings family into the process from the very beginning.</p>
+            <a href="https://www.care.com" class="resource-link" target="_blank" rel="noopener">Read the guide →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="resource-group">
+      <span class="resource-group-label">Emotional Readiness &amp; Intentional Love</span>
+      <div class="resource-cards">
+        <div class="resource-card rose-top">
+          <div class="resource-logo">
+            <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69e4146d2c135a8c83311ab2.png" alt="Esther Perel" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="resource-logo-fallback" style="display:none">Esther Perel</span>
+          </div>
+          <div class="resource-body">
+            <div class="resource-type">Podcast</div>
+            <div class="resource-title">Where Should We Begin?</div>
+            <div class="resource-author">Esther Perel</div>
+            <p class="resource-desc">Real couples explore communication, desire, and emotional truth. Ideal for adults reentering love with wisdom — and a reminder that depth is possible at any age.</p>
+            <a href="https://www.estherperel.com/podcast" class="resource-link" target="_blank" rel="noopener">Listen now →</a>
+          </div>
+        </div>
+        <div class="resource-card rose-top">
+          <div class="resource-logo">
+            <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69e4146d38381eafa86bd669.png" alt="Lori Gottlieb" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="resource-logo-fallback" style="display:none">Lori Gottlieb</span>
+          </div>
+          <div class="resource-body">
+            <div class="resource-type">Book</div>
+            <div class="resource-title">Maybe You Should Talk to Someone</div>
+            <div class="resource-author">Lori Gottlieb</div>
+            <p class="resource-desc">A therapist's own journey through emotional readiness — a perfect companion for anyone seeking clarity before connection. One of the most honest books written about love and self-awareness.</p>
+            <a href="https://lorigottlieb.com/book/" class="resource-link" target="_blank" rel="noopener">Learn more →</a>
+          </div>
+        </div>
+        <div class="resource-card rose-top">
+          <div class="resource-logo">
+            <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69e4146d50b9a3263af02c57.png" alt="The Gottman Institute" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="resource-logo-fallback" style="display:none">The Gottman Institute</span>
+          </div>
+          <div class="resource-body">
+            <div class="resource-type">Research · Articles</div>
+            <div class="resource-title">The Gottman Institute</div>
+            <div class="resource-author">Drs. John &amp; Julie Gottman</div>
+            <p class="resource-desc">Decades of evidence-based research on communication, trust, and emotional attunement. The science behind what makes love actually last — at any stage of life.</p>
+            <a href="https://www.gottman.com" class="resource-link" target="_blank" rel="noopener">Read the research →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="resource-group">
+      <span class="resource-group-label">Visibility, Aging &amp; Cultural Legitimacy</span>
+      <div class="resource-cards">
+        <div class="resource-card">
+          <div class="resource-logo">
+            <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69e4146d50b9a3263af02c56.png" alt="AARP" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="resource-logo-fallback" style="display:none">AARP</span>
+          </div>
+          <div class="resource-body">
+            <div class="resource-type">Magazine · Resource Hub</div>
+            <div class="resource-title">AARP — Dating &amp; Relationships After 50</div>
+            <div class="resource-author">AARP</div>
+            <p class="resource-desc">Articles on dating, companionship, loneliness, and purpose for adults 50+. AARP has been sounding the alarm on this underserved population for years.</p>
+            <a href="https://www.aarp.org/relationships/love-and-dating/" class="resource-link" target="_blank" rel="noopener">Visit AARP →</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-logo">
+            <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69e4162e2c135a8c83316674.png" alt="PBS Next Avenue" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="resource-logo-fallback" style="display:none">Next Avenue · PBS</span>
+          </div>
+          <div class="resource-body">
+            <div class="resource-type">PBS · Editorial</div>
+            <div class="resource-title">Next Avenue</div>
+            <div class="resource-author">PBS</div>
+            <p class="resource-desc">Thoughtful, award-winning journalism on aging, reinvention, and relationships. Next Avenue treats adults over 50 as fully realized humans — just as TrueLuvTake2 does.</p>
+            <a href="https://www.nextavenue.org" class="resource-link" target="_blank" rel="noopener">Read the stories →</a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-logo">
+            <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69e4162e8696a78b8dfc62e6.png" alt="Modern Elder Academy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <span class="resource-logo-fallback" style="display:none">Modern Elder Academy</span>
+          </div>
+          <div class="resource-body">
+            <div class="resource-type">Community · Academy</div>
+            <div class="resource-title">Modern Elder Academy</div>
+            <div class="resource-author">Chip Conley</div>
+            <p class="resource-desc">A global community focused on midlife wisdom, purpose, and connection. MEA proves that the second half of life can be the most intentional — and the most alive.</p>
+            <a href="https://www.modernelderacademy.com" class="resource-link" target="_blank" rel="noopener">Explore MEA →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     6. SPHINX BRIDGE — ancient wisdom quote
+════════════════════════════════════════ -->
+<section class="sphinx-bridge fb">
+  <div class="sphinx-overlay"></div>
+  <div class="sphinx-inner">
+    <span class="sphinx-eyebrow">The Founding Principle</span>
+    <p class="sphinx-quote">Ancient cultures understood that the most important unions require <em>witnesses, wisdom, and time.</em> TrueLuvTake2 is the first platform to bring that truth into the modern age.</p>
+    <span class="sphinx-attr">— Monique Alemán, Founder</span>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     7. PODCASTS — charcoal strip
+════════════════════════════════════════ -->
+<section class="podcasts fb">
+  <div class="podcasts-inner">
+    <div class="podcasts-header">
+      <h2>Podcasts <em>worth your time</em></h2>
+      <p>Voices exploring midlife, love, aging, and human connection — the same conversation TrueLuvTake2 is building for.</p>
+    </div>
+    <div class="podcast-grid">
+      <div class="podcast-card">
+        <div class="podcast-art">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/7a/a6/dd/7aa6ddb9-ba7c-e7df-fd29-a8e875be8871/mza_5854921686815900498.jpg/600x600bb.jpg"
+               alt="Oprah's Super Soul"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="podcast-art-fallback">O</div>
+        </div>
+        <div class="podcast-body">
+          <div class="podcast-name">Super Soul Conversations</div>
+          <div class="podcast-host">Oprah Winfrey</div>
+          <a href="https://www.oprah.com/app/super-soul-sunday.html" class="podcast-link" target="_blank" rel="noopener">Listen →</a>
+        </div>
+      </div>
+      <div class="podcast-card">
+        <div class="podcast-art">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/0f/33/fb/0f33fb29-6f71-b5db-6d9d-86bf59d68e36/mza_9113257127226878404.jpeg/600x600bb.jpg"
+               alt="Where Should We Begin?"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="podcast-art-fallback">E</div>
+        </div>
+        <div class="podcast-body">
+          <div class="podcast-name">Where Should We Begin?</div>
+          <div class="podcast-host">Esther Perel</div>
+          <a href="https://www.estherperel.com/podcast" class="podcast-link" target="_blank" rel="noopener">Listen →</a>
+        </div>
+      </div>
+      <div class="podcast-card">
+        <div class="podcast-art">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/d9/a6/cd/d9a6cda8-0601-6e8d-133d-1bb050a58674/mza_13566537301633724443.jpg/600x600bb.jpg"
+               alt="Divorce and Beyond"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="podcast-art-fallback">S</div>
+        </div>
+        <div class="podcast-body">
+          <div class="podcast-name">Divorce &amp; Beyond</div>
+          <div class="podcast-host">Susan Guthrie</div>
+          <a href="https://divorceandbeyondpod.com" class="podcast-link" target="_blank" rel="noopener">Listen →</a>
+        </div>
+      </div>
+      <div class="podcast-card">
+        <div class="podcast-art">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/69/af/0d/69af0ddd-1e0f-7ae3-c84b-88f18e31ad0c/mza_14445920128472365296.png/600x600bb.jpg"
+               alt="The Diary of a CEO"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="podcast-art-fallback">D</div>
+        </div>
+        <div class="podcast-body">
+          <div class="podcast-name">Diary of a CEO</div>
+          <div class="podcast-host">Steven Bartlett</div>
+          <a href="https://stevenbartlett.com/doac/" class="podcast-link" target="_blank" rel="noopener">Listen →</a>
+        </div>
+      </div>
+      <div class="podcast-card">
+        <div class="podcast-art">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/e4/0d/1d/e40d1dc1-a9c6-c833-8534-2177d6e6d9b0/mza_8325970966613423517.png/600x600bb.jpg"
+               alt="The Terri Cole Show"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="podcast-art-fallback">T</div>
+        </div>
+        <div class="podcast-body">
+          <div class="podcast-name">The Terri Cole Show</div>
+          <div class="podcast-host">Terri Cole</div>
+          <a href="https://www.terricole.com/podcast/" class="podcast-link" target="_blank" rel="noopener">Listen →</a>
+        </div>
+      </div>
+      <div class="podcast-card">
+        <div class="podcast-art">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/d5/80/28/d5802807-0091-e50c-6395-09944a6124ea/mza_4206547085430839338.jpg/600x600bb.jpg"
+               alt="NPR Life Kit"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="podcast-art-fallback">N</div>
+        </div>
+        <div class="podcast-body">
+          <div class="podcast-name">NPR Life Kit</div>
+          <div class="podcast-host">NPR</div>
+          <a href="https://www.npr.org/lifekit" class="podcast-link" target="_blank" rel="noopener">Listen →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     8. DIVERSITY — teal deep
+════════════════════════════════════════ -->
+<section class="diversity fb">
+  <div class="diversity-inner">
+    <div class="diversity-grid">
+      <div class="diversity-text">
+        <div class="label-rule"></div>
+        <span class="label">Inclusion Matters</span>
+        <h2>Love after 50 is <em>universal</em></h2>
+        <p>TrueLuvTake2 is built for the full spectrum of human experience. This Media Center intentionally includes voices and research representing diverse communities — because meaningful connection later in life belongs to everyone.</p>
+      </div>
+      <div class="diversity-tags">
+        <span class="diversity-tag">LGBTQ+ Perspectives</span>
+        <span class="diversity-tag">Multicultural Experiences</span>
+        <span class="diversity-tag">Intergenerational Dynamics</span>
+        <span class="diversity-tag">Socioeconomic Diversity</span>
+        <span class="diversity-tag">Widowhood &amp; Grief</span>
+        <span class="diversity-tag">Disability &amp; Chronic Illness</span>
+        <span class="diversity-tag">Faith &amp; Spiritual Readiness</span>
+        <span class="diversity-tag">Geographic Diversity</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     9. FOUNDER BIO — cream
+════════════════════════════════════════ -->
+<section class="founder fb">
+  <div class="founder-inner">
+    <div class="founder-photo">
+      <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/699e0fca1001a5a3c53f19f2.jpg"
+           alt="Monique Alemán — Founder, TrueLuvTake2">
+    </div>
+    <div class="founder-text">
+      <div class="label-rule"></div>
+      <span class="label">About the Founder</span>
+      <h2>Meet <em>Monique Alemán</em></h2>
+      <span class="founder-role">Founder, TrueLuvTake2 · Boston, MA</span>
+      <p>Monique Alemán brings more than two decades of leadership experience across entrepreneurship, healthcare, and executive search. She has led national teams responsible for high-stakes professional matchmaking and multi-million-dollar revenue portfolios — giving her a unique perspective on discernment, alignment, and the human elements of successful long-term partnerships.</p>
+      <p>Her background includes ten years as a successful restaurant entrepreneur and multiple VP-level leadership roles within the healthcare industry. Her work is grounded in a lifelong study of human connection, emotional intelligence, and relational readiness — shaped by both professional expertise and transformative global travel, including immersive journeys in Egypt and Peru.</p>
+      <p>TrueLuvTake2 is the integration of everything she has learned — professionally, personally, and spiritually — about what it truly takes for love to take root later in life.</p>
+      <div class="founder-tags">
+        <span class="founder-tag">Executive Leadership</span>
+        <span class="founder-tag">Healthcare Industry</span>
+        <span class="founder-tag">Entrepreneur</span>
+        <span class="founder-tag">Relationship Philosophy</span>
+        <span class="founder-tag">Emotional Intelligence</span>
+        <span class="founder-tag">Boston, MA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     10. PRESS RELEASE — dark
+════════════════════════════════════════ -->
+<section class="press fb">
+  <div class="press-inner">
+    <div class="press-text">
+      <div class="label-rule"></div>
+      <span class="label pale">Official Release</span>
+      <h2>Press <em>Release</em></h2>
+      <span class="press-meta">For Immediate Release — May 1, 2026</span>
+      <p class="press-excerpt">
+        <strong>TrueLuvTake2 Launches to Reimagine Love Later in Life — A Purpose-Led Alternative to Traditional Dating Apps.</strong>
+        At a time when dating apps face growing criticism for fostering superficial, transactional experiences, TrueLuvTake2 is emerging with a fundamentally different approach — one grounded in self-knowledge, discernment, and real-world context.
+      </p>
+      <p class="press-excerpt">"Matching doesn't begin with data. It begins with self-knowing." — Monique Alemán, Founder</p>
+      <div class="press-btns">
+        <a href="#" class="btn-ghost">Download Full Press Release (PDF)</a>
+        <a href="#media-inquiry" class="btn-outline" style="border-color:rgba(43,165,180,0.5);color:rgba(43,165,180,0.85);">Request Press Kit</a>
+      </div>
+    </div>
+    <div class="press-panel">
+      <h3>Media Contact</h3>
+      <div class="press-contact-row">
+        <span class="press-contact-icon">✉</span>
+        <div>
+          <div class="press-contact-label">Email</div>
+          <div class="press-contact-value"><a href="mailto:hello@trueluvtake2.com">hello@trueluvtake2.com</a></div>
+        </div>
+      </div>
+      <div class="press-contact-row">
+        <span class="press-contact-icon">☏</span>
+        <div>
+          <div class="press-contact-label">Phone</div>
+          <div class="press-contact-value">(508) 844-1281</div>
+        </div>
+      </div>
+      <div class="press-contact-row">
+        <span class="press-contact-icon">◎</span>
+        <div>
+          <div class="press-contact-label">Location</div>
+          <div class="press-contact-value">Boston, MA · Available remotely worldwide</div>
+        </div>
+      </div>
+      <div class="press-contact-row">
+        <span class="press-contact-icon">◷</span>
+        <div>
+          <div class="press-contact-label">Response Time</div>
+          <div class="press-contact-value">Within 2 business days</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     11. FOUNDER QUOTES — cream
+════════════════════════════════════════ -->
+<section class="quotes fb">
+  <div class="quotes-inner">
+    <div class="quotes-header">
+      <div class="label-rule"></div>
+      <span class="label">Words Worth Quoting</span>
+      <h2><em>Founder</em> quotes</h2>
+    </div>
+    <div class="quotes-grid">
+      <div class="quote-card">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">Matching doesn't begin with data. It begins with self-knowing.</p>
+        <span class="quote-byline">Monique Alemán · Founder, TrueLuvTake2</span>
+      </div>
+      <div class="quote-card">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">Love later in life is not rare. It is simply under-supported.</p>
+        <span class="quote-byline">Monique Alemán · Founder, TrueLuvTake2</span>
+      </div>
+      <div class="quote-card">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">This stage of life is not a problem to solve. It's a chapter to celebrate.</p>
+        <span class="quote-byline">Monique Alemán · Founder, TrueLuvTake2</span>
+      </div>
+      <div class="quote-card">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">We invest extraordinary care into hiring the right people professionally. Our most important personal decision deserves the same.</p>
+        <span class="quote-byline">Monique Alemán · Founder, TrueLuvTake2</span>
+      </div>
+      <div class="quote-card">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">The best love stories don't always begin when we're young. Sometimes they begin when we finally know who we are.</p>
+        <span class="quote-byline">Monique Alemán · Founder, TrueLuvTake2</span>
+      </div>
+      <div class="quote-card">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">Ancient cultures understood that the most important unions require witnesses, wisdom, and time. We're bringing that truth into the modern age.</p>
+        <span class="quote-byline">Monique Alemán · Founder, TrueLuvTake2</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     12. IN THE NEWS — placeholder
+════════════════════════════════════════ -->
+<section class="news fb">
+  <div class="news-inner">
+    <div class="news-sprout">🌱</div>
+    <h2>The story is just <em>beginning.</em></h2>
+    <p>Press coverage, podcast appearances, and features will be listed here as TrueLuvTake2 grows. If you'd like to be among the first to cover this story — we'd love to hear from you.</p>
+    <a href="#media-inquiry" class="btn-rose">Be the First to Cover This →</a>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     13. MEDIA INQUIRY CTA — burgundy
+════════════════════════════════════════ -->
+<section class="media-cta fb" id="media-inquiry">
+  <div class="media-cta-inner">
+    <div class="media-cta-text">
+      <div class="label-rule"></div>
+      <span class="label pale">Get in Touch</span>
+      <h2>Invite Monique to your<br>show or <em>publication</em></h2>
+      <p>Monique is available for podcast interviews, panel discussions, newsletter features, and media appearances. She brings warmth, depth, and a perspective your audience hasn't heard before.</p>
+      <div class="media-cta-btns">
+        <a href="mailto:hello@trueluvtake2.com?subject=Media%20Inquiry%20%E2%80%94%20TrueLuvTake2" class="btn-ghost">Send a Media Inquiry</a>
+        <a href="#speaking" class="btn-outline" style="border-color:rgba(245,232,236,0.3);color:rgba(245,232,236,0.7);">View Speaking Topics ↑</a>
+      </div>
+    </div>
+    <div class="media-cta-panel">
+      <h3>Contact &amp; Details</h3>
+      <div class="media-contact-item">
+        <div class="media-contact-label">Email</div>
+        <div class="media-contact-value"><a href="mailto:hello@trueluvtake2.com">hello@trueluvtake2.com</a></div>
+      </div>
+      <div class="media-contact-item">
+        <div class="media-contact-label">Phone</div>
+        <div class="media-contact-value">(508) 844-1281</div>
+      </div>
+      <div class="media-contact-item">
+        <div class="media-contact-label">Location</div>
+        <div class="media-contact-value">Boston, MA · Available remotely worldwide</div>
+      </div>
+      <div class="media-contact-item">
+        <div class="media-contact-label">Website</div>
+        <div class="media-contact-value"><a href="https://www.trueluvtake2.com">www.TrueLuvTake2.com</a></div>
+      </div>
+      <div class="media-contact-item">
+        <div class="media-contact-label">Response Time</div>
+        <div class="media-contact-value">Within 2 business days</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

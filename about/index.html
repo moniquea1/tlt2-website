@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meet Monique — TrueLuvTake2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* ── MONDAi Reset (Mel Rules) ── */
+
+
+
+
+/* ── DESIGN TOKENS ── */
+:root {
+  --rose:        #823348;
+  --rose-light:  #9B3D57;
+  --rose-pale:   #F5E8EC;
+  --rose-bg:     rgba(130,51,72,0.07);
+  --teal:        #2BA5B4;
+  --teal-pale:   rgba(43,165,180,0.10);
+  --cream:       #FAF7F2;
+  --cream-deep:  #F2EDE4;
+  --charcoal:    #1A1410;
+  --charcoal-mid:#252018;
+  --text-warm:   #2E2725;
+  --muted:       #7a6e66;
+  --rule:        #e4dbd0;
+  --font-serif:  "Playfair Display", Georgia, serif;
+  --font-body:   "Source Serif 4", Georgia, serif;
+  --font-ui:     "Instrument Sans", sans-serif;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--text-warm);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 88px;
+}
+
+/* ── FULL-BLEED ── */
+.fb { width: 100vw; position: relative; left: 50%; margin-left: -50vw; box-sizing: border-box; }
+
+/* ── SHARED ── */
+.label {
+  font-family: var(--font-ui); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 20px; display: block;
+}
+.label.rose  { color: var(--rose); }
+.label.light { color: rgba(43,165,180,0.75); }
+.label.pale  { color: rgba(255,255,255,0.4); }
+h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
+
+/* ── BUTTONS ── */
+.btn-rose {
+  display: inline-block; font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--rose); color: white;
+  padding: 16px 36px; text-decoration: none; border-radius: 2px;
+  transition: background 0.2s;
+}
+.btn-rose:hover { background: var(--rose-light); }
+.btn-ghost {
+  display: inline-block; font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.8);
+  padding: 16px 36px; text-decoration: none; border-radius: 2px;
+  transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: white; color: white; }
+
+
+/* ════════════════════════════════════════
+   1. HERO — Great Pyramid Egypt, full-bleed
+════════════════════════════════════════ */
+.hero {
+  position: relative; overflow: hidden;
+  min-height: 92vh;
+  display: flex; align-items: flex-end; justify-content: flex-start;
+  background: #0F0C09;
+  margin-top: 0 !important;
+}
+.hero-bg { position: absolute; inset: 0; }
+.hero-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 30%;
+  display: block;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15,12,9,0.97) 0%,
+    rgba(15,12,9,0.75) 45%,
+    rgba(15,12,9,0.30) 100%
+  );
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  max-width: 1200px; width: 100%;
+  margin: 0 auto;
+  padding: clamp(96px,11vw,130px) clamp(32px,6vw,96px) clamp(64px,9vw,110px);
+}
+.hero-eyebrow {
+  font-family: var(--font-ui); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--teal);
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 32px;
+}
+.hero h1 {
+  font-size: clamp(38px,6vw,72px); line-height: 1.12;
+  color: white; max-width: 800px;
+  margin-bottom: 28px; letter-spacing: -0.02em;
+}
+.hero h1 em { font-style: italic; color: rgba(232,189,201,0.9); }
+.hero-sub {
+  font-size: clamp(15px,1.8vw,18px); line-height: 1.8;
+  color: rgba(255,255,255,0.5); font-weight: 300;
+  max-width: 520px; margin-bottom: 8px;
+}
+.hero-credit {
+  font-family: var(--font-ui); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.25); margin-top: 16px;
+}
+.hero-story {
+  max-width: 600px;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.hero-story p {
+  font-size: clamp(14px,1.6vw,16px); line-height: 1.85;
+  color: rgba(255,255,255,0.52); font-weight: 300;
+  margin-bottom: 16px;
+}
+.hero-story p strong { color: rgba(255,255,255,0.78); font-weight: 400; }
+.hero-story-close {
+  font-family: var(--font-serif); font-size: clamp(16px,1.8vw,19px) !important;
+  font-style: italic; color: rgba(232,189,201,0.85) !important;
+  margin-top: 8px;
+}
+
+
+/* ════════════════════════════════════════
+   3. ORIGIN — burgundy, editorial
+════════════════════════════════════════ */
+.origin {
+  background: linear-gradient(160deg, #5E2233 0%, #7A2D44 50%, #5E2233 100%);
+  padding: clamp(88px,11vw,124px) clamp(24px,6vw,80px);
+}
+.origin-inner { max-width: 760px; margin: 0 auto; padding-top: clamp(72px,9vw,104px); }
+.origin-text h2 {
+  font-size: clamp(28px,3.8vw,48px); line-height: 1.18;
+  color: white; margin-bottom: 28px;
+}
+.origin-text h2 em { font-style: italic; color: rgba(232,189,201,0.9); }
+.origin-text p {
+  font-size: clamp(15px,1.7vw,18px); line-height: 1.9;
+  color: rgba(255,255,255,0.58); font-weight: 300; margin-bottom: 28px;
+}
+.origin-text blockquote {
+  border-left: 2px solid rgba(232,189,201,0.4);
+  padding-left: 24px;
+  font-family: var(--font-serif);
+  font-size: clamp(17px,2vw,22px);
+  font-style: italic; color: rgba(232,189,201,0.85);
+  line-height: 1.55;
+}
+
+/* ════════════════════════════════════════
+   4. EGYPT MOMENT — full-bleed, pure photo
+════════════════════════════════════════ */
+.photo-moment {
+  display: block;
+  height: clamp(480px,65vw,760px);
+  overflow: hidden;
+}
+.photo-moment img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 25%;
+  display: block;
+  transition: transform 0.8s ease;
+}
+.photo-moment:hover img { transform: scale(1.02); }
+
+/* ════════════════════════════════════════
+   5. NATURE BRIDGE — Peru, one line
+════════════════════════════════════════ */
+.nature-bridge {
+  position: relative; overflow: hidden;
+  min-height: 400px;
+  display: flex; align-items: center; justify-content: center;
+}
+.nature-bg { position: absolute; inset: 0; }
+.nature-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.nature-overlay {
+  position: absolute; inset: 0;
+  background: rgba(26,20,16,0.62);
+}
+.nature-inner {
+  position: relative; z-index: 2;
+  text-align: center;
+  padding: clamp(48px,7vw,80px) clamp(24px,6vw,80px);
+}
+.nature-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(22px,3.5vw,42px);
+  font-style: italic; color: white;
+  line-height: 1.4; margin-bottom: 20px;
+}
+.nature-quote em { color: rgba(232,189,201,0.9); font-style: normal; }
+.nature-cite {
+  font-family: var(--font-ui); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+
+/* ════════════════════════════════════════
+   4. LOVE IMPRINT — burgundy, parents
+════════════════════════════════════════ */
+.imprint {
+  background: linear-gradient(160deg, #5E2233 0%, #7A2D44 50%, #5E2233 100%);
+}
+.imprint-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+}
+.imprint-photo {
+  position: relative; overflow: hidden;
+}
+.imprint-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block;
+}
+.imprint-photo-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to left, #5E2233 0%, transparent 30%);
+}
+.imprint-text {
+  padding: clamp(80px,9vw,110px) clamp(40px,5vw,80px);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.imprint-text h2 {
+  font-size: clamp(28px,3.5vw,44px); line-height: 1.2;
+  color: white; margin-bottom: 24px;
+}
+.imprint-text h2 em { font-style: italic; color: rgba(232,189,201,0.85); }
+.imprint-text p {
+  font-size: clamp(15px,1.7vw,17px); line-height: 1.88;
+  color: rgba(255,255,255,0.52); font-weight: 300; margin-bottom: 20px;
+}
+.imprint-text p strong { color: rgba(255,255,255,0.82); font-weight: 400; }
+.imprint-text blockquote {
+  margin-top: 8px;
+  border-left: 2px solid rgba(130,51,72,0.6);
+  padding-left: 20px;
+  font-family: var(--font-serif); font-size: clamp(16px,1.8vw,20px);
+  font-style: italic; color: rgba(232,189,201,0.8);
+  line-height: 1.55;
+}
+
+
+/* ════════════════════════════════════════
+   5. SONS — teal deep, 2-col
+════════════════════════════════════════ */
+.sons {
+  background: linear-gradient(160deg, #0E2F34 0%, #123840 100%);
+}
+.sons-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+}
+.sons-text {
+  padding: clamp(80px,9vw,110px) clamp(40px,5vw,80px);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.sons-text h2 {
+  font-size: clamp(28px,3.5vw,44px); line-height: 1.2;
+  color: white; margin-bottom: 24px;
+}
+.sons-text h2 em { font-style: italic; color: rgba(43,165,180,0.9); }
+.sons-text p {
+  font-size: clamp(15px,1.7vw,17px); line-height: 1.88;
+  color: rgba(255,255,255,0.52); font-weight: 300; margin-bottom: 20px;
+}
+.sons-text p strong { color: rgba(255,255,255,0.82); font-weight: 400; }
+.sons-text blockquote {
+  margin-top: 8px;
+  border-left: 2px solid rgba(43,165,180,0.45);
+  padding-left: 20px;
+  font-family: var(--font-serif); font-size: clamp(16px,1.8vw,20px);
+  font-style: italic; color: rgba(255,255,255,0.65);
+  line-height: 1.55;
+}
+.sons-photo {
+  position: relative; overflow: hidden;
+}
+.sons-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block;
+}
+.sons-photo-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, #0E2F34 0%, transparent 25%);
+}
+
+
+/* ════════════════════════════════════════
+   7. CLOSING CTA — Medicine Wheel Sedona
+════════════════════════════════════════ */
+.closing {
+  position: relative; overflow: hidden;
+  min-height: 540px;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+}
+.closing-bg { position: absolute; inset: 0; }
+.closing-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 40%;
+}
+.closing-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(26,20,16,0.52) 0%,
+    rgba(26,20,16,0.75) 50%,
+    rgba(26,20,16,0.92) 100%);
+}
+.closing-inner {
+  position: relative; z-index: 2;
+  max-width: 680px; margin: 0 auto;
+  padding: clamp(72px,10vw,110px) clamp(24px,6vw,64px);
+}
+.closing-eyebrow {
+  font-family: var(--font-ui); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--teal);
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  margin-bottom: 24px;
+}
+.closing h2 {
+  font-size: clamp(30px,5vw,54px); line-height: 1.2;
+  font-style: italic; color: white; margin-bottom: 20px;
+}
+.closing h2 em { color: rgba(232,189,201,0.88); font-style: normal; }
+.closing p {
+  font-size: clamp(15px,1.8vw,17px); line-height: 1.8;
+  color: rgba(255,255,255,0.52); font-weight: 300;
+  max-width: 520px; margin: 0 auto 40px;
+}
+.closing-btns {
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+}
+
+
+
+
+/* ════════════════════════════════════════
+   MOBILE
+════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .fb { width: 100% !important; left: 0 !important; margin-left: 0 !important; position: relative; }
+
+  /* Hero — shorter on mobile */
+  .hero { min-height: 70vh; align-items: flex-end; }
+  .hero-inner { padding: 88px 24px 52px; }
+
+  /* Journey sections mobile */
+  .photo-moment { height: 70vw; }
+  .nature-bridge { min-height: 280px; }
+
+  /* Imprint — stack */
+  .imprint-inner { grid-template-columns: 1fr; }
+  .imprint-photo { height: 60vw; }
+  .imprint-photo-overlay { background: linear-gradient(to bottom, #5E2233 0%, transparent 30%); }
+  .imprint-text { padding: 52px 24px 48px; }
+
+  /* Sons — stack, photo on top */
+  .sons-inner { grid-template-columns: 1fr; }
+  .sons-photo { height: 75vw; min-height: 280px; order: -1; }
+  .sons-photo-overlay { background: linear-gradient(to bottom, #0E2F34 0%, transparent 30%); }
+  .sons-text { padding: 52px 24px 48px; }
+}
+@media (max-width: 480px) {
+  .hero { min-height: 60vh; }
+}
+
+</style>
+</head>
+<body>
+<script src="/components/nav.js"></script>
+
+<!-- ════════════════════════════════════════
+     1. HERO — Great Pyramid Egypt
+════════════════════════════════════════ -->
+<section class="hero fb">
+  <div class="hero-bg">
+    <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69f7d834d868be00855ee13e.jpg"
+         alt="The Great Pyramid — Egypt">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Meet the Founder</div>
+    <h1>"The best love stories don't always begin<br>when we're young. Sometimes they begin<br>when we finally <em>know who we are.</em>"</h1>
+    <p class="hero-sub">Monique Alemán &nbsp;·&nbsp; Founder, TrueLuvTake2</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     3. ORIGIN — burgundy, editorial short copy
+════════════════════════════════════════ -->
+<section class="origin fb">
+  <div class="origin-inner">
+    <div class="origin-text">
+      <span class="label pale">Her Story</span>
+      <h2>She spent decades building<br>partnerships that mattered.<br><em>Then she brought that same care to love.</em></h2>
+      <p>After decades of leadership working with people, teams, and complex decisions, Monique noticed something she couldn't unsee — the care used to evaluate meaningful professional partnerships was far more thoughtful than anything available for love.</p>
+      <blockquote>"TrueLuvTake2 was created to honor the richness of this stage of life."</blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     4. EGYPT MOMENT — full-bleed, no text
+════════════════════════════════════════ -->
+<section class="photo-moment fb">
+  <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69b828d187f2fb514ca83b91.jpg"
+       alt="Monique Alemán at the Great Pyramid, Egypt">
+</section>
+
+<!-- ════════════════════════════════════════
+     5. PERU BRIDGE — nature breath, one line
+════════════════════════════════════════ -->
+<section class="nature-bridge fb">
+  <div class="nature-bg">
+    <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69f7d834086be1f079e1e66b.jpg"
+         alt="Sacred Valley, Peru" style="object-position: center 40%;">
+    <div class="nature-overlay"></div>
+  </div>
+  <div class="nature-inner">
+    <p class="nature-quote">"Wisdom is not something we acquire.<br>It is something we <em>uncover.</em>"</p>
+    <span class="nature-cite">— Monique Alemán</span>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     4. LOVE IMPRINT — burgundy, parents
+════════════════════════════════════════ -->
+<section class="imprint fb">
+  <div class="imprint-inner">
+    <div class="imprint-photo">
+      <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69b828ff5b89c7322ccaf937.jpg"
+           alt="Monique with her mother">
+      <div class="imprint-photo-overlay"></div>
+    </div>
+    <div class="imprint-text">
+      <span class="label">Love's First Blueprint</span>
+      <h2>She learned what love<br>looked like by <em>watching it.</em></h2>
+      <p>Monique's understanding of love began at home — watching her parents move through life together with grace. Her father was the first sacred masculine presence. The love between them set a powerful imprint for what partnership could look like.</p>
+      <p><strong>"The quiet dignity of a king and queen."</strong> Not dramatic. Not performative. Simply consistent — showing up on ordinary days with steadiness and care.</p>
+      <blockquote>"Love, at its truest, is not dramatic. It is consistent. It shows up on ordinary days."</blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     5. SONS — teal deep, 2-col
+════════════════════════════════════════ -->
+<section class="sons fb">
+  <div class="sons-inner">
+    <div class="sons-text">
+      <span class="label">Her Greatest Teachers</span>
+      <h2>They showed her how to love<br><em>without keeping score.</em></h2>
+      <p>Different relationships through the years shaped Monique's understanding of love — some brought joy and family, some brought lessons, others revealed new dimensions of intimacy, friendship, and connection.</p>
+      <p>But her two sons have been her <strong>greatest teachers of all.</strong> They have shown her what it means to love without condition, to give without keeping score, and to be fully, joyfully present in someone's life.</p>
+      <blockquote>"They have shown me what it means to love without condition, to give without keeping score, and to be fully, joyfully present in someone's life."</blockquote>
+    </div>
+    <div class="sons-photo">
+      <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69b828d15b89c7462acaefb8.jpg"
+           alt="Monique with her sons" style="object-position: center 15%;">
+      <div class="sons-photo-overlay"></div>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
