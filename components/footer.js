@@ -175,7 +175,7 @@
     + '<a href="/faq">FAQ</a>'
     + '</div>'
     + '<div class="footer-col"><h4>Resources</h4>'
-    + '<a href="https://blog.trueluvtake2.com/reflections" target="_blank" rel="noopener" class="footer-accent">Reflections Blog</a>'
+    + '<a href="https://go.trueluvtake2.com/reflections" target="_blank" rel="noopener" class="footer-accent">Reflections Blog</a>'
     + '<a href="/five-elements">5 Elements</a>'
     + '<a href="/advisory-circle">The Advisory Circle</a>'
     + '</div>'
