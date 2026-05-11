@@ -34,7 +34,7 @@
   --font-ui:     "Instrument Sans", sans-serif;
 }
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   background: var(--cream);
   color: var(--text-warm);
@@ -378,7 +378,7 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 
   /* Hero — shorter on mobile */
   .hero { min-height: 70vh; align-items: flex-end; }
-  .hero-inner { padding: 88px 24px 52px; }
+  .hero-inner { padding: 48px 24px 52px; }
 
   /* Journey sections mobile */
   .photo-moment { height: 70vw; }
@@ -394,7 +394,8 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
   .sons-inner { grid-template-columns: 1fr; }
   .sons-photo { height: 75vw; min-height: 280px; order: -1; }
   .sons-photo-overlay { background: linear-gradient(to bottom, #0E2F34 0%, transparent 30%); }
-  .sons-text { padding: 52px 24px 48px; }
+  .sons-text { padding: 52px 24px 64px; }
+  .sons { padding-bottom: 0; }
 }
 @media (max-width: 480px) {
   .hero { min-height: 60vh; }
