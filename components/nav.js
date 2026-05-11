@@ -61,76 +61,76 @@
   ].join('');
   document.body.appendChild(mobileOverlay);
 
-  // ── Nav Behaviour ──────────────────────────────────────────────
-(function () {
+  // ── Nav Behaviour ─────────────────────────────────────────
   var nav       = document.getElementById('tl2Nav');
   var hamburger = document.getElementById('navHamburger');
   var mobile    = document.getElementById('navMobile');
   var closeBtn  = document.getElementById('navClose');
 
-  // Scroll shadow
-  window.addEventListener('scroll', function () {
-    nav.classList.toggle('scrolled', window.scrollY > 8);
-  }, { passive: true });
+  if (!nav || !hamburger || !mobile) {
+    console.warn('TL2 Nav: required elements not found');
+  } else {
 
-  function openMobile() {
-    mobile.classList.add('open');
-    hamburger.classList.add('open');
-    hamburger.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  }
+    // Scroll shadow
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
 
-  function closeMobile() {
-    mobile.classList.remove('open');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
-  window.closeMobile = closeMobile;
-
-  hamburger.addEventListener('click', function () {
-    mobile.classList.contains('open') ? closeMobile() : openMobile();
-  });
-
-  closeBtn.addEventListener('click', closeMobile);
-
-  // Click backdrop to close
-  mobile.addEventListener('click', function (e) {
-    if (e.target === mobile) closeMobile();
-  });
-
-  // Escape key closes
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && mobile.classList.contains('open')) closeMobile();
-  });
-
-  // Active page highlight
-  var currentPath = window.location.pathname.replace(/\/$/, '');
-  document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(function (link) {
-    var linkPath = link.getAttribute('href').replace(/\/$/, '').replace('https://trueluvtake2.com', '');
-    if (linkPath && currentPath === linkPath) {
-      link.classList.add('nav-active');
+    function openMobile() {
+      mobile.classList.add('open');
+      hamburger.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
     }
-  });
 
-  // ── Live Founding Circle Counter ──
-  // Fetches the real member count from Airtable via the Garden API.
-  // Updates automatically — no manual edits needed when new members join.
-  fetch('https://tlt2-garden.vercel.app/api/count')
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      var countEl = document.getElementById('fcCount');
-      var fillEl  = document.querySelector('.fc-progress-fill');
-      if (countEl && data.count) {
-        countEl.textContent = data.count;
-      }
-      if (fillEl && data.percentage) {
-        fillEl.style.width = data.percentage + '%';
-      }
-    })
-    .catch(function() {
-      // Silently fail — static fallback number stays visible
+    function closeMobile() {
+      mobile.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    window.closeMobile = closeMobile;
+
+    // Hamburger opens menu
+    hamburger.addEventListener('click', function () {
+      mobile.classList.contains('open') ? closeMobile() : openMobile();
     });
 
-})();
+    // Close button
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeMobile);
+    }
+
+    // Tap backdrop to close
+    mobile.addEventListener('click', function (e) {
+      if (e.target === mobile) closeMobile();
+    });
+
+    // Escape key closes
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobile.classList.contains('open')) closeMobile();
+    });
+
+    // Active page highlight
+    var currentPath = window.location.pathname.replace(/\/$/, '');
+    document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(function (link) {
+      var href = link.getAttribute('href') || '';
+      var linkPath = href.replace(/\/$/, '').replace('https://trueluvtake2.com', '').replace('https://www.trueluvtake2.com', '');
+      if (linkPath && currentPath === linkPath) {
+        link.classList.add('nav-active');
+      }
+    });
+
+    // Live Founding Circle Counter
+    fetch('https://tlt2-garden.vercel.app/api/count')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        var countEl = document.getElementById('fcCount');
+        var fillEl  = document.querySelector('.fc-progress-fill');
+        if (countEl && data.count) { countEl.textContent = data.count; }
+        if (fillEl && data.percentage) { fillEl.style.width = data.percentage + '%'; }
+      })
+      .catch(function() {});
+  }
+
 })();
