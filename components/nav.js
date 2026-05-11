@@ -10,7 +10,6 @@
   document.body.insertBefore(tmp.firstElementChild, document.body.firstChild);
 
   // ── Nav Behaviour ──────────────────────────────────────────────
-  <script>
 (function () {
   var nav       = document.getElementById('tl2Nav');
   var hamburger = document.getElementById('navHamburger');
@@ -82,5 +81,4 @@
     });
 
 })();
-</script>
 })();
