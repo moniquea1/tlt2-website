@@ -30,9 +30,9 @@ body {
   font-family: var(--font-body);
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
-  padding-top: 72px;
+  padding-top: 96px;
 }
-@media (max-width: 768px) { body { padding-top: 64px; } }
+@media (max-width: 768px) { body { padding-top: 88px; } }
 
 /* ── TOPBAR ── */
 .mk-topbar {
@@ -58,12 +58,12 @@ body {
 }
 .mk-cover-inner { max-width:960px;margin:0 auto;position:relative;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center; }
 @media (max-width:640px) { .mk-cover-inner { grid-template-columns:1fr; } }
-.mk-cover-logo img { height:64px;width:auto;display:block; }
+.mk-cover-logo img { height:64px;width:auto;display:block;filter:brightness(0) invert(1); }
 .mk-cover-tag { font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(43,165,180,0.9);display:block;margin-bottom:16px;margin-top:24px; }
 .mk-cover-title { font-family:var(--font-serif);font-size:clamp(28px,4vw,46px);color:white;font-weight:400;line-height:1.2;margin-bottom:12px; }
 .mk-cover-title em { font-style:italic;color:rgba(232,189,201,0.9); }
 .mk-cover-sub { font-family:var(--font-ui);font-size:13px;color:rgba(255,255,255,0.55);letter-spacing:1px; }
-.mk-cover-photo { width:180px;height:220px;object-fit:cover;object-position:center 15%;border-radius:2px;flex-shrink:0; }
+.mk-cover-photo { width:180px;height:220px;object-fit:cover;object-position:70% 20%;border-radius:2px;flex-shrink:0; }
 @media (max-width:640px) { .mk-cover-photo { width:100%;height:260px; } }
 
 /* ── WRAP ── */
@@ -100,7 +100,7 @@ body {
 /* ── FOUNDER BIO ── */
 .mk-bio-grid { display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:start;margin:24px 0; }
 @media (max-width:560px) { .mk-bio-grid { grid-template-columns:1fr; } }
-.mk-bio-photo { width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 10%;border-radius:2px; }
+.mk-bio-photo { width:100%;aspect-ratio:3/4;object-fit:cover;object-position:70% 15%;border-radius:2px; }
 .mk-bio-name { font-family:var(--font-serif);font-size:clamp(20px,2.5vw,26px);color:var(--charcoal);margin-bottom:4px; }
 .mk-bio-title { font-family:var(--font-ui);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:16px;display:block; }
 
@@ -152,7 +152,7 @@ body {
       <p class="mk-cover-sub">Press assets, founder bio, brand guidelines &amp; contact</p>
     </div>
     <img
-      src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69b828d187f2fb514ca83b91.jpg"
+      src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/699e0fca1001a5a3c53f19f2.jpg"
       alt="Monique Alemán — Founder, TrueLuvTake2"
       class="mk-cover-photo">
   </div>
@@ -231,7 +231,7 @@ body {
     <hr class="mk-rule rose">
     <div class="mk-bio-grid">
       <img
-        src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69b828d187f2fb514ca83b91.jpg"
+        src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/699e0fca1001a5a3c53f19f2.jpg"
         alt="Monique Alemán"
         class="mk-bio-photo">
       <div>
@@ -324,6 +324,8 @@ body {
 
 </div>
 
-<script src="/components/footer.js"></script>
+<footer style="text-align:center;padding:24px;font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:1px;color:#9a8f88;">
+  &copy; 2026 TrueLuvTake2 &nbsp;&middot;&nbsp; <a href="/privacy-policy" style="color:#9a8f88;text-decoration:none;">Privacy</a> &nbsp;&middot;&nbsp; <a href="/terms-of-service" style="color:#9a8f88;text-decoration:none;">Terms</a> &nbsp;&middot;&nbsp; <a href="/" style="color:#9a8f88;text-decoration:none;">Home</a>
+</footer>
 </body>
 </html>
