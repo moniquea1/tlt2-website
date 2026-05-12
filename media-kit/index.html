@@ -30,18 +30,13 @@ body {
   font-family: var(--font-body);
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
-  padding-top: 124px;
 }
-/* nav.js injects a .nav-offset div — suppress it here so we don't double-space */
-.nav-offset { display: none !important; }
-@media (max-width: 900px) { body { padding-top: 100px; } }
 
 /* ── COVER ── */
 .mk-cover {
   background: var(--charcoal);
   position: relative; overflow: hidden;
-  padding: 32px clamp(1.25rem,5vw,2.5rem) 64px;
-  margin-top: 0;
+  padding: 48px clamp(1.25rem,5vw,2.5rem) 64px;
 }
 /* nav buttons inside cover */
 .mk-cover-nav {
@@ -122,18 +117,14 @@ body {
 
 /* ── PRINT ── */
 @media print {
-  body { padding-top:0; background:white; }
-  .mk-topbar { display:none; }
-  .mk-print { display:none; }
-  .mk-cover { margin-top:0; }
+  body { background:white; }
+  .mk-cover-nav { display:none; }
   .mk-contact { background:#1A1410; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
   .mk-stats, .mk-features, .mk-quotes { break-inside:avoid; }
 }
 </style>
 </head>
 <body>
-
-<script src="/components/nav.js"></script>
 
 <!-- COVER -->
 <div class="mk-cover">
