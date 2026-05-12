@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media Kit — TrueLuvTake2</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rose:     #823348;
+  --rose-dark:#6d2a3d;
+  --teal:     #2BA5B4;
+  --cream:    #FAF7F2;
+  --cream-deep:#F2EDE4;
+  --charcoal: #1A1410;
+  --muted:    #4a3f38;
+  --rule:     #d8cfc6;
+  --font-serif:"Playfair Display", Georgia, serif;
+  --font-body: "Source Serif 4", Georgia, serif;
+  --font-ui:   "Instrument Sans", sans-serif;
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 72px;
+}
+@media (max-width: 768px) { body { padding-top: 64px; } }
+
+/* ── TOPBAR ── */
+.mk-topbar {
+  max-width: 960px; margin: 0 auto;
+  padding: 40px clamp(1.25rem,5vw,2.5rem) 0;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+}
+.mk-back { font-family:var(--font-ui);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);text-decoration:none; }
+.mk-back:hover { text-decoration:underline; }
+.mk-print { font-family:var(--font-ui);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:var(--rose);color:white;border:none;padding:10px 20px;cursor:pointer;border-radius:2px; }
+.mk-print:hover { background:var(--rose-dark); }
+
+/* ── COVER ── */
+.mk-cover {
+  background: var(--charcoal);
+  position: relative; overflow: hidden;
+  padding: 72px clamp(1.25rem,5vw,2.5rem) 64px;
+  margin-top: 32px;
+}
+.mk-cover::before {
+  content:'';position:absolute;inset:0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(130,51,72,0.35) 0%, transparent 65%);
+}
+.mk-cover-inner { max-width:960px;margin:0 auto;position:relative;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center; }
+@media (max-width:640px) { .mk-cover-inner { grid-template-columns:1fr; } }
+.mk-cover-logo img { height:64px;width:auto;display:block; }
+.mk-cover-tag { font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(43,165,180,0.9);display:block;margin-bottom:16px;margin-top:24px; }
+.mk-cover-title { font-family:var(--font-serif);font-size:clamp(28px,4vw,46px);color:white;font-weight:400;line-height:1.2;margin-bottom:12px; }
+.mk-cover-title em { font-style:italic;color:rgba(232,189,201,0.9); }
+.mk-cover-sub { font-family:var(--font-ui);font-size:13px;color:rgba(255,255,255,0.55);letter-spacing:1px; }
+.mk-cover-photo { width:180px;height:220px;object-fit:cover;object-position:center 15%;border-radius:2px;flex-shrink:0; }
+@media (max-width:640px) { .mk-cover-photo { width:100%;height:260px; } }
+
+/* ── WRAP ── */
+.mk-wrap { max-width:960px;margin:0 auto;padding:0 clamp(1.25rem,5vw,2.5rem) 80px; }
+
+/* ── SECTION HEADS ── */
+.mk-section { margin-top:56px; }
+.mk-section-label { font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:6px; }
+.mk-rule { border:none;border-top:1px solid var(--rule);margin:10px 0 28px; }
+.mk-rule.rose { border-top:2px solid var(--rose); }
+
+/* ── BODY TEXT ── */
+.mk-body { font-size:clamp(15px,1.8vw,17px);line-height:1.8;color:var(--muted);margin-bottom:18px; }
+.mk-body strong { color:var(--charcoal);font-weight:600; }
+
+/* ── STAT GRID ── */
+.mk-stats { display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin:24px 0; }
+.mk-stat { background:var(--cream-deep);padding:24px 20px;border-top:2px solid var(--rose);text-align:center; }
+.mk-stat-num { font-family:var(--font-serif);font-size:clamp(28px,4vw,42px);color:var(--rose);display:block;line-height:1; }
+.mk-stat-label { font-family:var(--font-ui);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:8px;display:block; }
+
+/* ── PLATFORM FEATURES ── */
+.mk-features { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:24px 0; }
+.mk-feature { padding:20px;border:1px solid var(--rule);background:white; }
+.mk-feature-name { font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--rose);margin-bottom:8px;display:block; }
+.mk-feature-body { font-size:14px;color:var(--muted);line-height:1.65; }
+
+/* ── QUOTES ── */
+.mk-quotes { display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:24px 0; }
+.mk-quote { border-left:3px solid var(--rose);padding:16px 20px;background:rgba(130,51,72,0.04); }
+.mk-quote-text { font-family:var(--font-serif);font-style:italic;font-size:clamp(15px,1.8vw,17px);color:var(--charcoal);line-height:1.55;margin-bottom:10px; }
+.mk-quote-cite { font-family:var(--font-ui);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted); }
+
+/* ── FOUNDER BIO ── */
+.mk-bio-grid { display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:start;margin:24px 0; }
+@media (max-width:560px) { .mk-bio-grid { grid-template-columns:1fr; } }
+.mk-bio-photo { width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 10%;border-radius:2px; }
+.mk-bio-name { font-family:var(--font-serif);font-size:clamp(20px,2.5vw,26px);color:var(--charcoal);margin-bottom:4px; }
+.mk-bio-title { font-family:var(--font-ui);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:16px;display:block; }
+
+/* ── BRAND COLORS ── */
+.mk-colors { display:flex;flex-wrap:wrap;gap:16px;margin:24px 0; }
+.mk-color { text-align:center; }
+.mk-swatch { width:80px;height:80px;border-radius:4px;margin-bottom:8px; }
+.mk-color-name { font-family:var(--font-ui);font-size:11px;font-weight:600;color:var(--charcoal);display:block; }
+.mk-color-hex { font-family:var(--font-ui);font-size:10px;color:var(--muted);letter-spacing:1px; }
+
+/* ── CONTACT BOX ── */
+.mk-contact { background:var(--charcoal);padding:36px;margin-top:56px; }
+.mk-contact h3 { font-family:var(--font-ui);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:20px; }
+.mk-contact-row { display:flex;gap:16px;margin-bottom:10px;font-size:15px;color:rgba(255,255,255,0.65); }
+.mk-contact-row strong { color:white;font-family:var(--font-ui);font-size:12px;min-width:90px; }
+.mk-contact a { color:rgba(43,165,180,0.9);text-decoration:none; }
+.mk-contact a:hover { text-decoration:underline; }
+
+/* ── PRINT ── */
+@media print {
+  body { padding-top:0; background:white; }
+  .mk-topbar { display:none; }
+  .mk-print { display:none; }
+  .mk-cover { margin-top:0; }
+  .mk-contact { background:#1A1410; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .mk-stats, .mk-features, .mk-quotes { break-inside:avoid; }
+}
+</style>
+</head>
+<body>
+
+<script src="/components/nav.js"></script>
+
+<!-- TOP BAR -->
+<div class="mk-topbar">
+  <a href="/media" class="mk-back">← Back to Media</a>
+  <button class="mk-print" onclick="window.print()">Save as PDF / Print</button>
+</div>
+
+<!-- COVER -->
+<div class="mk-cover">
+  <div class="mk-cover-inner">
+    <div>
+      <div class="mk-cover-logo">
+        <img src="/assets/logo.png" alt="TrueLuvTake2">
+      </div>
+      <span class="mk-cover-tag">Media Kit · May 2026</span>
+      <h1 class="mk-cover-title">Reimagining love<br><em>later in life.</em></h1>
+      <p class="mk-cover-sub">Press assets, founder bio, brand guidelines &amp; contact</p>
+    </div>
+    <img
+      src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69b828d187f2fb514ca83b91.jpg"
+      alt="Monique Alemán — Founder, TrueLuvTake2"
+      class="mk-cover-photo">
+  </div>
+</div>
+
+<div class="mk-wrap">
+
+  <!-- COMPANY OVERVIEW -->
+  <div class="mk-section">
+    <span class="mk-section-label">Company Overview</span>
+    <hr class="mk-rule rose">
+    <p class="mk-body"><strong>TrueLuvTake2</strong> is a people-first platform designed to support meaningful connection later in life. Founded by Monique Alemán and launching in 2026, TrueLuvTake2 offers a human-guided alternative to traditional dating apps — built on principles of self-awareness, discernment, and real-world context.</p>
+    <p class="mk-body">Rather than replicating the speed, anonymity, and algorithm-driven mechanics of modern dating, TrueLuvTake2 introduces a model that mirrors how people make meaningful decisions in every other area of life. The platform centers readiness, authenticity, and introductions supported by trusted Advisory Circles — the people who know a Seeker best.</p>
+    <p class="mk-body"><strong>Website:</strong> <a href="https://www.trueluvtake2.com" style="color:var(--rose);">www.TrueLuvTake2.com</a> &nbsp;·&nbsp; <strong>Founded:</strong> 2026 &nbsp;·&nbsp; <strong>Based in:</strong> Boston, MA</p>
+  </div>
+
+  <!-- KEY STATS -->
+  <div class="mk-section">
+    <span class="mk-section-label">The Opportunity</span>
+    <hr class="mk-rule rose">
+    <div class="mk-stats">
+      <div class="mk-stat">
+        <span class="mk-stat-num">40M+</span>
+        <span class="mk-stat-label">Adults over 50 who are single in the US</span>
+      </div>
+      <div class="mk-stat">
+        <span class="mk-stat-num">70%</span>
+        <span class="mk-stat-label">Report being open to a new relationship</span>
+      </div>
+      <div class="mk-stat">
+        <span class="mk-stat-num">250</span>
+        <span class="mk-stat-label">Founding Circle spots — Garden opens at capacity</span>
+      </div>
+      <div class="mk-stat">
+        <span class="mk-stat-num">$0</span>
+        <span class="mk-stat-label">Cost to create a Seeker Introduction</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLATFORM FEATURES -->
+  <div class="mk-section">
+    <span class="mk-section-label">How It Works</span>
+    <hr class="mk-rule rose">
+    <div class="mk-features">
+      <div class="mk-feature">
+        <span class="mk-feature-name">Attunement Profile</span>
+        <p class="mk-feature-body">A reflective profile assessing readiness across multiple dimensions. Shifts the question from "Who do you want?" to "Who are you now, and what are you ready for?"</p>
+      </div>
+      <div class="mk-feature">
+        <span class="mk-feature-name">Advisory Circle</span>
+        <p class="mk-feature-body">A personal love team of trusted people — typically adult children and a Trusted Love Advisor — who support and advocate for the Seeker throughout the process.</p>
+      </div>
+      <div class="mk-feature">
+        <span class="mk-feature-name">Authentic Presence</span>
+        <p class="mk-feature-body">Every member submits a short video. No AI-generated profiles, no bots, no unverified identities. You will always know the person is real.</p>
+      </div>
+      <div class="mk-feature">
+        <span class="mk-feature-name">Curated Invitations</span>
+        <p class="mk-feature-body">Potential connections are presented as thoughtful invitations — not endless profiles to scroll through. Intentional pacing at every step.</p>
+      </div>
+      <div class="mk-feature">
+        <span class="mk-feature-name">Five Elements Framework</span>
+        <p class="mk-feature-body">A proprietary connection framework (Earth, Water, Air, Fire, Ether) replacing algorithms. Measures compatibility through lived experience, not data points.</p>
+      </div>
+      <div class="mk-feature">
+        <span class="mk-feature-name">The Garden</span>
+        <p class="mk-feature-body">A private, members-only space where Advisory Circles browse profiles and signal interest on behalf of their Seeker. Browsing happens with support — never in isolation.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOUNDER BIO -->
+  <div class="mk-section">
+    <span class="mk-section-label">About the Founder</span>
+    <hr class="mk-rule rose">
+    <div class="mk-bio-grid">
+      <img
+        src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69b828d187f2fb514ca83b91.jpg"
+        alt="Monique Alemán"
+        class="mk-bio-photo">
+      <div>
+        <h2 class="mk-bio-name">Monique Alem&aacute;n</h2>
+        <span class="mk-bio-title">Founder &amp; CEO, TrueLuvTake2</span>
+        <p class="mk-body">Monique Alemán brings more than two decades of leadership experience across entrepreneurship, healthcare, and executive search. She has led national teams responsible for high-stakes professional matchmaking and multi-million-dollar revenue portfolios, giving her a unique perspective on discernment, alignment, and the human elements of successful long-term partnerships.</p>
+        <p class="mk-body">Her background includes ten years as a successful restaurant entrepreneur and multiple VP-level leadership roles within the healthcare industry. Her work draws on a lifelong study of human connection, emotional intelligence, and relational readiness, shaped by personal journeys in Egypt and Peru centered on presence, reflection, and human connection.</p>
+        <p class="mk-body"><strong>Available for:</strong> Podcast interviews, panel discussions, newsletter features, keynote speaking, and media appearances.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPROVED QUOTES -->
+  <div class="mk-section">
+    <span class="mk-section-label">Approved Quotes</span>
+    <hr class="mk-rule rose">
+    <div class="mk-quotes">
+      <div class="mk-quote">
+        <p class="mk-quote-text">"Matching doesn't begin with data. It begins with self-knowing."</p>
+        <span class="mk-quote-cite">Monique Alemán · Founder, TrueLuvTake2</span>
+      </div>
+      <div class="mk-quote">
+        <p class="mk-quote-text">"Love later in life is not rare. It is simply under-supported."</p>
+        <span class="mk-quote-cite">Monique Alemán · Founder, TrueLuvTake2</span>
+      </div>
+      <div class="mk-quote">
+        <p class="mk-quote-text">"This stage of life is not a problem to solve. It's a chapter to celebrate."</p>
+        <span class="mk-quote-cite">Monique Alemán · Founder, TrueLuvTake2</span>
+      </div>
+      <div class="mk-quote">
+        <p class="mk-quote-text">"Ancient cultures understood that the most important unions require witnesses, wisdom, and time. TrueLuvTake2 is the first platform to bring that truth into the modern age."</p>
+        <span class="mk-quote-cite">Monique Alemán · Founder, TrueLuvTake2</span>
+      </div>
+      <div class="mk-quote">
+        <p class="mk-quote-text">"We invest extraordinary time and resources into hiring the right people professionally. Our most important personal decision deserves the same."</p>
+        <span class="mk-quote-cite">Monique Alemán · Founder, TrueLuvTake2</span>
+      </div>
+      <div class="mk-quote">
+        <p class="mk-quote-text">"The best love stories don't always begin when we're young. Sometimes they begin when we finally know who we are."</p>
+        <span class="mk-quote-cite">Monique Alemán · Founder, TrueLuvTake2</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRAND GUIDELINES -->
+  <div class="mk-section">
+    <span class="mk-section-label">Brand Guidelines</span>
+    <hr class="mk-rule rose">
+    <p class="mk-body">When writing about TrueLuvTake2, please use the full name <strong>TrueLuvTake2</strong> on first reference. Acceptable shortened forms: <strong>TLT2</strong> (internal) or <strong>TrueLuvTake2</strong> (always preferred in editorial). The founder's name is always written <strong>Monique Alemán</strong> — with the accent over the second 'a'.</p>
+
+    <p class="mk-body" style="margin-top:20px;"><strong>Brand Voice:</strong> Warm, grounded, and elegant. Never salesy or urgent. Key phrases: attunement, discernment, intentional pacing, lived experience, readiness. Avoid: swipe, match (as a verb), algorithm, optimize.</p>
+
+    <p class="mk-body" style="margin-top:8px;"><strong>Primary Colors:</strong></p>
+    <div class="mk-colors">
+      <div class="mk-color">
+        <div class="mk-swatch" style="background:#823348;"></div>
+        <span class="mk-color-name">Burgundy Rose</span>
+        <span class="mk-color-hex">#823348</span>
+      </div>
+      <div class="mk-color">
+        <div class="mk-swatch" style="background:#2BA5B4;"></div>
+        <span class="mk-color-name">Teal</span>
+        <span class="mk-color-hex">#2BA5B4</span>
+      </div>
+      <div class="mk-color">
+        <div class="mk-swatch" style="background:#FAF7F2;border:1px solid #d8cfc6;"></div>
+        <span class="mk-color-name">Cream</span>
+        <span class="mk-color-hex">#FAF7F2</span>
+      </div>
+      <div class="mk-color">
+        <div class="mk-swatch" style="background:#1A1410;"></div>
+        <span class="mk-color-name">Charcoal</span>
+        <span class="mk-color-hex">#1A1410</span>
+      </div>
+    </div>
+
+    <p class="mk-body" style="margin-top:8px;"><strong>Typography:</strong> Playfair Display (headlines) · Source Serif 4 (body) · Instrument Sans (UI/labels)</p>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="mk-contact">
+    <h3>Media Contact</h3>
+    <div class="mk-contact-row"><strong>Name</strong> Monique Alem&aacute;n, Founder &amp; CEO</div>
+    <div class="mk-contact-row"><strong>Email</strong> <a href="mailto:hello@trueluvtake2.com">hello@trueluvtake2.com</a></div>
+    <div class="mk-contact-row"><strong>Phone</strong> (508) 844-1281</div>
+    <div class="mk-contact-row"><strong>Website</strong> <a href="https://www.trueluvtake2.com">www.TrueLuvTake2.com</a></div>
+    <div class="mk-contact-row"><strong>Press Release</strong> <a href="/press-release">trueluvtake2.com/press-release</a></div>
+    <div class="mk-contact-row"><strong>Response Time</strong> Within 2 business days</div>
+  </div>
+
+</div>
+
+<script src="/components/footer.js"></script>
+</body>
+</html>
