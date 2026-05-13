@@ -5,7 +5,8 @@
     { "src": "/garden", "status": 301, "headers": { "Location": "https://tlt2-garden.vercel.app" } },
 
     { "src": "/partner-profile(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/partner-profile$1" } },
-    { "src": "/advisory-circle-access(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/advisory-circle-access$1" } },
+    { "src": "/advisory-circle-access(.*)", "status": 301, "headers": { "Location": "https://go.trueluvtake2.com/love-team-access$1" } },
+    { "src": "/love-team-access(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/love-team-access$1" } },
     { "src": "/family-results(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/family-results$1" } },
     { "src": "/partner-results-page(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/partner-results-page$1" } },
     { "src": "/profiles(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/profiles$1" } },
