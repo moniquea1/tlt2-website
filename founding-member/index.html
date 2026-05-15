@@ -93,7 +93,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
 .hero-bg { position: absolute; inset: 0; }
 .hero-bg img {
   width: 100%; height: 100%;
-  object-fit: cover; object-position: center 55%;
+  object-fit: cover; object-position: center 18%;
   display: block;
   filter: brightness(0.95) saturate(1.1);
 }
@@ -286,6 +286,11 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   .receives-grid { grid-template-columns: 1fr; }
 }
 
+
+/* ═══════ FOOTER GOLD OVERRIDE ═══════ */
+.footer-cta { background: linear-gradient(135deg, #8B5E0A 0%, #6B4508 100%) !important; }
+.cta-white { background: white !important; color: var(--gold) !important; }
+.footer-social a:hover { border-color: var(--gold) !important; }
 </style>
 </head>
 <body>
@@ -386,7 +391,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
 </section>
 
 <!-- ═══════ CELEBRATION PHOTO BREAK ═══════ -->
-<div class="fb" style="height:420px;overflow:hidden;position:relative;">
+<div class="fb" style="height:280px;overflow:hidden;position:relative;">
   <img src="/images/hero-founding.jpg" alt="A toast to what's ahead" style="width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:brightness(1.05) saturate(1.1);">
   <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(12,8,6,0.55) 0%,rgba(12,8,6,0.10) 60%,rgba(12,8,6,0.00) 100%);display:flex;align-items:center;padding:0 clamp(1.5rem,8vw,6rem);">
     <div>
@@ -421,16 +426,4 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
         <div class="receives-card">
           <span class="receives-card-icon">✦</span>
           <p class="receives-card-title">Permanent founding member recognition</p>
-          <p class="receives-card-body">Within the platform, founding members are permanently recognized — a quiet acknowledgment of what you made possible.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════ CTA ═══════ -->
-<section class="cta-section fb">
-  <div class="cta-inner">
-    <span class="label">Ready to Begin</span>
-    <h2 class="cta-title">
-      The Garden opens<br>because people like
+          <p class="receives-card-body">Within the platform, founding members are permanently recognized — a quiet acknowledgment of what you made possi
