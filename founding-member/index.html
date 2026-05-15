@@ -101,9 +101,9 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   position: absolute; inset: 0;
   background: linear-gradient(
     to top,
-    rgba(12,8,6,0.98) 0%,
-    rgba(12,8,6,0.65) 42%,
-    rgba(12,8,6,0.20) 100%
+    rgba(12,8,6,0.68) 0%,
+    rgba(12,8,6,0.22) 45%,
+    rgba(12,8,6,0.00) 100%
   );
 }
 .hero-inner {
@@ -153,7 +153,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
 
 /* ═══════ THE COMMITMENT ═══════ */
 .commitment-section {
-  background: linear-gradient(160deg, var(--charcoal) 0%, #231B14 100%);
+  background: linear-gradient(160deg, #7a4f06 0%, #5c3a04 100%);
 }
 .commitment-inner {
   padding: clamp(72px,10vw,110px) 0;
@@ -257,10 +257,10 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
 
 /* ═══════ CTA ═══════ */
 .cta-section {
-  background: var(--charcoal);
+  background: linear-gradient(160deg, #8B5E0A 0%, #6B4508 100%);
   padding: clamp(72px,10vw,110px) clamp(1.25rem,5vw,2.5rem);
   text-align: center;
-  border-top: 3px solid var(--teal);
+  border-top: 3px solid rgba(255,255,255,0.15);
 }
 .cta-inner { max-width: 680px; margin: 0 auto; }
 .cta-title {
@@ -296,8 +296,8 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
 <section class="hero fb">
   <div class="hero-bg">
     <img
-      src="/images/hero-founding.jpg"
-      alt="Two martini glasses overlooking the water — a celebration of arriving"
+      src="/images/hero-garden.jpg"
+      alt="Golden beach sunset — a celebration of what's ahead"
     >
   </div>
   <div class="hero-overlay"></div>
@@ -385,6 +385,17 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   </div>
 </section>
 
+<!-- ═══════ CELEBRATION PHOTO BREAK ═══════ -->
+<div class="fb" style="height:420px;overflow:hidden;position:relative;">
+  <img src="/images/hero-founding.jpg" alt="A toast to what's ahead" style="width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:brightness(1.05) saturate(1.1);">
+  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(12,8,6,0.55) 0%,rgba(12,8,6,0.10) 60%,rgba(12,8,6,0.00) 100%);display:flex;align-items:center;padding:0 clamp(1.5rem,8vw,6rem);">
+    <div>
+      <p style="font-family:'Caveat',cursive;font-size:clamp(28px,4vw,48px);color:white;line-height:1.3;max-width:500px;text-shadow:0 2px 20px rgba(0,0,0,0.3);">"To the ones who said yes<br>before the doors opened."</p>
+      <p style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:16px;">— Founding Members</p>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════ WHAT YOU RECEIVE ═══════ -->
 <section class="receives-section fb">
   <div class="fb-inner">
@@ -422,28 +433,4 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   <div class="cta-inner">
     <span class="label">Ready to Begin</span>
     <h2 class="cta-title">
-      The Garden opens<br>because people like you<br><em>step forward.</em>
-    </h2>
-    <p class="cta-body">
-      TrueLuvTake2 is being built by and for people who believe love later in life deserves something better than a swipe. Your founding commitment is the act that makes the Garden real.
-    </p>
-    <div class="cta-btns">
-      <a href="https://go.trueluvtake2.com/membership" class="btn-white">Secure your place — $444 →</a>
-      <a href="/the-garden" class="btn-ghost-white">About the Garden</a>
-    </div>
-    <p class="cta-fine">
-      $444 covers your first two months at $222/month — today's rate, held until opening day.<br>
-      Activates only when the Garden reaches 250 members. Not before.
-    </p>
-  </div>
-</section>
-
-<script src="/components/footer.js"></script>
-
-<script>
-  // Pull live count into inline note
-  fetch('https://tlt2-garden.vercel.app/api/count')
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      var el = document.getElementById('countInline');
-      if (el && data.count !=
+      The Garden opens<br>because people like
