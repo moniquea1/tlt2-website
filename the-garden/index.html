@@ -303,6 +303,11 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   .what-inner { grid-template-columns: 1fr; }
 }
 
+/* ═══════ FOOTER GOLD OVERRIDE ═══════ */
+.footer-cta { background: linear-gradient(135deg, #8B5E0A 0%, #6B4508 100%) !important; }
+.cta-white { background: white !important; color: var(--gold) !important; }
+.footer-social a:hover { border-color: var(--gold) !important; }
+
 </style>
 </head>
 <body>
@@ -406,7 +411,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
 <section class="quote-section fb">
   <div class="quote-inner">
     <p class="quote-text">
-      "You've built a whole life. The Garden was built for exactly that — for people who arrive with wisdom, with clarity, and with the quiet certainty that they are worth this."
+      "This is the fun part. The part where everything you know about yourself gets to meet someone who has been waiting for exactly you."
     </p>
     <span class="quote-cite">— Monique Alemán, Founder</span>
   </div>
@@ -441,12 +446,4 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
     .then(function(data) {
       var countEl = document.getElementById('gardenCount');
       var fillEl  = document.getElementById('gardenFill');
-      if (countEl && data.count !== undefined) {
-        countEl.textContent = data.count;
-      }
-      if (fillEl && data.percentage !== undefined) {
-        fillEl.style.width = data.percentage + '%';
-      }
-    })
-    .catch(function() {
-      var countEl = document.getElementById('gardenCount')
+      if (countEl && data.count !== unde
