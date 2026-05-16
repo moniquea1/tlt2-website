@@ -112,11 +112,14 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   padding: clamp(100px,12vw,140px) clamp(1.25rem,5vw,2.5rem) clamp(72px,9vw,110px);
 }
 .hero-tag {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-family: var(--font-ui); font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--teal); margin-bottom: 28px;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-ui); font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); font-weight: 700; margin-bottom: 36px;
+  background: rgba(196,134,10,0.18); border: 1.5px solid rgba(196,134,10,0.6);
+  padding: 9px 22px; border-radius: 50px;
+  box-shadow: 0 0 24px rgba(196,134,10,0.18);
 }
-.hero-tag::before { content: ""; width: 24px; height: 1px; background: var(--teal); }
+.hero-tag::before { content: "✦"; font-size: 9px; opacity: 0.9; }
 .hero-title {
   font-size: clamp(36px, 5.5vw, 66px); color: white; line-height: 1.1;
   max-width: 820px; margin-bottom: 28px;
@@ -316,7 +319,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
     </p>
     <div class="hero-btns">
       <a href="https://go.trueluvtake2.com/membership" class="btn-white">Secure your place — $444 →</a>
-      <a href="#what-this-means" class="btn-ghost-white">What this means ↓</a>
+      <a href="#the-commitment" class="btn-ghost-white">See what's included ↓</a>
     </div>
   </div>
 </section>
@@ -425,5 +428,4 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
         </div>
         <div class="receives-card">
           <span class="receives-card-icon">✦</span>
-          <p class="receives-card-title">Permanent founding member recognition</p>
-          <p class="receives-card-body">Within the platform, founding members are permanently recognized — a quiet acknowledgment of wha
+          <p class="receives-card-title">Permanent
