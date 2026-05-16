@@ -107,11 +107,14 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   padding: clamp(100px,12vw,140px) clamp(1.25rem,5vw,2.5rem) clamp(72px,9vw,110px);
 }
 .hero-tag {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-family: var(--font-ui); font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--teal); margin-bottom: 28px;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-ui); font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); font-weight: 700; margin-bottom: 36px;
+  background: rgba(196,134,10,0.18); border: 1.5px solid rgba(196,134,10,0.6);
+  padding: 9px 22px; border-radius: 50px;
+  box-shadow: 0 0 24px rgba(196,134,10,0.18);
 }
-.hero-tag::before { content: ""; width: 24px; height: 1px; background: var(--teal); }
+.hero-tag::before { content: "✦"; font-size: 9px; opacity: 0.9; }
 .hero-title {
   font-size: clamp(36px, 5.5vw, 68px); color: white; line-height: 1.1;
   max-width: 800px; margin-bottom: 28px;
@@ -443,7 +446,4 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   // Pull live count from Garden API
   fetch('https://tlt2-garden.vercel.app/api/count')
     .then(function(r) { return r.json(); })
-    .then(function(data) {
-      var countEl = document.getElementById('gardenCount');
-      var fillEl  = document.getElementById('gardenFill');
-      if (countEl && data.count !== unde
+    .then(function
