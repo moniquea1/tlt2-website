@@ -31,6 +31,13 @@
   --font-body:    "Source Serif 4", Georgia, serif;
   --font-ui:      "Instrument Sans", sans-serif;
   --font-hand:    "Caveat", cursive;
+  --charcoal-mid: #252018;
+  --rose-light:   #9B3D57;
+  --white-60:     rgba(255,255,255,0.60);
+  --white-40:     rgba(255,255,255,0.40);
+  --white-20:     rgba(255,255,255,0.20);
+  --white-10:     rgba(255,255,255,0.10);
+  --white-06:     rgba(255,255,255,0.06);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -83,7 +90,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
 }
 .btn-rose:hover { background: var(--gold-dark); color: white; transform: translateY(-2px); }
 
-/* ═══════ HERO ═══════ */
+/* HERO */
 .hero {
   background: var(--charcoal);
   min-height: 85vh;
@@ -118,7 +125,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   background: rgba(196,134,10,0.22); border: 2px solid rgba(196,134,10,0.80);
   padding: 9px 22px; border-radius: 50px;
 }
-.hero-tag::before { content: "✦"; font-size: 9px; color: var(--gold); opacity: 1; }
+.hero-tag::before { content: "\2726"; font-size: 9px; color: var(--gold); opacity: 1; }
 .hero-title {
   font-size: clamp(36px, 5.5vw, 66px); color: white; line-height: 1.1;
   max-width: 820px; margin-bottom: 28px;
@@ -130,7 +137,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
 }
 .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
 
-/* ═══════ WHAT THIS MEANS ═══════ */
+/* WHAT THIS MEANS */
 .meaning-section { background: var(--cream); }
 .meaning-inner {
   padding: clamp(72px,10vw,110px) 0;
@@ -152,8 +159,18 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   line-height: 1.5; margin: 36px 0;
   padding-left: 28px; border-left: 3px solid var(--teal);
 }
+.hand-note {
+  font-family: var(--font-hand);
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 600;
+  color: var(--rose);
+  line-height: 1.45;
+  margin: 28px 0 8px;
+  display: block;
+}
+.hand-note em { font-style: italic; color: #1A8A98; }
 
-/* ═══════ THE COMMITMENT ═══════ */
+/* THE COMMITMENT */
 .commitment-section {
   background: linear-gradient(160deg, #7a4f06 0%, #5c3a04 100%);
 }
@@ -180,9 +197,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   letter-spacing: 1.5px; margin-bottom: 32px;
 }
 .commitment-items { display: flex; flex-direction: column; gap: 14px; }
-.commitment-item {
-  display: flex; gap: 14px; align-items: flex-start;
-}
+.commitment-item { display: flex; gap: 14px; align-items: flex-start; }
 .commitment-item-dot {
   width: 6px; height: 6px; background: var(--teal); border-radius: 50%;
   flex-shrink: 0; margin-top: 8px;
@@ -191,8 +206,6 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   font-size: 14px; color: rgba(255,255,255,0.68); line-height: 1.6;
 }
 .commitment-item-text strong { color: white; }
-
-.commitment-text { }
 .commitment-text-title {
   font-size: clamp(24px,3vw,38px); color: white; line-height: 1.25; margin-bottom: 20px;
 }
@@ -206,27 +219,9 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   font-style: italic; line-height: 1.6; margin-top: 24px;
 }
 
-/* ═══════ WHAT YOU RECEIVE ═══════ */
+/* WHAT YOU RECEIVE */
 .receives-section { background: var(--gold-light); }
-
-/* ═══════ HANDWRITTEN MOMENT ═══════ */
-.hand-note {
-  font-family: var(--font-hand);
-  font-size: clamp(20px, 3vw, 30px);
-  font-weight: 600;
-  color: var(--rose);
-  line-height: 1.45;
-  margin: 28px 0 8px;
-  display: block;
-}
-.hand-note em {
-  font-style: italic;
-  color: #1A8A98;
-}
-.receives-inner {
-  padding: clamp(72px,10vw,110px) 0;
-  text-align: center;
-}
+.receives-inner { padding: clamp(72px,10vw,110px) 0; text-align: center; }
 .receives-title {
   font-size: clamp(26px,3.5vw,44px); color: var(--text-warm);
   line-height: 1.2; margin-bottom: 14px;
@@ -258,7 +253,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
 }
 .receives-card-body { font-size: 13px; color: var(--muted); line-height: 1.7; }
 
-/* ═══════ CTA ═══════ */
+/* CTA */
 .cta-section {
   background: linear-gradient(160deg, #8B5E0A 0%, #6B4508 100%);
   padding: clamp(72px,10vw,110px) clamp(1.25rem,5vw,2.5rem);
@@ -280,7 +275,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   margin-top: 20px; font-style: italic; line-height: 1.6;
 }
 
-/* ═══════ RESPONSIVE ═══════ */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .commitment-inner { grid-template-columns: 1fr; }
   .receives-grid { grid-template-columns: 1fr; }
@@ -289,17 +284,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   .receives-grid { grid-template-columns: 1fr; }
 }
 
-
-/* ═══════ FOOTER CSS (inlined — no JS injection) ═══════ */
-:root {
-  --charcoal-mid: #252018;
-  --rose-light:   #9B3D57;
-  --white-60:     rgba(255,255,255,0.60);
-  --white-40:     rgba(255,255,255,0.40);
-  --white-20:     rgba(255,255,255,0.20);
-  --white-10:     rgba(255,255,255,0.10);
-  --white-06:     rgba(255,255,255,0.06);
-}
+/* FOOTER CSS */
 .footer-cta {
   background: linear-gradient(135deg, #8B5E0A 0%, #6B4508 100%);
   padding: clamp(48px,7vw,72px) clamp(24px,6vw,80px);
@@ -340,29 +325,36 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   gap: clamp(32px,5vw,56px); margin-bottom: 40px;
   padding-bottom: 40px; border-bottom: 1px solid var(--white-10);
 }
-.footer-brand-name {
-  font-family: var(--font-serif); font-size: 22px; font-weight: 400;
-  color: #fff; letter-spacing: 0.02em; margin: 0 0 4px;
-}
-.footer-brand-name em { font-style: italic; color: rgba(255,255,255,0.7); }
 .footer-tagline {
   font-family: var(--font-ui); font-size: 11px; font-weight: 600;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--teal); margin: 0 0 16px;
 }
+.footer-brand-logo {
+  font-family: var(--font-serif); font-size: 24px; font-weight: 400;
+  color: #fff; letter-spacing: 0.02em; margin: 0 0 8px; display: block;
+}
+.footer-brand-logo em { font-style: italic; color: rgba(255,255,255,0.65); }
 .footer-brand-desc {
   font-family: var(--font-ui); font-size: 14px; font-weight: 300;
   line-height: 1.75; color: var(--white-40); max-width: 260px; margin: 0 0 24px;
 }
+.footer-elements { display: flex; gap: 6px; align-items: center; margin-bottom: 20px; }
+.el-dot { width: 6px; height: 6px; border-radius: 50%; }
+.el-earth { background: #6B8E5A; }
+.el-water { background: #5B8FB9; }
+.el-air   { background: #C5B8A0; }
+.el-fire  { background: #823348; }
+.el-ether { background: #9370B8; }
 .footer-social { display: flex; gap: 12px; align-items: center; }
 .footer-social a {
   display: flex; align-items: center; justify-content: center;
   width: 34px; height: 34px; border-radius: 50%;
   border: 1px solid var(--white-20); color: var(--white-40);
   text-decoration: none; transition: border-color 0.2s, color 0.2s;
+  font-family: var(--font-ui); font-size: 11px; font-weight: 600;
 }
 .footer-social a:hover { border-color: var(--gold); color: #fff; }
-.footer-social a svg { width: 14px; height: 14px; fill: currentColor; }
 .footer-col h4 {
   font-family: var(--font-ui); font-size: 10px; font-weight: 600;
   letter-spacing: 0.14em; text-transform: uppercase;
@@ -391,13 +383,6 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   margin-left: 20px; transition: color 0.2s;
 }
 .footer-bottom-links a:hover { color: rgba(255,255,255,0.6); }
-.footer-elements { display: flex; gap: 6px; align-items: center; margin-bottom: 20px; }
-.el-dot { width: 6px; height: 6px; border-radius: 50%; }
-.el-earth { background: #6B8E5A; }
-.el-water { background: #5B8FB9; }
-.el-air   { background: #C5B8A0; }
-.el-fire  { background: #823348; }
-.el-ether { background: #9370B8; }
 @media (max-width: 960px) {
   .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
   .footer-brand { grid-column: 1 / -1; }
@@ -420,13 +405,10 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
 
 <script src="/components/nav.js"></script>
 
-<!-- ═══════ HERO ═══════ -->
+<!-- HERO -->
 <section class="hero fb">
   <div class="hero-bg">
-    <img
-      src="/images/hero-garden.jpg"
-      alt="Golden beach sunset — a celebration of what's ahead"
-    >
+    <img src="/images/hero-garden.jpg" alt="Golden beach sunset — a celebration of what's ahead">
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-inner">
@@ -438,13 +420,13 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
       The Garden opens when 250 members arrive. Founding members are the people who step forward before the doors open — and make it possible for everyone else to walk in.
     </p>
     <div class="hero-btns">
-      <a href="#the-commitment" class="btn-white">Secure your place — $444 →</a>
-      <a href="#the-commitment" class="btn-ghost-white">See what's included ↓</a>
+      <a href="#the-commitment" class="btn-white">Secure your place — $444 &#8594;</a>
+      <a href="#the-commitment" class="btn-ghost-white">See what's included &#8595;</a>
     </div>
   </div>
 </section>
 
-<!-- ═══════ WHAT THIS MEANS ═══════ -->
+<!-- WHAT THIS MEANS -->
 <section class="meaning-section fb" id="what-this-means">
   <div class="fb-inner">
     <div class="meaning-inner">
@@ -461,7 +443,199 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   </div>
 </section>
 
-<!-- ═══════ THE COMMITMENT ═══════ -->
+<!-- THE COMMITMENT -->
 <section class="commitment-section fb" id="the-commitment">
   <div class="fb-inner">
-   
+    <div class="commitment-inner">
+
+      <div class="commitment-card">
+        <div class="commitment-price"><span>$</span>444</div>
+        <p class="commitment-price-label">TWO MONTHS &middot; HELD UNTIL OPENING DAY</p>
+        <div class="commitment-items">
+          <div class="commitment-item">
+            <div class="commitment-item-dot"></div>
+            <p class="commitment-item-text"><strong>$222/month</strong> — today's membership rate, secured before any future increases</p>
+          </div>
+          <div class="commitment-item">
+            <div class="commitment-item-dot"></div>
+            <p class="commitment-item-text"><strong>Two months</strong> paid now, held with care — activates on the day the Garden opens</p>
+          </div>
+          <div class="commitment-item">
+            <div class="commitment-item-dot"></div>
+            <p class="commitment-item-text"><strong>Not before.</strong> Your investment does not activate until we reach 250 members</p>
+          </div>
+          <div class="commitment-item">
+            <div class="commitment-item-dot"></div>
+            <p class="commitment-item-text"><strong>Month three</strong> is offered at $111 — our loyalty rate for members who continue</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="commitment-text">
+        <span class="label light">The Investment</span>
+        <h2 class="commitment-text-title">
+          Held with care.<br>Until the doors <em>open.</em>
+        </h2>
+        <p class="commitment-text-body">
+          Why ask for a commitment before the Garden opens? Because the people who are ready are ready now. And the Garden is being built for them.
+        </p>
+        <p class="commitment-text-body">
+          If the membership price increases between now and launch — which it may, as the platform grows — founding members will have already secured today's rate. That is not a promise of special treatment. It is simply the natural result of being here first.
+        </p>
+        <a href="#the-commitment" class="btn-rose" style="margin-top:32px;display:inline-block;">
+          Secure your founding place &#8594;
+        </a>
+        <p class="commitment-note">
+          Your $444 is held until the Garden opens at 250 members.<br>
+          The Garden is currently at <span id="countInline">&#8212;</span> of 250.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO BREAK -->
+<div class="fb" style="height:480px;overflow:hidden;position:relative;">
+  <img src="/images/hero-founding.jpg" alt="A toast to what's ahead" style="width:100%;height:auto;position:absolute;top:50%;left:0;transform:translateY(-50%);filter:brightness(1.05) saturate(1.1);">
+  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(12,8,6,0.55) 0%,rgba(12,8,6,0.10) 60%,rgba(12,8,6,0.00) 100%);display:flex;align-items:center;padding:0 clamp(1.5rem,8vw,6rem);">
+    <div>
+      <p style="font-family:'Caveat',cursive;font-size:clamp(28px,4vw,48px);color:white;line-height:1.3;max-width:500px;text-shadow:0 2px 20px rgba(0,0,0,0.3);">To the ones who said yes<br>before the doors opened.</p>
+      <p style="font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:16px;">&#8212; With love, Monique</p>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT YOU RECEIVE -->
+<section class="receives-section fb">
+  <div class="fb-inner">
+    <div class="receives-inner">
+      <span class="label">What Founding Members Receive</span>
+      <h2 class="receives-title">
+        The same Garden.<br>The <em>earliest</em> place in it.
+      </h2>
+      <p class="receives-intro">
+        Founding membership is not a different experience — it is the same Garden, the same community, the same TrueLuvTake2. The distinction is in the timing, and in what your commitment makes possible.
+      </p>
+      <div class="receives-grid">
+        <div class="receives-card">
+          <span class="receives-card-icon">&#127807;</span>
+          <p class="receives-card-title">A guaranteed place in the Garden on opening day</p>
+          <p class="receives-card-body">You're in — before the world is invited. Your profile is ready the moment we reach 250 members.</p>
+        </div>
+        <div class="receives-card">
+          <span class="receives-card-icon">&#128274;</span>
+          <p class="receives-card-title">Today's rate, secured</p>
+          <p class="receives-card-body">$222/month, locked in before any future price increases. If the rate goes up, you've already paid today's price.</p>
+        </div>
+        <div class="receives-card">
+          <span class="receives-card-icon">&#10022;</span>
+          <p class="receives-card-title">Permanent founding member recognition</p>
+          <p class="receives-card-body">Within the platform, founding members are permanently recognized — a quiet acknowledgment of what you made possible.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section fb">
+  <div class="cta-inner">
+    <span class="label">Ready to Begin</span>
+    <h2 class="cta-title">
+      The Garden opens<br>because people like you<br><em>step forward.</em>
+    </h2>
+    <p class="cta-body">
+      TrueLuvTake2 is being built by and for people who believe love later in life deserves something better than a swipe. Your founding commitment is the act that makes the Garden real.
+    </p>
+    <div class="cta-btns">
+      <a href="#the-commitment" class="btn-white">Secure your place — $444 &#8594;</a>
+      <a href="/the-garden" class="btn-ghost-white">About the Garden</a>
+    </div>
+    <p class="cta-fine">
+      $444 covers your first two months at $222/month — today's rate, held until opening day.<br>
+      Activates only when the Garden reaches 250 members. Not before.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER (inlined) -->
+<section class="footer-cta">
+  <div class="footer-cta-inner">
+    <div class="footer-cta-eyebrow">Start Here &#8212; It's Always Free</div>
+    <h2>The Garden is growing.<br><em>Be part of it.</em></h2>
+    <p>Upload your photo and complete your Attunement Profile. Your personal readiness results arrive by email. When The Garden reaches 250, you'll be first in line &#8212; and the people who love you will be ready to begin.</p>
+    <div class="footer-cta-btns">
+      <a href="/member-introduction-page" class="cta-white">Create My Introduction &#8212; It's Free &#8594;</a>
+      <a href="/love-team" class="cta-outline-w">Learn about the Love Team</a>
+    </div>
+    <p style="font-family:'Instrument Sans',sans-serif;font-size:11px;color:rgba(255,255,255,0.45);margin-top:20px;font-style:italic;">No credit card. No commitment. Your Introduction is always free.</p>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-brand-logo">TrueLuv<em>Take2</em></span>
+        <p class="footer-tagline">People-First &middot; Adults 50+</p>
+        <div class="footer-elements" title="The Five Elements of Connection">
+          <div class="el-dot el-earth"></div>
+          <div class="el-dot el-water"></div>
+          <div class="el-dot el-air"></div>
+          <div class="el-dot el-fire"></div>
+          <div class="el-dot el-ether"></div>
+        </div>
+        <p class="footer-brand-desc">The first platform where the people who love you most lead the search. No swiping. No algorithms. No pretending.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/trueluvtake2" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+          <a href="https://www.facebook.com/trueluvtake2" aria-label="Facebook" target="_blank" rel="noopener">FB</a>
+          <a href="https://www.linkedin.com/company/trueluvtake2" aria-label="LinkedIn" target="_blank" rel="noopener">LI</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="/">Home</a>
+        <a href="/how-it-works">Seeker Journey</a>
+        <a href="/love-team">Love Team</a>
+        <a href="/membership">Membership</a>
+        <a href="/about">Meet the Founder</a>
+        <a href="/faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="https://go.trueluvtake2.com/reflections" target="_blank" rel="noopener" class="footer-accent">Reflections Blog</a>
+        <a href="/five-elements">5 Elements</a>
+        <a href="/love-team">The Love Team</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="/member-introduction-page" class="footer-accent">Begin My Introduction &#8594;</a>
+        <a href="https://connect.trueluvtake2.com" target="_blank" rel="noopener">Member Sign In</a>
+        <a href="/love-team">Support a Loved One</a>
+        <a href="mailto:hello@trueluvtake2.com">hello@trueluvtake2.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; 2026 TrueLuvTake2. All rights reserved. Built with intention for adults who deserve better.</p>
+      <div class="footer-bottom-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Use</a>
+        <a href="/cookie-policy">Cookie Policy</a>
+        <a href="mailto:hello@trueluvtake2.com">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  fetch('https://tlt2-garden.vercel.app/api/count')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      var el = document.getElementById('countInline');
+      if (el && data.count !== undefined){ el.textContent = data.count; }
+    })
+    .catch(function(){});
+</script>
+
+</body>
+</html>
