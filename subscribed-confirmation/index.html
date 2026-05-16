@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're In — TrueLuvTake2</title>
+<meta name="description" content="Thank you for joining the TrueLuvTake2 community. We'll be in touch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --rose:      #823348;
+  --rose-dark: #6d2a3d;
+  --gold:      #C4860A;
+  --teal:      #2BA5B4;
+  --cream:     #FAF7F2;
+  --cream-deep:#F2EDE4;
+  --charcoal:  #1A1410;
+  --text-warm: #2E2725;
+  --muted:     #7a6e66;
+  --rule:      #e8e0d6;
+  --font-serif:'Playfair Display', Georgia, serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-ui:   'Instrument Sans', sans-serif;
+  --font-hand: 'Caveat', cursive;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--text-warm);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ═══════ MAIN CONTENT ═══════ */
+.confirmation-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(80px, 12vw, 140px) clamp(1.25rem, 5vw, 2.5rem);
+  text-align: center;
+}
+
+.confirmation-inner {
+  max-width: 560px;
+}
+
+/* Gold check circle */
+.check-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(196,134,10,0.1);
+  border: 2px solid rgba(196,134,10,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 32px;
+}
+.check-circle svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--gold);
+}
+
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--teal);
+  display: block;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--text-warm);
+  margin-bottom: 20px;
+}
+
+h1 em {
+  font-style: italic;
+  color: var(--rose);
+}
+
+.body-text {
+  font-family: var(--font-body);
+  font-size: clamp(15px, 1.7vw, 17px);
+  color: var(--muted);
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+
+.hand-note {
+  font-family: var(--font-hand);
+  font-size: clamp(22px, 2.8vw, 30px);
+  color: var(--gold);
+  display: block;
+  margin: 28px 0 40px;
+}
+
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--rule);
+  margin: 36px auto;
+}
+
+/* What's next cards */
+.next-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.next-card {
+  background: white;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 20px 18px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.next-card:hover {
+  border-color: rgba(196,134,10,0.4);
+  transform: translateY(-3px);
+}
+
+.next-card .card-label {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--teal);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.next-card p {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* CTA button */
+.btn-rose {
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: 50px;
+  background: var(--rose);
+  color: white;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.2s;
+}
+.btn-rose:hover {
+  background: var(--rose-dark);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .next-steps { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<script src="/components/nav.js"></script>
+
+<div class="confirmation-wrap">
+  <div class="confirmation-inner">
+
+    <!-- Check icon -->
+    <div class="check-circle">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 13l4 4L19 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <span class="eyebrow">You're in the circle</span>
+
+    <h1>Welcome to<br><em>TrueLuvTake2.</em></h1>
+
+    <p class="body-text">
+      You'll hear from us soon — with warmth, with intention, and with everything you need to know about what comes next.
+    </p>
+
+    <p class="body-text">
+      This community is being built for people who believe love later in life deserves something better. We're so glad you're one of them.
+    </p>
+
+    <span class="hand-note">With love, Monique</span>
+
+    <div class="divider"></div>
+
+    <!-- What's next -->
+    <div class="next-steps">
+      <div class="next-card">
+        <span class="card-label">While you wait</span>
+        <p>Explore The Garden — the members-only space where connection takes root.</p>
+      </div>
+      <div class="next-card">
+        <span class="card-label">Step forward</span>
+        <p>Founding Members are securing their place now — before the doors open.</p>
+      </div>
+    </div>
+
+    <a href="/founding-member" class="btn-rose">See Founding Membership →</a>
+
+  </div>
+</div>
+
+<script src="/components/footer.js"></script>
+</body>
+</html>
