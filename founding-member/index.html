@@ -41,7 +41,7 @@ body {
   font-family: var(--font-body);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Full-bleed utility */
@@ -115,7 +115,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--font-ui); font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
   color: var(--gold); font-weight: 600; margin-bottom: 36px;
-  background: rgba(196,134,10,0.15); border: 1.5px solid rgba(196,134,10,0.55);
+  background: rgba(196,134,10,0.22); border: 2px solid rgba(196,134,10,0.80);
   padding: 9px 22px; border-radius: 50px;
 }
 .hero-tag::before { content: "✦"; font-size: 9px; color: var(--gold); opacity: 1; }
@@ -428,4 +428,4 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
         <div class="receives-card">
           <span class="receives-card-icon">✦</span>
           <p class="receives-card-title">Permanent founding member recognition</p>
-          <p class="receives-card-body">
+          <p class="receives-card-body">With
