@@ -446,4 +446,13 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   fetch('https://tlt2-garden.vercel.app/api/count')
     .then(function(r) { return r.json(); })
     .then(function(data) {
-      var countEl = do
+      var countEl = document.getElementById('gardenCount');
+      var fillEl  = document.querySelector('.progress-fill');
+      if (countEl && data.count !== undefined) { countEl.textContent = data.count; }
+      if (fillEl && data.percentage !== undefined) { fillEl.style.width = data.percentage + '%'; }
+    })
+    .catch(function() {});
+</script>
+
+</body>
+</html>
