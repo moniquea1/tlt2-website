@@ -40,7 +40,7 @@
 
     '<div class="mobile-divider"></div>',
     '<div class="mob-group">',
-      '<a href="https://www.trueluvtake2.com/founding-member" class="mob-primary">Membership</a>',
+      '<a href="https://go.trueluvtake2.com/membership" class="mob-primary">Membership</a>',
       '<div class="mob-sub-links">',
         '<a href="https://www.trueluvtake2.com/founding-member">Founding Member</a>',
         '<a href="https://go.trueluvtake2.com/membership">Membership Overview</a>',
@@ -141,3 +141,4 @@
   }
 
 })();
+      
