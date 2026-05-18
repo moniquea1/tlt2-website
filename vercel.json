@@ -2,7 +2,14 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "routes": [
+
     { "src": "/garden", "status": 301, "headers": { "Location": "https://tlt2-garden.vercel.app" } },
+
+    { "src": "/launch",   "status": 301, "headers": { "Location": "https://www.linkedin.com/posts/monique-aleman_trueluvtake2-love-later-in-life-activity-7462185239885549568--ckl/" } },
+    { "src": "/linkedin", "status": 301, "headers": { "Location": "https://www.linkedin.com/in/monique-aleman" } },
+    { "src": "/facebook", "status": 301, "headers": { "Location": "https://www.facebook.com/trueluvtake2" } },
+    { "src": "/join",     "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/member-introduction-page" } },
+    { "src": "/founding", "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/founding-member" } },
 
     { "src": "/partner-profile(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/partner-profile$1" } },
     { "src": "/advisory-circle-access(.*)", "status": 301, "headers": { "Location": "https://go.trueluvtake2.com/love-team-access$1" } },
@@ -14,12 +21,4 @@
     { "src": "/advisory-circle(.*)", "status": 301, "headers": { "Location": "/love-team$1" } },
     { "src": "/the-five-elements-of-connection(.*)", "status": 301, "headers": { "Location": "/five-elements$1" } },
     { "src": "/affiliate-program(.*)", "status": 301, "headers": { "Location": "/partner-with-us$1" } },
-    { "src": "/membership(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/membership$1" } },
-    { "src": "/reflections(.*)", "status": 301, "headers": { "Location": "https://go.trueluvtake2.com/reflections$1" } },
-    { "src": "/cookie-policy(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/cookie-policy$1" } },
-    { "src": "/privacy-policy(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/privacy-policy$1" } },
-    { "src": "/terms-of-service(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/terms-of-service$1" } },
-
-    { "src": "/(.*)", "dest": "/$1" }
-  ]
-}
+    { "src": 
