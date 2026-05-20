@@ -118,6 +118,9 @@
     ".el-air   { background: #C5B8A0; }",
     ".el-fire  { background: #823348; }",
     ".el-ether { background: #9370B8; }",
+    ".footer-cards-row { display: flex; align-items: center; gap: 8px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--white-06); flex-wrap: wrap; }",
+    ".footer-cards-label { font-family: var(--font-ui); font-size: 10px; color: rgba(255,255,255,0.25); letter-spacing: 0.08em; text-transform: uppercase; margin-right: 2px; }",
+    ".footer-card-svg { border-radius: 3px; display: inline-block; vertical-align: middle; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }",
     "@media (max-width: 960px) {",
     "  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }",
     "  .footer-brand { grid-column: 1 / -1; }",
@@ -194,6 +197,13 @@
     + '<a href="/cookie-policy">Cookie Policy</a>'
     + '<a href="mailto:hello@trueluvtake2.com">Contact</a>'
     + '</div></div>'
+    + '<div class="footer-cards-row">'
+    + '<span class="footer-cards-label">Secure Payment</span>'
+    + '<svg class="footer-card-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 26" width="40" height="26" aria-label="Visa"><rect width="40" height="26" rx="3" fill="#1A1F71"/><text x="20" y="17" font-family="Arial,sans-serif" font-size="11" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">VISA</text></svg>'
+    + '<svg class="footer-card-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 26" width="40" height="26" aria-label="Mastercard"><rect width="40" height="26" rx="3" fill="#F6F6F6"/><circle cx="15" cy="13" r="8" fill="#EB001B"/><circle cx="25" cy="13" r="8" fill="#F79E1B" opacity="0.92"/></svg>'
+    + '<svg class="footer-card-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 26" width="40" height="26" aria-label="American Express"><rect width="40" height="26" rx="3" fill="#2E77BC"/><text x="20" y="15" font-family="Arial,sans-serif" font-size="7.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">AMEX</text></svg>'
+    + '<svg class="footer-card-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 26" width="40" height="26" aria-label="Discover"><rect width="40" height="26" rx="3" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="0.5"/><circle cx="29" cy="13" r="9" fill="#F76F20"/><text x="5" y="14" font-family="Arial,sans-serif" font-size="5" font-weight="700" fill="#231F20" dominant-baseline="middle">DISC</text><text x="5" y="20" font-family="Arial,sans-serif" font-size="4" font-weight="600" fill="#231F20">OVER</text></svg>'
+    + '</div>'
     + '</div></footer>';
 
   var tmp = document.createElement('div');
