@@ -7,7 +7,6 @@
     { "src": "/launch",   "status": 301, "headers": { "Location": "https://www.linkedin.com/posts/monique-aleman_trueluvtake2-love-later-in-life-activity-7462185239885549568--ckl/" } },
     { "src": "/linkedin", "status": 301, "headers": { "Location": "https://www.linkedin.com/in/monique-aleman" } },
     { "src": "/facebook", "status": 301, "headers": { "Location": "https://www.facebook.com/trueluvtake2" } },
-    { "src": "/join",     "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/member-introduction-page" } },
     { "src": "/founding", "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/founding-member" } },
 
     { "src": "/partner-profile(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/partner-profile$1" } },
