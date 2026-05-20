@@ -195,7 +195,7 @@
     + '<a href="/privacy-policy">Privacy Policy</a>'
     + '<a href="/terms-of-service">Terms of Use</a>'
     + '<a href="/cookie-policy">Cookie Policy</a>'
-    + '<a href="mailto:hello@trueluvtake2.com">Contact</a>'
+    + '<a href="/contact">Contact</a>'
     + '</div></div>'
     + '<div class="footer-cards-row">'
     + '<span class="footer-cards-label">Secure Payment</span>'
