@@ -1,4 +1,3 @@
-// footer.js v5 - Contact Us -> go.trueluvtake2.com/contact
 (function() {
 
   // ── Inject Footer Styles ───────────────────────────────────────
