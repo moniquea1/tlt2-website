@@ -387,13 +387,15 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 
   /* Imprint — stack */
   .imprint-inner { grid-template-columns: 1fr; }
-  .imprint-photo { height: 60vw; }
+  .imprint-photo { height: 75vw; }
+  .imprint-photo img { object-position: center 25%; }
   .imprint-photo-overlay { background: linear-gradient(to bottom, #5E2233 0%, transparent 30%); }
   .imprint-text { padding: 52px 24px 48px; }
 
   /* Sons — stack, photo on top */
   .sons-inner { grid-template-columns: 1fr; }
-  .sons-photo { height: 75vw; min-height: 280px; order: -1; }
+  .sons-photo { height: 90vw; min-height: 320px; order: -1; }
+  .sons-photo img { object-position: center 25% !important; }
   .sons-photo-overlay { background: linear-gradient(to bottom, #0E2F34 0%, transparent 30%); }
   .sons-text { padding: 52px 24px 64px; }
   .sons { padding-bottom: 0; }
@@ -517,7 +519,6 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
   </div>
 </section>
 
-<script src="/components/footer.js"></script>
-
+  <script src="/components/footer.js"></script>
 </body>
 </html>
