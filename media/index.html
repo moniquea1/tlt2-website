@@ -275,9 +275,38 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
   padding: 36px 40px;
   border: 1px solid var(--rule);
   border-left: 4px solid var(--teal);
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.28s, transform 0.28s;
+  position: relative;
 }
-.topic-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+.topic-card:hover {
+  box-shadow: 0 10px 36px rgba(0,0,0,0.11);
+  transform: translateY(-5px);
+}
+
+/* ── FEATURED CARD (currently live topic) ── */
+.topic-card.featured {
+  border-left: 4px solid var(--rose);
+  background: linear-gradient(160deg, white 0%, rgba(130,51,72,0.035) 100%);
+}
+.topic-card.featured .topic-number { color: var(--rose); }
+.topic-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-ui); font-size: 9px;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  background: var(--rose); color: white;
+  padding: 5px 11px; border-radius: 2px;
+  margin-bottom: 14px;
+}
+.topic-badge-dot {
+  display: inline-block; width: 6px; height: 6px;
+  background: white; border-radius: 50%;
+  animation: live-pulse 1.9s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.65); }
+}
 .topic-number {
   font-family: var(--font-ui); font-size: 10px;
   letter-spacing: 0.2em; color: var(--teal);
@@ -866,7 +895,8 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
       <p>Perfect for podcasts, panels, newsletters, and media appearances exploring midlife, relationships, aging, and modern connection.</p>
     </div>
     <div class="topics-grid">
-      <div class="topic-card">
+      <div class="topic-card featured">
+        <span class="topic-badge"><span class="topic-badge-dot"></span>Live Now</span>
         <span class="topic-number">01</span>
         <div class="topic-title">Lovespan&#8482;: The Missing Piece in the Longevity Conversation</div>
         <p class="topic-desc">The longevity community gave us Lifespan, Healthspan, and Peakspan. But it left out the single factor that most predicts how long and how richly we live: love. Monique coins the term Lovespan&#8482; and makes the scientific case that meaningful partnership is not a luxury — it is a longevity strategy.</p>
@@ -1354,29 +1384,4 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
     <div class="media-cta-panel">
       <h3>Contact &amp; Details</h3>
       <div class="media-contact-item">
-        <div class="media-contact-label">Email</div>
-        <div class="media-contact-value"><a href="mailto:hello@trueluvtake2.com">hello@trueluvtake2.com</a></div>
-      </div>
-      <div class="media-contact-item">
-        <div class="media-contact-label">Phone</div>
-        <div class="media-contact-value">(508) 844-1281</div>
-      </div>
-      <div class="media-contact-item">
-        <div class="media-contact-label">Location</div>
-        <div class="media-contact-value">Boston, MA · Available remotely worldwide</div>
-      </div>
-      <div class="media-contact-item">
-        <div class="media-contact-label">Website</div>
-        <div class="media-contact-value"><a href="https://www.trueluvtake2.com">www.TrueLuvTake2.com</a></div>
-      </div>
-      <div class="media-contact-item">
-        <div class="media-contact-label">Response Time</div>
-        <div class="media-contact-value">Within 2 business days</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <script src="/components/footer.js"></script>
-</body>
-</html>
+        <div class="media-con
