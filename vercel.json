@@ -4,7 +4,7 @@
   "routes": [
     { "src": "/garden", "status": 301, "headers": { "Location": "https://tlt2-garden.vercel.app" } },
 
-    { "src": "/lovespan", "status": 301, "headers": { "Location": "https://go.trueluvtake2.com/reflections" } },
+    { "src": "/lovespan", "status": 301, "headers": { "Location": "https://www.linkedin.com/pulse/healthspan-lifespan-peakspan-now-lovespan-monique-alem%C3%A1n-ejljf/" } },
 
     { "src": "/launch",   "status": 301, "headers": { "Location": "https://www.linkedin.com/posts/monique-aleman_trueluvtake2-love-later-in-life-activity-7462185239885549568--ckl/" } },
     { "src": "/still-1",  "status": 301, "headers": { "Location": "https://www.linkedin.com/posts/monique-aleman_trueluvtake2-lovelaterinlife-loveafter50-activity-7463326247419416576-pFeX" } },
@@ -28,8 +28,4 @@
     { "src": "/contact(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/contact$1" } },
     { "src": "/cookie-policy(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/cookie-policy$1" } },
     { "src": "/privacy-policy(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/privacy-policy$1" } },
-    { "src": "/terms-of-service(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/terms-of-service$1" } },
-
-    { "src": "/(.*)", "dest": "/$1" }
-  ]
-}
+    { "src": "/terms-of-service(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/terms-of-s
