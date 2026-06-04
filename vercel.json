@@ -12,7 +12,7 @@
     { "src": "/still-3",  "status": 301, "headers": { "Location": "https://www.linkedin.com/in/monique-aleman" } },
     { "src": "/linkedin", "status": 301, "headers": { "Location": "https://www.linkedin.com/in/monique-aleman" } },
     { "src": "/facebook", "status": 301, "headers": { "Location": "https://www.facebook.com/trueluvtake2" } },
-    { "src": "/founding", "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/founding-member" } },
+    { "src": "/founding", "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/founding-member?utm_source=shortlink&utm_medium=redirect&utm_campaign=founding" } },
 
     { "src": "/partner-profile(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/partner-profile$1" } },
     { "src": "/advisory-circle-access(.*)", "status": 301, "headers": { "Location": "https://go.trueluvtake2.com/love-team-access$1" } },
