@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Garden — TrueLuvTake2</title>
+<meta name="description" content="The Garden is where connection takes root. A members-only space — warm, curated, and full of people who have done the work of knowing themselves. Coming soon.">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --rose:         #823348;
+  --rose-dark:    #6d2a3d;
+  --rose-blush:   #FEF0F4;
+  --teal:         #2BA5B4;
+  --teal-light:   #E8F7F9;
+  --cream:        #FAF7F2;
+  --cream-deep:   #F2EDE4;
+  --charcoal:     #1A1410;
+  --text-warm:    #2E2725;
+  --muted:        #7a6e66;
+  --rule:         #e8e0d6;
+  --rule-dark:    rgba(255,255,255,0.08);
+  --font-serif:   "Playfair Display", Georgia, serif;
+  --font-body:    "Source Serif 4", Georgia, serif;
+  --font-ui:      "Instrument Sans", sans-serif;
+  --font-hand:    "Caveat", cursive;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--text-warm);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Full-bleed utility */
+.fb { width: 100vw; position: relative; left: 50%; margin-left: -50vw; box-sizing: border-box; }
+.fb-inner { max-width: 1200px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 2.5rem); }
+@media (max-width: 768px) {
+  .fb { width: 100% !important; left: 0 !important; margin-left: 0 !important; }
+}
+
+/* Shared */
+.label {
+  font-family: var(--font-ui); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: block;
+}
+.label.rose { color: var(--rose); }
+.label.light { color: rgba(255,255,255,0.45); }
+
+h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
+
+.btn-rose {
+  display: inline-block; padding: 15px 36px; border-radius: 50px;
+  background: var(--rose); color: white; font-family: var(--font-ui);
+  font-size: 13px; font-weight: 600; text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-rose:hover { background: var(--rose-dark); transform: translateY(-2px); }
+
+.btn-ghost {
+  display: inline-block; padding: 15px 36px; border-radius: 50px;
+  background: transparent; border: 1.5px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.85); font-family: var(--font-ui);
+  font-size: 13px; font-weight: 500; text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.btn-ghost:hover { border-color: white; background: rgba(255,255,255,0.07); }
+
+/* ═══════ HERO ═══════ */
+.hero {
+  background: var(--charcoal);
+  min-height: 90vh;
+  position: relative; overflow: hidden;
+  display: flex; align-items: flex-end;
+}
+.hero-bg { position: absolute; inset: 0; }
+.hero-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 35%;
+  display: block;
+  filter: brightness(1.1) saturate(1.15);
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15,12,9,0.97) 0%,
+    rgba(15,12,9,0.60) 40%,
+    rgba(15,12,9,0.18) 100%
+  );
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  padding: clamp(100px,12vw,140px) clamp(1.25rem,5vw,2.5rem) clamp(72px,9vw,110px);
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-ui); font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 28px;
+}
+.hero-tag::before { content: ""; width: 24px; height: 1px; background: var(--teal); }
+.hero-title {
+  font-size: clamp(36px, 5.5vw, 68px); color: white; line-height: 1.1;
+  max-width: 800px; margin-bottom: 28px;
+}
+.hero-title em { font-style: italic; color: rgba(232,189,201,0.9); }
+.hero-body {
+  font-size: clamp(15px, 1.8vw, 18px); color: rgba(255,255,255,0.68);
+  max-width: 560px; line-height: 1.8; margin-bottom: 44px;
+}
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* ═══════ WHAT IT IS ═══════ */
+.what-section { background: var(--rose-blush); }
+
+/* ═══════ HANDWRITTEN MOMENT ═══════ */
+.hand-note {
+  text-align: center;
+  padding: clamp(32px,5vw,52px) clamp(1.25rem,5vw,2.5rem);
+  background: var(--teal-light);
+}
+.hand-note-text {
+  font-family: var(--font-hand);
+  font-size: clamp(22px,3.5vw,34px);
+  font-weight: 600;
+  color: var(--rose);
+  line-height: 1.4;
+  max-width: 680px;
+  margin: 0 auto;
+  display: block;
+}
+.hand-note-text em {
+  font-style: italic;
+  color: #1A8A98;
+}
+
+/* ═══════ JOY DOTS — teal sparkle row ═══════ */
+.joy-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0 0;
+}
+.joy-dots span {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+  opacity: 0.5;
+}
+.joy-dots span:nth-child(2) { opacity: 0.8; width: 8px; height: 8px; }
+.joy-dots span:nth-child(3) { opacity: 0.5; }
+.what-inner {
+  padding: clamp(72px,10vw,110px) 0;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(48px,7vw,90px); align-items: center;
+}
+.what-body { font-size: clamp(15px,1.7vw,17px); color: var(--muted); line-height: 1.85; }
+.what-body p + p { margin-top: 18px; }
+.what-title {
+  font-size: clamp(26px,3.5vw,44px); color: var(--text-warm);
+  line-height: 1.2; margin-bottom: 22px;
+}
+.what-title em { color: var(--rose); font-style: italic; }
+
+.what-cards { display: flex; flex-direction: column; gap: 16px; }
+.what-card {
+  background: white; border-radius: 14px; padding: 24px 28px;
+  border-left: 4px solid var(--teal);
+  box-shadow: 0 4px 20px rgba(130,51,72,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.what-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(130,51,72,0.12);
+}
+.what-card-title {
+  font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  color: var(--text-warm); margin-bottom: 6px; letter-spacing: 0.02em;
+}
+.what-card-body { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+/* ═══════ 250 THRESHOLD ═══════ */
+.threshold-section {
+  background: linear-gradient(160deg, var(--charcoal) 0%, #231B14 100%);
+}
+.threshold-inner {
+  padding: clamp(72px,10vw,110px) 0;
+  text-align: center; max-width: 760px; margin: 0 auto;
+}
+.threshold-number {
+  font-family: var(--font-serif); font-size: clamp(72px,12vw,140px);
+  color: var(--teal); line-height: 1; margin-bottom: 10px;
+  opacity: 1;
+  text-shadow: 0 0 60px rgba(43,165,180,0.35);
+}
+.threshold-label {
+  font-family: var(--font-ui); font-size: 11px; letter-spacing: 3px;
+  text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 36px;
+}
+.threshold-title {
+  font-size: clamp(24px,3vw,38px); color: white; line-height: 1.3;
+  margin-bottom: 20px;
+}
+.threshold-title em { font-style: italic; color: rgba(232,189,201,0.88); }
+.threshold-body {
+  font-size: clamp(15px,1.7vw,17px); color: rgba(255,255,255,0.62);
+  line-height: 1.85; margin-bottom: 48px;
+}
+
+/* Live counter */
+.counter-pill {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(43,165,180,0.3);
+  border-radius: 100px; padding: 14px 28px; margin-bottom: 48px;
+}
+.counter-pill-count {
+  font-family: var(--font-serif); font-size: 28px; color: var(--teal); line-height: 1;
+}
+.counter-pill-label {
+  font-family: var(--font-ui); font-size: 12px; color: rgba(255,255,255,0.55);
+  line-height: 1.4; text-align: left;
+}
+.counter-pill-label strong { color: white; display: block; }
+
+/* Progress bar */
+.progress-track {
+  width: 100%; max-width: 500px; margin: 0 auto 48px;
+  height: 4px; background: rgba(255,255,255,0.08); border-radius: 4px;
+}
+.progress-fill {
+  height: 100%; background: var(--teal); border-radius: 4px;
+  transition: width 1s ease;
+}
+
+/* ═══════ QUOTE BREAK ═══════ */
+.quote-section {
+  background: var(--rose);
+  padding: clamp(64px,9vw,100px) clamp(1.25rem,5vw,2.5rem);
+  text-align: center;
+}
+.quote-inner { max-width: 720px; margin: 0 auto; }
+.quote-text {
+  font-family: var(--font-serif); font-size: clamp(20px,3vw,34px);
+  font-style: italic; color: white; line-height: 1.5; margin-bottom: 20px;
+}
+.quote-cite {
+  font-family: var(--font-ui); font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,0.45);
+}
+
+/* ═══════ CTA ═══════ */
+.cta-section { background: var(--cream-deep); }
+.cta-inner {
+  padding: clamp(72px,10vw,110px) 0;
+  text-align: center; max-width: 680px; margin: 0 auto;
+}
+.cta-title {
+  font-size: clamp(28px,4vw,48px); color: var(--text-warm);
+  line-height: 1.2; margin-bottom: 18px;
+}
+.cta-title em { color: var(--rose); font-style: italic; }
+.cta-body {
+  font-size: clamp(15px,1.7vw,17px); color: var(--muted);
+  line-height: 1.85; margin-bottom: 40px;
+}
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-rose-dark {
+  display: inline-block; padding: 15px 36px; border-radius: 50px;
+  background: var(--rose); color: white; font-family: var(--font-ui);
+  font-size: 13px; font-weight: 600; text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-rose-dark:hover { background: var(--rose-dark); transform: translateY(-2px); }
+.btn-outline {
+  display: inline-block; padding: 15px 36px; border-radius: 50px;
+  background: transparent; border: 1.5px solid rgba(130,51,72,0.3);
+  color: var(--rose); font-family: var(--font-ui);
+  font-size: 13px; font-weight: 500; text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.btn-outline:hover { border-color: var(--rose); background: rgba(130,51,72,0.04); }
+.cta-fine {
+  font-family: var(--font-ui); font-size: 11px; color: var(--muted);
+  margin-top: 18px; font-style: italic;
+}
+
+/* ═══════ RESPONSIVE ═══════ */
+@media (max-width: 768px) {
+  .what-inner { grid-template-columns: 1fr; }
+}
+
+</style>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<script src="/components/nav.js"></script>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero fb">
+  <div class="hero-bg">
+    <img
+      src="../../images/hero-garden.jpg"
+      alt="Golden light opens across a tropical horizon — the spirit of The Garden"
+    >
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <span class="hero-tag">The Garden</span>
+    <h1 class="hero-title">
+      Where connection<br>takes <em>root.</em>
+    </h1>
+    <p class="hero-body">
+      The Garden is the heart of TrueLuvTake2 — a private, members-only space built for people who are ready for something real. Not a feed to scroll. A community to belong to.
+    </p>
+    <div class="hero-btns">
+      <a href="/founding-member" class="btn-rose">Secure your place →</a>
+      <a href="#what-is-the-garden" class="btn-ghost">Learn more ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ WHAT IT IS ═══════ -->
+<section class="what-section fb" id="what-is-the-garden">
+  <div class="fb-inner">
+    <div class="what-inner">
+      <div>
+        <span class="label">What The Garden Is</span>
+        <h2 class="what-title">Not a platform.<br>A <em>place.</em></h2>
+        <div class="what-body">
+          <p>The Garden is a private, members-only space where every person has already completed a meaningful reflection — their photo, their story, and a full Attunement Profile that reveals who they truly are in relationship.</p>
+          <p>As a member, you don't scroll. You don't compare. You don't choose. You name your Love Team — the adult children and trusted advisor who already know and love you — and they do everything else.</p>
+          <p>Your Love Team browses The Garden entirely on your behalf. They watch videos, they discuss what they see, they reach out to other Love Teams. When they are ready, they bring you a presentation. Your only job is to receive it.</p>
+        </div>
+      </div>
+      <div class="what-cards">
+        <div class="what-card">
+          <p class="what-card-title">Every profile is real and verified</p>
+          <p class="what-card-body">Photo, video, written reflection, and Attunement Profile. Every member has done the work before they arrive.</p>
+        </div>
+        <div class="what-card">
+          <p class="what-card-title">Your Love Team does all the searching</p>
+          <p class="what-card-body">The people who already love you browse on your behalf — together, not in isolation. Love Team-to-Love Team introductions, not cold contact between strangers.</p>
+        </div>
+        <div class="what-card">
+          <p class="what-card-title">Zero stress. Zero scrolling. Zero work.</p>
+          <p class="what-card-body">You sit back and live your life. Your Love Team handles everything — and brings you up to three vetted presentations to consider.</p>
+        </div>
+        <div class="what-card">
+          <p class="what-card-title">You receive a presentation, not a notification</p>
+          <p class="what-card-body">When your Love Team is ready, they bring you a photo, a video, and a personal note explaining why they chose this person. That is the moment you step in.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ HANDWRITTEN BREATHER ═══════ -->
+<div class="hand-note fb">
+  <span class="hand-note-text">
+    No app. No scrolling. No swiping.<br>Just love — searched for by the people who <em>already know your heart.</em>
+  </span>
+  <div class="joy-dots">
+    <span></span><span></span><span></span>
+  </div>
+</div>
+
+<!-- ═══════ 250 THRESHOLD ═══════ -->
+<section class="threshold-section fb" id="the-threshold">
+  <div class="fb-inner">
+    <div class="threshold-inner">
+      <div class="threshold-number" id="gardenCount">—</div>
+      <p class="threshold-label">members in the Garden · 250 to open</p>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="gardenFill" style="width: 0%"></div>
+      </div>
+
+      <h2 class="threshold-title">
+        The Garden opens when<br>250 members <em>arrive.</em>
+      </h2>
+      <p class="threshold-body">
+        This threshold is not a technicality — it is a promise. We believe you deserve to walk into a room full of possibility, not a half-empty one. Every person who completes their Introduction brings the Garden one step closer to opening. The wait is not a delay. It is the preparation.
+      </p>
+      <a href="/founding-member" class="btn-rose" style="font-size:14px;padding:16px 40px;">
+        Step forward now →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ QUOTE ═══════ -->
+<section class="quote-section fb">
+  <div class="quote-inner">
+    <p class="quote-text">
+      "You've built a whole life. The Garden was built for exactly that — for people who arrive with wisdom, with clarity, and with the quiet certainty that they are worth this."
+    </p>
+    <span class="quote-cite">— Monique Alemán, Founder</span>
+  </div>
+</section>
+
+<!-- ═══════ CTA ═══════ -->
+<section class="cta-section fb">
+  <div class="fb-inner">
+    <div class="cta-inner">
+      <span class="label rose">Founding Membership</span>
+      <h2 class="cta-title">
+        Be here<br>from the <em>beginning.</em>
+      </h2>
+      <p class="cta-body">
+        Founding members are the people who helped make the Garden possible. Their $444 commitment — two months at today's rate — is held until the Garden opens, then applied to their first two months of membership. If the price increases before launch, founding members have already secured today's rate.
+      </p>
+      <div class="cta-btns">
+        <a href="/founding-member" class="btn-rose-dark">Secure your founding place →</a>
+        <a href="/how-it-works" class="btn-outline">How it works</a>
+      </div>
+      <p class="cta-fine">Your commitment is held with care until the Garden opens. Not before.</p>
+    </div>
+  </div>
+</section>
+
+<script src="/components/footer.js"></script>
+
+<script>
+  // Pull live count from Garden API
+  fetch('https://tlt2-garden.vercel.app/api/count')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var countEl = document.getElementById('gardenCount');
+      var fillEl  = document.getElementById('gardenFill');
+      if (countEl && data.count !== undefined) {
+        countEl.textContent = data.count;
+      }
+      if (fillEl && data.percentage !== undefined) {
+        fillEl.style.width = data.percentage + '%';
+      }
+    })
+    .catch(function() {
+      var countEl = document.getElementById('gardenCount');
+      if (countEl) countEl.textContent = '—';
+    });
+</script>
+
+</body>
+</html>
