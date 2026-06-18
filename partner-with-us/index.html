@@ -338,12 +338,76 @@ body {
 }
 
 /* ══════════════════════════════════════
+   WHAT YOU RECEIVE — rose
+══════════════════════════════════════ */
+.receive {
+  background: var(--rose);
+  padding: 0 clamp(24px,6vw,80px) clamp(64px,9vw,100px);
+  border-top: 4px solid rgba(255,255,255,0.15);
+}
+.receive-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding-top: clamp(64px,9vw,100px);
+  display: grid; grid-template-columns: 1fr 1.2fr;
+  gap: clamp(48px,6vw,80px); align-items: start;
+}
+.receive h2 {
+  font-family: var(--font-serif); font-size: clamp(32px,4vw,52px);
+  font-weight: 400; color: white; line-height: 1.15; margin-bottom: 20px;
+}
+.receive h2 em { font-style: italic; color: var(--rose-pale); }
+.receive-body {
+  font-family: var(--font-ui); font-size: clamp(15px,1.8vw,17px);
+  line-height: 1.85; color: rgba(255,255,255,0.62);
+}
+.receive-list { list-style: none; }
+.receive-item {
+  display: flex; align-items: flex-start; gap: 18px;
+  padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+.receive-item:first-child { border-top: 1px solid rgba(255,255,255,0.10); }
+.receive-mark {
+  width: 9px; height: 9px; margin-top: 9px; flex-shrink: 0;
+  background: var(--teal); transform: rotate(45deg);
+}
+.receive-text {
+  font-family: var(--font-body); font-size: 15px;
+  color: rgba(255,255,255,0.78); line-height: 1.72;
+}
+.receive-text strong {
+  display: block; font-family: var(--font-serif);
+  font-size: 18px; font-weight: 400; color: white; margin-bottom: 5px;
+}
+
+/* ══════════════════════════════════════
+   A NOTE FROM ME — cream-deep
+══════════════════════════════════════ */
+.note {
+  background: var(--cream-deep);
+  padding: clamp(72px,9vw,110px) clamp(24px,6vw,80px);
+  border-top: 4px solid var(--rose);
+  text-align: center;
+}
+.note-inner { max-width: 680px; margin: 0 auto; }
+.note .label { color: var(--teal); }
+.note p {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: clamp(20px,2.6vw,30px); font-weight: 400;
+  color: var(--charcoal); line-height: 1.5; margin-bottom: 28px;
+}
+.note-sig {
+  font-family: var(--font-serif); font-size: 22px;
+  color: var(--rose); font-style: italic;
+}
+
+/* ══════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════ */
 @media (max-width: 960px) {
   .who-intro        { grid-template-columns: 1fr; gap: 24px; }
   .who-grid         { grid-template-columns: 1fr 1fr; gap: 12px; }
   .commitment-inner { grid-template-columns: 1fr; gap: 40px; }
+  .receive-inner    { grid-template-columns: 1fr; gap: 40px; }
   .engage-grid      { grid-template-columns: 1fr; gap: 12px; }
   .form-inner       { grid-template-columns: 1fr; gap: 40px; }
   .form-copy        { position: static; }
@@ -369,8 +433,8 @@ body {
     Referral Partner Program
     <span class="hero-eyebrow-line"></span>
   </div>
-  <h1>Bring someone closer<br>to <em>finding love again.</em></h1>
-  <p class="hero-sub">If you work with, mentor, or simply know people navigating this next chapter — your referral can change a life. We'd love to partner with you.</p>
+  <h1>Help the people you serve <em>find love again.</em><br>And grow right alongside it.</h1>
+  <p class="hero-sub">If you guide, counsel, write for, or simply know people navigating love after 50, your introduction can change a life. Become a TrueLuvTake2 Referral Partner: we lift each other up, share each other's work, and reach further together than either of us could alone.</p>
   <a href="#apply" class="btn-rose">Apply to Partner →</a>
 </section>
 
@@ -382,7 +446,7 @@ body {
         <span class="label">Who This Is For</span>
         <h2>Built for people who<br><em>already do this work</em></h2>
       </div>
-      <p class="who-intro-body">You don't need to be a marketing expert. You're already someone people trust — and that's the most powerful referral there is.</p>
+      <p class="who-intro-body">You don't need to be a marketing expert. You're already someone people trust, and that's the most powerful referral there is.</p>
     </div>
     <div class="who-grid">
       <div class="who-card">
@@ -395,7 +459,7 @@ body {
       </div>
       <div class="who-card">
         <h3>Matchmakers &amp; Dating Professionals</h3>
-        <p>Refer clients you can't serve directly — or partner as a complement to your own practice.</p>
+        <p>Refer clients you can't serve directly, or partner as a complement to your own practice.</p>
       </div>
       <div class="who-card">
         <h3>Authors &amp; Content Creators</h3>
@@ -403,7 +467,7 @@ body {
       </div>
       <div class="who-card">
         <h3>Community &amp; Faith Leaders</h3>
-        <p>Women's groups, divorce recovery programs, faith communities — you are already trusted.</p>
+        <p>Women's groups, divorce recovery programs, faith communities. You are already trusted.</p>
       </div>
       <div class="who-card">
         <h3>Aligned Advocates</h3>
@@ -413,34 +477,59 @@ body {
   </div>
 </section>
 
+<!-- ══════ WHAT YOU RECEIVE ══════ -->
+<section class="receive fb">
+  <div class="receive-inner">
+    <div>
+      <span class="label" style="color:rgba(255,255,255,0.75);">What You Receive</span>
+      <h2>What you receive as a <em>Referral Partner</em></h2>
+      <p class="receive-body">Let's be clear about one thing first. This is not an affiliate scheme. There are no commissions and no kickbacks, which keeps it clean and ethical for the clinicians and counselors among you. What we offer instead is more durable: real partnership, and real visibility as this community grows.</p>
+    </div>
+    <ul class="receive-list">
+      <li class="receive-item">
+        <span class="receive-mark"></span>
+        <span class="receive-text"><strong>Featured placement</strong>Your name and logo, featured on the TrueLuvTake2 website, in front of a growing, aligned audience of adults 50+ and the families who love them. As we grow, that spotlight grows with us.</span>
+      </li>
+      <li class="receive-item">
+        <span class="receive-mark"></span>
+        <span class="receive-text"><strong>Cross-pollination</strong>We amplify your work to our audience, and you share TrueLuvTake2 with yours. We grow each other.</span>
+      </li>
+      <li class="receive-item">
+        <span class="receive-mark"></span>
+        <span class="receive-text"><strong>A founding voice</strong>Early partners help shape how this unfolds, and you are first to know what comes next.</span>
+      </li>
+      <li class="receive-item">
+        <span class="receive-mark"></span>
+        <span class="receive-text"><strong>A relationship, protected</strong>A genuine relationship with me and the platform. Your referral carries your reputation, and we treat it that way.</span>
+      </li>
+      <li class="receive-item">
+        <span class="receive-mark"></span>
+        <span class="receive-text"><strong>The real reward</strong>You give the people you serve a door to something better than swiping: an intentional, human path to love later in life.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
 <!-- ══════ 3. COMMITMENT ══════ -->
 <section class="commitment fb">
   <div class="commitment-inner">
     <div>
-      <span class="label" style="color:rgba(43,165,180,0.65);">Our Commitment to You</span>
+      <span class="label" style="color:rgba(43,165,180,0.65);">Our Promise</span>
       <h2>A partnership built on<br><em>shared values</em></h2>
-      <p class="commitment-body">TrueLuvTake2 is not a swipe app. It's an intentional community for people 50+ who deserve more than an algorithm. Your name stays connected to something that matters.</p>
+      <p class="commitment-body">TrueLuvTake2 is not a swipe app. It is an intentional community for people 50+ who deserve more than an algorithm. Your name stays connected to something that matters.</p>
     </div>
     <ul class="commit-list">
       <li class="commit-item">
         <span class="commit-num">01</span>
-        <span class="commit-text"><strong>Members come first</strong>Everyone you refer is guided with care — never rushed, never pressured.</span>
+        <span class="commit-text"><strong>Members come first</strong>Everyone you refer is guided with care, never rushed, never pressured.</span>
       </li>
       <li class="commit-item">
         <span class="commit-num">02</span>
-        <span class="commit-text"><strong>Honest and warm</strong>We serve with integrity. Your referral reflects your reputation — we protect that.</span>
+        <span class="commit-text"><strong>Honest and warm</strong>We serve with integrity. Your referral reflects your reputation, and we protect that.</span>
       </li>
       <li class="commit-item">
         <span class="commit-num">03</span>
-        <span class="commit-text"><strong>Full transparency</strong>Your referrals are tracked clearly. You'll always know what's happening.</span>
-      </li>
-      <li class="commit-item">
-        <span class="commit-num">04</span>
-        <span class="commit-text"><strong>A relationship that deepens</strong>As the platform grows, so do the perks and possibilities for our partners.</span>
-      </li>
-      <li class="commit-item">
-        <span class="commit-num">05</span>
-        <span class="commit-text"><strong>You stay in the loop</strong>Platform news, community updates, and partner communications come directly to you.</span>
+        <span class="commit-text"><strong>You stay in the loop</strong>Platform news, community updates, and partner communications come straight to you.</span>
       </li>
     </ul>
   </div>
@@ -456,98 +545,4 @@ body {
         <span class="step-num">01</span>
         <div class="step-content">
           <h3>Apply below</h3>
-          <p>Tell us about yourself and who you serve. Every application is reviewed by a real person.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">02</span>
-        <div class="step-content">
-          <h3>Get welcomed in</h3>
-          <p>Once approved, you'll receive your unique referral link and a welcome packet with everything you need.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">03</span>
-        <div class="step-content">
-          <h3>Share with intention</h3>
-          <p>Refer when it genuinely fits. This is about quality of connection, never volume.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">04</span>
-        <div class="step-content">
-          <h3>Deepen the partnership</h3>
-          <p>As we grow together, the relationship expands — more access, more ways to collaborate, more impact.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════ BRIDGE PHOTO BREAK ══════ -->
-<section class="bridge-break fb">
-  <div class="bridge-overlay"></div>
-  <div class="bridge-quote">
-    <p>"A referral from you carries weight.<br>We treat it that way."</p>
-  </div>
-</section>
-
-<!-- ══════ 5. HOW THEY ENGAGE ══════ -->
-<section class="engage fb">
-  <div class="engage-inner">
-    <span class="label">What Happens Next</span>
-    <h2>Three ways your referrals<br><em>engage with the platform</em></h2>
-    <p class="engage-intro">Once connected with TrueLuvTake2, the people you refer can participate in three distinct ways — each designed for a different role in the journey toward love.</p>
-    <div class="engage-grid">
-      <div class="engage-card">
-        <span class="engage-path">Always Available</span>
-        <h3>The Attunement Profile</h3>
-        <p>Where every journey begins. A quiet, reflective set of questions across five dimensions of connection. Results arrive privately by email — no scores shown, no comparison. Just an honest portrait of how love moves through someone right now.</p>
-      </div>
-      <div class="engage-card">
-        <span class="engage-path">Member Benefit</span>
-        <h3>The Love Team</h3>
-        <p>For the people who love a Seeker most — adult children and trusted advisors who reflect separately on who their person is in relationship. Not to decide, but to advocate thoughtfully. Together, they form the Love Team: the human context no algorithm can replicate.</p>
-      </div>
-      <div class="engage-card">
-        <span class="engage-path">When Ready</span>
-        <h3>The Garden</h3>
-        <p>The private member space where curated profiles are shared and interest is expressed with intention. Your referral earns their place here — reviewed, welcomed, and guided with care. No swiping. No algorithms. Just people, ready to be known.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════ 6. FORM ══════ -->
-<section class="form-section fb" id="apply">
-  <div class="form-inner">
-    <div class="form-copy">
-      <span class="label" style="color:rgba(43,165,180,0.65);">Ready to Join Us</span>
-      <h2>Apply to become a<br><em>Referral Partner</em></h2>
-      <p>Fill out the short form and we'll be in touch within a few business days. This is a real conversation — you'll hear from a person, not a bot.</p>
-    </div>
-    <div class="form-wrapper">
-      <iframe
-        src="https://go.getmondai.com/widget/form/aDldXzGxv9uCLMMkE0Ql"
-        id="inline-aDldXzGxv9uCLMMkE0Ql"
-        data-layout="{'id':'INLINE'}"
-        data-trigger-type="alwaysShow"
-        data-trigger-value=""
-        data-activation-type="alwaysActivated"
-        data-activation-value=""
-        data-deactivation-type="neverDeactivate"
-        data-deactivation-value=""
-        data-form-name="Affiliate Application"
-        data-height="725"
-        data-layout-iframe-id="inline-aDldXzGxv9uCLMMkE0Ql"
-        data-form-id="aDldXzGxv9uCLMMkE0Ql"
-        title="Affiliate Application">
-      </iframe>
-      <script src="https://go.getmondai.com/js/form_embed.js"></script>
-    </div>
-  </div>
-</section>
-
-  <script src="/components/footer.js"></script>
-</body>
-</html>
+          <p>Tell us about yours
