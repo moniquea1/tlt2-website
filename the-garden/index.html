@@ -400,8 +400,8 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
 <section class="threshold-section fb" id="the-threshold">
   <div class="fb-inner">
     <div class="threshold-inner">
-      <div class="threshold-number" id="gardenCount">—</div>
-      <p class="threshold-label">members in the Garden · 250 to open</p>
+      <div class="threshold-number" id="gardenCount" style="display:none">—</div>
+      <p class="threshold-label" id="gardenLabel">The founding circle is forming · 250 opens the Garden</p>
 
       <div class="progress-track">
         <div class="progress-fill" id="gardenFill" style="width: 0%"></div>
@@ -457,10 +457,15 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
   fetch('https://tlt2-garden.vercel.app/api/count')
     .then(function(r) { return r.json(); })
     .then(function(data) {
-      var countEl = document.getElementById('gardenCount');
-      var fillEl  = document.querySelector('.progress-fill');
-      if (countEl && data.count !== undefined) { countEl.textContent = data.count; }
-      if (fillEl && data.percentage !== undefined) { fillEl.style.width = data.percentage + '%'; }
+      var n = (data && data.count !== undefined) ? data.count : 0;
+      if (n >= 50) {
+        var countEl = document.getElementById('gardenCount');
+        var labelEl = document.getElementById('gardenLabel');
+        var fillEl  = document.querySelector('.progress-fill');
+        if (countEl) { countEl.style.display = ''; countEl.textContent = n; }
+        if (labelEl) { labelEl.textContent = 'members in the Garden · 250 to open'; }
+        if (fillEl && data.percentage !== undefined) { fillEl.style.width = data.percentage + '%'; }
+      }
     })
     .catch(function() {});
 </script>
