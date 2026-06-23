@@ -499,7 +499,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
         </a>
         <p class="commitment-note">
           Your $444 is held until the Garden opens at 250 members.<br>
-          The Garden is currently at <span id="countInline">&#8212;</span> of 250.
+          <span id="countInline">The founding circle is forming. 250 opens the Garden.</span>
         </p>
       </div>
 
@@ -644,7 +644,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
     .then(function(r){ return r.json(); })
     .then(function(data){
       var el = document.getElementById('countInline');
-      if (el && data.count !== undefined){ el.textContent = data.count; }
+      if (el && data.count !== undefined && data.count >= 50){ el.innerHTML = 'The Garden is currently at <strong>' + data.count + '</strong> of 250.'; }
     })
     .catch(function(){});
 </script>
