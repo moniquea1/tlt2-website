@@ -17,6 +17,7 @@
     { "src": "/performing",   "status": 301, "headers": { "Location": "https://www.linkedin.com/feed/update/urn:li:activity:7473407935922995201/" } },
     { "src": "/readiness",    "status": 301, "headers": { "Location": "https://www.linkedin.com/feed/update/urn:li:activity:7474857496692563968/" } },
     { "src": "/ia",         "status": 301, "headers": { "Location": "https://www.linkedin.com/posts/monique-aleman_i-have-two-sons-one-of-them-george-works-activity-7475966724958220288-6yFz" } },
+    { "src": "/quotable",     "status": 301, "headers": { "Location": "https://quotablemediaco.com/monique-aleman-of-trueluvtake2/" } },
     { "src": "/linkedin", "status": 301, "headers": { "Location": "https://www.linkedin.com/in/monique-aleman" } },
     { "src": "/facebook", "status": 301, "headers": { "Location": "https://www.facebook.com/trueluvtake2" } },
     { "src": "/founding", "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/founding-member?utm_source=shortlink&utm_medium=redirect&utm_campaign=founding" } },
