@@ -245,9 +245,9 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
 /* ── Light-touch section seams: a gentle faded hairline atop light sections (desktop + mobile) ── */
 .cream-sec, .white-sec { position: relative; }
 .cream-sec::before, .white-sec::before {
-  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-  width: min(90%, 720px); height: 1px; pointer-events: none;
-  background: linear-gradient(90deg, transparent, rgba(130,51,72,.32), transparent);
+  content: ''; position: absolute; top: 30px; left: 50%; transform: translateX(-50%);
+  width: 172px; height: 22px; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27172%27%20height%3D%2722%27%20viewBox%3D%270%200%20172%2022%27%20fill%3D%27none%27%3E%3Cline%20x1%3D%278%27%20y1%3D%2711%27%20x2%3D%2766%27%20y2%3D%2711%27%20stroke%3D%27rgba%28130%2C51%2C72%2C.30%29%27%20stroke-width%3D%271%27%2F%3E%3Cline%20x1%3D%27106%27%20y1%3D%2711%27%20x2%3D%27164%27%20y2%3D%2711%27%20stroke%3D%27rgba%28130%2C51%2C72%2C.30%29%27%20stroke-width%3D%271%27%2F%3E%3Cg%20transform%3D%27translate%2868%2C1%29%27%3E%3Cpath%20d%3D%27M18%2010%20Q12%204%206%208%20Q12%207%2018%2010Z%27%20fill%3D%27rgba%28130%2C51%2C72%2C.55%29%27%2F%3E%3Cpath%20d%3D%27M18%2010%20Q24%204%2030%208%20Q24%207%2018%2010Z%27%20fill%3D%27rgba%28130%2C51%2C72%2C.55%29%27%2F%3E%3Cpath%20d%3D%27M18%2010%20Q12%2016%206%2012%20Q12%2013%2018%2010Z%27%20fill%3D%27rgba%28130%2C51%2C72%2C.38%29%27%2F%3E%3Cpath%20d%3D%27M18%2010%20Q24%2016%2030%2012%20Q24%2013%2018%2010Z%27%20fill%3D%27rgba%28130%2C51%2C72%2C.38%29%27%2F%3E%3Ccircle%20cx%3D%2718%27%20cy%3D%2710%27%20r%3D%272.4%27%20fill%3D%27rgba%2843%2C165%2C180%2C.9%29%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center/contain no-repeat;
 }
 
 /* ── MOBILE STYLE — "Why This Matters" gets visual rhythm (phones only; desktop unchanged) ── */
