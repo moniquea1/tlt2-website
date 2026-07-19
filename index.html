@@ -236,6 +236,21 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
     box-shadow: 0 12px 34px rgba(130,51,72,.11);
   }
 }
+
+/* ── MOBILE: journey as a crisp white checklist panel (phones only) ── */
+@media (max-width: 700px){
+  .journey-card {
+    background: #fff;
+    border: 1px solid rgba(130,51,72,.10);
+    border-top: 3px solid var(--teal);
+    border-radius: 14px;
+    padding: 8px 14px !important;
+    box-shadow: 0 12px 34px rgba(130,51,72,.10);
+    gap: 2px !important;
+    margin-top: 8px;
+  }
+  .journey-card .step { padding: 14px 6px !important; }
+}
 </style>
   <script defer src="/_vercel/insights/script.js"></script>
 
@@ -365,7 +380,7 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
       <h2 class="hd" style="font-size:clamp(26px,3vw,34px);color:var(--char)">Six steps to The Garden.</h2>
       <p style="font-family:var(--san);font-size:16px;color:var(--muted);margin-top:10px;font-style:italic">At your own pace. On your own terms.</p>
     </div>
-    <div class="grid-2" style="gap:36px">
+    <div class="grid-2 journey-card" style="gap:36px">
       <div class="step">
         <span class="step-num">1</span>
         <div>
