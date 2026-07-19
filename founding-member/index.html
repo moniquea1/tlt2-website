@@ -409,6 +409,9 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
 @media (max-width: 400px) {
   .footer-top { grid-template-columns: 1fr; }
 }
+
+/* MOBILE: quiet the redundant middle $444 CTA on phones; keep the top + bottom asks */
+@media (max-width: 768px){ .fm-mhide{ display:none !important; } }
 </style>
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -494,7 +497,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
         <p class="commitment-text-body">
           If the membership price increases between now and launch — which it may, as the platform grows — founding members will have already secured today's rate. That is not a transaction. It is recognition — of what it means to step forward before the room is ready.
         </p>
-        <a href="https://krpy.me/nv4fn" class="btn-rose" style="margin-top:32px;display:inline-block;">
+        <a href="https://krpy.me/nv4fn" class="btn-rose fm-mhide" style="margin-top:32px;display:inline-block;">
           Secure your founding place &#8594;
         </a>
         <p class="commitment-note">
@@ -509,7 +512,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 400; }
 
 <!-- PHOTO BREAK -->
 <div class="fb" style="height:480px;overflow:hidden;position:relative;">
-  <img src="/images/hero-founding.jpg" alt="A toast to what's ahead" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center center;filter:brightness(1.05) saturate(1.1);">
+  <img src="/images/hero-founding.jpg" loading="lazy" alt="A toast to what's ahead" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center center;filter:brightness(1.05) saturate(1.1);">
   <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(12,8,6,0.55) 0%,rgba(12,8,6,0.10) 60%,rgba(12,8,6,0.00) 100%);display:flex;align-items:center;padding:0 clamp(1.5rem,8vw,6rem);">
     <div>
       <p style="font-family:'Caveat',cursive;font-size:clamp(28px,4vw,48px);color:white;line-height:1.3;max-width:500px;text-shadow:0 2px 20px rgba(0,0,0,0.3);">To the ones who said yes<br>before the doors opened.</p>
