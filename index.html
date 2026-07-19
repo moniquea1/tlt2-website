@@ -205,6 +205,10 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
   .grid-2 { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
 }
+/* == MOBILE LEAN v1 (2026-07-17) — phones only; hides duplicative/secondary blocks. Desktop unaffected. Delete this rule + the m-hide classes to revert. == */
+@media (max-width: 700px) {
+  .m-hide { display: none !important; }
+}
 </style>
   <script defer src="/_vercel/insights/script.js"></script>
 
@@ -284,7 +288,7 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
 <!-- ═══════════════════════════════════════════════
      SECTION 3 — PATH SPLIT
 ════════════════════════════════════════════════ -->
-<section class="white-sec sec">
+<section class="white-sec sec m-hide">
   <div class="container">
     <div style="text-align:center;margin-bottom:48px">
       <span class="label" style="color:var(--teal)">Two Ways to Begin</span>
@@ -440,7 +444,7 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
     </div>
 
     <!-- Matchmaker contrast — left-aligned, thin top rule -->
-    <div style="border-top:1px solid rgba(249,246,240,.2);padding-top:44px;margin-bottom:20px;text-align:left">
+    <div class="m-hide" style="border-top:1px solid rgba(249,246,240,.2);padding-top:44px;margin-bottom:20px;text-align:left">
       <p class="body-text" style="color:rgba(249,246,240,.92);margin-bottom:24px">
         Elite matchmaking services charge thousands of dollars for a professional who met you once. Your Love Team brings something no hired matchmaker can offer: <strong style="color:#fff">decades of knowing you.</strong> They've watched you love and be loved. They know your patterns, your blindspots, your gifts — and what you actually deserve, even when you forget.
       </p>
@@ -454,7 +458,7 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
     <div style="width:52px;height:1px;background:rgba(249,246,240,.2);margin:0 auto 40px"></div>
 
     <!-- Circle configuration cards — redesigned with icon headers -->
-    <div class="grid-3" style="margin-bottom:44px;text-align:left">
+    <div class="grid-3 m-hide" style="margin-bottom:44px;text-align:left">
 
       <!-- Card 1 -->
       <div class="ac-circle-card">
@@ -533,7 +537,7 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
      Earth=green, Water=blue, Air=light blue, Fire=coral, Ether=purple.
      NO Tabler icons / NO AI-looking symbols.
 ════════════════════════════════════════════════ -->
-<section class="cream-sec sec">
+<section class="cream-sec sec m-hide">
   <div style="max-width:600px;margin:0 auto;padding:0 40px;text-align:center">
     <span class="label" style="color:var(--teal)">Our Framework</span>
     <p style="font-family:var(--ser);font-style:italic;font-size:18px;color:var(--muted);margin:0 0 12px">Before we match, we attune.</p>
@@ -612,7 +616,7 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
 
 
 <!-- TRANSITION — Five Elements → Founder -->
-<div class="sec" style="background:var(--char);padding:44px 40px;text-align:center">
+<div class="sec m-hide" style="background:var(--char);padding:44px 40px;text-align:center">
   <div style="display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:16px">
     <div style="width:52px;height:.5px;background:rgba(255,255,255,.18)"></div>
     <!-- Botanical ornament -->
