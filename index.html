@@ -242,6 +242,14 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
   box-shadow: 0 14px 36px rgba(130,51,72,.11);
 }
 
+/* ── Light-touch section seams: a gentle faded hairline atop light sections (desktop + mobile) ── */
+.cream-sec, .white-sec { position: relative; }
+.cream-sec::before, .white-sec::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: min(86%, 640px); height: 1px; pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(130,51,72,.14), transparent);
+}
+
 /* ── MOBILE STYLE — "Why This Matters" gets visual rhythm (phones only; desktop unchanged) ── */
 @media (max-width: 700px) {
   .why-matters { background: #fff; padding-top: 54px; padding-bottom: 54px; }
