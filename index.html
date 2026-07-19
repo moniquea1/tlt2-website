@@ -208,6 +208,8 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
 /* == MOBILE LEAN v1 (2026-07-17) — phones only; hides duplicative/secondary blocks. Desktop unaffected. Delete this rule + the m-hide classes to revert. == */
 @media (max-width: 700px) {
   .m-hide { display: none !important; }
+  /* Journey on phones: show the six numbered titles as a scannable list; full descriptions stay on desktop + behind "Read the full journey". */
+  .step-body { display: none !important; }
 }
 </style>
   <script defer src="/_vercel/insights/script.js"></script>
