@@ -66,6 +66,7 @@
     '<a href="https://www.trueluvtake2.com/the-garden" class="mob-primary">The Garden</a>',
     '<a href="https://www.trueluvtake2.com/about" class="mob-primary">Meet Monique</a>',
     '<a href="https://www.trueluvtake2.com/faq" class="mob-primary">FAQ</a>',
+    '<a href="https://www.trueluvtake2.com/media" class="mob-primary">Media</a>',
     '<a href="https://www.trueluvtake2.com/founding-member" class="mob-primary">Founding Membership</a>',
 
     '<div class="mobile-divider"></div>',
