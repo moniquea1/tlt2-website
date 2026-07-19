@@ -380,6 +380,9 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
   letter-spacing: 0.18em; text-transform: uppercase;
   color: rgba(255,255,255,0.3);
 }
+
+/* MOBILE: hide the 4.3MB decorative nature-break photo on phones (kept on desktop) */
+@media (max-width: 768px){ .ac-nature-break{ display:none !important; } }
 </style>
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -438,7 +441,7 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
   <div class="fb-inner">
     <div class="story-grid">
       <div class="story-photo-wrap">
-        <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69b9858d61cba53ce18d90fd.jpg"
+        <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69b9858d61cba53ce18d90fd.jpg" loading="lazy"
              alt="Adult children — the heart of the Love Team">
         <div class="story-photo-caption">
           <p>"You've always known what they deserve. Now there's a way to help them find it."</p>
@@ -703,7 +706,7 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 <!-- ═══════ NATURE BREAK — Medicine Wheel ═══════ -->
 <section class="ac-nature-break fb">
   <div class="ac-nature-bg">
-    <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69f7d834fdf2432ccfe3dd92.jpg"
+    <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69f7d834fdf2432ccfe3dd92.jpg" loading="lazy"
          alt="Medicine Wheel — Sedona">
     <div class="ac-nature-overlay"></div>
   </div>
