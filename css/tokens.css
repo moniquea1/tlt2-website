@@ -22,3 +22,11 @@
   --brand-dark:   #6d2a3d;
   --border-faint: rgba(130,51,72,0.06);
 }
+
+/* ═══ READABILITY PASS (2026-07): floor micro-labels at 12.5px for the 50+ audience.
+   Font-size only — spacing, color, and weight unchanged. Delete this block to revert. ═══ */
+.label, .section-label, .hero-label, .eyebrow, .footer-col-title,
+.timeline-when, .price-snap-eyebrow, .step-badge, .path-card-label,
+.faq-cat-btn, .price-snap-period {
+  font-size: 12.5px !important;
+}
