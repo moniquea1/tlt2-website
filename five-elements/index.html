@@ -377,12 +377,12 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 ════════════════════════════════════════ */
 .monique-bridge {
   position: relative; overflow: hidden;
-  height: clamp(420px, 65vw, 820px);
+  height: clamp(240px, 30vw, 420px);
   background-color: #2A1A10;
   background-image: url('https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69f7d4fd6b07ab330355f7ee.jpg');
-  background-size: 100% auto;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center 35%;
+  background-position: center 22%;
 }
 .monique-overlay {
   position: absolute;
@@ -555,7 +555,7 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
   </div>
   <h1>The Five <em>Elements</em><br>of Connection</h1>
   <p class="hero-sub">Not a score. Not a type. <strong>A reflective mirror</strong> — designed to illuminate how love moves through you.</p>
-  <a href="#the-framework" class="btn-rose">Explore the Framework →</a>
+  <a href="#the-framework" class="btn-rose">See the Five Elements →</a>
 </section>
 
 <!-- ════════════════════════════════════════
@@ -587,20 +587,6 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 <!-- ════════════════════════════════════════
      3. FIVE ELEMENTS — dark, cards pop
 ════════════════════════════════════════ -->
-<!-- ATTUNEMENT VIDEO -->
-<section class="attune-video fb" style="background:var(--cream);padding:clamp(56px,8vw,96px) clamp(24px,6vw,80px);text-align:center;border-top:4px solid var(--rose)">
-  <span class="label rose" style="padding-top:0">Watch</span>
-  <h2 style="font-family:var(--font-serif);font-weight:400;font-size:clamp(28px,3.5vw,44px);color:var(--charcoal);line-height:1.2;margin-bottom:16px">See the Attunement Profile <em style="font-style:italic;color:var(--rose)">in motion</em></h2>
-  <p style="font-size:clamp(15px,1.7vw,17px);line-height:1.8;color:var(--muted);font-weight:300;max-width:620px;margin:0 auto 40px">A short walk through what happens when you take your profile &mdash; the doorway to The Garden.</p>
-  <div style="max-width:1040px;margin:0 auto;position:relative;border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(26,20,16,.24);cursor:pointer;background:#000" onclick="var v=document.getElementById('attuneVideo');var p=document.getElementById('attunePlay');if(v.paused){v.play();p.style.opacity='0';v.setAttribute('controls','controls')}else{v.pause();v.removeAttribute('controls');p.style.opacity='1'}">
-    <video id="attuneVideo" playsinline preload="none" poster="/attune-profile-poster.jpg" style="width:100%;height:auto;display:block">
-      <source src="/attune-profile.mp4" type="video/mp4">
-    </video>
-    <div id="attunePlay" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(26,20,16,.10);pointer-events:none;transition:opacity .3s">
-      <span style="width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 34px rgba(0,0,0,.32)"><svg width="32" height="32" viewBox="0 0 24 24" fill="#823348"><path d="M8 5v14l11-7z"/></svg></span>
-    </div>
-  </div>
-</section>
 <section class="framework fb" id="the-framework">
   <div class="framework-header">
     <span class="label light">The Framework</span>
