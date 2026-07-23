@@ -555,7 +555,7 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
   </div>
   <h1>The Five <em>Elements</em><br>of Connection</h1>
   <p class="hero-sub">Not a score. Not a type. <strong>A reflective mirror</strong> — designed to illuminate how love moves through you.</p>
-  <a href="#how-it-works" class="btn-rose">Explore the Framework →</a>
+  <a href="#the-framework" class="btn-rose">Explore the Framework →</a>
 </section>
 
 <!-- ════════════════════════════════════════
@@ -587,7 +587,21 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 <!-- ════════════════════════════════════════
      3. FIVE ELEMENTS — dark, cards pop
 ════════════════════════════════════════ -->
-<section class="framework fb">
+<!-- ATTUNEMENT VIDEO -->
+<section class="attune-video fb" style="background:var(--cream);padding:clamp(56px,8vw,96px) clamp(24px,6vw,80px);text-align:center;border-top:4px solid var(--rose)">
+  <span class="label rose" style="padding-top:0">Watch</span>
+  <h2 style="font-family:var(--font-serif);font-weight:400;font-size:clamp(28px,3.5vw,44px);color:var(--charcoal);line-height:1.2;margin-bottom:16px">See the Attunement Profile <em style="font-style:italic;color:var(--rose)">in motion</em></h2>
+  <p style="font-size:clamp(15px,1.7vw,17px);line-height:1.8;color:var(--muted);font-weight:300;max-width:620px;margin:0 auto 40px">A short walk through what happens when you take your profile &mdash; the doorway to The Garden.</p>
+  <div style="max-width:1040px;margin:0 auto;position:relative;border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(26,20,16,.24);cursor:pointer;background:#000" onclick="var v=document.getElementById('attuneVideo');var p=document.getElementById('attunePlay');if(v.paused){v.play();p.style.opacity='0';v.setAttribute('controls','controls')}else{v.pause();v.removeAttribute('controls');p.style.opacity='1'}">
+    <video id="attuneVideo" playsinline preload="none" poster="/attune-profile-poster.jpg" style="width:100%;height:auto;display:block">
+      <source src="/attune-profile.mp4" type="video/mp4">
+    </video>
+    <div id="attunePlay" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(26,20,16,.10);pointer-events:none;transition:opacity .3s">
+      <span style="width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 34px rgba(0,0,0,.32)"><svg width="32" height="32" viewBox="0 0 24 24" fill="#823348"><path d="M8 5v14l11-7z"/></svg></span>
+    </div>
+  </div>
+</section>
+<section class="framework fb" id="the-framework">
   <div class="framework-header">
     <span class="label light">The Framework</span>
     <h2>Five Elements, <em>One Language</em></h2>
@@ -673,53 +687,7 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 <!-- ════════════════════════════════════════
      5. HOW IT WORKS — cream, clean numbered list
 ════════════════════════════════════════ -->
-<section class="how fb" id="how-it-works">
-  <div class="how-inner">
-    <div class="how-header">
-      <span class="label light">How It Works</span>
-      <h2>The Attunement <em>Profile</em></h2>
-      <p>Your responses move through six relational domains — one for each dimension of connection. There are <strong>no right answers.</strong> No scores are ever shown to you. What emerges is a gentle reflection — a portrait of how connection lives in you right now.</p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <span class="step-num">01</span>
-        <div class="step-content">
-          <h4>Complete the Profile</h4>
-          <p>A quiet, reflective set of questions across six relational domains. About 10–15 minutes. Only honest answers — no right or wrong.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">02</span>
-        <div class="step-content">
-          <h4>Scored Behind the Scenes</h4>
-          <p>Weighted values work quietly in the background. You never see numbers or percentages — only the human language of your portrait.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">03</span>
-        <div class="step-content">
-          <h4>Each Element Is Reflected</h4>
-          <p>Earth, Water, Air, Fire, and Ether — each shown at Rooted, Growing, or Seeding, with a short narrative written for you personally.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">04</span>
-        <div class="step-content">
-          <h4>You Receive Your Full Results</h4>
-          <p>Five element reflections, your strengths, and what may want more care — returned as a private portrait, emailed directly to you.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">05</span>
-        <div class="step-content">
-          <h4>Your Profile Shapes the Journey</h4>
-          <p>Your profile becomes your relational portrait — the foundation your Love Team draws from as they support your journey. They receive an overall impression of who you are and how you connect, giving them the context to advocate thoughtfully on your behalf.</p>
-          <div class="step-note">Your private specifics remain yours alone. your team sees the portrait — not the details.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- ════════════════════════════════════════
      6. QUOTE — Crossing the Bridge, Peru
@@ -740,40 +708,14 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 <!-- ════════════════════════════════════════
      7. TWO PROFILES — teal deep
 ════════════════════════════════════════ -->
-<section class="profiles fb">
-  <div class="profiles-header">
-    <span class="label">Two Profiles</span>
-    <h2>Designed for <em>Real Lives</em></h2>
-    <p>A guided reflection experience for both you and the people who stand beside you in this journey.</p>
-  </div>
-  <div class="profiles-grid">
-    <div class="profile-card active">
-      <div class="profile-status">
-        <div class="status-dot"></div>Available Now
-      </div>
-      <div class="profile-icon"><svg width="28" height="28" viewBox="0 0 30 30" fill="none" stroke="#823348" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 26S4 19 4 11a6 6 0 0 1 11-3 6 6 0 0 1 11 3c0 8-11 15-11 15z"/></svg></div>
-      <h3 class="profile-name">Partner Attunement Profile</h3>
-      <p class="profile-desc">A reflective starting point for those ready to explore partnership again. Understand your relational readiness, emotional availability, and the conditions where love can genuinely take hold in your life right now.</p>
-      <div class="profile-privacy">
-        <span>🔒</span>
-        Your results are private — returned directly to you. No one else sees your specific profile details.
-      </div>
-      <a href="/member-introduction-page" class="btn-rose" style="margin-top:28px;display:inline-block;">Begin My Attunement Profile →</a>
-    </div>
-    <div class="profile-card circle">
-      <div class="profile-status">
-        <div class="status-dot"></div>Unlocks with Membership
-      </div>
-      <div class="profile-icon"><svg width="28" height="28" viewBox="0 0 30 30" fill="none" stroke="#823348" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="8" r="3.5"/><circle cx="24" cy="20" r="3"/><circle cx="6" cy="20" r="3"/><path d="M15 11.5c0 4-4 6.5-9 6.5M15 11.5c0 4 4 6.5 9 6.5"/></svg></div>
-      <h3 class="profile-name">Love Team Insight</h3>
-      <p class="profile-desc">A guided reflection designed for the people who stand beside you — your adult children or trusted advisors. As part of your member dossier, your Love Team receives an overall impression of your relational portrait — enough to search thoughtfully on your behalf. The private details remain yours alone.</p>
-      <div class="profile-privacy">
-        <span>🤝</span>
-        your team receives context, not confidences. The impression, not the intimacy.
-      </div>
-    </div>
-  </div>
+<!-- CTA -->
+<section class="attune-cta fb" style="background:linear-gradient(160deg,#1A2830 0%,#22343C 100%);padding:clamp(64px,9vw,104px) clamp(24px,6vw,80px);text-align:center">
+  <span class="label" style="padding-top:0;color:rgba(43,165,180,.85)">Your Reflection Awaits</span>
+  <h2 style="font-family:var(--font-serif);font-weight:400;font-size:clamp(32px,4vw,52px);line-height:1.15;color:white;margin-bottom:20px">Ready to meet <em style="font-style:italic;color:rgba(43,165,180,.9)">your reflection?</em></h2>
+  <p style="font-size:clamp(15px,1.8vw,17px);line-height:1.8;color:rgba(255,255,255,.55);font-weight:300;max-width:620px;margin:0 auto 40px">Take your Attunement Profile &mdash; about 15&ndash;20 minutes, no right answers. A private reflection of your readiness, emailed directly to you.</p>
+  <a href="https://go.trueluvtake2.com/profiles" class="btn-rose">Take Your Attunement Profile &rarr;</a>
 </section>
+
 
   <script src="/components/footer.js"></script>
 </body>
