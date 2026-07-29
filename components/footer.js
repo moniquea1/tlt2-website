@@ -20,7 +20,7 @@
     "}",
 
     ".footer-cta {",
-    "  background: var(--rose);",
+    "  background: #6E1315;",
     "  padding: clamp(48px,7vw,72px) clamp(24px,6vw,80px);",
     "  text-align: center;",
     "}",
