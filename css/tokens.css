@@ -11,14 +11,14 @@
   /* Palette */
   --cream:  #F9F6F0;
   --char:   #1a1614;
-  --burg:   #891111;
+  --burg:   #89181A;
   --teal:   #2BA5B4;
 
   /* Aliases matching nav.js tokens */
   --bg:           #F9F6F0;
   --text-head:    #1a1614;
   --text-muted:   #5a524e;
-  --brand:        #891111;
-  --brand-dark:   #6f0d0d;
-  --border-faint: rgba(137,17,17,0.06);
+  --brand:        #89181A;
+  --brand-dark:   #6E1315;
+  --border-faint: rgba(137,24,26,0.06);
 }
