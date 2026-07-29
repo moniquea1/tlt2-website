@@ -29,11 +29,11 @@
   --text-body:    #2E2725;
   --text-muted:   #5a524e;
   --text-faint:   #A0927D;
-  --brand:        #823348;
-  --brand-dark:   #6d2a3d;
+  --brand:        #89181A;
+  --brand-dark:   #6E1315;
   --teal:         #2BA5B4;
   --teal-dark:    #1a8a97;
-  --border-faint: rgba(130,51,72,0.06);
+  --border-faint: rgba(137,24,26,0.06);
   --shadow-md:    0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
   --shadow-lg:    0 20px 60px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.06);
   --radius:       1.25rem;
@@ -57,7 +57,7 @@ a{text-decoration:none;color:inherit}
 /* Background orbs */
 .page-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 .page-orb{position:absolute;border-radius:50%;filter:blur(80px);animation:breathe 12s ease-in-out infinite}
-.page-orb.a{width:500px;height:500px;top:-10%;right:-8%;background:radial-gradient(circle,rgba(130,51,72,.07) 0%,transparent 65%)}
+.page-orb.a{width:500px;height:500px;top:-10%;right:-8%;background:radial-gradient(circle,rgba(137,24,26,.07) 0%,transparent 65%)}
 .page-orb.b{width:400px;height:400px;bottom:5%;left:-6%;background:radial-gradient(circle,rgba(43,165,180,.06) 0%,transparent 65%);animation-delay:5s}
 /* Main container */
 .join-wrap{
@@ -125,9 +125,9 @@ a{text-decoration:none;color:inherit}
 }
 .join-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
 /* Seeker card — brand/burgundy */
-.join-card.seeker{border-color:rgba(130,51,72,.2)}
-.join-card.seeker::before{background:radial-gradient(ellipse at 50% 0%,rgba(130,51,72,.05) 0%,transparent 65%)}
-.join-card.seeker:hover{border-color:rgba(130,51,72,.35);box-shadow:0 20px 60px rgba(130,51,72,.15)}
+.join-card.seeker{border-color:rgba(137,24,26,.2)}
+.join-card.seeker::before{background:radial-gradient(ellipse at 50% 0%,rgba(137,24,26,.05) 0%,transparent 65%)}
+.join-card.seeker:hover{border-color:rgba(137,24,26,.35);box-shadow:0 20px 60px rgba(137,24,26,.15)}
 /* Supporter card — teal */
 .join-card.supporter{border-color:rgba(43,165,180,.2)}
 .join-card.supporter::before{background:radial-gradient(ellipse at 50% 0%,rgba(43,165,180,.06) 0%,transparent 65%)}
@@ -140,7 +140,7 @@ a{text-decoration:none;color:inherit}
   flex-shrink:0;transition:transform .3s;
 }
 .join-card:hover .card-icon{transform:scale(1.1)}
-.seeker .card-icon{background:linear-gradient(135deg,rgba(130,51,72,.12) 0%,rgba(130,51,72,.06) 100%)}
+.seeker .card-icon{background:linear-gradient(135deg,rgba(137,24,26,.12) 0%,rgba(137,24,26,.06) 100%)}
 .seeker .card-icon svg{stroke:var(--brand)}
 .supporter .card-icon{background:linear-gradient(135deg,rgba(43,165,180,.12) 0%,rgba(43,165,180,.06) 100%)}
 .supporter .card-icon svg{stroke:var(--teal-dark)}
@@ -194,9 +194,9 @@ a{text-decoration:none;color:inherit}
 .seeker .card-cta{
   background:linear-gradient(135deg,var(--brand) 0%,var(--brand-dark) 100%);
   color:#fff;
-  box-shadow:0 4px 16px rgba(130,51,72,.25);
+  box-shadow:0 4px 16px rgba(137,24,26,.25);
 }
-.seeker:hover .card-cta{transform:translateY(-1px);box-shadow:0 6px 22px rgba(130,51,72,.35)}
+.seeker:hover .card-cta{transform:translateY(-1px);box-shadow:0 6px 22px rgba(137,24,26,.35)}
 .supporter .card-cta{
   background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dark) 100%);
   color:#fff;
