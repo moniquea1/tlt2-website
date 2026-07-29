@@ -208,86 +208,6 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
 /* == MOBILE LEAN v1 (2026-07-17) — phones only; hides duplicative/secondary blocks. Desktop unaffected. Delete this rule + the m-hide classes to revert. == */
 @media (max-width: 700px) {
   .m-hide { display: none !important; }
-  /* Journey on phones: show the six numbered titles as a scannable list; full descriptions stay on desktop + behind "Read the full journey". */
-  .step-body { display: none !important; }
-}
-
-/* ── DESIGN v2: light cards + teal accents on ALL screens (desktop + mobile) for consistency ── */
-.why-matters { background: #fff; }
-.why-matters .stat-block {
-  background: #fff;
-  border: 1px solid rgba(130,51,72,.10);
-  border-top: 3px solid var(--teal);
-  border-radius: 14px;
-  padding: 34px 32px;
-  box-shadow: 0 14px 36px rgba(130,51,72,.11);
-  margin: 0 auto 34px;
-  max-width: 600px;
-}
-.why-matters .fm-quote {
-  background: #fff !important;
-  border: 1px solid rgba(130,51,72,.10) !important;
-  border-top: 3px solid var(--teal) !important;
-  border-radius: 14px !important;
-  padding: 34px 34px !important;
-  margin: 44px auto 0 !important;
-  box-shadow: 0 14px 36px rgba(130,51,72,.11);
-}
-.journey-card {
-  background: #fff;
-  border: 1px solid rgba(130,51,72,.10);
-  border-top: 3px solid var(--teal);
-  border-radius: 16px;
-  padding: 26px 30px;
-  box-shadow: 0 14px 36px rgba(130,51,72,.11);
-}
-
-/* ── Light-touch section seams: a gentle faded hairline atop light sections (desktop + mobile) ── */
-.cream-sec, .white-sec { position: relative; }
-.cream-sec::before, .white-sec::before {
-  content: ''; position: absolute; top: 30px; left: 50%; transform: translateX(-50%);
-  width: 172px; height: 22px; pointer-events: none;
-  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27172%27%20height%3D%2722%27%20viewBox%3D%270%200%20172%2022%27%20fill%3D%27none%27%3E%3Cline%20x1%3D%278%27%20y1%3D%2711%27%20x2%3D%2766%27%20y2%3D%2711%27%20stroke%3D%27rgba%28130%2C51%2C72%2C.30%29%27%20stroke-width%3D%271%27%2F%3E%3Cline%20x1%3D%27106%27%20y1%3D%2711%27%20x2%3D%27164%27%20y2%3D%2711%27%20stroke%3D%27rgba%28130%2C51%2C72%2C.30%29%27%20stroke-width%3D%271%27%2F%3E%3Cg%20transform%3D%27translate%2868%2C1%29%27%3E%3Cpath%20d%3D%27M18%2010%20Q12%204%206%208%20Q12%207%2018%2010Z%27%20fill%3D%27rgba%28130%2C51%2C72%2C.55%29%27%2F%3E%3Cpath%20d%3D%27M18%2010%20Q24%204%2030%208%20Q24%207%2018%2010Z%27%20fill%3D%27rgba%28130%2C51%2C72%2C.55%29%27%2F%3E%3Cpath%20d%3D%27M18%2010%20Q12%2016%206%2012%20Q12%2013%2018%2010Z%27%20fill%3D%27rgba%28130%2C51%2C72%2C.38%29%27%2F%3E%3Cpath%20d%3D%27M18%2010%20Q24%2016%2030%2012%20Q24%2013%2018%2010Z%27%20fill%3D%27rgba%28130%2C51%2C72%2C.38%29%27%2F%3E%3Ccircle%20cx%3D%2718%27%20cy%3D%2710%27%20r%3D%272.4%27%20fill%3D%27rgba%2843%2C165%2C180%2C.9%29%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center/contain no-repeat;
-}
-
-/* ── MOBILE STYLE — "Why This Matters" gets visual rhythm (phones only; desktop unchanged) ── */
-@media (max-width: 700px) {
-  .why-matters { background: #fff; padding-top: 54px; padding-bottom: 54px; }
-  .why-matters .stat-block {
-    background: #fff;
-    border: 1px solid rgba(130,51,72,.10);
-    border-top: 3px solid var(--teal);
-    border-radius: 14px;
-    padding: 30px 22px;
-    box-shadow: 0 12px 34px rgba(130,51,72,.11);
-    margin: 0 0 32px;
-  }
-  .why-matters .stat-line { margin-bottom: 16px; }
-  .why-matters .stat-line:last-child { margin-bottom: 0; }
-  .why-matters .fm-quote {
-    background: #fff !important;
-    border: 1px solid rgba(130,51,72,.10) !important;
-    border-top: 3px solid var(--teal) !important;
-    border-radius: 14px !important;
-    padding: 30px 24px !important;
-    margin: 40px auto 0 !important;
-    box-shadow: 0 12px 34px rgba(130,51,72,.11);
-  }
-}
-
-/* ── MOBILE: journey as a crisp white checklist panel (phones only) ── */
-@media (max-width: 700px){
-  .journey-card {
-    background: #fff;
-    border: 1px solid rgba(130,51,72,.10);
-    border-top: 3px solid var(--teal);
-    border-radius: 14px;
-    padding: 8px 14px !important;
-    box-shadow: 0 12px 34px rgba(130,51,72,.10);
-    gap: 2px !important;
-    margin-top: 8px;
-  }
-  .journey-card .step { padding: 14px 6px !important; }
 }
 </style>
   <script defer src="/_vercel/insights/script.js"></script>
@@ -302,562 +222,148 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
 <body>
 <script src="/components/nav.js"></script>
 
-<!-- ═══════════════════════════════════════════════
-     SECTION 1 — HERO
-     MONDAi layout: copy left column · Monique's
-     portrait right column. Charcoal background.
-════════════════════════════════════════════════ -->
-<section class="hero sec">
-  <div style="max-width:1160px;margin:0 auto;width:100%;padding:0 32px">
-  <div class="hero-copy">
-    <div class="hero-eyebrow">
-      <span class="line"></span>
-      <span class="label" style="color:var(--teal);margin:0;letter-spacing:.1em">For Adults 50+ · People-First · Family-Included</span>
-    </div>
-    <h1>You've built a whole life.<br>You shouldn't have to condense it into a swipe.</h1>
-    <p class="hero-pivot">You don't have to search alone. And you don't have to settle.</p>
-    <p class="hero-body">TrueLuvTake2 is not a dating app. It's the first space where the people who love you most — your adult children, your closest friends, your trusted advisors — are part of finding the person who deserves you.</p>
-    <p class="hero-bridge">Two ways to begin:</p>
-    <div class="hero-ctas">
-      <a href="/member-introduction-page" class="btn btn-burg">I'm looking for love →</a>
-      <a href="/love-team" class="btn btn-teal">I'm here for someone I love →</a>
-    </div>
-  </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
-     AS FEATURED IN — press credibility strip
-════════════════════════════════════════════════ -->
-<section style="background:var(--cream);border-bottom:1px solid rgba(130,51,72,0.10);padding:24px 32px;text-align:center">
-  <div style="max-width:1160px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 20px">
-    <span style="font-family:var(--san);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal)">As Featured In</span>
-    <span style="display:inline-block;width:1px;height:15px;background:rgba(130,51,72,0.22)"></span>
-    <a href="/quotable" style="font-family:var(--ser);font-style:italic;font-size:clamp(17px,2vw,20px);color:var(--burg);text-decoration:none">Quotable Magazine</a>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
-     SECTION 2 — YOU ARE NOT ALONE
-════════════════════════════════════════════════ -->
-<section class="cream-sec sec why-matters">
-  <style>
-  .wm-grid{display:grid;grid-template-columns:1fr;gap:44px;align-items:center;text-align:left}
-  .wm-eyebrow{display:flex;align-items:center;gap:14px;font-family:var(--san);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:20px}
-  .wm-eyebrow i{display:block;width:34px;height:2px;background:var(--teal);flex:none}
-  .wm-h2{font-family:var(--ser);font-weight:400;font-size:clamp(34px,5vw,54px);line-height:1.12;color:var(--char);margin:0 0 26px}
-  .wm-h2 em{font-style:italic;color:var(--burg)}
-  .wm-bridge{font-family:var(--san);font-size:clamp(16px,2vw,18px);line-height:1.7;color:var(--muted);max-width:440px;margin:0 0 18px}
-  .wm-thesis{font-family:var(--ser);font-size:clamp(19px,2.3vw,22px);line-height:1.5;color:var(--char);max-width:450px;border-left:3px solid var(--burg);padding-left:18px;margin:0 0 28px}
-  .wm-q{font-family:var(--ser);font-style:italic;font-size:clamp(26px,3.4vw,34px);line-height:1.3;color:var(--burg);margin:0 0 18px}
-  .wm-ans{font-family:var(--san);font-size:clamp(16px,2vw,18px);line-height:1.7;color:var(--muted);max-width:430px;margin:0 0 30px}
-  .wm-rule{width:78px;height:3px;background:linear-gradient(90deg,var(--burg),var(--teal))}
-  .wm-cards{display:flex;flex-direction:column;gap:26px;padding:8px 4px}
-  .wm-c{position:relative;background:#fff;border-radius:16px;box-shadow:0 12px 34px rgba(26,22,20,.12);padding:30px 26px 26px}
-  .wm-c:nth-child(1){transform:rotate(-1.6deg)}
-  .wm-c:nth-child(2){transform:rotate(1.4deg)}
-  .wm-c:nth-child(3){transform:rotate(-1deg)}
-  .wm-pill{position:absolute;top:-13px;left:22px;background:#fff;border-radius:999px;padding:6px 15px;font-family:var(--san);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);box-shadow:0 4px 14px rgba(26,22,20,.12);white-space:nowrap}
-  .wm-c:nth-child(3) .wm-pill{color:var(--burg)}
-  .wm-n{font-family:var(--ser);font-weight:700;font-size:clamp(64px,11vw,88px);line-height:.88;color:var(--burg);letter-spacing:-2px}
-  .wm-nlab{font-family:var(--san);font-size:15px;line-height:1.5;color:var(--muted);margin-top:12px}
-  .wm-ct{font-family:var(--ser);font-size:clamp(19px,2.3vw,22px);line-height:1.45;color:var(--char)}
-  @media(min-width:900px){
-    .wm-grid{grid-template-columns:1fr 1.12fr;gap:60px}
-    .wm-cards{display:block;position:relative;height:600px;padding:0}
-    .wm-c{position:absolute}
-    .wm-c:nth-child(1){top:0;left:5%;width:372px;transform:rotate(-2.4deg);z-index:3}
-    .wm-c:nth-child(2){top:232px;left:36%;width:392px;transform:rotate(1.8deg);z-index:2}
-    .wm-c:nth-child(3){top:418px;left:1%;width:390px;transform:rotate(-1.2deg);z-index:1}
-  }
-  </style>
-  <div class="container">
-    <div class="wm-grid">
-      <div>
-        <div class="wm-eyebrow"><i></i>Why this matters</div>
-        <h2 class="wm-h2">You are not<br>alone in <em>this</em>.</h2>
-        <p class="wm-bridge">And somewhere between &ldquo;I&rsquo;m fine&rdquo; and &ldquo;I want more,&rdquo; there&rsquo;s a question most of us are afraid to say out loud.</p>
-        <p class="wm-thesis">Fine is the word we use when we have quietly decided to stop asking for what we really want.</p>
-        <p class="wm-q">Is this it?<br>Or is there still time?</p>
-        <p class="wm-ans">There is still time. That&rsquo;s what TrueLuvTake2 was built for.</p>
-        <div class="wm-rule"></div>
-      </div>
-      <div class="wm-cards">
-        <div class="wm-c"><span class="wm-pill">Gray divorce</span>
-          <div class="wm-n">1 in 3</div>
-          <div class="wm-nlab">divorces now involves someone over 50</div></div>
-        <div class="wm-c"><span class="wm-pill">Living alone</span>
-          <div class="wm-ct">More people are living alone in their 60s than at any point in modern history.</div></div>
-        <div class="wm-c"><span class="wm-pill">Lovespan&trade;</span>
-          <div class="wm-ct">We are living longer, healthier, and more awake to who we are than any generation before us.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
-     SECTION 3 — PATH SPLIT
-════════════════════════════════════════════════ -->
-<!-- WATCH / VIDEO -->
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet">
 <style>
-  .watch-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;}
-  .watch-copy{text-align:center;}
-  .watch-sub{display:none;}
-  #watchFrame{max-width:400px;margin:0 auto;}
-  @media(min-width:781px){
-    .watch-grid{grid-template-columns:1fr 1.85fr;gap:52px;}
-    .watch-copy{text-align:left;}
-    .watch-sub{display:block;}
-    .watch-cap{display:none;}
-    #watchFrame{max-width:760px;margin:0;}
-  }
+#tlt-home{
+  --cream:#FAF7F2; --warm:#FFFDFA; --linen:#F3ECE0;
+  --burg:#891111; --burg-d:#6f0d0d; --crim:#891111; --teal:#2BA5B4; --teal-d:#17606c;
+  --gold:#C4860A; --ink:#2E2725; --char:#1A1410; --muted:#7a6e66;
+  --line:rgba(137,17,17,.12);
+  --ser:'Playfair Display',Georgia,serif; --body:'Source Serif 4',Georgia,serif; --ui:'Instrument Sans',system-ui,sans-serif;
+}#tlt-home *{margin:0;padding:0;box-sizing:border-box}#tlt-home{scroll-behavior:smooth}#tlt-home{font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}#tlt-home .wrap{max-width:1160px;margin:0 auto;padding:0 32px}#tlt-home .eyebrow{font-family:var(--ui);font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-d)}#tlt-home h1,#tlt-home h2,#tlt-home h3{font-family:var(--ser);font-weight:400;color:var(--char);letter-spacing:-.4px;line-height:1.12}#tlt-home em{font-style:italic;color:var(--burg)}#tlt-home a{color:inherit}#tlt-home .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--ui);font-weight:600;font-size:15px;text-decoration:none;border-radius:100px;padding:14px 28px;transition:transform .15s,box-shadow .2s;cursor:pointer;border:none}#tlt-home .btn-primary{background:linear-gradient(135deg,var(--burg),var(--burg-d));color:#fff;box-shadow:0 10px 26px rgba(137,17,17,.28)}#tlt-home .btn-primary:hover{transform:translateY(-2px)}#tlt-home .btn-ghost{background:transparent;color:var(--burg);border:1.5px solid rgba(137,17,17,.3)}#tlt-home .btn-ghost:hover{background:rgba(137,17,17,.05)}#tlt-home /* LOGO LOCKUP (rebuilt from official mark + wordmark) */
+.logo-lock{display:inline-flex;align-items:center;gap:.42em;line-height:1}#tlt-home .logo-lock img{height:1.05em;width:auto;display:block}#tlt-home .logo-lock .wm{font-family:var(--ui);font-weight:700;letter-spacing:-.02em;white-space:nowrap}#tlt-home .logo-lock .wm .t1{color:var(--char)}#tlt-home .logo-lock .wm .t2{color:var(--crim)}#tlt-home /* announcement */
+.announce{background:linear-gradient(90deg,#caa24a,var(--gold));color:#fff;text-align:center;font-family:var(--ui);font-size:14px;font-weight:500;padding:11px 20px;display:flex;gap:20px;align-items:center;justify-content:center;flex-wrap:wrap}#tlt-home .announce b{font-weight:700}#tlt-home .announce .mini{background:rgba(255,255,255,.92);color:var(--burg-d);text-decoration:none;font-weight:700;font-size:12.5px;padding:6px 15px;border-radius:100px;letter-spacing:.03em}#tlt-home /* header — heart mark only (Lucien's note) */
+header{position:sticky;top:0;z-index:50;background:rgba(250,247,242,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}#tlt-home .nav{display:flex;align-items:center;justify-content:space-between;padding:15px 32px;max-width:1220px;margin:0 auto}#tlt-home .brand-mark{display:flex;align-items:center;text-decoration:none}#tlt-home .brand-mark img{width:auto;height:50px;display:block}#tlt-home .nav-links{display:flex;gap:26px;font-family:var(--ui);font-size:14.5px;font-weight:500;color:var(--ink)}#tlt-home .nav-links a{text-decoration:none;opacity:.85}#tlt-home .nav-cta{display:flex;gap:14px;align-items:center}#tlt-home .nav-cta .signin{font-family:var(--ui);font-size:14px;color:var(--muted);text-decoration:none}@media(max-width:900px){#tlt-home .nav-links{display:none}}#tlt-home /* hero — full official lockup,#tlt-home no photo */
+.hero{text-align:center;padding:48px 0;min-height:calc(100vh - 130px);display:flex;flex-direction:column;justify-content:center;background:radial-gradient(900px 500px at 50% -8%,rgba(43,165,180,.07),transparent 62%),radial-gradient(800px 480px at 88% 118%,rgba(137,17,17,.06),transparent 60%),var(--cream)}#tlt-home .hero .logo-lock{font-size:52px;margin:0 auto 30px}#tlt-home .hero .eyebrow{margin:0 auto 32px;display:inline-block}#tlt-home .hero h1{font-size:clamp(34px,5vw,58px);max-width:820px;margin:0 auto 22px}#tlt-home .hero .lede{font-size:clamp(17px,2vw,21px);color:var(--muted);max-width:820px;margin:0 auto 26px;font-weight:400;text-wrap:balance}#tlt-home .hero .lede b{color:var(--ink);font-weight:400}#tlt-home .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}#tlt-home .hero-note{margin-top:20px;font-family:var(--ui);font-size:13px;color:var(--muted);letter-spacing:.02em}#tlt-home /* featured strip */
+.featured{background:var(--warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;padding:20px}#tlt-home .featured .lab{font-family:var(--ui);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}#tlt-home .featured .name{font-family:var(--ser);font-style:italic;font-size:22px;color:var(--burg)}#tlt-home /* section base */
+section.block{padding:84px 0}#tlt-home .sec-eyebrow{text-align:center;margin-bottom:14px}#tlt-home .sec-title{text-align:center;font-size:clamp(28px,3.6vw,44px);max-width:760px;margin:0 auto 18px;text-wrap:balance}#tlt-home /* why this matters — one calm voice */
+.why{background:var(--cream)}#tlt-home .why-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}#tlt-home .why h2{font-size:clamp(30px,3.8vw,46px);margin-bottom:28px}#tlt-home .reflection{border-left:3px solid rgba(196,134,10,.55);padding-left:26px}#tlt-home .reflection p{font-family:var(--body);font-size:20px;line-height:1.72;color:var(--ink);margin-bottom:18px;font-weight:400}#tlt-home .reflection p:last-child{margin-bottom:0}#tlt-home .reflection .q{color:var(--burg)}#tlt-home .stats{display:flex;flex-direction:column;gap:18px}#tlt-home .stat{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:24px 26px;box-shadow:0 14px 40px rgba(26,20,16,.05)}#tlt-home .stat .tag{font-family:var(--ui);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-d);font-weight:700;margin-bottom:8px}#tlt-home .stat .big{font-family:var(--ser);font-size:40px;color:var(--burg);line-height:1;margin-bottom:6px}#tlt-home .stat .txt{font-family:var(--body);font-size:15.5px;color:var(--muted);line-height:1.5}#tlt-home .stat.s2 .txt,#tlt-home .stat.s3 .txt{font-size:17px;color:var(--ink)}@media(max-width:820px){#tlt-home .why-grid{grid-template-columns:1fr;gap:38px}}#tlt-home /* how it works — brief */
+.how{background:var(--warm)}#tlt-home .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}#tlt-home .step{background:var(--warm);border:1px solid var(--line);border-radius:20px;padding:34px 28px;text-align:center}#tlt-home .step .n{width:44px;height:44px;border-radius:50%;background:rgba(43,165,180,.1);color:var(--teal-d);font-family:var(--ser);font-size:22px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}#tlt-home .step h3{font-size:22px;margin-bottom:10px}#tlt-home .step p{font-family:var(--body);font-size:15.5px;color:var(--muted);line-height:1.6}#tlt-home .how .center{text-align:center;margin-top:40px}#tlt-home .link-arrow{font-family:var(--ui);font-weight:600;font-size:15px;color:var(--burg);text-decoration:none;border-bottom:2px solid rgba(137,17,17,.25);padding-bottom:2px}@media(max-width:820px){#tlt-home .steps{grid-template-columns:1fr}}#tlt-home /* five elements */
+.elements{background:var(--warm)}#tlt-home .el-intro{max-width:660px;margin:0 auto;text-align:center;font-family:var(--body);font-size:18px;color:var(--muted);line-height:1.7}#tlt-home .el-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:48px}#tlt-home .el{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:28px 20px;text-align:center;transition:transform .2s,box-shadow .2s}#tlt-home .el:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(26,20,16,.08)}#tlt-home .el .dot{width:46px;height:46px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:22px}#tlt-home .el h3{font-size:20px;margin-bottom:8px}#tlt-home .el p{font-family:var(--body);font-size:13.5px;color:var(--muted);line-height:1.55}#tlt-home .el.earth .dot{background:rgba(140,110,70,.14)}#tlt-home .el.water .dot{background:rgba(43,120,180,.13)}#tlt-home .el.air .dot{background:rgba(120,170,180,.16)}#tlt-home .el.fire .dot{background:rgba(196,90,40,.13)}#tlt-home .el.ether .dot{background:rgba(137,17,17,.12)}@media(max-width:820px){#tlt-home .el-grid{grid-template-columns:repeat(2,1fr)}}#tlt-home /* founder */
+.founder{background:var(--cream)}#tlt-home .founder-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;max-width:1000px;margin:0 auto}#tlt-home .founder .portrait{aspect-ratio:4/5;border-radius:20px;overflow:hidden;box-shadow:0 26px 60px rgba(26,20,16,.14);position:relative}#tlt-home .founder .portrait img{width:100%;height:100%;object-fit:cover;object-position:center 32%;display:block}#tlt-home .founder .portrait .ph{font-family:var(--ui);font-size:12px;color:var(--muted);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;letter-spacing:.05em}#tlt-home .founder h2{font-size:clamp(26px,3.2vw,38px);margin-bottom:20px}#tlt-home .founder p{font-family:var(--body);font-size:17.5px;color:var(--ink);line-height:1.75;margin-bottom:16px}#tlt-home .founder .sig{font-family:var(--ser);font-style:italic;font-size:19px;color:var(--burg);margin:20px 0 6px}#tlt-home .founder .signame{font-family:var(--ui);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:24px}@media(max-width:820px){#tlt-home .founder-grid{grid-template-columns:1fr;gap:32px}}#tlt-home /* closing CTA */
+.closing{background:var(--warm);text-align:center}#tlt-home .closing h2{font-size:clamp(30px,4vw,50px);margin-bottom:16px}#tlt-home .closing h2 .free{color:var(--teal-d);font-style:italic}#tlt-home .closing .sub{font-family:var(--body);font-size:18px;color:var(--muted);max-width:560px;margin:0 auto 14px;line-height:1.7}#tlt-home .closing .price{font-family:var(--ui);font-size:14px;color:var(--muted);margin-bottom:32px;letter-spacing:.02em}#tlt-home .closing .price b{color:var(--ink);font-weight:600}#tlt-home .closing-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}#tlt-home /* footer */
+footer{background:var(--cream);border-top:1px solid var(--line);padding:44px 32px;text-align:center}#tlt-home .foot-brand .logo-lock{font-size:22px}#tlt-home .foot-tag{font-family:var(--body);font-style:italic;font-size:15px;color:var(--muted);margin-top:10px}#tlt-home .concept{position:fixed;bottom:16px;right:16px;z-index:99;background:var(--char);color:#fff;font-family:var(--ui);font-size:12px;padding:9px 15px;border-radius:100px;box-shadow:0 8px 24px rgba(0,0,0,.3);opacity:.9}#tlt-home /* quotable feature */
+.quotable{background:var(--warm)}#tlt-home .q-gallery{display:flex;gap:22px;justify-content:center;align-items:flex-start;flex-wrap:wrap;margin-top:24px}#tlt-home .q-coverlink{display:inline-block;border-radius:16px;transition:transform .2s,box-shadow .2s}#tlt-home .q-coverlink:hover{transform:translateY(-4px)}#tlt-home .q-cover{width:240px;cursor:pointer;border-radius:16px;box-shadow:0 26px 60px rgba(26,20,16,.18);display:block}#tlt-home .q-card{width:216px;border-radius:14px;box-shadow:0 16px 40px rgba(26,20,16,.10);display:block;align-self:center}#tlt-home .q-note{text-align:center;font-family:var(--body);font-size:16px;color:var(--muted);max-width:560px;margin:26px auto 0;line-height:1.7}#tlt-home /* video */
+.video-sec{background:var(--cream)}#tlt-home .video-hold{max-width:508px;margin:40px auto 0;border-radius:34px;overflow:hidden;box-shadow:0 34px 80px rgba(26,20,16,.20);aspect-ratio:1080/1350;background:#0f0b08}#tlt-home .video-hold video{width:100%;height:100%;object-fit:cover;display:block}#tlt-home .video-note{text-align:center;font-family:var(--ui);font-size:13px;color:var(--muted);margin-top:16px;letter-spacing:.02em}#tlt-home .hero-logo{height:148px;width:auto;max-width:94%;display:block;margin:0 auto 34px}#tlt-home .foot-logo{height:30px;width:auto;display:inline-block}#tlt-home .brand-mark img{width:auto;height:38px}@media(max-width:640px){#tlt-home .lede .brk{display:none}}#tlt-home .headline-band{display:flex;align-items:center;justify-content:center;text-align:center;background:var(--warm);border-top:1px solid var(--line);padding:104px 0}#tlt-home .headline-band h1{font-size:clamp(34px,5.4vw,64px);max-width:900px;margin:0 auto;line-height:1.12;text-wrap:balance}
 </style>
-<section style="background:#FAF7F2;width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box;">
-  <div style="max-width:1080px;margin:0 auto;padding:clamp(46px,7vw,80px) clamp(1.25rem,5vw,2.5rem);">
-    <div class="watch-grid">
-      <div class="watch-copy">
-        <p style="font-family:'Instrument Sans',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#2BA5B4;margin:0 0 14px;">See it in 30 seconds</p>
-        <h2 style="font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(34px,4vw,56px);line-height:1.16;color:#1A1410;margin:0 0 22px;">Watch how it works.</h2>
-        <p class="watch-sub" style="font-family:'Instrument Sans',system-ui,sans-serif;font-size:20px;color:#7a6e66;line-height:1.65;max-width:460px;margin:0;">The whole journey &mdash; from your free Introduction to the moment someone is chosen for you, with love.</p>
-      </div>
-      <div>
-        <div id="watchFrame" onclick="playWatch()" style="position:relative;border-radius:20px;overflow:hidden;box-shadow:0 18px 50px rgba(26,20,16,0.22);cursor:pointer;background:#000;">
-          <video id="watchVideo" playsinline preload="none" poster="data:image/jpeg;base64,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ABQAAAAAAAAAAVAFEAUAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAQAAAAAAAAAAABFQAAAAAAAAAAFQBRFUAAAAAAAAAAAAAAAAAAAAUQBRAFEAUQBRAFEAVAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAABAABBRFAAAAAAAAAAAAAVAFEVQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAABAAAVAFEUAAAAAAAAAAAAAAFEAUQUUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBRAFEAAAAAAAAAAAAAAABAFQAAAAABFQAAAAAAUQBRFAAAAAAAAAAAAAAAABRAFEAUQUURQAAAAAAAAAAAAAABAFEAUQBUAAAAAAAAAAAAAAAAAAQBUAAAAAAAAQAAQUQBQAAAAAAAUQBRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAVAAAAAAAABAVAAAAAAAAVAFEUAAAAAAAAAAFEAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBUAAAAAAAAAAAAQAAAAAAAAAAAAAAAABRAFAAAAAAAAAAABRAFEAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBRAFQAAAAAAAAAAAAQFQAAAAAAAAAAAAAAAAAAAAAAAAAFQBRAFAAAAAAAAAAAAAAAAABRAFEAUQBRAFEAUQBUAAAAAAAAAAAAAAAAAAEBRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABUAUQBRAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAUQBRAFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFQBRAFEAUQBRAFEAUQBRAFEAUQBRAFEAUQBRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH//2Q==" style="width:100%;height:auto;display:block;">
-            <source src="/tlt2-web.mp4" type="video/mp4">
-          </video>
-          <div id="watchPlay" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(26,20,16,0.06);pointer-events:none;">
-            <span style="width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,0.94);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 22px rgba(0,0,0,0.28);">
-              <svg width="28" height="32" viewBox="0 0 26 30" fill="none" style="margin-left:5px;"><path d="M2 2.5v25l22-12.5z" fill="#823348"/></svg>
-            </span>
-          </div>
-        </div>
-        <p class="watch-cap" style="font-family:'Instrument Sans',system-ui,sans-serif;font-size:12px;color:#7a6e66;margin:14px 0 0;font-style:italic;text-align:center;">A 30-second look at how love finds you.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<script>
-function playWatch(){var v=document.getElementById('watchVideo');var b=document.getElementById('watchPlay');if(!v){return;}v.setAttribute('controls','');if(b){b.style.display='none';}var p=v.play();if(p&&p.catch){p.catch(function(){});}}
-</script>
 
-<section class="white-sec sec m-hide">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:48px">
-      <span class="label" style="color:var(--teal)">Two Ways to Begin</span>
-      <h2 class="hd" style="font-size:clamp(26px,3vw,38px);color:var(--char)">Are you a <em>Seeker</em> — or here for someone you love?</h2>
-    </div>
-    <div class="grid-2" style="margin-bottom:24px">
-      <div class="path-card seeker-card">
-        <span class="label" style="color:var(--burg)">The Seeker</span>
-        <h3 class="hd" style="font-size:clamp(22px,2.4vw,28px);color:var(--char);margin-bottom:14px">I am ready for real connection.</h3>
-        <p class="body-text" style="color:var(--muted);font-size:15px;margin-bottom:24px">You've lived enough to know what you want. You're not interested in apps, algorithms, or pretending. You want a process that honors the life you've built — and the love you still have to give.</p>
-        <a href="/member-introduction-page" class="btn btn-burg" style="width:100%;text-align:center;display:block">Begin My Introduction — It's Free →</a>
-      </div>
-      <div class="path-card advisor-card">
-        <span class="label" style="color:var(--teal)">For the One Supporting Someone They Love</span>
-        <h3 class="hd" style="font-size:clamp(22px,2.4vw,28px);color:var(--char);margin-bottom:14px">I am here for someone I love.</h3>
-        <p class="body-text" style="color:var(--muted);font-size:15px;margin-bottom:24px">You were invited because your judgment is trusted and your love is real. Whether you're an adult child, a best friend, a sibling, or a trusted advisor — your role here is one of the most meaningful things you can do for someone you love.</p>
-        <a href="/join" class="btn btn-teal" style="width:100%;text-align:center;display:block">Join as a Supporter →</a>
-      </div>
-    </div>
-    <div style="text-align:center">
-      <a href="/join" style="font-family:var(--san);font-size:14px;color:var(--teal);text-decoration:none">Just here to learn more? Join the community →</a>
+<div id="tlt-home">
+<section class="hero">
+  <div class="wrap">
+    <img class="hero-logo" src="/assets/logo.png" alt="TrueLuvTake2">
+    <p class="lede">A space where the people who love you most help find the person who deserves you.</p>
+    <span class="eyebrow">For Adults 50+ &middot; People-First &middot; Family-Included</span>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://www.trueluvtake2.com/member-introduction-page">I'm looking for love &rarr;</a>
+      <a class="btn btn-ghost" href="https://www.trueluvtake2.com/love-team">I'm here for someone I love &rarr;</a>
     </div>
   </div>
 </section>
 
+<!-- HEADLINE BAND (revealed on scroll) -->
+<section class="headline-band">
+  <div class="wrap">
+    <h1>You've built a whole life. You shouldn't have to condense it into a <em>swipe.</em></h1>
+  </div>
+</section>
 
-<!-- ═══════════════════════════════════════════════
-     SECTION 4 — THE SEEKER JOURNEY
-════════════════════════════════════════════════ -->
-<section class="cream-sec sec">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:52px">
-      <span class="label" style="color:var(--teal)">The Seeker Journey</span>
-      <!-- Decorative botanical flourish -->
-      <div style="margin:0 auto 18px;display:flex;align-items:center;justify-content:center;gap:10px">
-        <svg width="64" height="18" viewBox="0 0 64 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 9 Q10 3 18 9 Q26 15 34 9 Q42 3 50 9 Q56 13 62 9" stroke="rgba(130,51,72,.25)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-          <circle cx="2" cy="9" r="1.5" fill="rgba(130,51,72,.35)"/>
-          <circle cx="32" cy="9" r="2" fill="rgba(130,51,72,.45)"/>
-          <circle cx="62" cy="9" r="1.5" fill="rgba(130,51,72,.35)"/>
-          <!-- tiny leaf left -->
-          <path d="M14 6 Q18 2 22 6 Q18 5 14 6Z" fill="rgba(130,51,72,.2)"/>
-          <!-- tiny leaf right -->
-          <path d="M42 12 Q46 8 50 12 Q46 11 42 12Z" fill="rgba(130,51,72,.2)"/>
-        </svg>
-      </div>
-      <h2 class="hd" style="font-size:clamp(26px,3vw,34px);color:var(--char)">Six steps to The Garden.</h2>
-      <p style="font-family:var(--san);font-size:16px;color:var(--muted);margin-top:10px;font-style:italic">At your own pace. On your own terms.</p>
+<!-- QUOTABLE FEATURE -->
+<section class="block quotable">
+  <div class="wrap">
+    <div class="sec-eyebrow eyebrow">As featured in</div>
+    <h2 class="sec-title">Quotable Magazine &middot; <em>Female Founder Spotlight</em></h2>
+    <div class="q-gallery">
+      <a class="q-coverlink" href="https://www.trueluvtake2.com/media" target="_blank" rel="noopener"><img class="q-cover" src="/images/quotable-cover.jpg" alt="Quotable Magazine cover featuring Monique Alemán"></a>
     </div>
-    <div class="grid-2 journey-card" style="gap:36px">
-      <div class="step">
-        <span class="step-num">1</span>
-        <div>
-          <p class="step-title">Take Your Attunement Profile</p>
-          <p class="step-body">Before you look for someone, look at yourself. Five Elements of Connection — a quiet, reflective exploration of who you are and what you're truly ready for. Results arrive by email. No scores. No judgment. Only honest answers.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">2</span>
-        <div>
-          <p class="step-title">Create Your Free Introduction</p>
-          <p class="step-body">A photo. A few honest words. A 60-second video that proves you're real and lets your personality speak for itself. No script. No performance. Just you.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">3</span>
-        <div>
-          <p class="step-title">Join The Garden and Wait for the Moment</p>
-          <p class="step-body">A photo brings you into The Garden today, and that is all it takes. Your video comes later, when The Garden opens, and it is what lets your Love Team step in. Then you wait, at your own pace, for the moment worth waiting for.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">4</span>
-        <div>
-          <p class="step-title">Activate Your Membership and Name Your Love Team</p>
-          <p class="step-body">When The Garden opens, you activate your membership and name your Love Team: up to two adult children and a Trusted Love Advisor. They receive a personal invitation to take the first step for you.</p>
-          
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">5</span>
-        <div>
-          <p class="step-title">Your Love Team Searches The Garden</p>
-          <p class="step-body">Your Love Team browses The Garden on your behalf. They review introductions, watch videos, and reach out to other Love Teams. They screen. They vet. They discuss privately, and bring only their best forward.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">6</span>
-        <div>
-          <p class="step-title">Receive Your Presentations</p>
-          <p class="step-body">Your Love Team brings you their best: a photo, a video, and a personal note on why they believe this person deserves to meet you. Not a match suggestion. An act of love.</p>
-        </div>
+    <p class="q-note">A Female Founder Spotlight on people-first love after 50.<br><a class="link-arrow" href="https://www.trueluvtake2.com/media" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px">Read the Spotlight &rarr;</a></p>
+  </div>
+</section>
+
+<!-- WHY THIS MATTERS : one type voice -->
+<section class="block why">
+  <div class="wrap why-grid">
+    <div class="why-copy">
+      <div class="eyebrow" style="margin-bottom:14px">Why this matters</div>
+      <h2>You are not alone in <em>this.</em></h2>
+      <div class="reflection">
+        <p>"Fine" is the word we use when we have quietly decided to stop asking for what we really want.</p>
+        <p>And somewhere between "I'm fine" and "I want more," there's a question most of us are afraid to say out loud:</p>
+        <p class="q">Is this it? Or is there still time?</p>
+        <p>There is still time. That's what TrueLuvTake2 was built for.</p>
       </div>
     </div>
-    <div style="text-align:center;margin-top:48px">
-      <a href="/how-it-works" style="font-family:var(--san);font-size:14px;color:var(--teal);font-weight:600;text-decoration:none">Read the full journey →</a>
+    <div class="stats">
+      <div class="stat s1"><div class="tag">Gray Divorce</div><div class="big">1 in 3</div><div class="txt">divorces now involves someone over 50.</div></div>
+      <div class="stat s2"><div class="tag">Living Alone</div><div class="txt">More people are living alone in their 60s than at any point in modern history.</div></div>
+      <div class="stat s3"><div class="tag">Lovespan&trade;</div><div class="txt">We are living longer, healthier, and more awake to who we are than any generation before us.</div></div>
     </div>
   </div>
 </section>
 
-
-<!-- ═══════════════════════════════════════════════
-     SECTION 5 — THE GARDEN
-     NOTE: "loneliness" language removed per founder.
-     TLT2 is for people with full hearts + more love to give.
-════════════════════════════════════════════════ -->
-<section class="char-sec sec">
-  <div style="max-width:640px;margin:0 auto;padding:0 40px;text-align:center">
-    <span class="label" style="color:var(--teal)">The Garden</span>
-    <p style="font-family:var(--ser);font-style:italic;font-size:18px;color:rgba(249,246,240,.6);margin:0 0 16px">If you've never seen anything quite like this before, that's intentional.</p>
-    <h2 class="hd" style="font-size:clamp(26px,3vw,34px);color:#fff;margin-bottom:28px">A members-only space built for people who are truly ready.</h2>
-    <p class="body-text" style="color:rgba(249,246,240,.92)">The Garden is not a place the Seeker enters. It is a place their Love Team enters — on their behalf.</p>
-    <p class="body-text" style="color:rgba(249,246,240,.92)">Your Love Team browses introductions, watches videos, and reaches out to other Love Teams within the platform. They screen. They vet. They bring their best candidates forward.</p>
-    <p class="body-text" style="color:rgba(249,246,240,.92)">The Seeker never scrolls through faces. Never swipes. Never reduces a rich life to a thumbnail. That's not what this chapter calls for.</p>
-    <p style="font-family:var(--ser);font-style:italic;font-size:clamp(17px,2vw,20px);color:rgba(249,246,240,.72);margin:0 0 30px">That is not a small distinction. That is the entire point.</p>
-    <a href="/how-it-works" style="font-family:var(--san);font-size:14px;color:var(--teal);font-weight:600;text-decoration:none">Read the full journey →</a>
+<!-- HOW IT WORKS : condensed -->
+<section class="block how">
+  <div class="wrap">
+    <div class="sec-eyebrow eyebrow">How it works</div>
+    <h2 class="sec-title">Someone introduced to you by the people who love you.</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Attune</h3><p>A quiet, reflective look at who you are and what you're ready for. No scores, no judgment.</p></div>
+      <div class="step"><div class="n">2</div><h3>Your Love Team searches</h3><p>The people who know your heart review The Garden on your behalf. You never swipe or scroll.</p></div>
+      <div class="step"><div class="n">3</div><h3>An introduction with care</h3><p>They bring their best forward: one person, with a note on why they're right for you.</p></div>
+    </div>
+    <div class="center"><a class="link-arrow" href="https://www.trueluvtake2.com/how-it-works">See the full journey &rarr;</a></div>
   </div>
 </section>
 
-
-<!-- ═══════════════════════════════════════════════
-     SECTION 6 — ADVISORY CIRCLE
-     Teal · single column · size hierarchy creates the flair
-════════════════════════════════════════════════ -->
-<section class="ac-sec sec">
-  <div style="max-width:680px;margin:0 auto;padding:0 40px;text-align:center">
-
-    <!-- Label -->
-    <span class="label" style="color:rgba(249,246,240,.6)">The Love Team</span>
-
-    <!-- Headline with serif italic -->
-    <h2 class="hd" style="font-size:clamp(32px,4vw,48px);color:#fff;line-height:1.18;margin:0 auto 20px;max-width:640px">
-      The people who already know your heart <em>do the searching.</em>
-    </h2>
-
-    <!-- Thin cream rule -->
-    <div style="width:52px;height:1px;background:rgba(249,246,240,.3);margin:0 auto 44px"></div>
-
-    <!-- Lead paragraph — larger, centered -->
-    <p style="font-family:var(--san);font-size:18px;color:rgba(249,246,240,.95);line-height:1.85;max-width:600px;margin:0 auto 18px">
-      Your Love Team browses The Garden on your behalf. They review introductions, watch videos, and reach out to other Love Teams within the platform. They screen. They vet.
-    </p>
-    <p class="body-text" style="color:rgba(249,246,240,.8);max-width:580px;margin:0 auto 52px">
-      And when they're done, they bring you their best — with a photo, a video, and a personal note explaining exactly why they believe this person deserves to meet you. This could be your adult children, your best friend of thirty years, a sibling, or a trusted advisor whose judgment you trust completely.
-    </p>
-
-    <!-- Founder quote — full-width cream card, left-aligned text inside -->
-    <div style="background:var(--cream);border-radius:10px;padding:38px 44px;margin:0 auto 52px;text-align:left">
-      <p style="font-family:var(--ser);font-style:italic;font-size:20px;color:var(--char);line-height:1.72;margin:0 0 20px">
-        "The people who already love you are your greatest asset. At TrueLuvTake2, they are invited in from the very beginning."
-      </p>
-      <span class="label" style="color:var(--muted);font-size:10px;margin:0">— Monique Alemán, Founder</span>
+<!-- HOW IT WORKS VIDEO -->
+<section class="block video-sec">
+  <div class="wrap">
+    <div class="sec-eyebrow eyebrow">See it in action</div>
+    <h2 class="sec-title">A short look at how love finds you.</h2>
+    <div class="video-hold">
+      <video poster="/images/hiw-poster.jpg" src="/assets/hiw-home.mp4" autoplay muted loop playsinline controls></video>
     </div>
-
-    <!-- Matchmaker contrast — left-aligned, thin top rule -->
-    <div class="m-hide" style="border-top:1px solid rgba(249,246,240,.2);padding-top:44px;margin-bottom:20px;text-align:left">
-      <p class="body-text" style="color:rgba(249,246,240,.92);margin-bottom:24px">
-        Elite matchmaking services charge thousands of dollars for a professional who met you once. Your Love Team brings something no hired matchmaker can offer: <strong style="color:#fff">decades of knowing you.</strong> They've watched you love and be loved. They know your patterns, your blindspots, your gifts — and what you actually deserve, even when you forget.
-      </p>
-      <!-- Standalone pullquote — the emotional landing -->
-      <p style="font-family:var(--ser);font-style:italic;font-size:clamp(20px,2.5vw,25px);color:rgba(249,246,240,.88);line-height:1.45;margin:0 0 52px">
-        No other platform in the world acknowledges this dynamic — let alone builds for it.
-      </p>
-    </div>
-
-    <!-- Thin rule before cards -->
-    <div style="width:52px;height:1px;background:rgba(249,246,240,.2);margin:0 auto 40px"></div>
-
-    <!-- Circle configuration cards — redesigned with icon headers -->
-    <div class="grid-3 m-hide" style="margin-bottom:44px;text-align:left">
-
-      <!-- Card 1 -->
-      <div class="ac-circle-card">
-        <div class="ac-card-head">
-          <!-- Family icon -->
-          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="16" cy="10" r="4"/>
-            <path d="M8 26c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
-            <circle cx="7" cy="12" r="3"/>
-            <path d="M2 26c0-3.3 2.2-6 5-7"/>
-            <circle cx="25" cy="12" r="3"/>
-            <path d="M30 26c0-3.3-2.2-6-5-7"/>
-          </svg>
-          <div>
-            <p style="font-family:var(--san);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin:0 0 2px">Option 1</p>
-            <p style="font-family:var(--san);font-size:12px;font-weight:600;color:#fff;margin:0;line-height:1.3">Family + Advisor</p>
-          </div>
-        </div>
-        <div class="ac-card-body">
-          <p style="font-family:var(--san);font-weight:600;font-size:13px;color:var(--char);margin:0 0 8px">2 Adult Children + 1 Trusted Love Advisor</p>
-          <p style="font-family:var(--san);font-size:13px;color:var(--muted);line-height:1.7;margin:0">Family history grounded in lived experience, supported by a trusted outside voice.</p>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="ac-circle-card">
-        <div class="ac-card-head">
-          <!-- Balance icon (two figures) -->
-          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="10" r="4"/>
-            <path d="M3 26c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
-            <circle cx="23" cy="11" r="3.5"/>
-            <path d="M17 26c0-3.6 2.7-6.5 6-7"/>
-          </svg>
-          <div>
-            <p style="font-family:var(--san);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin:0 0 2px">Option 2</p>
-            <p style="font-family:var(--san);font-size:12px;font-weight:600;color:#fff;margin:0;line-height:1.3">Balanced & Whole</p>
-          </div>
-        </div>
-        <div class="ac-card-body">
-          <p style="font-family:var(--san);font-weight:600;font-size:13px;color:var(--char);margin:0 0 8px">1 Adult Child + 1 Trusted Love Advisor</p>
-          <p style="font-family:var(--san);font-size:13px;color:var(--muted);line-height:1.7;margin:0">One family member, one trusted friend — balanced, grounded, and whole.</p>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="ac-circle-card">
-        <div class="ac-card-head">
-          <!-- Heart / chosen family icon -->
-          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 27S4 19 4 11.5A6.5 6.5 0 0 1 16 8a6.5 6.5 0 0 1 12 3.5C28 19 16 27 16 27z"/>
-          </svg>
-          <div>
-            <p style="font-family:var(--san);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin:0 0 2px">Option 3</p>
-            <p style="font-family:var(--san);font-size:12px;font-weight:600;color:#fff;margin:0;line-height:1.3">Chosen Family</p>
-          </div>
-        </div>
-        <div class="ac-card-body">
-          <p style="font-family:var(--san);font-weight:600;font-size:13px;color:var(--char);margin:0 0 8px">2 Trusted Love Advisors</p>
-          <p style="font-family:var(--san);font-size:13px;color:var(--muted);line-height:1.7;margin:0">Chosen family is real family. Two TLAs form a complete and equally sacred circle.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- CTA -->
-    <a href="/love-team" class="ac-cta-link">Learn about the Love Team →</a>
-
+    <p class="video-note">Tap the video for sound</p>
   </div>
 </section>
 
-
-<!-- ═══════════════════════════════════════════════
-     SECTION 7 — FIVE ELEMENTS
-     Thin-line inline SVGs matching existing Five Elements page.
-     Earth=green, Water=blue, Air=light blue, Fire=coral, Ether=purple.
-     NO Tabler icons / NO AI-looking symbols.
-════════════════════════════════════════════════ -->
-<section class="cream-sec sec m-hide">
-  <div style="max-width:600px;margin:0 auto;padding:0 40px;text-align:center">
-    <span class="label" style="color:var(--teal)">Our Framework</span>
-    <p style="font-family:var(--ser);font-style:italic;font-size:18px;color:var(--muted);margin:0 0 12px">Before we match, we attune.</p>
-    <h2 class="hd" style="font-size:clamp(26px,3vw,34px);color:var(--char);margin-bottom:16px">The Five Elements of Connection.</h2>
-    <p class="body-text" style="color:var(--muted);margin-bottom:36px">Not a quiz. Not an algorithm. A reflective mirror — designed to help you understand yourself before you look for someone else. Because the most important conversation in this process is the one you have with your own honest answers.</p>
-
-    <div style="display:grid;gap:12px;margin-bottom:32px;text-align:left">
-
-      <!-- EARTH — Globe icon, green -->
-      <div class="elem-row">
-        <div class="elem-icon" style="background:rgba(78,139,95,.1)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4E8B5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <ellipse cx="12" cy="12" rx="4" ry="10"/>
-            <line x1="2" y1="12" x2="22" y2="12"/>
-          </svg>
-        </div>
-        <span class="elem-name" style="color:var(--earth)">Earth</span>
-        <span class="elem-desc">Stability, readiness, and real-life availability that allow love to take root.</span>
-      </div>
-
-      <!-- WATER — Droplet icon, blue -->
-      <div class="elem-row">
-        <div class="elem-icon" style="background:rgba(46,123,196,.1)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E7BC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2.25S5 10.5 5 14.5a7 7 0 0 0 14 0C19 10.5 12 2.25 12 2.25z"/>
-          </svg>
-        </div>
-        <span class="elem-name" style="color:var(--water)">Water</span>
-        <span class="elem-desc">How feeling, empathy, and repair move through you in connection.</span>
-      </div>
-
-      <!-- AIR — Three wavy lines, light blue -->
-      <div class="elem-row">
-        <div class="elem-icon" style="background:rgba(91,164,199,.1)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5BA4C7" stroke-width="1.5" stroke-linecap="round">
-            <path d="M2 7c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0"/>
-            <path d="M2 12c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0"/>
-            <path d="M2 17c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0"/>
-          </svg>
-        </div>
-        <span class="elem-name" style="color:var(--air)">Air</span>
-        <span class="elem-desc">The rhythm and spaciousness that let love breathe and communication build.</span>
-      </div>
-
-      <!-- FIRE — Flame outline, coral -->
-      <div class="elem-row">
-        <div class="elem-icon" style="background:rgba(201,75,31,.1)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C94B1F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2c0 0-6 8-6 12.5a6 6 0 0 0 12 0C18 10 12 2 12 2z"/>
-            <path d="M12 22c-1.7 0-3-1.3-3-3 0-2 2-4 3-4s3 2 3 4c0 1.7-1.3 3-3 3z"/>
-          </svg>
-        </div>
-        <span class="elem-name" style="color:var(--fire)">Fire</span>
-        <span class="elem-desc">The warmth, aliveness, and spark that keep love vibrant and joyful.</span>
-      </div>
-
-      <!-- ETHER — 8-point asterisk/starburst, purple -->
-      <div class="elem-row">
-        <div class="elem-icon" style="background:rgba(123,104,200,.1)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7B68C8" stroke-width="1.5" stroke-linecap="round">
-            <line x1="12" y1="3"    x2="12" y2="21"/>
-            <line x1="3"  y1="12"   x2="21" y2="12"/>
-            <line x1="5.64" y1="5.64" x2="18.36" y2="18.36"/>
-            <line x1="18.36" y1="5.64" x2="5.64" y2="18.36"/>
-          </svg>
-        </div>
-        <span class="elem-name" style="color:var(--ether)">Ether</span>
-        <span class="elem-desc">Community, family, values — the wider container that helps love grow sustainably.</span>
-      </div>
-
+<!-- FIVE ELEMENTS -->
+<section class="block elements">
+  <div class="wrap">
+    <div class="sec-eyebrow eyebrow">Our framework</div>
+    <h2 class="sec-title">Before we match, we <em>attune.</em></h2>
+    <p class="el-intro">A reflective mirror, not a quiz, designed to help you understand yourself before you look for someone else.</p>
+    <div class="el-grid">
+      <div class="el earth"><div class="dot">&#127793;</div><h3>Earth</h3><p>Stability, readiness, and real-life availability that let love take root.</p></div>
+      <div class="el water"><div class="dot">&#128167;</div><h3>Water</h3><p>How feeling, empathy, and repair move through you in connection.</p></div>
+      <div class="el air"><div class="dot">&#128168;</div><h3>Air</h3><p>The rhythm and spaciousness that let love breathe and communication build.</p></div>
+      <div class="el fire"><div class="dot">&#128293;</div><h3>Fire</h3><p>The warmth, aliveness, and spark that keep love vibrant and joyful.</p></div>
+      <div class="el ether"><div class="dot">&#10024;</div><h3>Ether</h3><p>Community, family, and values: the wider container love grows within.</p></div>
     </div>
-    <a href="/five-elements" style="font-family:var(--san);font-size:14px;color:var(--teal);font-weight:600;text-decoration:none">Explore the Five Elements →</a>
+    <div class="center" style="text-align:center;margin-top:40px"><a class="link-arrow" href="https://www.trueluvtake2.com/five-elements">Explore the Five Elements &rarr;</a></div>
   </div>
 </section>
 
-
-<!-- TRANSITION — Five Elements → Founder -->
-<div class="sec m-hide" style="background:var(--char);padding:44px 40px;text-align:center">
-  <div style="display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:16px">
-    <div style="width:52px;height:.5px;background:rgba(255,255,255,.18)"></div>
-    <!-- Botanical ornament -->
-    <svg width="36" height="20" viewBox="0 0 36 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M18 10 Q12 4 6 8 Q12 7 18 10Z" fill="rgba(130,51,72,.55)"/>
-      <path d="M18 10 Q24 4 30 8 Q24 7 18 10Z" fill="rgba(130,51,72,.55)"/>
-      <path d="M18 10 Q12 16 6 12 Q12 13 18 10Z" fill="rgba(130,51,72,.35)"/>
-      <path d="M18 10 Q24 16 30 12 Q24 13 18 10Z" fill="rgba(130,51,72,.35)"/>
-      <circle cx="18" cy="10" r="2" fill="rgba(43,165,180,.7)"/>
-    </svg>
-    <div style="width:52px;height:.5px;background:rgba(255,255,255,.18)"></div>
+<!-- MEET THE FOUNDER -->
+<section class="block founder">
+  <div class="wrap founder-grid">
+    <div class="portrait"><img src="/images/founder-monique-sons.jpg" alt="Monique Alemán with her two sons"></div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:14px">Our founder</div>
+      <h2>A full life, fully lived, and the clarity that comes from it.</h2>
+      <p>By this stage of life, we don't need more options. We need the right ones, and we need the people who love us most to be part of finding them.</p>
+      <p>I couldn't find anything that worked this way, so I built it. My sons are part of my journey. My history is part of my story. And my heart, after everything, is still open.</p>
+      <p class="sig">If any of that sounds familiar, you're in the right place.</p>
+      <p class="signame">Monique Alem&aacute;n, Founder</p>
+      <a class="btn btn-ghost" href="https://www.trueluvtake2.com/about">Meet Monique &rarr;</a>
+    </div>
   </div>
-  <p style="font-family:var(--ser);font-style:italic;font-size:16px;color:rgba(255,255,255,.52);margin:0;letter-spacing:.01em">Built from lived experience. Founded with love.</p>
+</section>
+
 </div>
 
-<!-- ═══════════════════════════════════════════════
-     SECTION 8 — FOUNDER VOICE
-     Photo: Monique with sons (advisory section photo)
-     NOT the headshot from the hero.
-════════════════════════════════════════════════ -->
-<section class="white-sec sec">
-  <div class="container">
-    <div class="grid-2" style="align-items:center;gap:56px">
-
-      <!-- Photo — Monique with her sons -->
-      <div>
-        <div style="border-radius:10px;overflow:hidden;max-width:340px;aspect-ratio:3/4;background:var(--char)">
-          <img
-            src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69b9858d61cba53ce18d90fd.jpg"
-            style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block"
-            alt="Monique Alemán with her sons">
-        </div>
-      </div>
-
-      <!-- Copy -->
-      <div>
-        <span class="label" style="color:var(--teal)">Our Founder</span>
-        <h2 class="hd" style="font-size:clamp(22px,2.4vw,28px);color:var(--char);margin-bottom:24px">A full life, fully lived — and the clarity that comes from it.</h2>
-        <p style="font-family:var(--san);font-weight:600;font-size:16px;color:var(--char);margin:0 0 4px">Not another app.</p>
-        <p style="font-family:var(--san);font-weight:600;font-size:16px;color:var(--char);margin:0 0 4px">Not a matchmaker who'd never met me.</p>
-        <p style="font-family:var(--san);font-weight:600;font-size:16px;color:var(--char);margin:0 0 22px">Not anything that existed yet.</p>
-        <p style="font-family:var(--ser);font-style:italic;font-size:26px;color:var(--burg);margin:0 0 22px">So I built it.</p>
-        <p class="body-text" style="color:var(--muted)">TrueLuvTake2 exists because by this stage of life, we don't need more options. We need the right ones. And we need the people who love us most to be part of that.</p>
-        <p class="body-text" style="color:var(--muted)">My adult sons are part of my journey. My history is part of my story. And my heart — after everything — is still open.</p>
-        <p style="font-family:var(--san);font-size:16px;color:var(--char);font-style:italic;margin:0 0 16px">If any of that sounds familiar, you're in the right place.</p>
-        <span class="label" style="color:var(--muted);font-size:10px;margin:0">— Monique Alemán, Founder</span>
-        <div style="margin-top:22px">
-          <a href="/about" style="font-family:var(--san);font-size:14px;color:var(--teal);font-weight:600;text-decoration:none">Meet Monique →</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════
-     SECTION 9 — PRICING
-     FREE leads. $222 follows smaller / muted.
-════════════════════════════════════════════════ -->
-<section class="char-sec sec">
-  <div style="max-width:520px;margin:0 auto;padding:0 40px;text-align:center">
-    <span class="label" style="color:var(--teal)">Transparent Pricing</span>
-    <h2 class="hd" style="font-size:clamp(36px,5vw,50px);color:#fff;line-height:1.15">Your Introduction</h2>
-    <h2 class="hd" style="font-size:clamp(36px,5vw,50px);color:#fff;font-style:italic;margin:0 0 32px">is always free.</h2>
-    <p class="body-text" style="color:rgba(249,246,240,.9)">Paid membership activates when The Garden reaches 250 founding members.</p>
-    <p class="body-text" style="color:rgba(249,246,240,.9)">Until then — your place is free, your profile is live, and your Love Team can begin forming today.</p>
-    <p style="font-family:var(--san);font-size:13px;color:rgba(249,246,240,.38);margin:0 0 32px">When pricing activates: $222/month &nbsp;·&nbsp; No long-term contracts &nbsp;·&nbsp; Complete transparency</p>
-
-    <!-- Founding membership callout -->
-    <div class="m-hide" style="background:rgba(196,134,10,0.12);border:1px solid rgba(196,134,10,0.4);border-radius:10px;padding:24px 28px;margin:0 0 32px;text-align:left">
-      <p style="font-family:var(--san);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#C4860A;margin:0 0 10px">Founding Membership — Available Now</p>
-      <p style="font-family:var(--ser);font-size:18px;color:#fff;line-height:1.55;margin:0 0 14px">Ready to step forward? Secure your place for <strong style="color:#C4860A">$444</strong> — two months at today's rate, held with care until opening day.</p>
-      <a href="/founding-member" style="font-family:var(--san);font-size:13px;color:#C4860A;font-weight:600;text-decoration:none">Learn about founding membership →</a>
-    </div>
-
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;align-items:center">
-      <a href="/member-introduction-page" class="btn btn-burg">Start Free Today →</a>
-      
-    </div>
-  </div>
-</section>
 
 <script src="/components/footer.js"></script>
 
 
 </body>
 </html>
-                                                                                                        
