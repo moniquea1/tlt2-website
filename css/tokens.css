@@ -11,22 +11,14 @@
   /* Palette */
   --cream:  #F9F6F0;
   --char:   #1a1614;
-  --burg:   #823348;
+  --burg:   #891111;
   --teal:   #2BA5B4;
 
   /* Aliases matching nav.js tokens */
   --bg:           #F9F6F0;
   --text-head:    #1a1614;
   --text-muted:   #5a524e;
-  --brand:        #823348;
-  --brand-dark:   #6d2a3d;
-  --border-faint: rgba(130,51,72,0.06);
-}
-
-/* ═══ READABILITY PASS (2026-07): floor micro-labels at 12.5px for the 50+ audience.
-   Font-size only — spacing, color, and weight unchanged. Delete this block to revert. ═══ */
-.label, .section-label, .hero-label, .eyebrow, .footer-col-title,
-.timeline-when, .price-snap-eyebrow, .step-badge, .path-card-label,
-.faq-cat-btn, .price-snap-period {
-  font-size: 12.5px !important;
+  --brand:        #891111;
+  --brand-dark:   #6f0d0d;
+  --border-faint: rgba(137,17,17,0.06);
 }
