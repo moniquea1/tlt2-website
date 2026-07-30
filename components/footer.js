@@ -20,7 +20,8 @@
     "}",
 
     ".footer-cta {",
-    "  background: #6E1315;",
+    "  background: #F2EDE4;",
+    "  border-top: 1px solid #e4dbd0;",
     "  padding: clamp(48px,7vw,72px) clamp(24px,6vw,80px);",
     "  text-align: center;",
     "}",
@@ -28,16 +29,16 @@
     ".footer-cta-eyebrow {",
     "  font-family: var(--font-ui); font-size: 11px; font-weight: 600;",
     "  letter-spacing: 0.14em; text-transform: uppercase;",
-    "  color: rgba(255,255,255,0.65); margin-bottom: 16px;",
+    "  color: #7a6e66; margin-bottom: 16px;",
     "}",
     ".footer-cta h2 {",
     "  font-family: var(--font-serif); font-size: clamp(28px,4.5vw,44px);",
-    "  font-weight: 400; color: #fff; line-height: 1.25; margin: 0 0 16px;",
+    "  font-weight: 400; color: #1A1410; line-height: 1.25; margin: 0 0 16px;",
     "}",
     ".footer-cta h2 em { font-style: italic; }",
     ".footer-cta p {",
     "  font-family: var(--font-ui); font-size: 16px; font-weight: 300;",
-    "  color: rgba(255,255,255,0.8); line-height: 1.75; margin: 0 0 32px;",
+    "  color: #7a6e66; line-height: 1.75; margin: 0 0 32px;",
     "}",
     ".footer-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }",
     ".footer-cta-btns a {",
@@ -45,10 +46,10 @@
     "  font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;",
     "  text-decoration: none; padding: 14px 28px; border-radius: 2px; transition: all 0.2s;",
     "}",
-    ".cta-white { background: #fff; color: var(--rose); }",
-    ".cta-white:hover { background: rgba(255,255,255,0.92); }",
-    ".cta-outline-w { border: 1px solid rgba(255,255,255,0.5); color: #fff; background: transparent; }",
-    ".cta-outline-w:hover { background: rgba(255,255,255,0.1); }",
+    ".cta-white { background: #89181A; color: #fff; }",
+    ".cta-white:hover { background: #6f0d0d; }",
+    ".cta-outline-w { border: 1px solid rgba(137,24,26,0.4); color: #89181A; background: transparent; }",
+    ".cta-outline-w:hover { background: rgba(137,24,26,0.06); }",
 
     ".footer {",
     "  background: var(--charcoal);",
@@ -150,7 +151,7 @@
     + '<a href="/member-introduction-page" class="cta-white">Create My Introduction — It’s Free →</a>'
     + '<a href="/love-team" class="cta-outline-w">Learn about the Love Team</a>'
     + '</div>'
-    + '<p style="font-family:\'Instrument Sans\',sans-serif;font-size:11px;color:rgba(255,255,255,0.45);margin-top:20px;font-style:italic;">No credit card. No commitment. Your Introduction is always free.</p>'
+    + '<p style="font-family:\'Instrument Sans\',sans-serif;font-size:11px;color:rgba(26,20,16,0.5);margin-top:20px;font-style:italic;">No credit card. No commitment. Your Introduction is always free.</p>'
     + '</div></section>'
     + '<footer class="footer">'
     + '<div class="footer-inner">'
