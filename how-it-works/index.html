@@ -106,8 +106,9 @@ body{background:var(--cream);color:var(--text-warm);font-family:var(--font-body)
 .path-card.circle .path-card-link{color:var(--teal)}
 
 /* ── JOURNEY STEPS ── */
-.steps-section{background:var(--cream);width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box;}
-.steps-inner{max-width:1200px;margin:0 auto;padding:clamp(48px,8vw,80px) clamp(1.25rem,5vw,2.5rem)}
+.steps-section{background-image:linear-gradient(to right,var(--cream) 0%,var(--cream) 45%,rgba(250,247,242,0.72) 53%,rgba(250,247,242,0.30) 63%,rgba(250,247,242,0.04) 75%,rgba(250,247,242,0) 85%),url('/images/garden-path.jpg');background-size:cover;background-position:58% 42%;background-repeat:no-repeat;width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box;}
+@media(max-width:900px){.steps-section{background-image:linear-gradient(180deg,var(--cream) 0%,var(--cream) 52%,rgba(250,247,242,0.82) 74%,rgba(250,247,242,0.28) 100%),url('/images/garden-path.jpg');background-position:center bottom}}
+.steps-inner{max-width:600px;margin:0;padding:clamp(48px,8vw,80px) clamp(1.25rem,5vw,2.5rem)}
 .steps-grid{display:flex;flex-direction:column;gap:0}
 .step{display:grid;grid-template-columns:80px 1fr;gap:32px;padding:40px 0;border-bottom:1px solid var(--rule);align-items:start}
 .step:last-child{border-bottom:none}
