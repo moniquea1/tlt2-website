@@ -228,6 +228,15 @@ body {
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--rose); margin-bottom: 8px;
 }
+/* -- The Process: v3.0 hover motion -- */
+.step { transition: transform .32s cubic-bezier(.22,.61,.36,1), box-shadow .32s ease; }
+.step-num { transition: background .32s ease; }
+.step-content h3 { transition: letter-spacing .32s ease; }
+.step:hover { transform: translate(6px,-3px); box-shadow: -6px 16px 34px -16px rgba(11,74,84,0.32); z-index: 2; }
+.step:hover .step-num { background: rgba(43,165,180,0.15); }
+.step:hover .step-content h3 { letter-spacing: 0.16em; }
+@media (prefers-reduced-motion: reduce) { .step { transition: none; } .step:hover { transform: none; box-shadow: 0 6px 18px -10px rgba(11,74,84,0.25); } }
+/* -- end Process hover -- */
 .step-content p {
   font-family: var(--font-ui); font-size: 15px;
   line-height: 1.78; color: var(--text-warm);
