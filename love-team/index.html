@@ -389,6 +389,10 @@ display:flex;align-items:center;justify-content:center;font-family:var(--font-se
 
 /* MOBILE: hide the 4.3MB decorative nature-break photo on phones (kept on desktop) */
 @media (max-width: 768px){ .ac-nature-break{ display:none !important; } }
+/* tile hover */
+.role-card{transition:transform .3s cubic-bezier(.2,.7,.3,1),box-shadow .3s ease;}
+.role-card:hover{transform:translateY(-5px);box-shadow:0 20px 44px -20px rgba(26,20,16,0.30);}
+@media(prefers-reduced-motion:reduce){.role-card{transition:none;}.role-card:hover{transform:none;}}
 </style>
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
