@@ -12,7 +12,7 @@ Single source of truth for language across the site. Use these terms exactly thi
 
 - Membership runs **two months**.
 - In that window, the Love Team works to bring the member **up to three** vetted candidates.
-- If the Love Team needs more time to finish, the member **activates a third month**.
+- The member can **activate a third month at half price**, which brings **up to two more**, for **five presentations per cycle**.
 - The goal is **efficiency, not lingering** — members move *through* TrueLuvTake2 toward real people, unlike traditional apps built around endless scrolling and swiping.
 - By the time a candidate reaches a Seeker, the Love Team's vetting, interviews, and prequalification have already done the hard filtering — so Seekers meet people who have already passed many tests.
 
@@ -23,5 +23,5 @@ Single source of truth for language across the site. Use these terms exactly thi
 
 ## Copy-pass to-do (deferred word-level items)
 
-- **The Garden — card 4** ("You receive a presentation, not a notification"): reword to convey "up to three" — but only once we lock whether a Presentation is *one package* or *one-per-candidate*. Do not publish until settled.
+- **SETTLED (Aug 2026):** a Presentation is **one per candidate**, not one package. Confirmed by Monique via the Month 3 pricing (2 additional presentations = 2 additional candidates). **The Garden — card 4** ("You receive a presentation, not a notification") can now be reworded to convey "up to three."
 - Standardize **Introduction / Profile / Presentation** site-wide (e.g., How It Works currently says "introductions," The Garden says "presentations" — align to the definitions above).
