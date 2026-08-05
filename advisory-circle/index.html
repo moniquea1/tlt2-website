@@ -66,7 +66,7 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 
 
 /* ═══════════════════════════════
-   HERO — Egypt night scene
+   HERO — Love Team to Love Team
 ═══════════════════════════════ */
 .hero {
   background: #1A1410;
@@ -81,6 +81,20 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
   object-fit: cover; object-position: center 45%;
   display: block;
   filter: brightness(1.35) contrast(1.1) saturate(1.25);
+}
+
+/* ── HERO DIPTYCH — Love Team to Love Team ── */
+.hero-bg.duo { display: grid; grid-template-columns: 1fr 1fr; }
+.duo-panel { position: relative; overflow: hidden; }
+.duo-panel img { width: 100%; height: 100%; object-fit: cover; display: block; filter: contrast(1.04) saturate(1.05); }
+.duo-panel.left img  { object-position: 50% 50%; }
+.duo-panel.right img { object-position: 50% 45%; }
+.hero-bg.duo::after { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: rgba(43,165,180,0.38); z-index: 3; }
+@media (max-width: 1024px) {
+  .hero-bg.duo { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+  .hero-bg.duo::after { left: 0; right: 0; width: auto; top: 50%; height: 1px; }
+  .duo-panel.left img  { object-position: 50% 42%; }
+  .duo-panel.right img { object-position: 50% 50%; }
 }
 .hero-overlay {
   position: absolute; inset: 0;
@@ -375,11 +389,11 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 <body>
 <script src="/components/nav.js"></script>
 
-<!-- ═══════ HERO — Egypt night scene ═══════ -->
+<!-- ═══════ HERO — Love Team to Love Team ═══════ -->
 <section class="hero fb">
-  <div class="hero-bg">
-    <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69fa37aaea88e31e443d5a17.jpg"
-         alt="Evening gathering — Egypt">
+  <div class="hero-bg duo">
+    <div class="duo-panel left"><img src="/images/love-team-hero-left.jpg" alt="Two adult sons at a laptop, looking through The Garden for their parent"></div>
+    <div class="duo-panel right"><img src="/images/love-team-hero-right.jpg" alt="Two adult daughters at a laptop, looking through The Garden for their parent"></div>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-inner">

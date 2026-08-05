@@ -10,11 +10,11 @@
 <meta property="og:url" content="https://www.trueluvtake2.com/love-team">
 <meta property="og:title" content="The Love Team — TrueLuvTake2">
 <meta property="og:description" content="Your Love Team is the people who know your heart, your adult children and closest friends, searching for your match on your behalf. The heart of TrueLuvTake2.">
-<meta property="og:image" content="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/699e0fca1001a5a3c53f19f2.jpg">
+<meta property="og:image" content="https://www.trueluvtake2.com/images/love-team-social.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Love Team — TrueLuvTake2">
 <meta name="twitter:description" content="Your Love Team is the people who know your heart, your adult children and closest friends, searching for your match on your behalf. The heart of TrueLuvTake2.">
-<meta name="twitter:image" content="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/699e0fca1001a5a3c53f19f2.jpg">
+<meta name="twitter:image" content="https://www.trueluvtake2.com/images/love-team-social.jpg">
 <link rel="stylesheet" href="/css/tokens.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,6 +88,13 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 }
 .hero-bg { position: absolute; inset: 0; }
 
+.hero-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 62% 42%;
+  display: block;
+  filter: contrast(1.04) saturate(1.05);
+}
+
 /* ── HERO DIPTYCH — Love Team to Love Team ── */
 .hero-bg.duo { display: grid; grid-template-columns: 1fr 1fr; }
 .duo-panel { position: relative; overflow: hidden; }
@@ -100,13 +107,6 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
   .hero-bg.duo::after { left: 0; right: 0; width: auto; top: 50%; height: 1px; }
   .duo-panel.left img  { object-position: 50% 42%; }
   .duo-panel.right img { object-position: 50% 50%; }
-}
-
-.hero-bg img {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: 62% 42%;
-  display: block;
-  filter: contrast(1.04) saturate(1.05);
 }
 .hero-overlay {
   position: absolute; inset: 0;
