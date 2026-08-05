@@ -217,7 +217,7 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
   background: white; border-radius: 20px; padding: clamp(28px,4vw,44px);
   border-top: 4px solid var(--teal);
 }
-.role-icon { font-size: 32px; margin-bottom: 16px; }
+.role-title::before { content: ""; display: block; width: 28px; height: 2px; background: var(--teal); margin-bottom: 16px; }
 .role-eyebrow { font-family: var(--font-ui); font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
 .role-title { font-family: var(--font-serif); font-size: clamp(20px,2.5vw,26px); color: var(--text-warm); margin-bottom: 14px; }
 .role-body { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 20px; }
@@ -304,7 +304,8 @@ display:flex;align-items:center;justify-content:center;font-family:var(--font-se
   box-shadow: 0 8px 32px rgba(43,165,180,0.14);
 }
 .why-card-icon { width: 32px; height: 32px; margin-bottom: 16px; }
-.why-card-title { font-family: var(--font-serif); font-size: clamp(16px,2vw,20px); color: var(--text-warm); margin-bottom: 10px; line-height: 1.3; }
+.why-card-title { font-family: var(--font-serif); font-size: clamp(18px,2.3vw,23px); color: var(--charcoal); margin-bottom: 12px; line-height: 1.25; }
+.why-card-title::before { content: ""; display: block; width: 28px; height: 2px; background: var(--teal); margin-bottom: 18px; }
 .why-card-body { font-size: 13px; color: var(--muted); line-height: 1.75; }
 
 /* ═══════════════════════════════
@@ -445,15 +446,15 @@ display:flex;align-items:center;justify-content:center;font-family:var(--font-se
       </div>
       <div class="idea-stat-stack">
         <div class="idea-stat">
-          <div class="idea-stat-num">Your story</div>
-          <div class="idea-stat-label">You bring lived knowledge no profile can capture — their humor, their heartbreaks, their nonnegotiables</div>
+          <div class="idea-stat-num">Your history</div>
+          <div class="idea-stat-label">You bring lived knowledge no photo or paragraph can capture: their humor, their heartbreaks, their nonnegotiables</div>
         </div>
         <div class="idea-stat">
-          <div class="idea-stat-num">Your judgment</div>
-          <div class="idea-stat-label">You vet with love and honesty — bringing an outside eye and a vested interest in their happiness</div>
+          <div class="idea-stat-num">Your discernment</div>
+          <div class="idea-stat-label">You vet with love and honesty, bringing an outside eye and a vested interest in their happiness</div>
         </div>
         <div class="idea-stat">
-          <div class="idea-stat-num">Your gift</div>
+          <div class="idea-stat-num">Your presentation</div>
           <div class="idea-stat-label">When the moment comes, you present — not a notification, but a personal, curated act of love</div>
         </div>
       </div>
@@ -474,9 +475,9 @@ display:flex;align-items:center;justify-content:center;font-family:var(--font-se
       </div>
       <div class="story-content">
         <span class="label">For Every Person Who Loves Them</span>
-        <p class="story-pull">"You know who they are when no one's watching. That's the gift only you can bring."</p>
-        <p class="story-body">Maybe you're their adult child — and you've watched your parent move through loss, growth, and a quiet readiness they may not even name out loud. Maybe you're their closest friend, the one they call when something real happens. Maybe you're a sibling, an aunt, a mother, a father — someone who has always seen what they deserve in love, even when they couldn't see it themselves.</p>
-        <p class="story-body">Someone in your life is ready for love and is not out looking for it. Not scrolling. Not swiping. Just living, and quietly hoping that someone who loves them will take the first step. Men especially wait in silence for someone to notice they are ready.</p>
+        <p class="story-pull">"You know who they are when no one's watching. That's the insight only you can bring."</p>
+        <p class="story-body">Maybe you're their <strong>adult child</strong>, and you've watched your parent move through loss, growth, and a quiet readiness they may not even name out loud. Maybe you're their <strong>closest friend</strong>, the one they call when something real happens. Maybe you're a <strong>sibling</strong>, an <strong>aunt</strong>, a <strong>mother</strong>, a <strong>father</strong>: someone who has always seen what they deserve in love, even when they couldn't see it themselves.</p>
+        <p class="story-body">They are not going to do this for themselves. Not because they have given up, but because starting over in public asks something no one should have to give twice. You can carry that part.</p>
       </div>
     </div>
   </div>
@@ -495,18 +496,10 @@ display:flex;align-items:center;justify-content:center;font-family:var(--font-se
     <div class="roles-intro">
       <span class="label">Who Can Be on Your Love Team</span>
       <h2 class="section-title">Two roles. One shared purpose.</h2>
-      <p class="section-body">A Love Team can include up to two Adult Children and one Trusted Love Advisor.</p>
+      <p class="section-body">A Love Team can include up to 2 Adult Children and 1 Trusted Love Advisor.</p>
     </div>
     <div class="roles-grid">
       <div class="role-card">
-        <div class="role-icon">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#2BA5B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="16" cy="10" r="5"/>
-            <path d="M6 28c0-5.5 4.5-10 10-10s10 4.5 10 10"/>
-            <path d="M22 14c2.5 1 4 3.5 4 6"/>
-            <path d="M10 14c-2.5 1-4 3.5-4 6"/>
-          </svg>
-        </div>
         <p class="role-eyebrow">Role One</p>
         <h3 class="role-title">Adult Child</h3>
         <p class="role-body">You have watched your parent love and be loved. You know what brings out their best, and what a genuinely available partner looks like.</p>
@@ -517,12 +510,6 @@ display:flex;align-items:center;justify-content:center;font-family:var(--font-se
         </ul>
       </div>
       <div class="role-card teal-top">
-        <div class="role-icon">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#2BA5B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 6 C10 6, 6 10, 6 15 C6 22, 16 28, 16 28 C16 28, 26 22, 26 15 C26 10, 22 6, 16 6Z"/>
-            <path d="M12 15 l3 3 6-6"/>
-          </svg>
-        </div>
         <p class="role-eyebrow">Role Two</p>
         <h3 class="role-title">Trusted Love Advisor</h3>
         <p class="role-body">You are a close friend, a sibling, someone they chose to hold this with them. Their trust in you is total.</p>
@@ -546,8 +533,8 @@ display:flex;align-items:center;justify-content:center;font-family:var(--font-se
     <div class="steps-wave" id="ac-wave">
       <svg class="steps-spine" id="ac-spine" preserveAspectRatio="none"><path class="spine-glow" id="ac-glow"/><path class="spine-path" id="ac-path"/></svg>
       <div class="wstep left"><div class="wnode">1</div><div class="wcard"><h3>You've been chosen</h3><p>Someone who loves you has named you to their Love Team. A personal email explains the role. Take your time: this is an honor, not an obligation.</p></div></div>
-      <div class="wstep right"><div class="wnode">2</div><div class="wcard"><h3>Complete your profile or reflection</h3><p>Adult Children complete a short multiple-choice survey about the person they love. Trusted Love Advisors answer three reflective questions. Neither takes more than fifteen minutes.</p></div></div>
-      <div class="wstep left"><div class="wnode">3</div><div class="wcard"><h3>Browse The Garden — as a team</h3><p>When the Seeker's membership activates, your Love Team receives access to The Garden: photos, sixty-second videos, essence statements. You discuss what resonates among yourselves, unhurried.</p></div></div>
+      <div class="wstep right"><div class="wnode">2</div><div class="wcard"><h3>Complete your profile or reflection</h3><p>Adult Children complete a short multiple-choice survey about the person they love. Trusted Love Advisors answer three reflective questions. Neither takes more than 15 minutes.</p></div></div>
+      <div class="wstep left"><div class="wnode">3</div><div class="wcard"><h3>Browse The Garden — as a team</h3><p>When the Seeker's membership activates, your Love Team receives access to The Garden: photos, 60-second videos, essence statements. You discuss what resonates among yourselves, unhurried.</p></div></div>
       <div class="wstep right"><div class="wnode">4</div><div class="wcard"><h3>Reach out and vet — team to team</h3><p>You never start with the candidate. You reach out to their Love Team, so the first conversation happens between people who love someone rather than strangers trying to impress each other. After that, how you meet them is up to the two teams: a call, a video chat, in person.</p></div></div>
       <div class="wstep left"><div class="wnode">5</div><div class="wcard"><h3>Make the presentation</h3><p>You present your chosen candidates to the Seeker, each with their photo, their video, and a personal note from your Love Team explaining why this person. Up to 3 in the first two months.</p></div></div>
     </div>
@@ -579,42 +566,18 @@ display:flex;align-items:center;justify-content:center;font-family:var(--font-se
       <h2 class="section-title" style="max-width:680px">Human discernment over<br><em>gamification.</em></h2>
       <div class="why-grid">
         <div class="why-card">
-          <div class="why-card-icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#2BA5B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 10c0-6 16-6 16 0v2c0 3-3 5-8 5s-8-2-8-5v-2z"/>
-              <path d="M16 17v5M11 22h10M13 22v4M19 22v4"/>
-            </svg>
-          </div>
           <h3 class="why-card-title">You see what data cannot</h3>
           <p class="why-card-body">An algorithm sees data points. You see their history, their values, their nonnegotiables, and the quiet things they have never had to say aloud because you already know.</p>
         </div>
         <div class="why-card">
-          <div class="why-card-icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#2BA5B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 3L5 8v9c0 6 5 10 11 11 6-1 11-5 11-11V8L16 3z"/>
-              <path d="M11 16l4 4 7-7"/>
-            </svg>
-          </div>
           <h3 class="why-card-title">Built-in accountability</h3>
           <p class="why-card-body">Love Team to Love Team vetting means every conversation happens between people with real names and real relationships. No bots. No catfishing. No ambiguity about who is on the other side.</p>
         </div>
         <div class="why-card">
-          <div class="why-card-icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#2BA5B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 27S5 20 5 12a7 7 0 0 1 11-5.7A7 7 0 0 1 27 12c0 8-11 15-11 15z"/>
-            </svg>
-          </div>
           <h3 class="why-card-title">No competing agenda</h3>
           <p class="why-card-body">A professional matchmaker has a business to run. An algorithm has engagement metrics to optimize. You have one agenda: their happiness.</p>
         </div>
         <div class="why-card">
-          <div class="why-card-icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="#2BA5B4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 6C9 6 4 11 4 17h24c0-6-5-11-12-11z"/>
-              <path d="M16 6v14c0 2.5 2 4 4 4s4-1.5 4-4"/>
-              <path d="M10 25h12"/>
-            </svg>
-          </div>
           <h3 class="why-card-title">Protection for the Seeker</h3>
           <p class="why-card-body">They never browse. They never scroll. They never take on the anxiety and rejection of being on an app alone. They are presented to, not exposed.</p>
         </div>
