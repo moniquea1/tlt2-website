@@ -15,8 +15,8 @@
 { "src": "/readiness", "status": 301, "headers": { "Location": "https://www.linkedin.com/feed/update/urn:li:activity:7474857496692563968/" } },
 { "src": "/ia", "status": 301, "headers": { "Location": "https://www.linkedin.com/posts/monique-aleman_i-have-two-sons-one-of-them-george-works-activity-7475966724958220288-6yFz" } },
 { "src": "/quotable", "status": 301, "headers": { "Location": "https://quotablemediaco.com/monique-aleman-of-trueluvtake2/" } },
-{ "src": "/stories-li", "status": 301, "headers": { "Location": "https://www.linkedin.com/feed/update/urn:li:activity:7496189421424168960/" } },
-{ "src": "/stories-fb", "status": 301, "headers": { "Location": "https://www.facebook.com/monique.aleman.9/posts/pfbid02GGKA1M5S2DgMLq75YC89ysEKhU3sjodap1uvv2XM4h2CZiH2gNJgbSewHRNp8qCbl" } },
+{ "src": "/stories-li", "status": 302, "headers": { "Location": "https://www.linkedin.com/feed/update/urn:li:activity:7496189421424168960/" } },
+{ "src": "/stories-fb", "status": 302, "headers": { "Location": "https://www.facebook.com/monique.aleman.9/posts/pfbid02GGKA1M5S2DgMLq75YC89ysEKhU3sjodap1uvv2XM4h2CZiH2gNJgbSewHRNp8qCbl" } },
 { "src": "/from-linkedin", "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/?utm_source=linkedin&utm_medium=social&utm_campaign=summer2026" } },
 { "src": "/from-facebook", "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/?utm_source=facebook&utm_medium=social&utm_campaign=summer2026" } },
 { "src": "/from-instagram", "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/?utm_source=instagram&utm_medium=social&utm_campaign=summer2026" } },
@@ -42,5 +42,4 @@
 { "src": "/terms-of-service(.*)", "status": 302, "headers": { "Location": "https://go.trueluvtake2.com/terms-of-service$1" } },
 { "src": "/(.*)", "dest": "/$1" }
 ]
-}
 }
