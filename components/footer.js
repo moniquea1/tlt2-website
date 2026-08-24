@@ -146,7 +146,7 @@
     + '<div class="footer-cta-inner">'
     + '<div class="footer-cta-eyebrow">Start Here — It’s Always Free</div>'
     + '<h2>The Garden is growing.<br><em>Be part of it.</em></h2>'
-    + '<p>Upload your photo and complete your Attunement Profile. Your personal readiness results arrive by email. When The Garden reaches 250, you’ll be first in line — and the people who love you will be ready to begin.</p>'
+    + '<p>Upload your photo and complete your Attunement Profile. Your personal readiness results arrive by email. When Boston’s founding circle fills, you’ll be first in line — and the people who love you will be ready to begin.</p>'
     + '<div class="footer-cta-btns">'
     + '<a href="/member-introduction-page" class="cta-white">Create My Introduction — It’s Free →</a>'
     + '<a href="/love-team" class="cta-outline-w">Learn about the Love Team</a>'
