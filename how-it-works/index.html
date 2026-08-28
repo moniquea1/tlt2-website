@@ -169,6 +169,16 @@ body{background:var(--cream);color:var(--text-warm);font-family:var(--font-body)
 .pres-card-title{font-family:var(--font-ui);font-size:12px;font-weight:600;color:var(--charcoal);margin-bottom:3px}
 .pres-card-body{font-size:13px;color:var(--muted);line-height:1.55}
 
+/* ── SAFETY + ACCOUNTABILITY ── */
+.safety-sec{background:var(--cream);width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box}
+.safety-inner{max-width:760px;margin:0 auto;padding:clamp(64px,8vw,96px) 40px}
+.safety-label{font-family:var(--font-ui);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin:0 0 14px}
+.safety-title{font-family:var(--font-serif);font-size:clamp(26px,3.6vw,40px);font-weight:400;color:var(--charcoal);line-height:1.22;margin:0 0 26px;text-wrap:balance}
+.safety-title em{font-style:italic;color:var(--rose)}
+.safety-body{font-family:var(--font-body);font-size:clamp(16px,1.9vw,17.5px);color:var(--muted);line-height:1.8;margin:0 0 20px}
+.safety-pull{font-family:var(--font-serif);font-size:clamp(19px,2.4vw,24px);color:var(--charcoal);line-height:1.5;margin:0 0 26px;padding-left:22px;border-left:3px solid var(--teal)}
+@media(max-width:640px){.safety-inner{padding:56px 24px}.safety-pull{font-size:19px;padding-left:16px}}
+
 /* ── PRICING SNAPSHOT ── */
 .pricing-snap{background:var(--cream-deep);width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box;}
 .pricing-snap-inner{max-width:900px;margin:0 auto;padding:72px 40px;text-align:center}
@@ -338,7 +348,7 @@ body{background:var(--cream);color:var(--text-warm);font-family:var(--font-body)
   <div class="hero-inner">
     <p class="hero-label">The Seeker Journey</p>
     <h1 class="hero-title">A process designed around you.<br><em>Not against you.</em></h1>
-    <p class="hero-body">You never scroll. The people who already love you do the searching.</p>
+    <p class="hero-body">You never scroll. The people who already love you do the searching, and you still decide everything that happens next.</p>
     <div class="hero-paths">
       <a href="#seeker-journey" class="hero-path-btn seeker">I'm a Seeker →</a>
     </div>
@@ -402,7 +412,7 @@ body{background:var(--cream);color:var(--text-warm);font-family:var(--font-body)
         <div class="step-content">
           <span class="step-badge paid">Activate Membership</span>
           <h3 class="step-title">Activate your membership and name your Love Team.</h3>
-          <p class="step-body">Up to 2 Adult Children and 1 Trusted Love Advisor, each invited personally. From here, the searching is theirs.</p>
+          <p class="step-body">2 or 3 people &mdash; up to 2 Adult Children, and always at least 1 Trusted Love Advisor. Each invited personally. From here, the searching is theirs.</p>
         </div>
       </div>
 
@@ -451,6 +461,19 @@ body{background:var(--cream);color:var(--text-warm);font-family:var(--font-body)
   </div>
 </section>
 
+<!-- SAFETY + ACCOUNTABILITY -->
+<section class="safety-sec">
+  <div class="safety-inner">
+    <p class="safety-label">Safety</p>
+    <h2 class="safety-title">You are never meeting a stranger <em>alone.</em></h2>
+    <p class="safety-body">Before you meet anyone, the people who love you have already spoken to the people who love him. That conversation comes first, on purpose &mdash; between people who care about someone, not between strangers trying to impress each other.</p>
+    <p class="safety-pull">No introduction reaches you until that has happened.</p>
+    <p class="safety-body">An app asks you to trust a stranger with no history and no one who vouched for them. Here, an introduction only arrives with both.</p>
+    <p class="safety-body">And if it simply isn&rsquo;t right, that is the ordinary outcome, not a failure.</p>
+    <p class="safety-pull">Nobody who helped you is let down by two decent people deciding they&rsquo;re not a match.</p>
+  </div>
+</section>
+
 <!-- PRICING SNAPSHOT -->
 <section class="pricing-snap">
   <div class="pricing-snap-inner" style="text-align:left;max-width:960px">
@@ -480,30 +503,30 @@ body{background:var(--cream);color:var(--text-warm);font-family:var(--font-body)
         <div style="background:var(--cream-deep);border-left:3px solid var(--rose);border-radius:0 8px 8px 0;padding:16px 18px;margin-bottom:24px">
           <p style="font-size:13px;color:var(--charcoal);line-height:1.7">Creating your Introduction places you just outside the gate. <strong>Membership opens it.</strong></p>
         </div>
-        <a href="/member-introduction-page" style="display:block;text-align:center;background:transparent;border:1.5px solid var(--rose);color:var(--rose);padding:14px 24px;border-radius:50px;font-family:var(--font-ui);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s">Create My Introduction →</a>
+        <a href="/member-introduction-page" style="display:block;text-align:center;background:var(--rose);color:white;padding:14px 24px;border-radius:50px;font-family:var(--font-ui);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s">Create My Free Introduction →</a>
       </div>
 
       <!-- RESERVE CARD -->
       <div style="background:white;border-radius:16px;padding:36px 32px;color:var(--charcoal)">
-        <p style="font-family:var(--font-ui);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold, #C4860A);margin-bottom:12px">Fully refundable</p>
+        <p style="font-family:var(--font-ui);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold, #C4860A);margin-bottom:12px">Reserve a seat</p>
         <h3 style="font-family:var(--font-serif);font-size:22px;color:var(--charcoal);margin-bottom:16px;font-weight:400">Hold a Boston Seat</h3>
         <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px">
           <span style="font-family:var(--font-serif);font-size:48px;color:var(--rose);line-height:1">$50</span>
           <span style="font-family:var(--font-ui);font-size:13px;color:var(--muted)">&nbsp;/ once</span>
         </div>
-        <p style="font-family:var(--font-ui);font-size:12px;color:var(--rose);font-style:italic;margin-bottom:24px">Refunded in full whenever you ask.</p>
+        <p style="font-family:var(--font-ui);font-size:12px;color:var(--rose);font-style:italic;margin-bottom:24px">Credited to your first month.</p>
         <div style="border-top:1px solid var(--rule);padding-top:20px;margin-bottom:20px">
           <div style="display:flex;flex-direction:column;gap:12px">
             <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--teal);font-weight:700;font-size:14px;margin-top:1px">&#10003;</span><span style="font-size:14px;color:var(--text-warm)">Holds one of the 100 founding seats in Greater Boston</span></div>
-            <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--teal);font-weight:700;font-size:14px;margin-top:1px">&#10003;</span><span style="font-size:14px;color:var(--text-warm)">Comes off your first month, or comes back to you</span></div>
+            <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--teal);font-weight:700;font-size:14px;margin-top:1px">&#10003;</span><span style="font-size:14px;color:var(--text-warm)">Credited in full toward your membership</span></div>
             <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--teal);font-weight:700;font-size:14px;margin-top:1px">&#10003;</span><span style="font-size:14px;color:var(--text-warm)">Everything in the free Introduction</span></div>
             <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--muted);font-size:14px;margin-top:1px">&mdash;</span><span style="font-size:14px;color:var(--muted)">Massachusetts residents at launch</span></div>
           </div>
         </div>
         <div style="background:var(--cream-deep);border-left:3px solid var(--gold, #C4860A);border-radius:0 8px 8px 0;padding:16px 18px;margin-bottom:24px">
-          <p style="font-size:13px;color:var(--charcoal);line-height:1.7">A placeholder, not a purchase. <strong>You can ask for it back at any time</strong> and it is returned in full.</p>
+          <p style="font-size:13px;color:var(--charcoal);line-height:1.7">Boston opens with 100 people. <strong>A seat is how you make sure one of them is you.</strong> Refundable on request.</p>
         </div>
-        <a href="/founding-member" style="display:block;text-align:center;background:transparent;border:1.5px solid var(--rose);color:var(--rose);padding:14px 24px;border-radius:50px;font-family:var(--font-ui);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s">See how a seat works &rarr;</a>
+        <a href="/founding-member#seat" style="display:block;text-align:center;background:transparent;border:1.5px solid var(--rose);color:var(--rose);padding:14px 24px;border-radius:50px;font-family:var(--font-ui);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s">Hold my seat — $50 →</a>
       </div>
 
       <!-- PAID CARD -->
@@ -525,7 +548,7 @@ body{background:var(--cream);color:var(--text-warm);font-family:var(--font-body)
             <div style="display:flex;align-items:flex-start;gap:10px"><span style="color:var(--rose);font-weight:700;font-size:14px;margin-top:1px">✓</span><span style="font-size:14px;color:var(--text-warm)">Continue in cycles for as long as you choose</span></div>
           </div>
         </div>
-        <a href="/member-introduction-page" style="display:block;text-align:center;background:var(--rose);color:white;padding:14px 24px;border-radius:50px;font-family:var(--font-ui);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s">Start with a Free Introduction →</a>
+        <a href="https://krpy.me/nv4fn" style="display:block;text-align:center;background:transparent;border:1.5px solid var(--rose);color:var(--rose);padding:14px 24px;border-radius:50px;font-family:var(--font-ui);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s">Secure your place — $444 →</a>
       </div>
 
     </div>

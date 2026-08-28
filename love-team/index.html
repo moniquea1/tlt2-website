@@ -281,6 +281,10 @@ display:flex;align-items:center;justify-content:center;font-family:var(--font-se
 }
 .pres-card-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
 .pres-card-title { font-family: var(--font-ui); font-size: 12px; font-weight: 600; color: var(--text-warm); margin-bottom: 4px; }
+.pres-no { max-width: 680px; margin: 34px auto 0; text-align: left; }
+.pres-no-lead { font-family: var(--font-serif); font-size: clamp(19px,2.3vw,24px); color: var(--text-warm); line-height: 1.45; margin: 0 0 16px; padding-left: 20px; border-left: 3px solid var(--teal); }
+.pres-no-body { font-size: 16px; color: var(--muted); line-height: 1.78; margin: 0 0 14px; }
+@media(max-width:640px){ .pres-no{margin-top:28px} .pres-no-lead{font-size:19px;padding-left:14px} }
 .pres-card-body { font-size: 13px; color: var(--muted); line-height: 1.55; }
 
 /* ═══════════════════════════════
@@ -496,7 +500,7 @@ display:flex;align-items:center;justify-content:center;font-family:var(--font-se
     <div class="roles-intro">
       <span class="label">Who Can Be on Your Love Team</span>
       <h2 class="section-title">Two roles. One shared purpose.</h2>
-      <p class="section-body">A Love Team can include up to 2 Adult Children and 1 Trusted Love Advisor.</p>
+      <p class="section-body">A Love Team is 2 or 3 people &mdash; three is ideal. Up to 2 Adult Children, and always at least 1 Trusted Love Advisor.</p>
     </div>
     <div class="roles-grid">
       <div class="role-card">
@@ -552,6 +556,11 @@ display:flex;align-items:center;justify-content:center;font-family:var(--font-se
         <div class="pres-quote-card">
           <blockquote>"When your Love Team presents someone to you, it is not a match suggestion. It is an act of love. And you will feel the difference."</blockquote>
           <cite>— Monique Alemán, Founder</cite>
+        </div>
+        <div class="pres-no">
+          <p class="pres-no-lead">And a no is an ordinary outcome, not a failure.</p>
+          <p class="pres-no-body">The person you love can decline any introduction you bring &mdash; without a conversation, without a reason, and without your feelings being on the line. They never owe you an explanation, and you never need to ask for one.</p>
+          <p class="pres-no-body">Nobody who helped is let down by two decent people deciding they&rsquo;re not a match.</p>
         </div>
       </div>
     </div>
