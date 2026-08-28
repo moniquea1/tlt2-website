@@ -272,9 +272,12 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
 #tlt-home .wpull{font-family:var(--ser);font-size:clamp(21px,2.6vw,27px);font-style:italic;color:var(--char);line-height:1.4;margin:0 auto 22px;max-width:600px;text-wrap:balance}
 @media(max-width:640px){#tlt-home .weight{padding:60px 0}#tlt-home .wq{margin-bottom:36px}}
 
-#tlt-home .together{margin:0;width:100vw;position:relative;left:50%;margin-left:-50vw;line-height:0}
-#tlt-home .together img{width:100%;height:auto;max-height:460px;object-fit:cover;object-position:50% 34%;display:block}
-@media(max-width:640px){#tlt-home .together img{max-height:300px}}
+/* Contained, not full-bleed: at full-bleed the 2:1 photo was forced into a ~4:1 slot,
+   so object-fit had to crop vertically and it clipped their heads. Held to its own
+   aspect ratio, nothing is ever cropped at any screen width. */
+#tlt-home .together{margin:0 auto;max-width:1160px;padding:0 32px;line-height:0}
+#tlt-home .together img{width:100%;height:auto;display:block;border-radius:14px}
+@media(max-width:640px){#tlt-home .together{padding:0 20px}#tlt-home .together img{border-radius:10px}}
 </style>
 
 <div id="tlt-home">
@@ -321,7 +324,7 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
 
 <!-- TOGETHER BAND -->
 <figure class="together">
-  <img src="/images/home-together.jpg" alt="Two friends in conversation" loading="lazy" decoding="async">
+  <img src="/images/home-together.jpg" alt="A woman seated between her two adult daughters, their hands resting together in her lap" loading="lazy" decoding="async">
 </figure>
 
 <!-- WHY THIS MATTERS : one type voice -->
