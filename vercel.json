@@ -22,6 +22,8 @@
 { "src": "/from-instagram", "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/?utm_source=instagram&utm_medium=social&utm_campaign=summer2026" } },
 { "src": "/from-email", "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/?utm_source=email&utm_medium=email&utm_campaign=summer2026" } },
 { "src": "/from-text", "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/?utm_source=personal&utm_medium=message&utm_campaign=summer2026" } },
+{ "src": "/from-room", "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/member-introduction-page?utm_source=room&utm_medium=event&utm_campaign=boston-fall2026" } },
+{ "src": "/from-card", "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/?utm_source=card&utm_medium=print&utm_campaign=boston-fall2026" } },
 { "src": "/linkedin", "status": 301, "headers": { "Location": "https://www.linkedin.com/in/monique-aleman" } },
 { "src": "/facebook", "status": 301, "headers": { "Location": "https://www.facebook.com/trueluvtake2" } },
 { "src": "/founding", "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/founding-member?utm_source=shortlink&utm_medium=redirect&utm_campaign=founding" } },
