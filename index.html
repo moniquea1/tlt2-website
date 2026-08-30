@@ -278,6 +278,21 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
 #tlt-home .together{margin:0 auto;max-width:1160px;padding:0 32px;line-height:0}
 #tlt-home .together img{width:100%;height:auto;display:block;border-radius:14px}
 @media(max-width:640px){#tlt-home .together{padding:0 20px}#tlt-home .together img{border-radius:10px}}
+
+/* Two photographs crossfading. The first is a normal <img> and is always there;
+   the second sits on top and fades in and out. If the animation never runs the
+   page simply shows the first photograph, so nothing can break. */
+#tlt-home .together{position:relative}
+#tlt-home .together .fade-in{position:absolute;top:0;left:32px;right:32px;width:calc(100% - 64px);height:100%;object-fit:cover;opacity:0;animation-duration:24s;animation-timing-function:ease-in-out;animation-iteration-count:infinite}
+/* Three photographs, eight seconds each. The base <img> is the first one and is
+   never hidden; these two fade over the top of it in turn. */
+#tlt-home .together .fade-2{animation-name:tlt-fade-2}
+#tlt-home .together .fade-3{animation-name:tlt-fade-3}
+@keyframes tlt-fade-2{0%,29%{opacity:0}35%,62%{opacity:1}68%,100%{opacity:0}}
+@keyframes tlt-fade-3{0%,62%{opacity:0}68%,95%{opacity:1}100%{opacity:0}}
+@media(max-width:640px){#tlt-home .together .fade-in{left:20px;right:20px;width:calc(100% - 40px)}}
+/* Anyone who has asked their device for less motion just gets the one image. */
+@media(prefers-reduced-motion:reduce){#tlt-home .together .fade-in{display:none}}
 </style>
 
 <div id="tlt-home">
@@ -325,6 +340,8 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
 <!-- TOGETHER BAND -->
 <figure class="together">
   <img src="/images/home-together.jpg" alt="A woman seated between her two adult daughters, their hands resting together in her lap" loading="lazy" decoding="async">
+  <img class="fade-in fade-2" src="/images/home-friends.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+  <img class="fade-in fade-3" src="/images/home-father-son.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
 </figure>
 
 <!-- WHY THIS MATTERS : one type voice -->
