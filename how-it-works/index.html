@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="/css/tokens.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ── MONDAi Full-Bleed Reset (per TLT2_MONDAi_FullBleed_MobileRules.md) ── */
 
@@ -310,17 +310,17 @@ body{background:var(--cream);color:var(--text-warm);font-family:var(--font-body)
 
   /* Pricing — stack free card above paid card */
   .pricing-grid { grid-template-columns: 1fr !important; }
-
-  /* Witch arrow — hide on mobile */
-  .witch-arrow-wrap { display: none !important; }
-  /* Witch text — reset to left edge on mobile, allow 3 lines */
-  .witch-text { margin-left: 4px !important; max-width: 160px !important; }
 }
 
 /* scroll reveal */
 .rv{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .75s cubic-bezier(.2,.7,.3,1);}
 .rv.rv-in{opacity:1;transform:none;}
 @media (prefers-reduced-motion: reduce){.rv{opacity:1!important;transform:none!important;transition:none!important;}}
+
+.arrive-band{background:var(--cream-deep);width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box;padding:clamp(54px,6vw,82px) 24px;text-align:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.arrive-band p{font-family:var(--font-serif);font-size:clamp(22px,2.9vw,34px);font-style:italic;color:var(--charcoal);line-height:1.5;margin:0 auto;max-width:780px;letter-spacing:-.2px}
+.arrive-band em{font-style:italic;color:var(--teal)}
+@media(max-width:640px){.arrive-band{padding:44px 22px}.arrive-band p{font-size:20px;line-height:1.55}}
 </style>
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -328,39 +328,6 @@ body{background:var(--cream);color:var(--text-warm);font-family:var(--font-body)
 <script src="/components/nav.js"></script>
 
 <!-- HERO -->
-<!-- PHOTO BREAK -->
-<div style="width:100vw;position:relative;left:50%;margin-left:-50vw;box-sizing:border-box;display:grid;grid-template-rows:1fr;overflow:hidden;">
-
-  <!-- Layer 1: the photo -->
-  <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69f7d834dd67e758c0fb5486.jpg"
-       alt="Monique"
-       style="grid-row:1;grid-column:1;width:100%;height:clamp(440px,60vw,720px);object-fit:cover;object-position:68% 42%;display:block;">
-
-  <!-- Layer 2: gradient + text — sits on top via grid stacking -->
-  <div style="grid-row:1;grid-column:1;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(20px,3vw,40px) clamp(24px,5vw,72px);box-sizing:border-box;background:linear-gradient(to top,rgba(15,12,9,0.88) 0%,rgba(15,12,9,0.35) 50%,transparent 100%);z-index:2;">
-
-    <!-- Top zone: empty spacer pushes witch to middle -->
-    <div></div>
-
-    <!-- Middle zone: witch annotation — floats at ~50% image height, arrow points down toward the hat -->
-    <div class="witch-text" style="display:inline-block;transform:rotate(-3deg);max-width:320px;margin-left:clamp(16px,12vw,200px);">
-      <p style="font-family:'Caveat',cursive;font-size:clamp(18px,2.5vw,34px);color:#ffffff;line-height:1.4;text-shadow:0 2px 12px rgba(0,0,0,0.95);margin:0;font-weight:600;">Your Love Team will do better than this! &#128516;</p>
-      <div class="witch-arrow-wrap" style="display:block;">
-        <svg width="86" height="44" viewBox="0 0 86 44" fill="none" style="display:block;margin-top:6px;">
-          <path d="M6 6 C28 4, 58 14, 78 30" stroke="rgba(255,255,255,0.88)" stroke-width="2" stroke-linecap="round" fill="none"/>
-          <path d="M78 30 L65 22 M78 30 L66 38" stroke="rgba(255,255,255,0.88)" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </div>
-    </div>
-
-    <!-- Bottom zone: quote anchored bottom-right -->
-    <div style="display:flex;justify-content:flex-end;">
-      <p style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(20px,2.8vw,34px);color:rgba(255,255,255,0.95);font-style:italic;line-height:1.55;margin:0;text-align:right;max-width:600px;text-shadow:0 2px 8px rgba(0,0,0,0.7);">"The right love doesn't ask you to search harder.<br>It asks you to <em style="color:rgba(43,165,180,1);font-style:italic;">arrive more fully.</em>"</p>
-    </div>
-
-  </div>
-</div>
-
 <section class="hero">
   <div class="hero-inner hero-split">
     <div class="hero-copy">
@@ -375,6 +342,11 @@ body{background:var(--cream);color:var(--text-warm);font-family:var(--font-body)
       <img src="/images/hiw-monique-table.jpg" alt="Monique Alem&aacute;n in conversation across a table" loading="eager" decoding="async">
     </figure>
   </div>
+</section>
+
+<!-- ARRIVE LINE -->
+<section class="arrive-band">
+  <p>The right love doesn&rsquo;t ask you to search harder.<br>It asks you to <em>arrive more fully.</em></p>
 </section>
 
 <!-- SEEKER JOURNEY -->
@@ -491,8 +463,6 @@ body{background:var(--cream);color:var(--text-warm);font-family:var(--font-body)
     <p class="safety-body">Before you meet anyone, your people and theirs have already spoken. That conversation comes first, on purpose &mdash; between people who care about someone, not between strangers trying to impress each other.</p>
     <p class="safety-pull">No introduction reaches you until that has happened.</p>
     <p class="safety-body">An app asks you to trust a stranger with no history and no one who vouched for them. Here, an introduction only arrives with both.</p>
-    <p class="safety-body">And if it simply isn&rsquo;t right, that is the ordinary outcome, not a failure.</p>
-    <p class="safety-pull">Nobody who helped you is let down by two decent people deciding they&rsquo;re not a match.</p>
   </div>
 </section>
 
