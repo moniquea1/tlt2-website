@@ -116,6 +116,17 @@
   // Insert nav-offset right after the nav (which is now firstChild)
   document.body.insertBefore(offset, document.body.firstChild.nextSibling);
 
+  // Keep the spacer exactly as tall as the fixed header. The CSS height is a
+  // fallback only: when the announcement bar wraps to two lines on a narrow
+  // phone the header grows, and a fixed 72px spacer let the header sit on top
+  // of the first thing on the page.
+  var _navEl = document.getElementById('tl2Nav');
+  function _syncNavOffset(){ if (_navEl) offset.style.height = _navEl.offsetHeight + 'px'; }
+  _syncNavOffset();
+  window.addEventListener('resize', _syncNavOffset);
+  window.addEventListener('load', _syncNavOffset);
+  if (window.ResizeObserver && _navEl) { new ResizeObserver(_syncNavOffset).observe(_navEl); }
+
   // ── Announcement bar: let it wrap on small screens. Both CTAs stay — the
   //    seat button used to be display:none here, which is why phones sent people
   //    to the free form instead. Shorter copy below keeps it on one or two lines. ──
