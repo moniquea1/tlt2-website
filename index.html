@@ -296,22 +296,52 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
 @keyframes tlt-fade-3{0%,62%{opacity:0}69%,95%{opacity:1}100%{opacity:0}}
 @media(prefers-reduced-motion:reduce){#tlt-home .w-fig .fade-in{display:none}}
 @media(max-width:820px){#tlt-home .w-grid{grid-template-columns:1fr;gap:38px}#tlt-home .w-copy{max-width:none}#tlt-home .w-fig img{border-radius:130px 130px 8px 8px}}
+
+/* HERO 2026-09 — photograph plus the line that answers the jacket. The five
+   signals moved out of the card into one strip beneath, so the picture is not
+   competing with a list. Appended, never deleted: the old hero rules remain but
+   have no markup to attach to. */
+#tlt-home .hero{display:block;text-align:left;padding:0;min-height:0}
+#tlt-home .hero .wrap{max-width:1140px;padding:clamp(34px,4vw,56px) 40px clamp(30px,3.4vw,44px)}
+#tlt-home .hero-duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,4.4vw,64px);align-items:center}
+#tlt-home .hero-photo{margin:0;background:#F6EFE9;border-radius:14px;display:flex;align-items:center;justify-content:center;padding:22px}
+#tlt-home .hero-photo img{max-width:100%;max-height:560px;width:auto;height:auto;display:block}
+#tlt-home .hero .hero-logo{width:min(300px,74%);max-width:none;height:auto;display:block;margin:0 0 18px}
+#tlt-home .hero-turn{font-family:var(--ser);font-style:italic;font-size:clamp(30px,3.9vw,44px);color:var(--burg);line-height:1.16;margin:0 0 18px;letter-spacing:-.4px}
+#tlt-home .hero .lede{font-size:16.5px;color:var(--ink);line-height:1.55;margin:0 0 22px;max-width:430px;text-align:left}
+#tlt-home .hero .hero-cta{display:flex;flex-direction:column;gap:9px;max-width:280px;justify-content:flex-start}
+#tlt-home .hero .btn{display:flex;align-items:center;justify-content:center;font-size:13.5px;padding:12px 20px}
+#tlt-home .hero-safe{font-family:var(--ui);font-size:12.5px;line-height:1.6;color:var(--muted);margin:16px 0 0;max-width:400px;text-align:left}
+#tlt-home .signal-strip{display:flex;gap:clamp(14px,2vw,30px);justify-content:center;flex-wrap:wrap;background:var(--warm);border-top:1px solid var(--line);padding:18px 32px}
+#tlt-home .sig{display:flex;gap:8px;align-items:flex-start;font-family:var(--ui);font-size:12.5px;color:var(--muted)}
+#tlt-home .sig b{font-family:var(--ser);font-weight:500;font-size:15px;color:var(--char)}
+#tlt-home .sig .tick{flex:0 0 15px;width:15px;height:15px;border-radius:50%;background:var(--burg);display:flex;align-items:center;justify-content:center;margin-top:3px}
+#tlt-home .sig .tick svg{width:8px;height:8px;stroke:#fff;stroke-width:3.4;fill:none;stroke-linecap:round}
+@media(max-width:820px){
+ #tlt-home .hero{text-align:center}
+ #tlt-home .hero .wrap{padding:26px 22px 30px}
+ #tlt-home .hero-duo{grid-template-columns:1fr;gap:26px}
+ #tlt-home .hero-photo{order:2;padding:16px}
+ #tlt-home .hero-stage{order:1}
+ #tlt-home .hero .hero-logo{margin:0 auto 16px;width:min(280px,78%)}
+ #tlt-home .hero-turn{font-size:30px}
+ #tlt-home .hero .lede,#tlt-home .hero-safe{max-width:none;text-align:center}
+ #tlt-home .hero .hero-cta{max-width:none}
+ #tlt-home .signal-strip{gap:10px 18px;padding:16px 20px}
+ #tlt-home .sig{font-size:12px}#tlt-home .sig b{font-size:14px}
+}
 </style>
 
 <div id="tlt-home">
 <section class="hero">
   <div class="wrap">
-    <img class="hero-logo" src="/assets/logo.png" alt="TrueLuvTake2">
-    <div class="duo">
-      <div class="checks">
-        <p class="kicker">For adults 50+</p>
-        <div class="ck"><h4>People first<span class="t">not an algorithm</span></h4><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4 12.5 9.5 18 20 6.5"/></svg></span></div>
-        <div class="ck"><h4>Safety<span class="t">the team you trust screens first</span></h4><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4 12.5 9.5 18 20 6.5"/></svg></span></div>
-        <div class="ck"><h4>Pre-qualified<span class="t">hand-picked by your team</span></h4><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4 12.5 9.5 18 20 6.5"/></svg></span></div>
-        <div class="ck"><h4>No stress or scams<span class="t">real people, no bots</span></h4><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4 12.5 9.5 18 20 6.5"/></svg></span></div>
-        <div class="ck"><h4>A fraction of the cost<span class="t">high-end matchmaking without the price tag</span></h4><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4 12.5 9.5 18 20 6.5"/></svg></span></div>
-      </div>
-      <div class="stage">
+    <div class="hero-duo">
+      <figure class="hero-photo">
+        <img src="/images/home-hero-monique.jpg" alt="Monique Alem&aacute;n from behind, arms raised, in a jacket reading All You Need Is Love" loading="eager" decoding="async">
+      </figure>
+      <div class="hero-stage">
+        <img class="hero-logo" src="/assets/logo.png" alt="TrueLuvTake2">
+        <p class="hero-turn">And a few people who love you.</p>
         <p class="lede">A space where the people who love you most help you find someone worth showing up for.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="https://www.trueluvtake2.com/member-introduction-page">I'm ready to be found &rarr;</a>
@@ -320,6 +350,13 @@ body { font-family: var(--san); background: var(--cream); color: var(--char);
         <p class="hero-safe">No one here is a stranger off the internet. Every introduction comes through people who know you both.</p>
       </div>
     </div>
+  </div>
+  <div class="signal-strip">
+    <span class="sig"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4 12.5 9.5 18 20 6.5"/></svg></span><span><b>People first</b> &middot; not an algorithm</span></span>
+    <span class="sig"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4 12.5 9.5 18 20 6.5"/></svg></span><span><b>Safety</b> &middot; the team you trust screens first</span></span>
+    <span class="sig"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4 12.5 9.5 18 20 6.5"/></svg></span><span><b>Pre-qualified</b> &middot; hand-picked by your team</span></span>
+    <span class="sig"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4 12.5 9.5 18 20 6.5"/></svg></span><span><b>No stress or scams</b> &middot; real people, no bots</span></span>
+    <span class="sig"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4 12.5 9.5 18 20 6.5"/></svg></span><span><b>A fraction of the cost</b> &middot; high-end matchmaking without the price tag</span></span>
   </div>
 </section>
 
