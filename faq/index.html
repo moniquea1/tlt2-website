@@ -414,6 +414,16 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
   .footer-top { grid-template-columns: 1fr; }
 }
 
+
+/* WHERE THINGS STAND — replaces the dated roadmap */
+.status-now{max-width:720px;margin:0 auto;text-align:center}
+.status-lead{font-family:var(--font-serif);font-size:clamp(19px,2.3vw,25px);font-style:italic;color:var(--char);line-height:1.55;margin:0 0 22px}
+.status-body{font-family:var(--font-ui);font-size:15px;color:var(--muted);line-height:1.75;margin:0 0 32px}
+.status-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.status-cta a{font-family:var(--font-ui);font-size:14px;letter-spacing:.3px;text-transform:none;padding:14px 26px;border-radius:999px;text-decoration:none;display:inline-block}
+.status-cta .btn-primary{background:var(--rose);color:#fff;border:1px solid var(--rose)}
+.status-cta .btn-ghost{background:transparent;color:var(--rose);border:1px solid rgba(137,24,26,.4)}
+@media(max-width:560px){.status-cta a{width:100%;text-align:center}}
 </style>
   <script defer src="/_vercel/insights/script.js"></script>
 
@@ -458,7 +468,7 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
     <a href="#process">The Process</a>
     <a href="#advisory">Love Team</a>
     <a href="#membership">Membership</a>
-    <a href="#roadmap">Roadmap</a>
+    <a href="#roadmap">Where we are</a>
   </div>
 </nav>
 
@@ -687,7 +697,8 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a"><div class="faq-a-inner">
-          <p>Yes. TrueLuvTake2 is a premium, members-only platform. Membership is <strong>$222/month</strong>, with a two-month minimum commitment of <strong>$444</strong>. Month three is offered at <strong>$111</strong> as a loyalty rate — our way of honoring your continued presence.</p>
+          <p><strong>Creating your Introduction is free, and it stays free.</strong> Membership begins when the Garden opens.</p>
+          <p>Membership is <strong>$222/month</strong>, with a two-month minimum of <strong>$444</strong>. Month three is offered at <strong>$111</strong> as a loyalty rate — our way of honoring your continued presence.</p>
         </div></div>
       </div>
 
@@ -697,7 +708,9 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a"><div class="faq-a-inner">
-          <p>The Garden is the members-only browsing experience at the heart of TrueLuvTake2. It opens when Boston’s founding circle is full: 100 qualified members in Greater Boston who have completed their Introduction, not before. We are opening one metro properly rather than fifty thinly, and 250 nationally is the milestone after Boston. This threshold is intentional: we believe you deserve to walk into a room full of possibility, not a half-empty one.</p>
+          <p>The Garden is the members-only space at the heart of TrueLuvTake2 — where your Love Team looks on your behalf.</p>
+          <p>It opens when Greater Boston’s founding circle is full: <strong>100 people who have completed their Introduction.</strong> Not before.</p>
+          <p>We are starting in one city, and doing it properly. You deserve to walk into a full room, not an empty one.</p>
         </div></div>
       </div>
 
@@ -707,7 +720,11 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a"><div class="faq-a-inner">
-          <p>Yes — and we'd be honored if you did. Founding Membership is available now for <strong>$444</strong>. Your commitment is held until the Garden opens, then applied to your first two months of membership. Founding members receive today's rate locked in, priority access on opening day, and permanent founding member recognition within the platform. <a href="/founding-member" style="color:rgba(43,165,180,0.9);text-decoration:underline;">Learn about Founding Membership →</a></p>
+          <p>Yes — two ways, and we’d be honored either way.</p>
+          <p><strong>Hold a seat — $50.</strong> Greater Boston opens with 100 people. Fifty dollars holds one of those seats, credited in full toward your first month. Refundable on request.</p>
+          <p><strong>Founding Membership — $444.</strong> Your commitment is held until the Garden opens, then applied to your first two months. Founding members receive today’s rate locked in, priority access on opening day, and permanent founding member recognition.</p>
+          <p>Both are open to Massachusetts residents at launch. Creating your Introduction is free, always, and open to everyone.</p>
+          <p><a href="/founding-member#seat" style="color:rgba(43,165,180,0.9);text-decoration:underline;">Hold my seat — $50 →</a> &nbsp;&middot;&nbsp; <a href="/founding-member" style="color:rgba(43,165,180,0.9);text-decoration:underline;">Learn about Founding Membership →</a></p>
         </div></div>
       </div>
 
@@ -723,11 +740,13 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 
       <div class="faq-item" onclick="toggleFaq(this)">
         <button class="faq-q">
-          <span class="faq-q-text">How long will I wait?</span>
+          <span class="faq-q-text">When will the Garden open?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a"><div class="faq-a-inner">
-          <p>We update the Garden count regularly. At current growth, we anticipate the Garden opening in the coming months. You can follow our progress at <a href="/the-garden" style="color:rgba(43,165,180,0.9);text-decoration:underline;">trueluvtake2.com/the-garden</a>.</p>
+          <p><strong>It’s happening now.</strong> Greater Boston’s circle is filling, and every Introduction completed brings opening day closer.</p>
+          <p>The date isn’t ours to announce — it belongs to the people arriving. Come in now and you’re one of the people who opens it.</p>
+          <p>Watch the circle fill at <a href="/the-garden" style="color:rgba(43,165,180,0.9);text-decoration:underline;">trueluvtake2.com/the-garden</a>.</p>
         </div></div>
       </div>
 
@@ -755,68 +774,16 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 <section class="roadmap fb" id="roadmap">
   <div class="roadmap-inner">
     <div class="roadmap-header">
-      <span class="label teal">The Journey So Far</span>
-      <h2>Where we've been.<br>Where we're <em>going.</em></h2>
-      <p>TrueLuvTake2 is growing with intention — not urgency. Here's our honest roadmap.</p>
+      <span class="label teal">Where things stand</span>
+      <h2>Right <em>now.</em></h2>
     </div>
-    <div class="timeline">
-
-      <div class="timeline-item done">
-        <div class="timeline-dot"></div>
-        <span class="timeline-badge">Complete</span>
-        <span class="timeline-when">2024</span>
-        <h3 class="timeline-title">Vision takes shape</h3>
-        <p class="timeline-body">Philosophy, framework, and the Five Elements of Connection developed. The foundation of TrueLuvTake2 is built from lived experience and deep conviction.</p>
+    <div class="status-now">
+      <p class="status-lead">Greater Boston’s founding circle is filling. The Garden opens when 100 people here have completed their Introduction — and the people joining now are the ones who open it.</p>
+      <p class="status-body">Creating your Introduction is free. If you’d like to hold one of the 100 seats while you think it over, that’s $50 — credited toward your first month and refundable on request.</p>
+      <div class="status-cta">
+        <a class="btn-primary" href="/member-introduction-page">Begin My Introduction →</a>
+        <a class="btn-ghost" href="/founding-member#seat">Hold My Seat — $50 →</a>
       </div>
-
-      <div class="timeline-item done">
-        <div class="timeline-dot"></div>
-        <span class="timeline-badge">Complete</span>
-        <span class="timeline-when">2025</span>
-        <h3 class="timeline-title">Year of integration & insight</h3>
-        <p class="timeline-body">Deepening the vision through lived experience. The platform, attunement framework, and community architecture refined.</p>
-      </div>
-
-      <div class="timeline-item done">
-        <div class="timeline-dot"></div>
-        <span class="timeline-badge">Complete</span>
-        <span class="timeline-when">Early 2026</span>
-        <h3 class="timeline-title">Attunement Profiles launched</h3>
-        <p class="timeline-body">The Partner Attunement Profile and Love Team Insight Profile are built and live. Members begin their reflective journey.</p>
-      </div>
-
-      <div class="timeline-item live">
-        <div class="timeline-dot"></div>
-        <span class="timeline-badge">Live Now</span>
-        <span class="timeline-when">March 2026</span>
-        <h3 class="timeline-title">Community opens</h3>
-        <p class="timeline-body">Founding members begin engaging. The Garden opens for early access. Real conversations, real connection — beginning with intention.</p>
-      </div>
-
-      <div class="timeline-item live">
-        <div class="timeline-dot"></div>
-        <span class="timeline-badge">Live Now</span>
-        <span class="timeline-when">Spring 2026</span>
-        <h3 class="timeline-title">Founding Pilot — active</h3>
-        <p class="timeline-body">Founding members are arriving. Attunement Profiles are being completed. The Garden is building toward its first full room in Greater Boston — the threshold at which the full experience activates. <a href="https://krpy.me/nv4fn" style="color:rgba(43,165,180,0.9);text-decoration:none;font-weight:600;">Secure your founding place →</a></p>
-      </div>
-
-      <div class="timeline-item soon">
-        <div class="timeline-dot"></div>
-        <span class="timeline-badge">Coming Soon</span>
-        <span class="timeline-when">Late 2026</span>
-        <h3 class="timeline-title">Expanded member experience</h3>
-        <p class="timeline-body">Additional features, pathways, and community depth. The platform grows with the wisdom of its founding members.</p>
-      </div>
-
-      <div class="timeline-item future">
-        <div class="timeline-dot"></div>
-        <span class="timeline-badge">On the Horizon</span>
-        <span class="timeline-when">Future</span>
-        <h3 class="timeline-title">The TrueLuvTake2 App</h3>
-        <p class="timeline-body">A full mobile experience built on everything we've learned — intentional, beautiful, and designed for the richness of this stage of life.</p>
-      </div>
-
     </div>
   </div>
 </section>
