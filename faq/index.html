@@ -234,7 +234,7 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 ════════════════════════════════════════ */
 .roadmap {
   background: var(--cream-deep);
-  border-top: 4px solid var(--teal);
+  border-top: 1px solid var(--rule);
   padding: clamp(72px,10vw,112px) clamp(24px,6vw,80px);
 }
 .roadmap-inner { max-width: 900px; margin: 0 auto; }
@@ -424,6 +424,13 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 .status-cta .btn-primary{background:var(--rose);color:#fff;border:1px solid var(--rose)}
 .status-cta .btn-ghost{background:transparent;color:var(--rose);border:1px solid rgba(137,24,26,.4)}
 @media(max-width:560px){.status-cta a{width:100%;text-align:center}}
+
+/* QUOTE BAND — replaces the full-bleed photo */
+.faq-quote-band{background:var(--cream);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:clamp(56px,7vw,88px) clamp(24px,6vw,80px);text-align:center}
+.faq-quote-band p{font-family:var(--font-serif);font-size:clamp(21px,2.8vw,32px);font-style:italic;color:var(--charcoal);line-height:1.5;margin:0 auto;max-width:760px;letter-spacing:-.2px}
+.faq-quote-band em{font-style:italic;color:var(--rose)}
+.ask-link{font-family:var(--font-ui);font-size:15px;color:var(--rose);text-decoration:none;border-bottom:1px solid rgba(137,24,26,.35);padding-bottom:3px}
+.ask-link:hover{border-bottom-color:var(--rose)}
 </style>
   <script defer src="/_vercel/insights/script.js"></script>
 
@@ -556,7 +563,7 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 <!-- ════════════════════════════════════════
      3. THE PROCESS — charcoal
 ════════════════════════════════════════ -->
-<section class="faq-section charcoal fb" id="process">
+<section class="faq-section deep fb" id="process">
   <div class="faq-inner">
     <div class="faq-header">
       <span class="label light">The Process</span>
@@ -622,7 +629,7 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 <!-- ════════════════════════════════════════
      4. ADVISORY CIRCLE — burgundy
 ════════════════════════════════════════ -->
-<section class="faq-section burgundy fb" id="advisory">
+<section class="faq-section charcoal fb" id="advisory">
   <div class="faq-inner">
     <div class="faq-header">
       <span class="label pale">The Love Team</span>
@@ -682,7 +689,7 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 <!-- ════════════════════════════════════════
      5. MEMBERSHIP — teal dark
 ════════════════════════════════════════ -->
-<section class="faq-section teal-dark fb" id="membership">
+<section class="faq-section cream fb" id="membership">
   <div class="faq-inner">
     <div class="faq-header">
       <span class="label light">Membership</span>
@@ -716,7 +723,7 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 
       <div class="faq-item" onclick="toggleFaq(this)">
         <button class="faq-q">
-          <span class="faq-q-text" style="color:#C4860A;">Can I reserve my place before the Garden opens?</span>
+          <span class="faq-q-text" style="color:var(--rose);">Can I reserve my place before the Garden opens?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-a"><div class="faq-a-inner">
@@ -757,15 +764,8 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
 <!-- ════════════════════════════════════════
      BRIDGE PHOTO — Peru crossing
 ════════════════════════════════════════ -->
-<section class="bridge-photo fb">
-  <div class="bridge-bg">
-    <img src="https://assets.cdn.filesafe.space/Qf0pQQODoBLEPfZVAAGo/media/69f7d8346b07ab330356845f.jpg"
-         alt="Crossing the bridge — Sacred Valley, Peru">
-    <div class="bridge-overlay"></div>
-  </div>
-  <div class="bridge-inner">
-    <p>"There are no right answers here.<br>Only <em>honest</em> ones."</p>
-  </div>
+<section class="faq-quote-band">
+  <p>“There are no right answers here. Only <em>honest</em> ones.”</p>
 </section>
 
 <!-- ════════════════════════════════════════
@@ -795,11 +795,8 @@ h1,h2,h3 { font-family: var(--font-serif); font-weight: 400; }
   <div class="container" style="max-width:600px;margin:0 auto">
     <span class="label" style="color:var(--teal)">Ready When You Are</span>
     <h2 class="hd" style="font-size:clamp(26px,3vw,36px);color:var(--char);margin-bottom:20px">Still have questions? <em>Good.</em><br>That means you're paying attention.</h2>
-    <p class="body-text" style="color:var(--muted);margin-bottom:36px">The right questions are how you find the right answer. Begin your Introduction — it's free, it's reflective, and it's yours to keep.</p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-      <a href="/member-introduction-page" class="btn btn-burg">Begin My Introduction →</a>
-      <a href="https://krpy.me/nv4fn" style="display:inline-block;font-family:var(--san);font-size:14px;font-weight:600;padding:13px 26px;border-radius:4px;text-decoration:none;background:rgba(196,134,10,0.08);color:#C4860A;border:1.5px solid rgba(196,134,10,0.4)">Reserve a Founding Spot →</a>
-    </div>
+    <p class="body-text" style="color:var(--muted);margin-bottom:28px">The right questions are how you find the right answer. If yours isn’t answered here, ask us directly — we read every one.</p>
+      <div><a class="ask-link" href="/contact">Ask your question →</a></div>
   </div>
 </section>
 
