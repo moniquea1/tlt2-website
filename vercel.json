@@ -21,6 +21,7 @@
 { "src": "/amelias-ig", "status": 301, "headers": { "Location": "https://www.instagram.com/p/DfFhr5wmxH0/" } },
 { "src": "/amelias-fb", "status": 301, "headers": { "Location": "https://www.facebook.com/monique.aleman.9/posts/pfbid026jrqJA14KPtRQmKp7PLBuT1P7skE3vs9tfEB6bnBP33n9gm8to5XNCPPa4ZdfTgel" } },
 { "src": "/amelias-li", "status": 301, "headers": { "Location": "https://www.linkedin.com/posts/monique-aleman_where-are-our-people-our-people-are-50-share-7521636620941410304-ee3t/" } },
+{ "src": "/holidays", "status": 301, "headers": { "Location": "https://www.linkedin.com/posts/monique-aleman_not-everyone-is-looking-forward-to-the-holidays-share-7529221330664349696-RBH0/" } },
 { "src": "/from-linkedin", "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/?utm_source=linkedin&utm_medium=social&utm_campaign=summer2026" } },
 { "src": "/from-facebook", "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/?utm_source=facebook&utm_medium=social&utm_campaign=summer2026" } },
 { "src": "/from-instagram", "status": 301, "headers": { "Location": "https://www.trueluvtake2.com/?utm_source=instagram&utm_medium=social&utm_campaign=summer2026" } },
